@@ -13,7 +13,7 @@ class CaptchasController extends Controller
 
         $captcha = $captchaBuilder->build();
         // 两分钟后过期
-        $expiredAt = now()->addMinutes(2);
+        $expiredAt = now()->addMinutes(20);//todo 测试更改
         \Cache::put($key, ['captcha'=>$captcha->getPhrase()], $expiredAt);
 
         $result = [
