@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\UserRequest;
 use App\Models\User;
+use App\Transformers\UserTransformer;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -31,5 +32,11 @@ class UserController extends Controller
         // 清除验证码缓存
         \Cache::forget($request->captcha_key);
         return $this->response->created();
+    }
+
+    public function me()
+    {
+        // dd($this->user()->dormitory->dorm_number);
+        return $this->response->item($this->user(), new UserTransformer());
     }
 }

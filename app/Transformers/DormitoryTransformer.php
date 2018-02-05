@@ -2,7 +2,6 @@
 
 namespace App\Transformers;
 
-
 use App\Models\Dormitory;
 use League\Fractal\TransformerAbstract;
 
