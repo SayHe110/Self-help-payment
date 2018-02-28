@@ -16,4 +16,4 @@ let mix = require('laravel-mix');
    .js('resources/assets/js/hello.js', 'public/js')
     .extract(['vue', "vue-router", "axios"]); */
 	
-	mix.js('resources/assets/js/app.js', 'public/js').version();
+mix.js('resources/assets/js/app.js', 'public/js').version();

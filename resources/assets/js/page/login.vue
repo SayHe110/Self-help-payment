@@ -17,8 +17,8 @@
             </FormItem>
             <FormItem prop="verification" style="text-align:left">
                 <Input type="text" style="width:50%;float: left;margin-right:10px;" inline v-model="formInline.verification" placeholder="验证码" size="large"></Input>
-                <img class="token-img" id="token" alt="验证码" style="height:32px;" src="https://cas.baidu.com/?action=image2&appid=285&key=1512646621247">
-                <a href="javascript:void(0);">换一张</a>
+                <a href="javascript:;" @click="updatedCaptchas(captchasSrc)"> <img class="token-img" id="token" alt="验证码" style="height:32px;width:100px;" :src="captchasSrc"></a>
+                <a href="javascript:;" @click="updatedCaptchas(captchasSrc)" style="color:#19be6b">换一张</a>
             </FormItem>
             <FormItem>
                 <Button type="success" long @click="handleSubmit('formInline')">登录</Button>
@@ -30,10 +30,11 @@
     export default {
         data () {
             return {
+                captchasSrc: '',
                 formInline: {
                     user: '',
                     password: ''
-                },
+                },  
                 ruleInline: {
                     user: [
                         { required: true, message: '请输入学号', trigger: 'blur' }
@@ -48,6 +49,12 @@
                 }
             }
         },
+        created () {
+            // 请求验证码接口
+            this.$http.get('captchas').then(res => {
+                this.captchasSrc = res.body.captcha_image_content;
+            })
+        },
         methods: {
             handleSubmit(name) {
                 this.$refs[name].validate((valid) => {
@@ -57,6 +64,12 @@
                         this.$Message.error('登录失败!');
                     }
                 })
+            },
+            // 切换验证码
+            updatedCaptchas(captchasSrc){
+                this.$http.get('captchas').then(res => {
+                this.captchasSrc = res.body.captcha_image_content;
+            })
             }
         }
     }

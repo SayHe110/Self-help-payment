@@ -20,6 +20,7 @@
     "vue-router": "^3.0.1"
   },
   "dependencies": {
-    "iview": "^2.9.2"
+    "iview": "^2.9.2",
+    "vue-resource":"^1.2.1"
   }
 }
