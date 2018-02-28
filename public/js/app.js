@@ -36944,7 +36944,7 @@ var staticRenderFns = [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
                   attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
+                    src: __webpack_require__("./resources/assets/js/assets/icon/zhangdan.png"),
                     alt: ""
                   }
                 }),
@@ -36956,10 +36956,7 @@ var staticRenderFns = [
             _c("li", [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                    alt: ""
-                  }
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/dianfei.png"), alt: "" }
                 }),
                 _vm._v(" "),
                 _c("p", [_vm._v("电量电费")])
@@ -36969,10 +36966,7 @@ var staticRenderFns = [
             _c("li", [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                    alt: ""
-                  }
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/yue.png"), alt: "" }
                 }),
                 _vm._v(" "),
                 _c("p", [_vm._v("电费余额")])
@@ -36982,10 +36976,7 @@ var staticRenderFns = [
             _c("li", [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                    alt: ""
-                  }
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/baoxiu.png"), alt: "" }
                 }),
                 _vm._v(" "),
                 _c("p", [_vm._v("故障报修")])
@@ -36995,10 +36986,7 @@ var staticRenderFns = [
             _c("li", [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                    alt: ""
-                  }
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/gonggao.png"), alt: "" }
                 }),
                 _vm._v(" "),
                 _c("p", [_vm._v("停电公告")])
@@ -37009,7 +36997,7 @@ var staticRenderFns = [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
                   attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
+                    src: __webpack_require__("./resources/assets/js/assets/icon/changshi.png"),
                     alt: ""
                   }
                 }),
@@ -37021,10 +37009,7 @@ var staticRenderFns = [
             _c("li", [
               _c("a", { attrs: { href: "javascript:;" } }, [
                 _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                    alt: ""
-                  }
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/tousu.png"), alt: "" }
                 }),
                 _vm._v(" "),
                 _c("p", [_vm._v("投诉举报")])
@@ -37053,38 +37038,32 @@ var staticRenderFns = [
                 _c("a", { attrs: { href: "javascript:;" } }, [
                   _c("img", {
                     attrs: {
-                      src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
+                      src: __webpack_require__("./resources/assets/js/assets/icon/fudian.png"),
                       alt: ""
                     }
                   }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("快速购电")])
+                  _c("p", [_vm._v("自助复电")])
                 ])
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("a", { attrs: { href: "javascript:;" } }, [
                   _c("img", {
-                    attrs: {
-                      src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                      alt: ""
-                    }
+                    attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/licai.png"), alt: "" }
                   }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("我的账单")])
+                  _c("p", [_vm._v("电商理财")])
                 ])
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("a", { attrs: { href: "javascript:;" } }, [
                   _c("img", {
-                    attrs: {
-                      src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                      alt: ""
-                    }
+                    attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/fuwu.png"), alt: "" }
                   }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("电量电费")])
+                  _c("p", [_vm._v("网点服务")])
                 ])
               ])
             ])
@@ -37110,26 +37089,20 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "javascript:;" } }, [
                   _c("img", {
-                    attrs: {
-                      src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                      alt: ""
-                    }
+                    attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/fupin.png"), alt: "" }
                   }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("快速购电")])
+                  _c("p", [_vm._v("电商扶贫")])
                 ])
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("a", { attrs: { href: "javascript:;" } }, [
                   _c("img", {
-                    attrs: {
-                      src: __webpack_require__("./resources/assets/js/assets/icon/yuezhifu.png"),
-                      alt: ""
-                    }
+                    attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/ditan.png"), alt: "" }
                   }),
                   _vm._v(" "),
-                  _c("p", [_vm._v("我的账单")])
+                  _c("p", [_vm._v("低碳生活")])
                 ])
               ])
             ])
@@ -52838,6 +52811,62 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ }),
 
+/***/ "./resources/assets/js/assets/icon/baoxiu.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/baoxiu.png?8b2aa8f2609851f99a0d58e1d9783448";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/changshi.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/changshi.png?37975a133c843a32526f49890c374bdc";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/dianfei.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/dianfei.png?8e0d2a4e443a6e1badd6f3242c336035";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/ditan.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/ditan.png?cf41f4eeb6ea3fcb0b3c602551a39a37";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/fudian.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/fudian.png?d332e712d1c4ba3b325fbe596f2c2004";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/fupin.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/fupin.png?4192a95c281cc0320857ee7ec91f59b5";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/fuwu.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/fuwu.png?a66c1634bc847946e125d86c28e2ff14";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/gonggao.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/gonggao.png?91bd656485517bcc5a855890737231e4";
+
+/***/ }),
+
 /***/ "./resources/assets/js/assets/icon/icon-shu.png":
 /***/ (function(module, exports) {
 
@@ -52845,10 +52874,38 @@ module.exports = "/images/icon-shu.png?a0571986feb69761a581282ac7d5c6b6";
 
 /***/ }),
 
+/***/ "./resources/assets/js/assets/icon/licai.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/licai.png?02ed01cb4f56c451acda7f23e57bc5c5";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/tousu.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/tousu.png?09d5144b918a93e277adc91718b44874";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/yue.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/yue.png?c55298c7472a2ac976aaabe5b5312356";
+
+/***/ }),
+
 /***/ "./resources/assets/js/assets/icon/yuezhifu.png":
 /***/ (function(module, exports) {
 
 module.exports = "/images/yuezhifu.png?dc55b14f63379986a13a84602cc24fbf";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/zhangdan.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/zhangdan.png?b19cbf33eb7d05ac236b122fc6354ea6";
 
 /***/ }),
 

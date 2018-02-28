@@ -15,43 +15,43 @@
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/zhangdan.png" alt="">
                            <p>我的账单</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/dianfei.png" alt="">
                            <p>电量电费</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/yue.png" alt="">
                            <p>电费余额</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/baoxiu.png" alt="">
                            <p>故障报修</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/gonggao.png" alt="">
                            <p>停电公告</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/changshi.png" alt="">
                            <p>用电常识</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
+                           <img src="../assets/icon/tousu.png" alt="">
                            <p>投诉举报</p>
                        </a>
                    </li>
@@ -67,20 +67,20 @@
                 <ul>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
-                           <p>快速购电</p>
+                           <img src="../assets/icon/fudian.png" alt="">
+                           <p>自助复电</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
-                           <p>我的账单</p>
+                           <img src="../assets/icon/licai.png" alt="">
+                           <p>电商理财</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
-                           <p>电量电费</p>
+                           <img src="../assets/icon/fuwu.png" alt="">
+                           <p>网点服务</p>
                        </a>
                    </li>                   
                </ul>
@@ -95,14 +95,14 @@
                 <ul>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
-                           <p>快速购电</p>
+                           <img src="../assets/icon/fupin.png" alt="">
+                           <p>电商扶贫</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:;">
-                           <img src="../assets/icon/yuezhifu.png" alt="">
-                           <p>我的账单</p>
+                           <img src="../assets/icon/ditan.png" alt="">
+                           <p>低碳生活</p>
                        </a>
                    </li>              
                </ul>
