@@ -346,6 +346,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -402,6 +404,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -586,7 +609,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\r\n  padding-bottom: 50px;\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 15px;\r\n  color: #444;\r\n  display: block;\r\n  margin-top: 5px;\r\n  text-align: left;\r\n  padding-bottom: 5px;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6]{\r\n    height: 20px;\r\n    position: relative;\r\n    padding:20px 0;\n}\n.ivu-spin[data-v-1cafe2c6]{\r\n    color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6]{\r\n    z-index: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\r\n  /* padding-bottom: 50px; */\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 15px;\r\n  color: #444;\r\n  display: block;\r\n  margin-top: 5px;\r\n  text-align: left;\r\n  padding-bottom: 5px;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6]{\r\n    height: 20px;\r\n    position: relative;\r\n    padding:20px 0;\n}\n.ivu-spin[data-v-1cafe2c6]{\r\n    color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6]{\r\n    z-index: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -601,7 +624,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.notice-contain{\n    position: absolute;\n    background: #fff;\n    width: 100%;\n    left: 0;\n}\n.notice-contain ul li{\n    height: 50px;\n    border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a{\n    display: block;\n    padding: 5px 10px;\n    width: 100%;\n    height: 100%;\n}\n.notice-contain ul li .notice-icon{\n    width: 32px;\n    height: 32px;\n    float: left;\n}\n.notice-contain ul li .notice-title{\n    float: left;\n    padding-left: 10px;\n}\n.notice-contain ul li .notice-title p{\n    color: #444;\n    font-size: 14px;\n}\n.notice-contain ul li .notice-title span{\n    color: #ccc;\n    font-size: 12px;\n}\n.notice-contain ul li .notice-time{\n    position: absolute;\n    right: 10px;\n    color: #ccc;\n}\n", ""]);
 
 // exports
 
@@ -616,7 +639,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.login-bg{\n    padding: 0 15px;\n}\n.login_top{\n    width: 100%;\n    left: 0;\n    padding: 20px;\n}\n.login_top img{\n    width: 80px;\n    height: 80px;\n}\n.login_top p {\n    font-size: 26px;\n}\n", ""]);
+exports.push([module.i, "\n.layout{\n    width: 100%;\n    height: 100%;\n    background: #fff;\n}\n.login-bg{\n    padding: 0 15px;\n}\n.login_top{\n    width: 100%;\n    left: 0;\n    padding: 20px;\n}\n.login_top img{\n    width: 80px;\n    height: 80px;\n}\n.login_top p {\n    font-size: 26px;\n}\n", ""]);
 
 // exports
 
@@ -631,7 +654,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n#app {\n  font-family: \"Microsoft YaHei\",Arial, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody, html, .fillcontain{\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, "\n#app {\n  font-family: \"Microsoft YaHei\",Arial, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  max-width: 500px;\n  min-width: 300px;\n  margin: 0 auto;\n  height: 100%;\n  background: #fff;\n}\nhtml,body{\n  width: 100%;\n  height: 100%;\n  background:#f3f3f3;\n}\n", ""]);
 
 // exports
 
@@ -646,7 +669,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-header{\n  width: 100%;\n  height: 45px;\n  line-height: 45px;\n  background-color: #1BBC9B;\n  text-align: center;\n  padding: 0 10px;\n  position: fixed;\n  top: 0;\n  z-index: 9999;\n}\n.layout-header p{\n  font-size: 18px;\n  color: #fff;\n}\n", ""]);
+exports.push([module.i, "\n.layout-header{\n  width: 100%;\n  height: 45px;\n  line-height: 45px;\n  background-color: #1BBC9B;\n  text-align: center;\n  padding: 0 10px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 9999;\n}\n.layout-header p{\n  font-size: 18px;\n  color: #fff;\n}\n", ""]);
 
 // exports
 
@@ -691,7 +714,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout{\n  background: #f7f7f7;\n  position: relative;\n  height: 100%;    \n  width: 100%;\n}\n.layout-contain{\n  position: relative;\n  padding-bottom: 50px;\n  height: 100%;\n}\n.layout-footer{\n  position: fixed;\n  bottom: 0;\n  height: 50px;\n  width: 100%;\n}\n.layout-box{\n      position: absolute;\n      top: 45px;\n      padding: 0 10px;\n      width: 100%;\n      padding-bottom: 65px;\n}\n.ivu-menu-light{\n      background: #f7f7f7;\n}\n.ivu-menu-horizontal{\n      padding: 5px;\n}\n.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{\n      border-bottom:none;\n      color: #1bbc9b;\n}\n.ivu-menu-item>i{\n      margin-right: 0;\n}\n.ivu-icon{\n      display: block;\n      font-size: 24px;\n      margin-bottom: -20px;\n}\n.ivu-menu-horizontal .ivu-menu-item{\n      width: 25%;\n}\n", ""]);
+exports.push([module.i, "\n.layout{\n  background: #f3f3f3;\n  position: relative;\n  height: 100%;    \n  width: 100%;\n}\n.layout-contain{\n  position: relative;\n  padding-bottom: 50px;\n  height: 100%;\n}\n.layout-footer{\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  height: 50px;\n  width: 100%;\n}\n.layout-box{\n      position: absolute;\n      top: 45px;\n      padding: 0 10px;\n      width: 100%;\n      padding-bottom: 65px;\n}\n.ivu-menu-light{\n      background: #f7f7f7;\n}\n.ivu-menu-horizontal{\n      padding: 5px;\n}\n.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{\n      border-bottom:none;\n      color: #1bbc9b;\n}\n.ivu-menu-item>i{\n      margin-right: 0;\n}\n.ivu-icon{\n      display: block;\n      font-size: 24px;\n      margin-bottom: -20px;\n}\n.ivu-menu-horizontal .ivu-menu-item{\n      width: 25%;\n}\n", ""]);
 
 // exports
 
@@ -36603,7 +36626,46 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "layout-box" }, [
       _c("div", { staticClass: "notice-contain" }, [
-        _vm._v("\n        i am notice\n    ")
+        _c("ul", [
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("div", { staticClass: "notice-icon" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/huodong.png"), alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "notice-title" }, [
+                _c("p", [_vm._v("精彩活动")]),
+                _vm._v(" "),
+                _c("span", [_vm._v("暂无内容")])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "notice-time" }, [_vm._v("2018-3-1")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("div", { staticClass: "notice-icon" }, [
+                _c("img", {
+                  attrs: {
+                    src: __webpack_require__("./resources/assets/js/assets/icon/xitongxiaoxi.png"),
+                    alt: ""
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "notice-title" }, [
+                _c("p", [_vm._v("系统消息")]),
+                _vm._v(" "),
+                _c("span", [_vm._v("暂无内容")])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "notice-time" }, [_vm._v("2018-3-1")])
+            ])
+          ])
+        ])
       ])
     ])
   }
@@ -36626,168 +36688,174 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "login-bg" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "Form",
-        {
-          ref: "formInline",
-          staticClass: "login",
-          attrs: { model: _vm.formInline, rules: _vm.ruleInline }
-        },
-        [
-          _c(
-            "FormItem",
-            { attrs: { prop: "user" } },
-            [
-              _c(
-                "Input",
-                {
-                  attrs: { type: "text", placeholder: "学号", size: "large" },
-                  model: {
-                    value: _vm.formInline.user,
-                    callback: function($$v) {
-                      _vm.$set(_vm.formInline, "user", $$v)
+  return _c("div", { staticClass: "layout" }, [
+    _c(
+      "div",
+      { staticClass: "login-bg" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "Form",
+          {
+            ref: "formInline",
+            staticClass: "login",
+            attrs: { model: _vm.formInline, rules: _vm.ruleInline }
+          },
+          [
+            _c(
+              "FormItem",
+              { attrs: { prop: "user" } },
+              [
+                _c(
+                  "Input",
+                  {
+                    attrs: { type: "text", placeholder: "学号", size: "large" },
+                    model: {
+                      value: _vm.formInline.user,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formInline, "user", $$v)
+                      },
+                      expression: "formInline.user"
+                    }
+                  },
+                  [
+                    _c("Icon", {
+                      attrs: { slot: "prepend", type: "ios-person-outline" },
+                      slot: "prepend"
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "FormItem",
+              { attrs: { prop: "password" } },
+              [
+                _c(
+                  "Input",
+                  {
+                    attrs: {
+                      type: "password",
+                      placeholder: "密码",
+                      size: "large"
                     },
-                    expression: "formInline.user"
-                  }
-                },
-                [
-                  _c("Icon", {
-                    attrs: { slot: "prepend", type: "ios-person-outline" },
-                    slot: "prepend"
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "FormItem",
-            { attrs: { prop: "password" } },
-            [
-              _c(
-                "Input",
-                {
+                    model: {
+                      value: _vm.formInline.password,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formInline, "password", $$v)
+                      },
+                      expression: "formInline.password"
+                    }
+                  },
+                  [
+                    _c("Icon", {
+                      attrs: { slot: "prepend", type: "ios-locked-outline" },
+                      slot: "prepend"
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "FormItem",
+              {
+                staticStyle: { "text-align": "left" },
+                attrs: { prop: "verification" }
+              },
+              [
+                _c("Input", {
+                  staticStyle: {
+                    width: "50%",
+                    float: "left",
+                    "margin-right": "10px"
+                  },
                   attrs: {
-                    type: "password",
-                    placeholder: "密码",
+                    type: "text",
+                    inline: "",
+                    placeholder: "验证码",
                     size: "large"
                   },
                   model: {
-                    value: _vm.formInline.password,
+                    value: _vm.formInline.verification,
                     callback: function($$v) {
-                      _vm.$set(_vm.formInline, "password", $$v)
+                      _vm.$set(_vm.formInline, "verification", $$v)
                     },
-                    expression: "formInline.password"
+                    expression: "formInline.verification"
                   }
-                },
-                [
-                  _c("Icon", {
-                    attrs: { slot: "prepend", type: "ios-locked-outline" },
-                    slot: "prepend"
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "FormItem",
-            {
-              staticStyle: { "text-align": "left" },
-              attrs: { prop: "verification" }
-            },
-            [
-              _c("Input", {
-                staticStyle: {
-                  width: "50%",
-                  float: "left",
-                  "margin-right": "10px"
-                },
-                attrs: {
-                  type: "text",
-                  inline: "",
-                  placeholder: "验证码",
-                  size: "large"
-                },
-                model: {
-                  value: _vm.formInline.verification,
-                  callback: function($$v) {
-                    _vm.$set(_vm.formInline, "verification", $$v)
+                }),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "javascript:;" },
+                    on: {
+                      click: function($event) {
+                        _vm.updatedCaptchas(_vm.captchasSrc)
+                      }
+                    }
                   },
-                  expression: "formInline.verification"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  attrs: { href: "javascript:;" },
-                  on: {
-                    click: function($event) {
-                      _vm.updatedCaptchas(_vm.captchasSrc)
+                  [
+                    _c("img", {
+                      staticClass: "token-img",
+                      staticStyle: { height: "32px", width: "100px" },
+                      attrs: {
+                        id: "token",
+                        alt: "验证码",
+                        src: _vm.captchasSrc
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticStyle: { color: "#19be6b" },
+                    attrs: { href: "javascript:;" },
+                    on: {
+                      click: function($event) {
+                        _vm.updatedCaptchas(_vm.captchasSrc)
+                      }
                     }
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "token-img",
-                    staticStyle: { height: "32px", width: "100px" },
-                    attrs: { id: "token", alt: "验证码", src: _vm.captchasSrc }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticStyle: { color: "#19be6b" },
-                  attrs: { href: "javascript:;" },
-                  on: {
-                    click: function($event) {
-                      _vm.updatedCaptchas(_vm.captchasSrc)
+                  },
+                  [_vm._v("换一张")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "FormItem",
+              [
+                _c(
+                  "Button",
+                  {
+                    attrs: { type: "success", long: "" },
+                    on: {
+                      click: function($event) {
+                        _vm.handleSubmit("formInline")
+                      }
                     }
-                  }
-                },
-                [_vm._v("换一张")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "FormItem",
-            [
-              _c(
-                "Button",
-                {
-                  attrs: { type: "success", long: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.handleSubmit("formInline")
-                    }
-                  }
-                },
-                [_vm._v("登录")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+                  },
+                  [_vm._v("登录")]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -52867,6 +52935,13 @@ module.exports = "/images/gonggao.png?91bd656485517bcc5a855890737231e4";
 
 /***/ }),
 
+/***/ "./resources/assets/js/assets/icon/huodong.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/huodong.png?ba4ecdfc7d1920fc7547cc385363f5bd";
+
+/***/ }),
+
 /***/ "./resources/assets/js/assets/icon/icon-shu.png":
 /***/ (function(module, exports) {
 
@@ -52885,6 +52960,13 @@ module.exports = "/images/licai.png?02ed01cb4f56c451acda7f23e57bc5c5";
 /***/ (function(module, exports) {
 
 module.exports = "/images/tousu.png?09d5144b918a93e277adc91718b44874";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/xitongxiaoxi.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/xitongxiaoxi.png?413141fa9d64c212d1737fc2effa47be";
 
 /***/ }),
 

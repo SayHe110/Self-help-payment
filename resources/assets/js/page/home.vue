@@ -170,7 +170,7 @@
 /* 新闻资讯 */
 .news-container {
   padding-top: 150px;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 .news {
   background: #fff;

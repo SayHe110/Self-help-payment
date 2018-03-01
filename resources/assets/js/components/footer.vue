@@ -43,7 +43,7 @@ export default {
 </script>
 <style>
   .layout{
-    background: #f7f7f7;
+    background: #f3f3f3;
     position: relative;
     height: 100%;    
     width: 100%;
@@ -56,6 +56,7 @@ export default {
   .layout-footer{
     position: fixed;
     bottom: 0;
+    left: 0;
     height: 50px;
     width: 100%;
   }

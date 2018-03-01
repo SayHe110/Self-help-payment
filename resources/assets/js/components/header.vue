@@ -18,6 +18,7 @@ export default {
     padding: 0 10px;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 9999;
   }
   .layout-header p{

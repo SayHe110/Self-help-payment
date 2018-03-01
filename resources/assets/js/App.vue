@@ -17,9 +17,15 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  height: 100%;
+  background: #fff;
 }
-body, html, .fillcontain{
+html,body{
   width: 100%;
   height: 100%;
+  background:#f3f3f3;
 }
 </style>
