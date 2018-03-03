@@ -281,19 +281,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            value2: 0,
-            setting: {
-                autoplay: false,
-                autoplaySpeed: 2000,
-                dots: 'inside',
-                radiusDot: true,
-                trigger: 'click',
-                arrow: 'never'
-            }
-        };
-    }
+  data: function data() {
+    return {
+      value2: 0,
+      setting: {
+        autoplay: false,
+        autoplaySpeed: 2000,
+        dots: "inside",
+        radiusDot: true,
+        trigger: "click",
+        arrow: "never"
+      }
+    };
+  }
 });
 
 /***/ }),
@@ -335,51 +335,56 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            captchasSrc: '',
-            formInline: {
-                user: '',
-                password: ''
-            },
-            ruleInline: {
-                user: [{ required: true, message: '请输入学号', trigger: 'blur' }],
-                password: [{ required: true, message: '请输入密码', trigger: 'blur' }, { type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur' }],
-                verification: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
-            }
-        };
-    },
-    created: function created() {
-        var _this = this;
+  data: function data() {
+    return {
+      captchasSrc: "",
+      formInline: {
+        user: "",
+        password: ""
+      },
+      ruleInline: {
+        user: [{ required: true, message: "请输入学号", trigger: "blur" }],
+        password: [{ required: true, message: "请输入密码", trigger: "blur" }, {
+          type: "string",
+          min: 6,
+          message: "密码长度不能小于6位",
+          trigger: "blur"
+        }],
+        verification: [{ required: true, message: "请输入验证码", trigger: "blur" }]
+      }
+    };
+  },
+  created: function created() {
+    var _this = this;
 
-        // 请求验证码接口
-        this.$http.get('captchas').then(function (res) {
-            _this.captchasSrc = res.body.captcha_image_content;
-        });
-    },
+    // 请求验证码接口
+    this.$http.get("captchas").then(function (res) {
+      _this.captchasSrc = res.body.captcha_image_content;
+    });
+  },
 
-    methods: {
-        handleSubmit: function handleSubmit(name) {
-            var _this2 = this;
+  methods: {
+    handleSubmit: function handleSubmit(name) {
+      var _this2 = this;
 
-            this.$refs[name].validate(function (valid) {
-                if (valid) {
-                    _this2.$router.push('./home');
-                } else {
-                    _this2.$Message.error('登录失败!');
-                }
-            });
-        },
-
-        // 切换验证码
-        updatedCaptchas: function updatedCaptchas(captchasSrc) {
-            var _this3 = this;
-
-            this.$http.get('captchas').then(function (res) {
-                _this3.captchasSrc = res.body.captcha_image_content;
-            });
+      this.$refs[name].validate(function (valid) {
+        if (valid) {
+          _this2.$router.push("./home");
+        } else {
+          _this2.$Message.error("登录失败!");
         }
+      });
+    },
+
+    // 切换验证码
+    updatedCaptchas: function updatedCaptchas(captchasSrc) {
+      var _this3 = this;
+
+      this.$http.get("captchas").then(function (res) {
+        _this3.captchasSrc = res.body.captcha_image_content;
+      });
     }
+  }
 });
 
 /***/ }),
@@ -422,7 +427,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'notice'
+  name: "notice"
 });
 
 /***/ }),
@@ -442,9 +447,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'personal'
+  name: "personal"
 });
 
 /***/ }),
@@ -571,10 +617,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'service',
-    data: function data() {
-        return {};
-    }
+  name: "service",
+  data: function data() {
+    return {};
+  }
 });
 
 /***/ }),
@@ -603,7 +649,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 15px;\r\n  color: #444;\r\n  display: block;\r\n  margin-top: 5px;\r\n  text-align: left;\r\n  padding-bottom: 5px;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6]{\r\n    height: 20px;\r\n    position: relative;\r\n    padding:20px 0;\n}\n.ivu-spin[data-v-1cafe2c6]{\r\n    color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6]{\r\n    z-index: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 15px;\r\n  color: #444;\r\n  display: block;\r\n  margin-top: 5px;\r\n  text-align: left;\r\n  padding-bottom: 5px;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6] {\r\n  height: 20px;\r\n  position: relative;\r\n  padding: 20px 0;\n}\n.ivu-spin[data-v-1cafe2c6] {\r\n  color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6] {\r\n  z-index: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -618,7 +664,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.notice-contain{\n    position: absolute;\n    background: #fff;\n    width: 100%;\n    left: 0;\n}\n.notice-contain ul li{\n    height: 50px;\n    border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a{\n    display: block;\n    padding: 5px 10px;\n    width: 100%;\n    height: 100%;\n}\n.notice-contain ul li .notice-icon{\n    width: 32px;\n    height: 32px;\n    float: left;\n}\n.notice-contain ul li .notice-title{\n    float: left;\n    padding-left: 10px;\n}\n.notice-contain ul li .notice-title p{\n    color: #444;\n    font-size: 14px;\n}\n.notice-contain ul li .notice-title span{\n    color: #ccc;\n    font-size: 12px;\n}\n.notice-contain ul li .notice-time{\n    position: absolute;\n    right: 10px;\n    color: #ccc;\n}\n", ""]);
+exports.push([module.i, "\n.notice-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.notice-contain ul li {\r\n  height: 50px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a {\r\n  display: block;\r\n  padding: 5px 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.notice-contain ul li .notice-icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  float: left;\n}\n.notice-contain ul li .notice-title {\r\n  float: left;\r\n  padding-left: 10px;\n}\n.notice-contain ul li .notice-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.notice-contain ul li .notice-title span {\r\n  color: #ccc;\r\n  font-size: 12px;\n}\n.notice-contain ul li .notice-time {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #ccc;\n}\r\n", ""]);
 
 // exports
 
@@ -633,7 +679,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout{\n    width: 100%;\n    height: 100%;\n    background: #fff;\n}\n.login-bg{\n    padding: 0 15px;\n}\n.login_top{\n    width: 100%;\n    left: 0;\n    padding: 20px;\n}\n.login_top img{\n    width: 80px;\n    height: 80px;\n}\n.login_top p {\n    font-size: 26px;\n}\n", ""]);
+exports.push([module.i, "\n.layout {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #fff;\n}\n.login-bg {\r\n  padding: 0 15px;\n}\n.login_top {\r\n  width: 100%;\r\n  left: 0;\r\n  padding: 20px;\n}\n.login_top img {\r\n  width: 80px;\r\n  height: 80px;\n}\n.login_top p {\r\n  font-size: 26px;\n}\r\n", ""]);
 
 // exports
 
@@ -663,7 +709,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.personal-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.personal-contain ul li {\r\n  height: 32px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.personal-contain ul .personal-box {\r\n  height: 72px;\n}\n.personal-contain ul li a {\r\n  display: block;\r\n  padding: 0 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  float: left;\r\n  overflow: hidden;\r\n  margin-top: 12px;\r\n  border-radius: 50%;\n}\n.personal-contain ul li .personal-icon img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-title {\r\n  float: left;\r\n  padding-left: 10px;\r\n  text-align: left;\r\n  margin-top: 15px;\n}\n.personal-contain ul li .personal-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.personal-contain ul li .personal-title span {\r\n  color: #999;\r\n  font-size: 12px;\n}\n.personal-contain ul li .personal-exit, .more {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #999;\r\n  line-height: 72px;\n}\n.personal-contain ul li .personal-exit a{\r\n    color:#444;\n}\n.personal-contain ul li .personal-type {\r\n  display: block;\r\n  float: left;\r\n  color: #444;\r\n  line-height: 32px;\n}\n.personal-contain ul li .more {\r\n  line-height: 32px;\n}\n.personal-contain ul li .more img {\r\n  width: 12px;\r\n  height: 12px;\n}\r\n", ""]);
 
 // exports
 
@@ -678,7 +724,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.service-title{\n    padding-top: 10px;\n    width: 100%;\n    height: 30px;\n    line-height: 30px;\n}\n.title-icon{\n    width: 3px;\n    height: 16px;\n    float: left;\n    position: relative;\n    left: 10px;\n    margin-right: 10px;\n    top: 2px;\n}\n.title-name{\n    display: block;\n    float: left;\n    font-size: 14px;\n    line-height: 20px;\n    padding-left: 8px;\n    color: #999;\n}\n.service-type{\n    background: #fff;\n    width: 100%;\n    margin-top: 10px;\n    border-radius: 5px;\n    border: 0.5px solid #cccccc4a;\n    padding: 15px 0;\n    height: 160px;\n}\n.service-type ul li{\n    float: left;\n    width: 25%;\n    padding-bottom: 15px;\n}\n.service-type ul li a {\n    display: block;\n    width: 100%;\n    height: 100%;\n}\n.service-type ul li p{\n     color: #444;\n}\n", ""]);
+exports.push([module.i, "\n.service-title {\r\n  padding-top: 10px;\r\n  width: 100%;\r\n  height: 30px;\r\n  line-height: 30px;\n}\n.title-icon {\r\n  width: 3px;\r\n  height: 16px;\r\n  float: left;\r\n  position: relative;\r\n  left: 10px;\r\n  margin-right: 10px;\r\n  top: 2px;\n}\n.title-name {\r\n  display: block;\r\n  float: left;\r\n  font-size: 14px;\r\n  line-height: 20px;\r\n  padding-left: 8px;\r\n  color: #999;\n}\n.service-type {\r\n  background: #fff;\r\n  width: 100%;\r\n  margin-top: 10px;\r\n  border-radius: 5px;\r\n  border: 0.5px solid #cccccc4a;\r\n  padding: 15px 0;\r\n  height: 160px;\n}\n.service-type ul li {\r\n  float: left;\r\n  width: 25%;\r\n  padding-bottom: 15px;\n}\n.service-type ul li a {\r\n  display: block;\r\n  width: 100%;\r\n  height: 100%;\n}\n.service-type ul li p {\r\n  color: #444;\n}\r\n", ""]);
 
 // exports
 
@@ -36919,7 +36965,87 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "personal-contain" }, [
-        _vm._v("\n        i am personal\n    ")
+        _c("ul", [
+          _c("li", { staticClass: "personal-box" }, [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("div", { staticClass: "personal-icon" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/4.jpg"), alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "personal-title" }, [
+                _c("p", [_vm._v("南枫")]),
+                _vm._v(" "),
+                _c("span", [_vm._v("1508220235")])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "personal-exit" }, [
+                _c("a", { attrs: { href: "javascript:;" } }, [_vm._v("退出")])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("p", { staticClass: "personal-type" }, [_vm._v("手机号绑定")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/more.png"), alt: "" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("p", { staticClass: "personal-type" }, [_vm._v("宿舍号")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/more.png"), alt: "" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("p", { staticClass: "personal-type" }, [_vm._v("账户与安全")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/more.png"), alt: "" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("p", { staticClass: "personal-type" }, [_vm._v("帮助与反馈")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/more.png"), alt: "" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "javascript:;" } }, [
+              _c("p", { staticClass: "personal-type" }, [_vm._v("关于我们")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/more.png"), alt: "" }
+                })
+              ])
+            ])
+          ])
+        ])
       ])
     ])
   }
@@ -52818,6 +52944,13 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ }),
 
+/***/ "./resources/assets/js/assets/icon/4.jpg":
+/***/ (function(module, exports) {
+
+module.exports = "/images/4.jpg?3d38179e05a08ef1e574f6a82df9ab82";
+
+/***/ }),
+
 /***/ "./resources/assets/js/assets/icon/baoxiu.png":
 /***/ (function(module, exports) {
 
@@ -52892,6 +53025,13 @@ module.exports = "/images/icon-shu.png?a0571986feb69761a581282ac7d5c6b6";
 /***/ (function(module, exports) {
 
 module.exports = "/images/licai.png?02ed01cb4f56c451acda7f23e57bc5c5";
+
+/***/ }),
+
+/***/ "./resources/assets/js/assets/icon/more.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/more.png?e284fded3ee3c3441ab43d0e1a2a013d";
 
 /***/ }),
 

@@ -114,60 +114,58 @@
     </div>
 </template>
 <script>
-    export default {
-        name: 'service',
-        data () {
-            return {
-               
-            }
-        }
-    }
+export default {
+  name: "service",
+  data() {
+    return {};
+  }
+};
 </script>
 <style>
-    .service-title{
-        padding-top: 10px;
-        width: 100%;
-        height: 30px;
-        line-height: 30px;
-    }
-    .title-icon{
-        width: 3px;
-        height: 16px;
-        float: left;
-        position: relative;
-        left: 10px;
-        margin-right: 10px;
-        top: 2px;
-    }
-    .title-name{
-        display: block;
-        float: left;
-        font-size: 14px;
-        line-height: 20px;
-        padding-left: 8px;
-        color: #999;
-    }
-    .service-type{
-        background: #fff;
-        width: 100%;
-        margin-top: 10px;
-        border-radius: 5px;
-        border: 0.5px solid #cccccc4a;
-        padding: 15px 0;
-        height: 160px;
-    }
-    .service-type ul li{
-        float: left;
-        width: 25%;
-        padding-bottom: 15px;
-    }
-    .service-type ul li a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-    .service-type ul li p{
-         color: #444;
-     }
+.service-title {
+  padding-top: 10px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.title-icon {
+  width: 3px;
+  height: 16px;
+  float: left;
+  position: relative;
+  left: 10px;
+  margin-right: 10px;
+  top: 2px;
+}
+.title-name {
+  display: block;
+  float: left;
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 8px;
+  color: #999;
+}
+.service-type {
+  background: #fff;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 0.5px solid #cccccc4a;
+  padding: 15px 0;
+  height: 160px;
+}
+.service-type ul li {
+  float: left;
+  width: 25%;
+  padding-bottom: 15px;
+}
+.service-type ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.service-type ul li p {
+  color: #444;
+}
 </style>
 

@@ -4,15 +4,122 @@
            <p>个人中心</p>
         </div>
        <div class="personal-contain">
-           i am personal
+            <ul>
+                <li class="personal-box">
+                    <a href="javascript:;">
+                        <div class="personal-icon"><img src="../assets/icon/4.jpg" alt=""></div>
+                        <div class="personal-title">
+                            <p>南枫</p>
+                            <span>1508220235</span>
+                        </div>
+                        <span class="personal-exit"><a href="javascript:;">退出</a></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <p class="personal-type">手机号绑定</p>
+                        <span class="more"><img src="../assets/icon/more.png" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <p class="personal-type">宿舍号</p>
+                        <span class="more"><img src="../assets/icon/more.png" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <p class="personal-type">账户与安全</p>
+                        <span class="more"><img src="../assets/icon/more.png" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <p class="personal-type">帮助与反馈</p>
+                        <span class="more"><img src="../assets/icon/more.png" alt=""></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <p class="personal-type">关于我们</p>
+                        <span class="more"><img src="../assets/icon/more.png" alt=""></span>
+                    </a>
+                </li>
+            </ul>
        </div>
    </div>
 </template>
 <script>
-    export default {
-        name: 'personal'
-    }
+export default {
+  name: "personal"
+};
 </script>
 <style>
-
+.personal-contain {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  left: 0;
+}
+.personal-contain ul li {
+  height: 32px;
+  border-bottom: 1px solid #f3f3f3;
+}
+.personal-contain ul .personal-box {
+  height: 72px;
+}
+.personal-contain ul li a {
+  display: block;
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+}
+.personal-contain ul li .personal-icon {
+  width: 48px;
+  height: 48px;
+  float: left;
+  overflow: hidden;
+  margin-top: 12px;
+  border-radius: 50%;
+}
+.personal-contain ul li .personal-icon img {
+  width: 100%;
+  height: 100%;
+}
+.personal-contain ul li .personal-title {
+  float: left;
+  padding-left: 10px;
+  text-align: left;
+  margin-top: 15px;
+}
+.personal-contain ul li .personal-title p {
+  color: #444;
+  font-size: 14px;
+}
+.personal-contain ul li .personal-title span {
+  color: #999;
+  font-size: 12px;
+}
+.personal-contain ul li .personal-exit, .more {
+  position: absolute;
+  right: 10px;
+  color: #999;
+  line-height: 72px;
+}
+.personal-contain ul li .personal-exit a{
+    color:#444;
+}
+.personal-contain ul li .personal-type {
+  display: block;
+  float: left;
+  color: #444;
+  line-height: 32px;
+}
+.personal-contain ul li .more {
+  line-height: 32px;
+}
+.personal-contain ul li .more img {
+  width: 12px;
+  height: 12px;
+}
 </style>

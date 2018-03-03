@@ -2,7 +2,7 @@
    <div class="layout-box">
         <div class="layout-header">
            <p>掌电</p>
-        </div>
+       </div>
        <div class="home-contain">
             <div class="banner">
                 <Carousel autoplay v-model="value2"
@@ -35,124 +35,124 @@
             </div>
             <div class="news-container">
                 <ul class="news-lists">
-                        <li>
-                            <div class="news-box">
-                                <a href="javascript:;">
-                                    <div class="news-left">
-                                        <p class="news-title">国家电网公司积极推进10个城市世界一流城市配电网建设</p>
-                                        <p class="info">
-                                            <span>2017-12-27</span>
-                                            <span class="margin-left">admin</span>
-                                            <span class="margin-left">
-                                                <i class="iconfont icon-sannongguancha"> 90</i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="news-right">
-                                        <img src="../assets/images/list1.png" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-box">
-                                <a href="javascript:;">
-                                    <div class="news-left">
-                                        <p class="news-title">能源绿色低碳转型组合拳推出</p>                                        
-                                        <p class="info">
-                                            <span>2017-12-27</span>
-                                            <span class="margin-left">admin</span>
-                                            <span class="margin-left">
-                                                <i class="iconfont icon-sannongguancha"> 90</i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="news-right">
-                                        <img src="../assets/images/list2.png" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-box">
-                                <a href="javascript:;">
-                                    <div class="news-left">
-                                        <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
-                                        <p class="info">
-                                            <span>2017-12-27</span>
-                                            <span class="margin-left">admin</span>
-                                            <span class="margin-left">
-                                                <i class="iconfont icon-sannongguancha"> 90</i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="news-right">
-                                        <img src="../assets/images/list3.png" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-box">
-                                <a href="javascript:;">
-                                    <div class="news-left">
-                                        <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
-                                        <p class="info">
-                                            <span>2017-12-27</span>
-                                            <span class="margin-left">admin</span>
-                                            <span class="margin-left">
-                                                <i class="iconfont icon-sannongguancha"> 90</i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="news-right">
-                                        <img src="../assets/images/02.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-box">
-                                <a href="javascript:;">
-                                    <div class="news-left">
-                                        <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
-                                        <p class="info">
-                                            <span>2017-12-27</span>
-                                            <span class="margin-left">admin</span>
-                                            <span class="margin-left">
-                                                <i class="iconfont icon-sannongguancha"> 90</i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="news-right">
-                                        <img src="../assets/images/list1.png" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="get-more"> <Spin fix>加载中...</Spin></div>
-                </div>
+                    <li>
+                        <div class="news-box">
+                            <a href="javascript:;">
+                                <div class="news-left">
+                                    <p class="news-title">国家电网公司积极推进10个城市世界一流城市配电网建设</p>
+                                    <p class="info">
+                                        <span>2017-12-27</span>
+                                        <span class="margin-left">admin</span>
+                                        <span class="margin-left">
+                                            <i class="iconfont icon-sannongguancha"> 90</i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="news-right">
+                                    <img src="../assets/images/list1.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="news-box">
+                            <a href="javascript:;">
+                                <div class="news-left">
+                                    <p class="news-title">能源绿色低碳转型组合拳推出</p>                                        
+                                    <p class="info">
+                                        <span>2017-12-27</span>
+                                        <span class="margin-left">admin</span>
+                                        <span class="margin-left">
+                                            <i class="iconfont icon-sannongguancha"> 90</i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="news-right">
+                                    <img src="../assets/images/list2.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="news-box">
+                            <a href="javascript:;">
+                                <div class="news-left">
+                                    <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
+                                    <p class="info">
+                                        <span>2017-12-27</span>
+                                        <span class="margin-left">admin</span>
+                                        <span class="margin-left">
+                                            <i class="iconfont icon-sannongguancha"> 90</i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="news-right">
+                                    <img src="../assets/images/list3.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="news-box">
+                            <a href="javascript:;">
+                                <div class="news-left">
+                                    <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
+                                    <p class="info">
+                                        <span>2017-12-27</span>
+                                        <span class="margin-left">admin</span>
+                                        <span class="margin-left">
+                                            <i class="iconfont icon-sannongguancha"> 90</i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="news-right">
+                                    <img src="../assets/images/02.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="news-box">
+                            <a href="javascript:;">
+                                <div class="news-left">
+                                    <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
+                                    <p class="info">
+                                        <span>2017-12-27</span>
+                                        <span class="margin-left">admin</span>
+                                        <span class="margin-left">
+                                            <i class="iconfont icon-sannongguancha"> 90</i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="news-right">
+                                    <img src="../assets/images/list1.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="get-more"> <Spin fix>加载中...</Spin></div>
+            </div>
        </div>
    </div>
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                value2: 0,
-                setting: {
-                    autoplay: false,
-                    autoplaySpeed: 2000,
-                    dots: 'inside',
-                    radiusDot: true,
-                    trigger: 'click',
-                    arrow: 'never'
-                }
-            }
-        }
-    }
+export default {
+  data() {
+    return {
+      value2: 0,
+      setting: {
+        autoplay: false,
+        autoplaySpeed: 2000,
+        dots: "inside",
+        radiusDot: true,
+        trigger: "click",
+        arrow: "never"
+      }
+    };
+  }
+};
 </script>
 <style scoped>
 .layout-box {
@@ -221,16 +221,16 @@
   height: 100%;
   border-radius: 5px;
 }
-.get-more{
-    height: 20px;
-    position: relative;
-    padding:20px 0;
+.get-more {
+  height: 20px;
+  position: relative;
+  padding: 20px 0;
 }
-.ivu-spin{
-    color: #1bbc9b;
+.ivu-spin {
+  color: #1bbc9b;
 }
-.ivu-spin-fix{
-    z-index: 0;
+.ivu-spin-fix {
+  z-index: 0;
 }
 </style>
 

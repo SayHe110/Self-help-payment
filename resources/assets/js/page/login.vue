@@ -29,73 +29,76 @@
     </div>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                captchasSrc: '',
-                formInline: {
-                    user: '',
-                    password: ''
-                },  
-                ruleInline: {
-                    user: [
-                        { required: true, message: '请输入学号', trigger: 'blur' }
-                    ],
-                    password: [
-                        { required: true, message: '请输入密码', trigger: 'blur' },
-                        { type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur' }
-                    ],
-                    verification: [
-                        {required: true, message: '请输入验证码', trigger: 'blur'}
-                    ]                    
-                }
-            }
-        },
-        created () {
-            // 请求验证码接口
-            this.$http.get('captchas').then(res => {
-                this.captchasSrc = res.body.captcha_image_content;
-            })
-        },
-        methods: {
-            handleSubmit(name) {
-                this.$refs[name].validate((valid) => {
-                     if (valid) {
-                         this.$router.push('./home')
-                    } else {
-                        this.$Message.error('登录失败!');
-                    }
-                })
-            },
-            // 切换验证码
-            updatedCaptchas(captchasSrc){
-                this.$http.get('captchas').then(res => {
-                this.captchasSrc = res.body.captcha_image_content;
-            })
-            }
+export default {
+  data() {
+    return {
+      captchasSrc: "",
+      formInline: {
+        user: "",
+        password: ""
+      },
+      ruleInline: {
+        user: [{ required: true, message: "请输入学号", trigger: "blur" }],
+        password: [
+          { required: true, message: "请输入密码", trigger: "blur" },
+          {
+            type: "string",
+            min: 6,
+            message: "密码长度不能小于6位",
+            trigger: "blur"
+          }
+        ],
+        verification: [
+          { required: true, message: "请输入验证码", trigger: "blur" }
+        ]
+      }
+    };
+  },
+  created() {
+    // 请求验证码接口
+    this.$http.get("captchas").then(res => {
+      this.captchasSrc = res.body.captcha_image_content;
+    });
+  },
+  methods: {
+    handleSubmit(name) {
+      this.$refs[name].validate(valid => {
+        if (valid) {
+          this.$router.push("./home");
+        } else {
+          this.$Message.error("登录失败!");
         }
+      });
+    },
+    // 切换验证码
+    updatedCaptchas(captchasSrc) {
+      this.$http.get("captchas").then(res => {
+        this.captchasSrc = res.body.captcha_image_content;
+      });
     }
+  }
+};
 </script>
 <style>
-    .layout{
-        width: 100%;
-        height: 100%;
-        background: #fff;
-    }
-    .login-bg{
-        padding: 0 15px;
-    }
-    .login_top{
-        width: 100%;
-        left: 0;
-        padding: 20px;
-    }
-    .login_top img{
-        width: 80px;
-        height: 80px;
-    }
-    .login_top p {
-        font-size: 26px;
-    }
+.layout {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.login-bg {
+  padding: 0 15px;
+}
+.login_top {
+  width: 100%;
+  left: 0;
+  padding: 20px;
+}
+.login_top img {
+  width: 80px;
+  height: 80px;
+}
+.login_top p {
+  font-size: 26px;
+}
 </style>
 
