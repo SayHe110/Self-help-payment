@@ -1,5 +1,8 @@
 <template>
    <div class="layout-box">
+        <div class="layout-header">
+           <p>掌电</p>
+        </div>
        <div class="home-contain">
             <div class="banner">
                 <Carousel autoplay v-model="value2"
@@ -170,7 +173,6 @@
 /* 新闻资讯 */
 .news-container {
   padding-top: 150px;
-  /* padding-bottom: 50px; */
 }
 .news {
   background: #fff;

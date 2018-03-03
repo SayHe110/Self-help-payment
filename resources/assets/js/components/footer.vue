@@ -1,7 +1,6 @@
 <template>
   <div class="layout">
     <div class="layout-contain">
-        <header-top></header-top>
         <router-view/>
     </div>
     <div class="layout-footer">
@@ -52,6 +51,18 @@ export default {
     position: relative;
     padding-bottom: 50px;
     height: 100%;
+  }
+  .layout-header{
+      height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background: #1bbc9b;
+    line-height: 45px;
+    font-size: 18px;
+    z-index:999
   }
   .layout-footer{
     position: fixed;

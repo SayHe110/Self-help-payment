@@ -1,5 +1,8 @@
 <template>
     <div class="layout-box">
+        <div class="layout-header">
+           <p>全部应用</p>
+        </div>
         <div class="service-contain">
             <div class="service-title">
                 <img src="../assets/icon/icon-shu.png" class="title-icon">

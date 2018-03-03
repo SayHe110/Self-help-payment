@@ -1,5 +1,8 @@
 <template>
    <div class="layout-box">
+        <div class="layout-header">
+           <p>我的消息</p>
+        </div>
        <div class="notice-contain">
            <ul>
                <li>
