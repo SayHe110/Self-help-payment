@@ -31,7 +31,10 @@
     </div>
 </template>
 <style>
-.layout-header .return{
+.layout-box{
+    background: #fff;
+}
+.layout-header .return {
   float: left;
   line-height: 45px;
   position: absolute;
