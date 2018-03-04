@@ -26,11 +26,11 @@
   </div>
 </template>
 <script>
-import header from './header.vue'
+// import header from './header.vue'
 export default {
-    components: {
-        'header-top': header
-    },
+    // components: {
+    //     'header-top': header
+    // },
     methods: {
         onSelect (name) {
             this.$nextTick(() => {
@@ -53,7 +53,7 @@ export default {
     height: 100%;
   }
   .layout-header{
-      height: 45px;
+    height: 45px;
     position: fixed;
     top: 0;
     left: 0;
@@ -62,7 +62,8 @@ export default {
     background: #1bbc9b;
     line-height: 45px;
     font-size: 18px;
-    z-index:999
+    z-index: 999;
+    padding: 0 10px;
   }
   .layout-footer{
     position: fixed;

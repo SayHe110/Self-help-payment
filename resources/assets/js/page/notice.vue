@@ -7,10 +7,10 @@
             <ul>
                <li>
                    <a href="javascript:;">
-                       <div class="notice-icon"><img src="../assets/icon/huodong.png" alt=""></div>
+                       <div class="notice-icon"><Badge dot><img src="../assets/icon/huodong.png" alt=""></Badge></div>
                        <div class="notice-title">
                            <p>精彩活动</p>
-                            <span>暂无内容</span>
+                            <span>百万优惠券限量抢</span>
                        </div>
                        <span class="notice-time">2018-3-1</span>
                    </a>
@@ -59,6 +59,7 @@ export default {
 .notice-contain ul li .notice-title {
   float: left;
   padding-left: 10px;
+  text-align: left;
 }
 .notice-contain ul li .notice-title p {
   color: #444;

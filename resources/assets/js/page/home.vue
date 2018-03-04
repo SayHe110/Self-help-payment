@@ -36,6 +36,7 @@
             <div class="news-container">
                 <ul class="news-lists">
                     <li>
+                        <router-link :to="{path: 'article'}"></router-link>
                         <div class="news-box">
                             <a href="javascript:;">
                                 <div class="news-left">
@@ -180,6 +181,8 @@ export default {
 }
 .news-box {
   width: 100%;
+  height: 100%;
+  position: relative;
 }
 .news-lists li {
   flex-direction: row;
@@ -188,6 +191,11 @@ export default {
   overflow: hidden;
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  height: 90px;
+}
+.news-box a {
+  display: block;
+  height: 100%;
 }
 .news-left {
   width: 60%;
@@ -200,18 +208,22 @@ export default {
   float: left;
 }
 .news-box .news-title {
-  font-size: 15px;
+  font-size: 14px;
   color: #444;
-  display: block;
-  margin-top: 5px;
   text-align: left;
   padding-bottom: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .news-box .info {
   color: #999;
-  font-size: 13px;
+  font-size: 12px;
   text-align: left;
   margin-bottom: 0px;
+  position: absolute;
+  bottom: 0px;
 }
 .news-box .info .margin-left {
   margin-left: 10px !important;

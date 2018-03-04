@@ -62,7 +62,7 @@ export default {
   left: 0;
 }
 .personal-contain ul li {
-  height: 32px;
+  height: 36px;
   border-bottom: 1px solid #f3f3f3;
 }
 .personal-contain ul .personal-box {
@@ -94,7 +94,7 @@ export default {
 }
 .personal-contain ul li .personal-title p {
   color: #444;
-  font-size: 14px;
+  font-size: 14px; 
 }
 .personal-contain ul li .personal-title span {
   color: #999;
@@ -113,10 +113,10 @@ export default {
   display: block;
   float: left;
   color: #444;
-  line-height: 32px;
+  line-height: 36px;
 }
 .personal-contain ul li .more {
-  line-height: 32px;
+  line-height: 36px;
 }
 .personal-contain ul li .more img {
   width: 12px;

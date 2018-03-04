@@ -87,8 +87,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_vue__ = __webpack_require__("./resources/assets/js/components/header.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__header_vue__);
 //
 //
 //
@@ -117,11 +115,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
+// import header from './header.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        'header-top': __WEBPACK_IMPORTED_MODULE_0__header_vue___default.a
-    },
+    // components: {
+    //     'header-top': header
+    // },
     methods: {
         onSelect: function onSelect(name) {
             var _this = this;
@@ -140,6 +138,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -649,7 +648,22 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 15px;\r\n  color: #444;\r\n  display: block;\r\n  margin-top: 5px;\r\n  text-align: left;\r\n  padding-bottom: 5px;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6] {\r\n  height: 20px;\r\n  position: relative;\r\n  padding: 20px 0;\n}\n.ivu-spin[data-v-1cafe2c6] {\r\n  color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6] {\r\n  z-index: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  position: relative;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\r\n  height: 90px;\n}\n.news-box a[data-v-1cafe2c6] {\r\n  display: block;\r\n  height: 100%;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 14px;\r\n  color: #444;\r\n  text-align: left;\r\n  padding-bottom: 5px;\r\n  display: -webkit-box;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-line-clamp: 2;\r\n  overflow: hidden;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  position: absolute;\r\n  bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6] {\r\n  height: 20px;\r\n  position: relative;\r\n  padding: 20px 0;\n}\n.ivu-spin[data-v-1cafe2c6] {\r\n  color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6] {\r\n  z-index: 0;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/_css-loader@0.28.10@css-loader/index.js!./node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d9cdc28\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/page/article.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.10@css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -664,7 +678,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.notice-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.notice-contain ul li {\r\n  height: 50px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a {\r\n  display: block;\r\n  padding: 5px 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.notice-contain ul li .notice-icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  float: left;\n}\n.notice-contain ul li .notice-title {\r\n  float: left;\r\n  padding-left: 10px;\n}\n.notice-contain ul li .notice-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.notice-contain ul li .notice-title span {\r\n  color: #ccc;\r\n  font-size: 12px;\n}\n.notice-contain ul li .notice-time {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #ccc;\n}\r\n", ""]);
+exports.push([module.i, "\n.notice-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.notice-contain ul li {\r\n  height: 50px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a {\r\n  display: block;\r\n  padding: 5px 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.notice-contain ul li .notice-icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  float: left;\n}\n.notice-contain ul li .notice-title {\r\n  float: left;\r\n  padding-left: 10px;\r\n  text-align: left;\n}\n.notice-contain ul li .notice-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.notice-contain ul li .notice-title span {\r\n  color: #ccc;\r\n  font-size: 12px;\n}\n.notice-contain ul li .notice-time {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #ccc;\n}\r\n", ""]);
 
 // exports
 
@@ -709,7 +723,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.personal-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.personal-contain ul li {\r\n  height: 32px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.personal-contain ul .personal-box {\r\n  height: 72px;\n}\n.personal-contain ul li a {\r\n  display: block;\r\n  padding: 0 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  float: left;\r\n  overflow: hidden;\r\n  margin-top: 12px;\r\n  border-radius: 50%;\n}\n.personal-contain ul li .personal-icon img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-title {\r\n  float: left;\r\n  padding-left: 10px;\r\n  text-align: left;\r\n  margin-top: 15px;\n}\n.personal-contain ul li .personal-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.personal-contain ul li .personal-title span {\r\n  color: #999;\r\n  font-size: 12px;\n}\n.personal-contain ul li .personal-exit, .more {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #999;\r\n  line-height: 72px;\n}\n.personal-contain ul li .personal-exit a{\r\n    color:#444;\n}\n.personal-contain ul li .personal-type {\r\n  display: block;\r\n  float: left;\r\n  color: #444;\r\n  line-height: 32px;\n}\n.personal-contain ul li .more {\r\n  line-height: 32px;\n}\n.personal-contain ul li .more img {\r\n  width: 12px;\r\n  height: 12px;\n}\r\n", ""]);
+exports.push([module.i, "\n.personal-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.personal-contain ul li {\r\n  height: 36px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.personal-contain ul .personal-box {\r\n  height: 72px;\n}\n.personal-contain ul li a {\r\n  display: block;\r\n  padding: 0 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  float: left;\r\n  overflow: hidden;\r\n  margin-top: 12px;\r\n  border-radius: 50%;\n}\n.personal-contain ul li .personal-icon img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-title {\r\n  float: left;\r\n  padding-left: 10px;\r\n  text-align: left;\r\n  margin-top: 15px;\n}\n.personal-contain ul li .personal-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.personal-contain ul li .personal-title span {\r\n  color: #999;\r\n  font-size: 12px;\n}\n.personal-contain ul li .personal-exit, .more {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #999;\r\n  line-height: 72px;\n}\n.personal-contain ul li .personal-exit a{\r\n    color:#444;\n}\n.personal-contain ul li .personal-type {\r\n  display: block;\r\n  float: left;\r\n  color: #444;\r\n  line-height: 36px;\n}\n.personal-contain ul li .more {\r\n  line-height: 36px;\n}\n.personal-contain ul li .more img {\r\n  width: 12px;\r\n  height: 12px;\n}\r\n", ""]);
 
 // exports
 
@@ -739,7 +753,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout{\n  background: #f3f3f3;\n  position: relative;\n  height: 100%;    \n  width: 100%;\n}\n.layout-contain{\n  position: relative;\n  padding-bottom: 50px;\n  height: 100%;\n}\n.layout-header{\n    height: 45px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  color: #fff;\n  background: #1bbc9b;\n  line-height: 45px;\n  font-size: 18px;\n  z-index:999\n}\n.layout-footer{\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  height: 50px;\n  width: 100%;\n}\n.layout-box{\n      position: absolute;\n      top: 45px;\n      padding: 0 10px;\n      width: 100%;\n      padding-bottom: 65px;\n}\n.ivu-menu-light{\n      background: #f7f7f7;\n}\n.ivu-menu-horizontal{\n      padding: 5px;\n}\n.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{\n      border-bottom:none;\n      color: #1bbc9b;\n}\n.ivu-menu-item>i{\n      margin-right: 0;\n}\n.ivu-icon{\n      display: block;\n      font-size: 24px;\n      margin-bottom: -20px;\n}\n.ivu-menu-horizontal .ivu-menu-item{\n      width: 25%;\n}\n", ""]);
+exports.push([module.i, "\n.layout{\n  background: #f3f3f3;\n  position: relative;\n  height: 100%;    \n  width: 100%;\n}\n.layout-contain{\n  position: relative;\n  padding-bottom: 50px;\n  height: 100%;\n}\n.layout-header{\n  height: 45px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  color: #fff;\n  background: #1bbc9b;\n  line-height: 45px;\n  font-size: 18px;\n  z-index: 999;\n  padding: 0 10px;\n}\n.layout-footer{\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  height: 50px;\n  width: 100%;\n}\n.layout-box{\n      position: absolute;\n      top: 45px;\n      padding: 0 10px;\n      width: 100%;\n      padding-bottom: 65px;\n}\n.ivu-menu-light{\n      background: #f7f7f7;\n}\n.ivu-menu-horizontal{\n      padding: 5px;\n}\n.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{\n      border-bottom:none;\n      color: #1bbc9b;\n}\n.ivu-menu-item>i{\n      margin-right: 0;\n}\n.ivu-icon{\n      display: block;\n      font-size: 24px;\n      margin-bottom: -20px;\n}\n.ivu-menu-horizontal .ivu-menu-item{\n      width: 25%;\n}\n", ""]);
 
 // exports
 
@@ -36456,7 +36470,25 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "news-container" }, [
-        _vm._m(1),
+        _c("ul", { staticClass: "news-lists" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { path: "article" } } }),
+              _vm._v(" "),
+              _vm._m(1)
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _vm._m(5)
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -36481,153 +36513,165 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "news-lists" }, [
-      _c("li", [
-        _c("div", { staticClass: "news-box" }, [
-          _c("a", { attrs: { href: "javascript:;" } }, [
-            _c("div", { staticClass: "news-left" }, [
-              _c("p", { staticClass: "news-title" }, [
-                _vm._v("国家电网公司积极推进10个城市世界一流城市配电网建设")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "info" }, [
-                _c("span", [_vm._v("2017-12-27")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [
-                  _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                    _vm._v(" 90")
-                  ])
-                ])
-              ])
-            ]),
+    return _c("div", { staticClass: "news-box" }, [
+      _c("a", { attrs: { href: "javascript:;" } }, [
+        _c("div", { staticClass: "news-left" }, [
+          _c("p", { staticClass: "news-title" }, [
+            _vm._v("国家电网公司积极推进10个城市世界一流城市配电网建设")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "info" }, [
+            _c("span", [_vm._v("2017-12-27")]),
             _vm._v(" "),
-            _c("div", { staticClass: "news-right" }, [
-              _c("img", {
-                attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list1.png"), alt: "" }
-              })
+            _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "margin-left" }, [
+              _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
+                _vm._v(" 90")
+              ])
             ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "news-right" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list1.png"), alt: "" }
+          })
         ])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("div", { staticClass: "news-box" }, [
-          _c("a", { attrs: { href: "javascript:;" } }, [
-            _c("div", { staticClass: "news-left" }, [
-              _c("p", { staticClass: "news-title" }, [
-                _vm._v("能源绿色低碳转型组合拳推出")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "info" }, [
-                _c("span", [_vm._v("2017-12-27")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [
-                  _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                    _vm._v(" 90")
-                  ])
-                ])
-              ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "news-box" }, [
+        _c("a", { attrs: { href: "javascript:;" } }, [
+          _c("div", { staticClass: "news-left" }, [
+            _c("p", { staticClass: "news-title" }, [
+              _vm._v("能源绿色低碳转型组合拳推出")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "news-right" }, [
-              _c("img", {
-                attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list2.png"), alt: "" }
-              })
+            _c("p", { staticClass: "info" }, [
+              _c("span", [_vm._v("2017-12-27")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [
+                _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
+                  _vm._v(" 90")
+                ])
+              ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "news-right" }, [
+            _c("img", {
+              attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list2.png"), alt: "" }
+            })
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("div", { staticClass: "news-box" }, [
-          _c("a", { attrs: { href: "javascript:;" } }, [
-            _c("div", { staticClass: "news-left" }, [
-              _c("p", { staticClass: "news-title" }, [
-                _vm._v("国家电网蝉联中国500最具价值品牌第一名")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "info" }, [
-                _c("span", [_vm._v("2017-12-27")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [
-                  _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                    _vm._v(" 90")
-                  ])
-                ])
-              ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "news-box" }, [
+        _c("a", { attrs: { href: "javascript:;" } }, [
+          _c("div", { staticClass: "news-left" }, [
+            _c("p", { staticClass: "news-title" }, [
+              _vm._v("国家电网蝉联中国500最具价值品牌第一名")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "news-right" }, [
-              _c("img", {
-                attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list3.png"), alt: "" }
-              })
+            _c("p", { staticClass: "info" }, [
+              _c("span", [_vm._v("2017-12-27")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [
+                _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
+                  _vm._v(" 90")
+                ])
+              ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "news-right" }, [
+            _c("img", {
+              attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list3.png"), alt: "" }
+            })
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("div", { staticClass: "news-box" }, [
-          _c("a", { attrs: { href: "javascript:;" } }, [
-            _c("div", { staticClass: "news-left" }, [
-              _c("p", { staticClass: "news-title" }, [
-                _vm._v("国家电网蝉联中国500最具价值品牌第一名")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "info" }, [
-                _c("span", [_vm._v("2017-12-27")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [
-                  _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                    _vm._v(" 90")
-                  ])
-                ])
-              ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "news-box" }, [
+        _c("a", { attrs: { href: "javascript:;" } }, [
+          _c("div", { staticClass: "news-left" }, [
+            _c("p", { staticClass: "news-title" }, [
+              _vm._v("国家电网蝉联中国500最具价值品牌第一名")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "news-right" }, [
-              _c("img", {
-                attrs: { src: __webpack_require__("./resources/assets/js/assets/images/02.jpg"), alt: "" }
-              })
+            _c("p", { staticClass: "info" }, [
+              _c("span", [_vm._v("2017-12-27")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [
+                _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
+                  _vm._v(" 90")
+                ])
+              ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "news-right" }, [
+            _c("img", {
+              attrs: { src: __webpack_require__("./resources/assets/js/assets/images/02.jpg"), alt: "" }
+            })
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("div", { staticClass: "news-box" }, [
-          _c("a", { attrs: { href: "javascript:;" } }, [
-            _c("div", { staticClass: "news-left" }, [
-              _c("p", { staticClass: "news-title" }, [
-                _vm._v("国家电网蝉联中国500最具价值品牌第一名")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "info" }, [
-                _c("span", [_vm._v("2017-12-27")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "margin-left" }, [
-                  _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                    _vm._v(" 90")
-                  ])
-                ])
-              ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "news-box" }, [
+        _c("a", { attrs: { href: "javascript:;" } }, [
+          _c("div", { staticClass: "news-left" }, [
+            _c("p", { staticClass: "news-title" }, [
+              _vm._v("国家电网蝉联中国500最具价值品牌第一名")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "news-right" }, [
-              _c("img", {
-                attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list1.png"), alt: "" }
-              })
+            _c("p", { staticClass: "info" }, [
+              _c("span", [_vm._v("2017-12-27")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "margin-left" }, [
+                _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
+                  _vm._v(" 90")
+                ])
+              ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "news-right" }, [
+            _c("img", {
+              attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list1.png"), alt: "" }
+            })
           ])
         ])
       ])
@@ -36645,7 +36689,7 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-348c0ad4\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/page/notice.vue":
+/***/ "./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2d9cdc28\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/page/article.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -36661,50 +36705,113 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "layout-box" }, [
       _c("div", { staticClass: "layout-header" }, [
-        _c("p", [_vm._v("我的消息")])
+        _c("span", { staticClass: "return", staticStyle: { float: "left" } }, [
+          _c("img", {
+            attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/left.png"), alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("p", [_vm._v("个人中心")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "notice-contain" }, [
-        _c("ul", [
-          _c("li", [
-            _c("a", { attrs: { href: "javascript:;" } }, [
-              _c("div", { staticClass: "notice-icon" }, [
-                _c("img", {
-                  attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/huodong.png"), alt: "" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "notice-title" }, [
-                _c("p", [_vm._v("精彩活动")]),
-                _vm._v(" "),
-                _c("span", [_vm._v("暂无内容")])
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "notice-time" }, [_vm._v("2018-3-1")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "javascript:;" } }, [
-              _c("div", { staticClass: "notice-icon" }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./resources/assets/js/assets/icon/xitongxiaoxi.png"),
-                    alt: ""
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "notice-title" }, [
-                _c("p", [_vm._v("系统消息")]),
-                _vm._v(" "),
-                _c("span", [_vm._v("暂无内容")])
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "notice-time" }, [_vm._v("2018-3-1")])
-            ])
+      _c("div", { staticClass: "article-contain" }, [
+        _vm._v(
+          "\n            8月17日，公司组织召开世界一流城市配电网建设推进电视电话会议，交流世界一流城市配电网建设管理工作经验，部署下阶段重点工作任务。\n\n\n　　会议要求，各单位要进一步增强责任感和紧迫感，准确把握世界一流城市配电网建设的实质，加快构建坚强合理的网架结构，积极推动配网设备技术升级，加强精益运维管理，提升智能互动服务水平，切实做到“结构好、设备好、技术好、管理好”。要加强建设实施过程管控，搭建工作交流平台，交流典型做法，展示建设进度和工作成效；构建评价指标体系，开展建设成效评估，积极运用配网资产国际对标成果，滚动优化实施方案。要加强组织领导，注重安全质量，做深做细项目需求储备，强化各级电科院、经研院（所）支撑保障，高效协调推进10个城市世界一流城市配电网建设，持续提升配电网建设运营管理水平。\n\n\n　　国网运检部、发展部、营销部、科技部，中国电科院、国网经研院在主会场参加会议。国网北京、天津、河北、山东、上海、江苏、浙江、福建电力及有关地市公司相关人员在各分会场参加会议。\n        "
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-2d9cdc28", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-348c0ad4\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/page/notice.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "layout-box" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "notice-contain" }, [
+      _c("ul", [
+        _c("li", [
+          _c("a", { attrs: { href: "javascript:;" } }, [
+            _c(
+              "div",
+              { staticClass: "notice-icon" },
+              [
+                _c("Badge", { attrs: { dot: "" } }, [
+                  _c("img", {
+                    attrs: {
+                      src: __webpack_require__("./resources/assets/js/assets/icon/huodong.png"),
+                      alt: ""
+                    }
+                  })
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("span", { staticClass: "notice-time" }, [_vm._v("2018-3-1")])
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(2)
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "layout-header" }, [
+      _c("p", [_vm._v("我的消息")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notice-title" }, [
+      _c("p", [_vm._v("精彩活动")]),
+      _vm._v(" "),
+      _c("span", [_vm._v("百万优惠券限量抢")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "javascript:;" } }, [
+        _c("div", { staticClass: "notice-icon" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/xitongxiaoxi.png"), alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "notice-title" }, [
+          _c("p", [_vm._v("系统消息")]),
+          _vm._v(" "),
+          _c("span", [_vm._v("暂无内容")])
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "notice-time" }, [_vm._v("2018-3-1")])
       ])
     ])
   }
@@ -36843,7 +36950,7 @@ var render = function() {
                   [
                     _c("img", {
                       staticClass: "token-img",
-                      staticStyle: { height: "32px", width: "100px" },
+                      staticStyle: { height: "32px", width: "80px" },
                       attrs: {
                         id: "token",
                         alt: "验证码",
@@ -41573,6 +41680,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../node_modules/_css-loader@0.28.10@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1cafe2c6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./home.vue", function() {
      var newContent = require("!!../../../../node_modules/_css-loader@0.28.10@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1cafe2c6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/_vue-style-loader@3.1.2@vue-style-loader/index.js!./node_modules/_css-loader@0.28.10@css-loader/index.js!./node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d9cdc28\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/page/article.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/_css-loader@0.28.10@css-loader/index.js!./node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d9cdc28\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/page/article.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/_vue-style-loader@3.1.2@vue-style-loader/lib/addStylesClient.js")("a112078c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.10@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d9cdc28\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./article.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.10@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d9cdc28\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./article.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -53021,6 +53155,13 @@ module.exports = "/images/icon-shu.png?a0571986feb69761a581282ac7d5c6b6";
 
 /***/ }),
 
+/***/ "./resources/assets/js/assets/icon/left.png":
+/***/ (function(module, exports) {
+
+module.exports = "/images/left.png?3ef1ff4670ea315f8eb29de9edb9a360";
+
+/***/ }),
+
 /***/ "./resources/assets/js/assets/icon/licai.png":
 /***/ (function(module, exports) {
 
@@ -53171,18 +53312,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/header.vue":
+/***/ "./resources/assets/js/page/article.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/_vue-style-loader@3.1.2@vue-style-loader/index.js!./node_modules/_css-loader@0.28.10@css-loader/index.js!./node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d9cdc28\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/page/article.vue")
+}
 var normalizeComponent = __webpack_require__("./node_modules/_vue-loader@13.7.1@vue-loader/lib/component-normalizer.js")
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__("./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2d9cdc28\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/page/article.vue")
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -53195,7 +53341,23 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\header.vue"
+Component.options.__file = "resources\\assets\\js\\page\\article.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d9cdc28", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d9cdc28", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
 module.exports = Component.exports
 
@@ -53481,6 +53643,9 @@ module.exports = Component.exports
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_notice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__page_notice_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page_personal_vue__ = __webpack_require__("./resources/assets/js/page/personal.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page_personal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__page_personal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page_article_vue__ = __webpack_require__("./resources/assets/js/page/article.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page_article_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__page_article_vue__);
+
 
 
 
@@ -53504,7 +53669,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     children: [{
       path: '/home',
       name: 'home',
-      component: __WEBPACK_IMPORTED_MODULE_4__page_home_vue___default.a
+      component: __WEBPACK_IMPORTED_MODULE_4__page_home_vue___default.a,
+      children: []
     }, {
       path: '/service',
       name: 'service',
@@ -53517,6 +53683,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
       path: '/personal',
       name: 'personal',
       component: __WEBPACK_IMPORTED_MODULE_7__page_personal_vue___default.a
+    }, {
+      path: '/article',
+      name: 'article',
+      component: __WEBPACK_IMPORTED_MODULE_8__page_article_vue___default.a
     }]
   }]
 }));

@@ -6,6 +6,7 @@ import home from '../page/home.vue'
 import service from '../page/service.vue'
 import notice from '../page/notice.vue'
 import personal from '../page/personal.vue'
+import article from '../page/article.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
       name: 'login',
       component: login
     },
+   
     {
       path: '/footer',
       name: 'footer',
@@ -24,7 +26,8 @@ export default new Router({
         {
           path: '/home',
           name: 'home',
-          component: home
+          component: home,
+          children: []
         },
         {
           path: '/service',
@@ -41,6 +44,11 @@ export default new Router({
           name: 'personal',
           component: personal
         },
+        {
+            path: '/article',
+            name: 'article',
+            component: article
+        }
       ]
     }
   ]
