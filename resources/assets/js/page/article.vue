@@ -60,8 +60,8 @@
   text-align: left;
 }
 .article-title .info {
-  color: #999;
-  font-size: 12px;
+  color: gray;
+  font-size: 13px;
   text-align: left;
   margin-bottom: 0px;
   border-bottom: 1px solid #eee;
