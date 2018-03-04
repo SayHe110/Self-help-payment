@@ -662,7 +662,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-header .return{\r\n  float: left;\r\n  line-height: 45px;\r\n  position: absolute;\r\n  left: 20px;\r\n  top: 6px;\n}\n.layout-header .menu {\r\n  float: right;\r\n  position: absolute;\r\n  right: 20px;\r\n  top: 6px;\n}\n.layout-header .return img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.article-title {\r\n  text-align: left;\n}\n.article-title h2 {\r\n  font-size: 18px;\r\n  line-height: 1.5;\r\n  font-weight: 600;\r\n  color: #444;\r\n  margin-bottom: 5px;\r\n  text-align: left;\n}\n.article-title .info {\r\n  color: gray;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  border-bottom: 1px solid #eee;\r\n  padding-bottom: 5px;\n}\n.article-title .info .margin-left {\r\n  margin-left: 10px !important;\n}\n.article-box {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  color: #666;\r\n  word-wrap: break-word;\r\n  text-align: justify;\r\n  padding: 10px;\r\n  text-indent: 2em;\n}\r\n", ""]);
+exports.push([module.i, "\n.layout-header .return{\r\n  float: left;\r\n  line-height: 45px;\r\n  position: absolute;\r\n  left: 20px;\r\n  top: 8px;\n}\n.layout-header .menu {\r\n  float: right;\r\n  position: absolute;\r\n  right: 20px;\r\n  top: 8px;\n}\n.layout-header .return img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.article-title {\r\n  text-align: left;\n}\n.article-title h2 {\r\n  font-size: 18px;\r\n  line-height: 1.5;\r\n  font-weight: 600;\r\n  color: #444;\r\n  margin-bottom: 5px;\r\n  text-align: left;\n}\n.article-title .info {\r\n  color: gray;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  border-bottom: 1px solid #eee;\r\n  padding-bottom: 5px;\n}\n.article-title .info .margin-left {\r\n  margin-left: 10px !important;\n}\n.article-box {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  color: #666;\r\n  word-wrap: break-word;\r\n  text-align: justify;\r\n  padding: 10px;\r\n  text-indent: 2em;\n}\r\n", ""]);
 
 // exports
 
@@ -36711,7 +36711,7 @@ var render = function() {
           { staticClass: "return", attrs: { href: "javascript:;" } },
           [
             _c("Icon", {
-              attrs: { type: "android-arrow-back", color: "#fff", size: "32" }
+              attrs: { type: "android-arrow-back", color: "#fff", size: "28" }
             })
           ],
           1
@@ -36729,7 +36729,7 @@ var render = function() {
                   attrs: {
                     type: "android-more-vertical",
                     color: "#fff",
-                    size: "32"
+                    size: "28"
                   }
                 })
               ],

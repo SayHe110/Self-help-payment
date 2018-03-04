@@ -1,9 +1,9 @@
 <template>
     <div class="layout-box">
         <div class="layout-header">
-            <a href="javascript:;" class="return"><Icon type="android-arrow-back" color="#fff" size="32"></Icon></a>
+            <a href="javascript:;" class="return"><Icon type="android-arrow-back" color="#fff" size="28"></Icon></a>
             <Dropdown class="menu"  placement="bottom-end">
-                <a href="javascript:;"><Icon type="android-more-vertical" color="#fff" size="32"></Icon></a>
+                <a href="javascript:;"><Icon type="android-more-vertical" color="#fff" size="28"></Icon></a>
                 <DropdownMenu slot="list">
                     <DropdownItem>收藏</DropdownItem>
                     <DropdownItem>分享</DropdownItem>
@@ -36,13 +36,13 @@
   line-height: 45px;
   position: absolute;
   left: 20px;
-  top: 6px;
+  top: 8px;
 }
 .layout-header .menu {
   float: right;
   position: absolute;
   right: 20px;
-  top: 6px;
+  top: 8px;
 }
 .layout-header .return img {
   width: 100%;
