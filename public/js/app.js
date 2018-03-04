@@ -36740,11 +36740,11 @@ var render = function() {
               "DropdownMenu",
               { attrs: { slot: "list" }, slot: "list" },
               [
-                _c("DropdownItem", [_vm._v("驴打滚")]),
+                _c("DropdownItem", [_vm._v("收藏")]),
                 _vm._v(" "),
-                _c("DropdownItem", [_vm._v("炸酱面")]),
+                _c("DropdownItem", [_vm._v("分享")]),
                 _vm._v(" "),
-                _c("DropdownItem", [_vm._v("豆汁儿")])
+                _c("DropdownItem", [_vm._v("评论")])
               ],
               1
             )

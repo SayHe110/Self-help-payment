@@ -5,9 +5,9 @@
             <Dropdown class="menu"  placement="bottom-end">
                 <a href="javascript:;"><Icon type="android-more-vertical" color="#fff" size="32"></Icon></a>
                 <DropdownMenu slot="list">
-                    <DropdownItem>驴打滚</DropdownItem>
-                    <DropdownItem>炸酱面</DropdownItem>
-                    <DropdownItem>豆汁儿</DropdownItem>
+                    <DropdownItem>收藏</DropdownItem>
+                    <DropdownItem>分享</DropdownItem>
+                    <DropdownItem>评论</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         </div>
