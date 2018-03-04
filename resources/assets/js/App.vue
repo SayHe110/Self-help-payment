@@ -28,4 +28,8 @@ html,body{
   height: 100%;
   background:#f3f3f3;
 }
+html{
+  font-size: 62.5%;
+ 
+}
 </style>

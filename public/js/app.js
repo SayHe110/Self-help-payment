@@ -277,7 +277,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -663,7 +662,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.layout-header .return{\r\n  float: left;\r\n  line-height: 45px;\r\n  position: absolute;\r\n  left: 20px;\r\n  top: 6px;\n}\n.layout-header .menu {\r\n  float: right;\r\n  position: absolute;\r\n  right: 20px;\r\n  top: 6px;\n}\n.layout-header .return img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.article-title {\r\n  text-align: left;\n}\n.article-title h2 {\r\n  font-size: 18px;\r\n  line-height: 1.5;\r\n  font-weight: 600;\r\n  color: #444;\r\n  margin-bottom: 5px;\r\n  text-align: left;\n}\n.article-title .info {\r\n  color: #999;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  border-bottom: 1px solid #eee;\r\n  padding-bottom: 5px;\n}\n.article-title .info .margin-left {\r\n  margin-left: 10px !important;\n}\n.article-box {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  color: #666;\r\n  word-wrap: break-word;\r\n  text-align: justify;\r\n  padding: 10px;\r\n  text-indent: 2em;\n}\r\n", ""]);
 
 // exports
 
@@ -708,7 +707,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n#app {\n  font-family: \"Microsoft YaHei\",Arial, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  max-width: 500px;\n  min-width: 300px;\n  margin: 0 auto;\n  height: 100%;\n  background: #fff;\n}\nhtml,body{\n  width: 100%;\n  height: 100%;\n  background:#f3f3f3;\n}\n", ""]);
+exports.push([module.i, "\n#app {\n  font-family: \"Microsoft YaHei\",Arial, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  max-width: 500px;\n  min-width: 300px;\n  margin: 0 auto;\n  height: 100%;\n  background: #fff;\n}\nhtml,body{\n  width: 100%;\n  height: 100%;\n  background:#f3f3f3;\n}\nhtml{\n  font-size: 62.5%;\n}\n", ""]);
 
 // exports
 
@@ -36471,23 +36470,61 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "news-container" }, [
         _c("ul", { staticClass: "news-lists" }, [
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: { path: "article" } } }),
-              _vm._v(" "),
-              _vm._m(1)
-            ],
-            1
-          ),
+          _c("li", [
+            _c(
+              "div",
+              { staticClass: "news-box" },
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: { name: "article", params: { id: 1 } } } },
+                  [
+                    _c("div", { staticClass: "news-left" }, [
+                      _c("p", { staticClass: "news-title" }, [
+                        _vm._v(
+                          "国家电网公司积极推进10个城市世界一流城市配电网建设"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "info" }, [
+                        _c("span", [_vm._v("2017-12-27")]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "margin-left" }, [
+                          _vm._v("admin")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "margin-left" }, [
+                          _c(
+                            "i",
+                            { staticClass: "iconfont icon-sannongguancha" },
+                            [_vm._v(" 90")]
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "news-right" }, [
+                      _c("img", {
+                        attrs: {
+                          src: __webpack_require__("./resources/assets/js/assets/images/list1.png"),
+                          alt: ""
+                        }
+                      })
+                    ])
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
           _vm._v(" "),
           _vm._m(2),
           _vm._v(" "),
           _vm._m(3),
           _vm._v(" "),
-          _vm._m(4),
-          _vm._v(" "),
-          _vm._m(5)
+          _vm._m(4)
         ]),
         _vm._v(" "),
         _c(
@@ -36507,38 +36544,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "layout-header" }, [
       _c("p", [_vm._v("掌电")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "news-box" }, [
-      _c("a", { attrs: { href: "javascript:;" } }, [
-        _c("div", { staticClass: "news-left" }, [
-          _c("p", { staticClass: "news-title" }, [
-            _vm._v("国家电网公司积极推进10个城市世界一流城市配电网建设")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "info" }, [
-            _c("span", [_vm._v("2017-12-27")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "margin-left" }, [
-              _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                _vm._v(" 90")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "news-right" }, [
-          _c("img", {
-            attrs: { src: __webpack_require__("./resources/assets/js/assets/images/list1.png"), alt: "" }
-          })
-        ])
-      ])
     ])
   },
   function() {
@@ -36696,28 +36701,93 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "layout-box" }, [
+    _c(
+      "div",
+      { staticClass: "layout-header" },
+      [
+        _c(
+          "a",
+          { staticClass: "return", attrs: { href: "javascript:;" } },
+          [
+            _c("Icon", {
+              attrs: { type: "android-arrow-back", color: "#fff", size: "32" }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "Dropdown",
+          { staticClass: "menu", attrs: { placement: "bottom-end" } },
+          [
+            _c(
+              "a",
+              { attrs: { href: "javascript:;" } },
+              [
+                _c("Icon", {
+                  attrs: {
+                    type: "android-more-vertical",
+                    color: "#fff",
+                    size: "32"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "DropdownMenu",
+              { attrs: { slot: "list" }, slot: "list" },
+              [
+                _c("DropdownItem", [_vm._v("驴打滚")]),
+                _vm._v(" "),
+                _c("DropdownItem", [_vm._v("炸酱面")]),
+                _vm._v(" "),
+                _c("DropdownItem", [_vm._v("豆汁儿")])
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "layout-box" }, [
-      _c("div", { staticClass: "layout-header" }, [
-        _c("span", { staticClass: "return", staticStyle: { float: "left" } }, [
-          _c("img", {
-            attrs: { src: __webpack_require__("./resources/assets/js/assets/icon/left.png"), alt: "" }
-          })
+    return _c("div", { staticClass: "article-contain" }, [
+      _c("div", { staticClass: "article-title" }, [
+        _c("h2", [
+          _vm._v("国家电网公司积极推进10个城市世界一流城市配电网建设")
         ]),
         _vm._v(" "),
-        _c("p", [_vm._v("个人中心")])
+        _c("p", { staticClass: "info" }, [
+          _c("span", [_vm._v("2017-12-27")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "margin-left" }, [
+            _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
+              _vm._v(" 90")
+            ])
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "article-contain" }, [
-        _vm._v(
-          "\n            8月17日，公司组织召开世界一流城市配电网建设推进电视电话会议，交流世界一流城市配电网建设管理工作经验，部署下阶段重点工作任务。\n\n\n　　会议要求，各单位要进一步增强责任感和紧迫感，准确把握世界一流城市配电网建设的实质，加快构建坚强合理的网架结构，积极推动配网设备技术升级，加强精益运维管理，提升智能互动服务水平，切实做到“结构好、设备好、技术好、管理好”。要加强建设实施过程管控，搭建工作交流平台，交流典型做法，展示建设进度和工作成效；构建评价指标体系，开展建设成效评估，积极运用配网资产国际对标成果，滚动优化实施方案。要加强组织领导，注重安全质量，做深做细项目需求储备，强化各级电科院、经研院（所）支撑保障，高效协调推进10个城市世界一流城市配电网建设，持续提升配电网建设运营管理水平。\n\n\n　　国网运检部、发展部、营销部、科技部，中国电科院、国网经研院在主会场参加会议。国网北京、天津、河北、山东、上海、江苏、浙江、福建电力及有关地市公司相关人员在各分会场参加会议。\n        "
-        )
+      _c("div", { staticClass: "article-box" }, [
+        _c("p", [
+          _vm._v(
+            "\n                8月17日，公司组织召开世界一流城市配电网建设推进电视电话会议，交流世界一流城市配电网建设管理工作经验，部署下阶段重点工作任务。会议要求，各单位要进一步增强责任感和紧迫感，准确把握世界一流城市配电网建设的实质，加快构建坚强合理的网架结构，积极推动配网设备技术升级，加强精益运维管理，提升智能互动服务水平，切实做到“结构好、设备好、技术好、管理好”。要加强建设实施过程管控，搭建工作交流平台，交流典型做法，展示建设进度和工作成效；构建评价指标体系，开展建设成效评估，积极运用配网资产国际对标成果，滚动优化实施方案。要加强组织领导，注重安全质量，做深做细项目需求储备，强化各级电科院、经研院（所）支撑保障，高效协调推进10个城市世界一流城市配电网建设，持续提升配电网建设运营管理水平。国网运检部、发展部、营销部、科技部，中国电科院、国网经研院在主会场参加会议。国网北京、天津、河北、山东、上海、江苏、浙江、福建电力及有关地市公司相关人员在各分会场参加会议。\n            "
+          )
+        ])
       ])
     ])
   }
@@ -53155,13 +53225,6 @@ module.exports = "/images/icon-shu.png?a0571986feb69761a581282ac7d5c6b6";
 
 /***/ }),
 
-/***/ "./resources/assets/js/assets/icon/left.png":
-/***/ (function(module, exports) {
-
-module.exports = "/images/left.png?3ef1ff4670ea315f8eb29de9edb9a360";
-
-/***/ }),
-
 /***/ "./resources/assets/js/assets/icon/licai.png":
 /***/ (function(module, exports) {
 
@@ -53684,7 +53747,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
       name: 'personal',
       component: __WEBPACK_IMPORTED_MODULE_7__page_personal_vue___default.a
     }, {
-      path: '/article',
+      path: '/article/:id',
       name: 'article',
       component: __WEBPACK_IMPORTED_MODULE_8__page_article_vue___default.a
     }]

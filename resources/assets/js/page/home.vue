@@ -36,9 +36,8 @@
             <div class="news-container">
                 <ul class="news-lists">
                     <li>
-                        <router-link :to="{path: 'article'}"></router-link>
                         <div class="news-box">
-                            <a href="javascript:;">
+                            <router-link :to="{name: 'article', params: {id: 1}}">
                                 <div class="news-left">
                                     <p class="news-title">国家电网公司积极推进10个城市世界一流城市配电网建设</p>
                                     <p class="info">
@@ -52,7 +51,7 @@
                                 <div class="news-right">
                                     <img src="../assets/images/list1.png" alt="">
                                 </div>
-                            </a>
+                            </router-link>
                         </div>
                     </li>
                     <li>
