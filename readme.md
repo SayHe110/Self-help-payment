@@ -42,8 +42,7 @@ php artisan key:generate
 
 #### 6.发布资源
 ```shell
-php artisan vendor:publish
-> 0
+php artisan vendor:publish --provider='Dingo\Api\Provider\LaravelServiceProvider'
 ```
 
 #### 7.安装前端资源

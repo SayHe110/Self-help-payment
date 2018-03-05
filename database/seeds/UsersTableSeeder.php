@@ -35,5 +35,7 @@ class UsersTableSeeder extends Seeder
         $user_array = $users -> makeVisible(['password','remember_token'])->toArray();
 
         User::insert($user_array);
+
+        $user = User::find(1);
     }
 }
