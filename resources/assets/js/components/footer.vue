@@ -26,11 +26,8 @@
   </div>
 </template>
 <script>
-// import header from './header.vue'
+
 export default {
-    // components: {
-    //     'header-top': header
-    // },
     methods: {
         onSelect (name) {
             this.$nextTick(() => {

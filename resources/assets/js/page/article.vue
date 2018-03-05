@@ -1,11 +1,11 @@
 <template>
     <div class="layout-box">
         <div class="layout-header">
-            <a href="javascript:;" class="return"><Icon type="android-arrow-back" color="#fff" size="28"></Icon></a>
-            <Dropdown class="menu"  placement="bottom-end">
+            <a href="javascript:;" @click="back" class="return"><Icon type="android-arrow-back" color="#fff" size="28"></Icon></a>
+            <Dropdown class="menu" trigger="click"  placement="bottom-end">
                 <a href="javascript:;"><Icon type="android-more-vertical" color="#fff" size="28"></Icon></a>
                 <DropdownMenu slot="list">
-                    <DropdownItem>收藏</DropdownItem>
+                    <button  @click="success"><DropdownItem>收藏</DropdownItem></button>
                     <DropdownItem>分享</DropdownItem>
                     <DropdownItem>评论</DropdownItem>
                 </DropdownMenu>
@@ -15,7 +15,7 @@
             <div class="article-title">
                 <h2>国家电网公司积极推进10个城市世界一流城市配电网建设</h2>
                 <p class="info">
-                    <span>2017-12-27</span>
+                    <span>2018-03-03</span>
                     <span class="margin-left">admin</span>
                     <span class="margin-left">
                         <i class="iconfont icon-sannongguancha"> 90</i>
@@ -30,6 +30,18 @@
         </div>
     </div>
 </template>
+<script>
+    export default {
+        methods: {
+            back(){
+                this.$router.back(-1);
+            },
+            success () {
+                this.$Message.success('收藏成功!');
+            }
+        }
+    }
+</script>
 <style>
 .layout-box{
     background: #fff;
@@ -51,6 +63,10 @@
   width: 100%;
   height: 100%;
 }
+.menu button{
+    background: #fff;
+    border: none;
+}
 .article-title {
   text-align: left;
 }
@@ -69,9 +85,6 @@
   margin-bottom: 0px;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
-}
-.article-title .info .margin-left {
-  margin-left: 10px !important;
 }
 .article-box {
   width: 100%;
