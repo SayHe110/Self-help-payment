@@ -17,10 +17,11 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('student_id')->unique()->index()->comment('学号');
             $table->string('password');
-            $table->string('phone')->nullable()->unique()->comment('手机号');
+            $table->string('email')->nullable()->unique()->comment('邮箱地址');
             $table->string('nickname')->nullable()->comment('昵称');
             $table->string('avatar')->nullable()->comment('头像');
             $table->string('dormitory_id')->comment('宿舍号');
+            $table->boolean('is_verify')->default(false)->comment('是否验证');
             $table->rememberToken();
             $table->timestamps();
         });
