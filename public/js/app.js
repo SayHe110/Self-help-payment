@@ -695,7 +695,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\n  background-color: #fff;\n}\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\n  position: absolute;\n  left: 0;\n  overflow: hidden;\n  width: 100%;\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\n  height: 150px !important;\n  width: 100%;\n}\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\n  padding-top: 150px;\n}\n.news[data-v-1cafe2c6] {\n  background: #fff;\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n}\n.news-lists li[data-v-1cafe2c6] {\n  flex-direction: row;\n  display: flex;\n  padding: 10px 0px;\n  overflow: hidden;\n  background-color: #fff;\n  border-bottom: 1px solid #eee;\n  height: 90px;\n}\n.news-box a[data-v-1cafe2c6] {\n  display: block;\n  height: 100%;\n}\n.news-left[data-v-1cafe2c6] {\n  width: 60%;\n  float: left;\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\n  width: 40%;\n  height: 100%;\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\n  font-size: 14px;\n  color: #444;\n  text-align: left;\n  padding-bottom: 5px;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2;\n  overflow: hidden;\n}\n.news-box .info[data-v-1cafe2c6] {\n  color: #999;\n  font-size: 12px;\n  text-align: left;\n  margin-bottom: 0px;\n  position: absolute;\n  bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6] {\n  height: 20px;\n  position: relative;\n  padding: 20px 0;\n}\n.ivu-spin[data-v-1cafe2c6] {\n  color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6] {\n  z-index: 0;\n}\n", ""]);
+exports.push([module.i, "\n.layout-box[data-v-1cafe2c6] {\r\n  background-color: #fff;\n}\r\n/* 轮播图 */\n.banner[data-v-1cafe2c6] {\r\n  position: absolute;\r\n  left: 0;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 150px;\n}\n.demo-carousel img[data-v-1cafe2c6] {\r\n  height: 150px !important;\r\n  width: 100%;\n}\r\n/* 新闻资讯 */\n.news-container[data-v-1cafe2c6] {\r\n  padding-top: 150px;\n}\n.news[data-v-1cafe2c6] {\r\n  background: #fff;\r\n  padding: 20px 0;\n}\n.news-box[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  position: relative;\n}\n.news-lists li[data-v-1cafe2c6] {\r\n  flex-direction: row;\r\n  display: flex;\r\n  padding: 10px 0px;\r\n  overflow: hidden;\r\n  background-color: #fff;\r\n  border-bottom: 1px solid #eee;\r\n  height: 90px;\n}\n.news-box a[data-v-1cafe2c6] {\r\n  display: block;\r\n  height: 100%;\n}\n.news-left[data-v-1cafe2c6] {\r\n  width: 60%;\r\n  float: left;\r\n  padding-right: 5px;\n}\n.news-right[data-v-1cafe2c6] {\r\n  width: 40%;\r\n  height: 100%;\r\n  float: left;\n}\n.news-box .news-title[data-v-1cafe2c6] {\r\n  font-size: 14px;\r\n  color: #444;\r\n  text-align: left;\r\n  padding-bottom: 5px;\r\n  display: -webkit-box;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-line-clamp: 2;\r\n  overflow: hidden;\n}\n.news-box .info[data-v-1cafe2c6] {\r\n  color: #999;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  position: absolute;\r\n  bottom: 0px;\n}\n.news-box .info .margin-left[data-v-1cafe2c6] {\r\n  margin-left: 10px !important;\n}\n.news-right img[data-v-1cafe2c6] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 5px;\n}\n.get-more[data-v-1cafe2c6] {\r\n  height: 20px;\r\n  position: relative;\r\n  padding: 20px 0;\n}\n.ivu-spin[data-v-1cafe2c6] {\r\n  color: #1bbc9b;\n}\n.ivu-spin-fix[data-v-1cafe2c6] {\r\n  z-index: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -710,11 +710,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "\n.layout-box{\n    background: #fff;\n}\n.layout-header .return {\n  float: left;\n  line-height: 45px;\n  position: absolute;\n  left: 20px;\n  top: 8px;\n}\n.layout-header .menu {\n  float: right;\n  position: absolute;\n  right: 20px;\n  top: 8px;\n}\n.layout-header .return img {\n  width: 100%;\n  height: 100%;\n}\n.article-title {\n  text-align: left;\n}\n.article-title h2 {\n  font-size: 18px;\n  line-height: 1.5;\n  font-weight: 600;\n  color: #444;\n  margin-bottom: 5px;\n  text-align: left;\n}\n.article-title .info {\n  color: gray;\n  font-size: 13px;\n  text-align: left;\n  margin-bottom: 0px;\n  border-bottom: 1px solid #eee;\n  padding-bottom: 5px;\n}\n.article-title .info .margin-left {\n  margin-left: 10px !important;\n}\n.article-box {\n  width: 100%;\n  max-width: 100%;\n  font-size: 14px;\n  line-height: 1.8;\n  color: #666;\n  word-wrap: break-word;\n  text-align: justify;\n  padding: 10px;\n  text-indent: 2em;\n}\n", ""]);
-=======
-exports.push([module.i, "\n.layout-box{\r\n    background: #fff;\n}\n.layout-header .return {\r\n  float: left;\r\n  line-height: 45px;\r\n  position: absolute;\r\n  left: 20px;\r\n  top: 8px;\n}\n.layout-header .menu {\r\n  float: right;\r\n  position: absolute;\r\n  right: 20px;\r\n  top: 8px;\n}\n.layout-header .return img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.menu button{\r\n    background: #fff;\r\n    border: none;\n}\n.article-title {\r\n  text-align: left;\n}\n.article-title h2 {\r\n  font-size: 18px;\r\n  line-height: 1.5;\r\n  font-weight: 600;\r\n  color: #444;\r\n  margin-bottom: 5px;\r\n  text-align: left;\n}\n.article-title .info {\r\n  color: gray;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  border-bottom: 1px solid #eee;\r\n  padding-bottom: 5px;\n}\n.article-box {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  color: #666;\r\n  word-wrap: break-word;\r\n  text-align: justify;\r\n  padding: 10px;\r\n  text-indent: 2em;\n}\r\n", ""]);
->>>>>>> 22039682529c85278a61304f4f0e7dba66137d13
+exports.push([module.i, "\n.layout-box{\r\n    background: #fff;\r\n    position: absolute;\r\n    top: 45px;\r\n    padding: 0 10px;\r\n    width: 100%;\r\n    padding-bottom: 65px;\n}\n.layout-header{\r\n    height: 45px;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    color: #fff;\r\n    background: #1bbc9b;\r\n    line-height: 45px;\r\n    font-size: 18px;\r\n    z-index: 999;\r\n    padding: 0 10px;\n}\n.layout-header .return {\r\n  float: left;\r\n  line-height: 45px;\r\n  position: absolute;\r\n  left: 20px;\r\n  top: 8px;\n}\n.layout-header .menu {\r\n  float: right;\r\n  position: absolute;\r\n  right: 20px;\r\n  top: 8px;\n}\n.layout-header .return img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.menu button{\r\n    background: #fff;\r\n    border: none;\n}\n.article-title {\r\n  text-align: left;\n}\n.article-title h2 {\r\n  font-size: 18px;\r\n  line-height: 1.5;\r\n  font-weight: 600;\r\n  color: #444;\r\n  margin-bottom: 5px;\r\n  text-align: left;\n}\n.article-title .info {\r\n  color: gray;\r\n  font-size: 13px;\r\n  text-align: left;\r\n  margin-bottom: 0px;\r\n  border-bottom: 1px solid #eee;\r\n  padding-bottom: 5px;\n}\n.article-box {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  color: #666;\r\n  word-wrap: break-word;\r\n  text-align: justify;\r\n  padding: 10px;\r\n  text-indent: 2em;\n}\r\n", ""]);
 
 // exports
 
@@ -729,7 +725,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.notice-contain {\n  position: absolute;\n  background: #fff;\n  width: 100%;\n  left: 0;\n}\n.notice-contain ul li {\n  height: 50px;\n  border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a {\n  display: block;\n  padding: 5px 10px;\n  width: 100%;\n  height: 100%;\n}\n.notice-contain ul li .notice-icon {\n  width: 32px;\n  height: 32px;\n  float: left;\n}\n.notice-contain ul li .notice-title {\n  float: left;\n  padding-left: 10px;\n  text-align: left;\n}\n.notice-contain ul li .notice-title p {\n  color: #444;\n  font-size: 14px;\n}\n.notice-contain ul li .notice-title span {\n  color: #ccc;\n  font-size: 12px;\n}\n.notice-contain ul li .notice-time {\n  position: absolute;\n  right: 10px;\n  color: #ccc;\n}\n", ""]);
+exports.push([module.i, "\n.notice-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.notice-contain ul li {\r\n  height: 50px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.notice-contain ul li a {\r\n  display: block;\r\n  padding: 5px 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.notice-contain ul li .notice-icon {\r\n  width: 32px;\r\n  height: 32px;\r\n  float: left;\n}\n.notice-contain ul li .notice-title {\r\n  float: left;\r\n  padding-left: 10px;\r\n  text-align: left;\n}\n.notice-contain ul li .notice-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.notice-contain ul li .notice-title span {\r\n  color: #ccc;\r\n  font-size: 12px;\n}\n.notice-contain ul li .notice-time {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #ccc;\n}\r\n", ""]);
 
 // exports
 
@@ -744,7 +740,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout {\n  width: 100%;\n  height: 100%;\n  background: #fff;\n}\n.login-bg {\n  padding: 0 15px;\n}\n.login_top {\n  width: 100%;\n  left: 0;\n  padding: 20px;\n}\n.login_top img {\n  width: 80px;\n  height: 80px;\n}\n.login_top p {\n  font-size: 26px;\n}\n", ""]);
+exports.push([module.i, "\n.layout {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #fff;\n}\n.login-bg {\r\n  padding: 0 15px;\n}\n.login_top {\r\n  width: 100%;\r\n  left: 0;\r\n  padding: 20px;\n}\n.login_top img {\r\n  width: 80px;\r\n  height: 80px;\n}\n.login_top p {\r\n  font-size: 26px;\n}\r\n", ""]);
 
 // exports
 
@@ -774,7 +770,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.personal-contain {\n  position: absolute;\n  background: #fff;\n  width: 100%;\n  left: 0;\n}\n.personal-contain ul li {\n  height: 36px;\n  border-bottom: 1px solid #f3f3f3;\n}\n.personal-contain ul .personal-box {\n  height: 72px;\n}\n.personal-contain ul li a {\n  display: block;\n  padding: 0 10px;\n  width: 100%;\n  height: 100%;\n}\n.personal-contain ul li .personal-icon {\n  width: 48px;\n  height: 48px;\n  float: left;\n  overflow: hidden;\n  margin-top: 12px;\n  border-radius: 50%;\n}\n.personal-contain ul li .personal-icon img {\n  width: 100%;\n  height: 100%;\n}\n.personal-contain ul li .personal-title {\n  float: left;\n  padding-left: 10px;\n  text-align: left;\n  margin-top: 15px;\n}\n.personal-contain ul li .personal-title p {\n  color: #444;\n  font-size: 14px;\n}\n.personal-contain ul li .personal-title span {\n  color: #999;\n  font-size: 12px;\n}\n.personal-contain ul li .personal-exit, .more {\n  position: absolute;\n  right: 10px;\n  color: #999;\n  line-height: 72px;\n}\n.personal-contain ul li .personal-exit a{\n    color:#444;\n}\n.personal-contain ul li .personal-type {\n  display: block;\n  float: left;\n  color: #444;\n  line-height: 36px;\n}\n.personal-contain ul li .more {\n  line-height: 36px;\n}\n.personal-contain ul li .more img {\n  width: 12px;\n  height: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.personal-contain {\r\n  position: absolute;\r\n  background: #fff;\r\n  width: 100%;\r\n  left: 0;\n}\n.personal-contain ul li {\r\n  height: 36px;\r\n  border-bottom: 1px solid #f3f3f3;\n}\n.personal-contain ul .personal-box {\r\n  height: 72px;\n}\n.personal-contain ul li a {\r\n  display: block;\r\n  padding: 0 10px;\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  float: left;\r\n  overflow: hidden;\r\n  margin-top: 12px;\r\n  border-radius: 50%;\n}\n.personal-contain ul li .personal-icon img {\r\n  width: 100%;\r\n  height: 100%;\n}\n.personal-contain ul li .personal-title {\r\n  float: left;\r\n  padding-left: 10px;\r\n  text-align: left;\r\n  margin-top: 15px;\n}\n.personal-contain ul li .personal-title p {\r\n  color: #444;\r\n  font-size: 14px;\n}\n.personal-contain ul li .personal-title span {\r\n  color: #999;\r\n  font-size: 12px;\n}\n.personal-contain ul li .personal-exit, .more {\r\n  position: absolute;\r\n  right: 10px;\r\n  color: #999;\r\n  line-height: 72px;\n}\n.personal-contain ul li .personal-exit a{\r\n    color:#444;\n}\n.personal-contain ul li .personal-type {\r\n  display: block;\r\n  float: left;\r\n  color: #444;\r\n  line-height: 36px;\n}\n.personal-contain ul li .more {\r\n  line-height: 36px;\n}\n.personal-contain ul li .more img {\r\n  width: 12px;\r\n  height: 12px;\n}\r\n", ""]);
 
 // exports
 
@@ -789,7 +785,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.service-title {\n  padding-top: 10px;\n  width: 100%;\n  height: 30px;\n  line-height: 30px;\n}\n.title-icon {\n  width: 3px;\n  height: 16px;\n  float: left;\n  position: relative;\n  left: 10px;\n  margin-right: 10px;\n  top: 2px;\n}\n.title-name {\n  display: block;\n  float: left;\n  font-size: 14px;\n  line-height: 20px;\n  padding-left: 8px;\n  color: #999;\n}\n.service-type {\n  background: #fff;\n  width: 100%;\n  margin-top: 10px;\n  border-radius: 5px;\n  border: 0.5px solid #cccccc4a;\n  padding: 15px 0;\n  height: 160px;\n}\n.service-type ul li {\n  float: left;\n  width: 25%;\n  padding-bottom: 15px;\n}\n.service-type ul li a {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.service-type ul li p {\n  color: #444;\n}\n", ""]);
+exports.push([module.i, "\n.service-title {\r\n  padding-top: 10px;\r\n  width: 100%;\r\n  height: 30px;\r\n  line-height: 30px;\n}\n.title-icon {\r\n  width: 3px;\r\n  height: 16px;\r\n  float: left;\r\n  position: relative;\r\n  left: 10px;\r\n  margin-right: 10px;\r\n  top: 2px;\n}\n.title-name {\r\n  display: block;\r\n  float: left;\r\n  font-size: 14px;\r\n  line-height: 20px;\r\n  padding-left: 8px;\r\n  color: #999;\n}\n.service-type {\r\n  background: #fff;\r\n  width: 100%;\r\n  margin-top: 10px;\r\n  border-radius: 5px;\r\n  border: 0.5px solid #cccccc4a;\r\n  padding: 15px 0;\r\n  height: 160px;\n}\n.service-type ul li {\r\n  float: left;\r\n  width: 25%;\r\n  padding-bottom: 15px;\n}\n.service-type ul li a {\r\n  display: block;\r\n  width: 100%;\r\n  height: 100%;\n}\n.service-type ul li p {\r\n  color: #444;\n}\r\n", ""]);
 
 // exports
 
@@ -37186,31 +37182,6 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-7d728c66\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/contain.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "layout" }, [
-    _c("div", { staticClass: "layout-header" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "layout-contain" }, [_c("router-view")], 1)
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-7d728c66", module.exports)
-  }
-}
-
-/***/ }),
-
 /***/ "./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-de983704\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/page/personal.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37634,7 +37605,7 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/_vue-resource@1.5.0@vue-resource/dist/vue-resource.esm.js":
+/***/ "./node_modules/_vue-resource@1.4.0@vue-resource/dist/vue-resource.esm.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37642,7 +37613,7 @@ if (false) {
 /* unused harmony export Http */
 /* unused harmony export Resource */
 /*!
- * vue-resource v1.5.0
+ * vue-resource v1.4.0
  * https://github.com/pagekit/vue-resource
  * Released under the MIT License.
  */
@@ -38678,6 +38649,14 @@ function xhrClient (request) {
 
         request.abort = function () { return xhr.abort(); };
 
+        if (request.progress) {
+            if (request.method === 'GET') {
+                xhr.addEventListener('progress', request.progress);
+            } else if (/^(POST|PUT)$/i.test(request.method)) {
+                xhr.upload.addEventListener('progress', request.progress);
+            }
+        }
+
         xhr.open(request.method, request.getUrl(), true);
 
         if (request.timeout) {
@@ -38694,24 +38673,6 @@ function xhrClient (request) {
 
         if (!request.crossOrigin) {
             request.headers.set('X-Requested-With', 'XMLHttpRequest');
-        }
-
-        // deprecated use downloadProgress
-        if (isFunction(request.progress) && request.method === 'GET') {
-            xhr.addEventListener('progress', request.progress);
-        }
-
-        if (isFunction(request.downloadProgress)) {
-            xhr.addEventListener('progress', request.downloadProgress);
-        }
-
-        // deprecated use uploadProgress
-        if (isFunction(request.progress) && /^(POST|PUT)$/i.test(request.method)) {
-            xhr.upload.addEventListener('progress', request.progress);
-        }
-
-        if (isFunction(request.uploadProgress) && xhr.upload) {
-            xhr.upload.addEventListener('progress', request.uploadProgress);
         }
 
         request.headers.forEach(function (value, name) {
@@ -38816,11 +38777,11 @@ function Client (context) {
     return Client;
 }
 
-function sendRequest(request) {
+function sendRequest(request, resolve) {
 
     var client = request.client || (inBrowser ? xhrClient : nodeClient);
 
-    return client(request);
+    resolve(client(request));
 }
 
 /**
@@ -53219,7 +53180,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__("./resources/assets/js/App.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__("./resources/assets/js/router/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_resource__ = __webpack_require__("./node_modules/_vue-resource@1.5.0@vue-resource/dist/vue-resource.esm.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_resource__ = __webpack_require__("./node_modules/_vue-resource@1.4.0@vue-resource/dist/vue-resource.esm.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_iview__ = __webpack_require__("./node_modules/_iview@2.9.2@iview/dist/iview.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_iview___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_iview__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_iview_dist_styles_iview_css__ = __webpack_require__("./node_modules/_iview@2.9.2@iview/dist/styles/iview.css");
@@ -53419,54 +53380,6 @@ module.exports = "/images/list3.png?94ca67b5c25daf47fb3f56631736da6f";
 /***/ (function(module, exports) {
 
 module.exports = "/images/logo.png?fe5a57cb6deba958379b85c1675d896a";
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/contain.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__("./node_modules/_vue-loader@13.7.1@vue-loader/lib/component-normalizer.js")
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__("./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-7d728c66\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/contain.vue")
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\contain.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7d728c66", Component.options)
-  } else {
-    hotAPI.reload("data-v-7d728c66", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
 
 /***/ }),
 
@@ -53845,19 +53758,16 @@ module.exports = Component.exports
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__page_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__page_login_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_footer_vue__ = __webpack_require__("./resources/assets/js/components/footer.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_contain_vue__ = __webpack_require__("./resources/assets/js/components/contain.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_contain_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_contain_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__page_home_vue__ = __webpack_require__("./resources/assets/js/page/home.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__page_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__page_home_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_service_vue__ = __webpack_require__("./resources/assets/js/page/service.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_service_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__page_service_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page_notice_vue__ = __webpack_require__("./resources/assets/js/page/notice.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page_notice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__page_notice_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page_personal_vue__ = __webpack_require__("./resources/assets/js/page/personal.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page_personal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__page_personal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__page_article_vue__ = __webpack_require__("./resources/assets/js/page/article.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__page_article_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__page_article_vue__);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__page_home_vue__ = __webpack_require__("./resources/assets/js/page/home.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__page_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__page_home_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__page_service_vue__ = __webpack_require__("./resources/assets/js/page/service.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__page_service_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__page_service_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_notice_vue__ = __webpack_require__("./resources/assets/js/page/notice.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_notice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__page_notice_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page_personal_vue__ = __webpack_require__("./resources/assets/js/page/personal.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page_personal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__page_personal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page_article_vue__ = __webpack_require__("./resources/assets/js/page/article.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page_article_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__page_article_vue__);
 
 
 
@@ -53876,9 +53786,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     name: 'login',
     component: __WEBPACK_IMPORTED_MODULE_2__page_login_vue___default.a
   }, {
-    path: '/',
-    name: 'contain',
-    component: __WEBPACK_IMPORTED_MODULE_4__components_contain_vue___default.a
+    path: '/article/:id',
+    name: 'article',
+    component: __WEBPACK_IMPORTED_MODULE_8__page_article_vue___default.a
   }, {
     path: '/footer',
     name: 'footer',
@@ -53886,24 +53796,20 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     children: [{
       path: '/home',
       name: 'home',
-      component: __WEBPACK_IMPORTED_MODULE_5__page_home_vue___default.a,
+      component: __WEBPACK_IMPORTED_MODULE_4__page_home_vue___default.a,
       children: []
     }, {
       path: '/service',
       name: 'service',
-      component: __WEBPACK_IMPORTED_MODULE_6__page_service_vue___default.a
+      component: __WEBPACK_IMPORTED_MODULE_5__page_service_vue___default.a
     }, {
       path: '/notice',
       name: 'notice',
-      component: __WEBPACK_IMPORTED_MODULE_7__page_notice_vue___default.a
+      component: __WEBPACK_IMPORTED_MODULE_6__page_notice_vue___default.a
     }, {
       path: '/personal',
       name: 'personal',
-      component: __WEBPACK_IMPORTED_MODULE_8__page_personal_vue___default.a
-    }, {
-      path: '/article/:id',
-      name: 'article',
-      component: __WEBPACK_IMPORTED_MODULE_9__page_article_vue___default.a
+      component: __WEBPACK_IMPORTED_MODULE_7__page_personal_vue___default.a
     }]
   }]
 }));

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '../page/login.vue'
 import footer from '../components/footer.vue'
-import contain from '../components/contain.vue'
 import home from '../page/home.vue'
 import service from '../page/service.vue'
 import notice from '../page/notice.vue'
@@ -19,9 +18,9 @@ export default new Router({
       component: login
     },
     {
-        path: '/',
-        name: 'contain',
-        component: contain
+        path: '/article/:id',
+        name: 'article',
+        component: article
     },
     {
       path: '/footer',
@@ -48,11 +47,6 @@ export default new Router({
           path: '/personal',
           name: 'personal',
           component: personal
-        },
-        {
-            path: '/article/:id',
-            name: 'article',
-            component: article
         }
       ]
     }
