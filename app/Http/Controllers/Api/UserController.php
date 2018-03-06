@@ -22,7 +22,7 @@ class UserController extends Controller
             return $this->response->errorUnauthorized('验证码错误');
         }
         // dd($request->dormitory_id);
-        User::create([
+        $user = User::create([
             'student_id' => $request->student_id,
             'password' => bcrypt($request->password),
             'nickname' => str_random(10),
@@ -30,12 +30,17 @@ class UserController extends Controller
 
         // 清除验证码缓存
         \Cache::forget($request->captcha_key);
-        return $this->response->created();
+        return $this->response->item($user, new UserTransformer())
+            ->setMeta([
+                'access_token' => \Auth::guard('api')->fromUser($user),
+                'token_type' => 'Bearer',
+                'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+            ])
+            ->setStatusCode(201);
     }
 
     public function me()
     {
-        // dd($this->user()->dormitory->dorm_number);
         return $this->response->item($this->user(), new UserTransformer());
     }
 }

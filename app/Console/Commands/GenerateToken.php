@@ -19,7 +19,7 @@ class GenerateToken extends Command
      *
      * @var string
      */
-    protected $description = '快速为用户生成 oken';
+    protected $description = '快速为用户生成 token';
 
     /**t
      * Create a new command instance.
