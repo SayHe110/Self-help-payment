@@ -13,7 +13,7 @@ class AuthorizationsController extends Controller
         $username = $request->username;
 
         // 因为手机为 13 位 所以来判断用户是手机登录还是学号登录
-        strlen($username)!=13 ? $credentials['student_id']=$username : $credentials['phone'] = $username;
+        // strlen($username)!=13 ? $credentials['student_id']=$username : $credentials['phone'] = $username;
 
         $credentials['password'] = $request->password;
 

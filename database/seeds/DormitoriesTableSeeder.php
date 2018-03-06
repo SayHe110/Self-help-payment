@@ -12,6 +12,7 @@ class DormitoriesTableSeeder extends Seeder
      */
     public function run()
     {
+
         $droms = factory(Dormitory::class)->times(20)->make();
 
         Dormitory::insert($droms->toArray());
