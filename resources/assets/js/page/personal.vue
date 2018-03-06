@@ -62,7 +62,7 @@ export default {
   left: 0;
 }
 .personal-contain ul li {
-  height: 36px;
+  height: 40px;
   border-bottom: 1px solid #f3f3f3;
 }
 .personal-contain ul .personal-box {
@@ -94,11 +94,11 @@ export default {
 }
 .personal-contain ul li .personal-title p {
   color: #444;
-  font-size: 14px; 
+  font-size: 16px; 
 }
 .personal-contain ul li .personal-title span {
   color: #999;
-  font-size: 12px;
+  font-size: 13px;
 }
 .personal-contain ul li .personal-exit, .more {
   position: absolute;
@@ -113,10 +113,11 @@ export default {
   display: block;
   float: left;
   color: #444;
-  line-height: 36px;
+  line-height: 40px;
+  font-size: 14px;
 }
 .personal-contain ul li .more {
-  line-height: 36px;
+  line-height: 40px;
 }
 .personal-contain ul li .more img {
   width: 12px;

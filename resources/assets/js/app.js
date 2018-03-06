@@ -6,6 +6,7 @@ import router from './router'
 import VueResource from 'vue-resource'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import FastClick from 'fastclick';
 
 Vue.config.productionTip = false
 Vue.use(VueResource);
@@ -18,3 +19,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+FastClick.attach(document.body);
