@@ -431,43 +431,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   created: function created() {
-    var _this = this;
-
     // 请求验证码接口
-    this.$http.get("captchas").then(function (res) {
-      _this.captchasSrc = res.body.captcha_image_content;
-    });
+    this.updatedCaptchas();
   },
 
   methods: {
     handleSubmit: function handleSubmit(name) {
-      var _this2 = this;
+      var _this = this;
 
       this.$refs[name].validate(function (valid) {
         if (valid) {
-          _this2.$http.post('authorizations', {
-            student_id: _this2.formInline.user,
-            password: _this2.formInline.password,
-            captcha_key: _this2.formInline.verification,
-            captcha_code: _this2.captchaKey
+          _this.$http.post('authorizations', {
+            student_id: _this.formInline.user,
+            password: _this.formInline.password,
+            captcha_key: _this.captchaKey,
+            captcha_code: _this.formInline.verification
           }).then(function (res) {
-            _this2.$router.push("./home");
+            _this.$router.push("./home");
           }, function (err) {
-            _this2.$Message.error("登录失败 用户名或密码错误!");
+            _this.$Message.error(err.body.message || '登录失败');
           });
         } else {
-          _this2.$Message.error("输入的数据格式有误，请检查!");
+          _this.$Message.error("输入的数据格式有误，请检查!");
         }
       });
     },
 
     // 切换验证码
     updatedCaptchas: function updatedCaptchas(captchasSrc) {
-      var _this3 = this;
+      var _this2 = this;
 
       this.$http.get("captchas").then(function (res) {
-        _this3.captchaKey = res.body.captcha_key;
-        _this3.captchasSrc = res.body.captcha_image_content;
+        _this2.captchaKey = res.body.captcha_key;
+        _this2.captchasSrc = res.body.captcha_image_content;
       });
     }
   }
