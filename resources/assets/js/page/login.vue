@@ -58,9 +58,7 @@ export default {
   },
   created() {
     // 请求验证码接口
-    this.$http.get("captchas").then(res => {
-      this.captchasSrc = res.body.captcha_image_content;
-    });
+    this.updatedCaptchas(); 
   },
   methods: {
     handleSubmit(name) {
@@ -69,12 +67,12 @@ export default {
           this.$http.post('authorizations', {
               student_id: this.formInline.user,
               password: this.formInline.password,
-              captcha_key: this.formInline.verification,
-              captcha_code: this.captchaKey,
+              captcha_key: this.captchaKey,
+              captcha_code: this.formInline.verification,
           }).then(res => {
               this.$router.push("./home");
           }, err => {
-              this.$Message.error("登录失败 用户名或密码错误!");
+              this.$Message.error(err.body.message || '登录失败');
           });
         } else {
           this.$Message.error("输入的数据格式有误，请检查!");
