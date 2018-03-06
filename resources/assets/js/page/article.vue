@@ -31,39 +31,40 @@
     </div>
 </template>
 <script>
-    export default {
-        methods: {
-            back(){
-                this.$router.back(-1);
-            },
-            success () {
-                this.$Message.success('收藏成功!');
-            }
-        }
+export default {
+  methods: {
+    back() {
+      this.$router.back(-1);
+    },
+    success() {
+      this.$Message.success("收藏成功!");
     }
+  }
+};
 </script>
 <style>
-.layout-box{
-    background: #fff;
-    position: absolute;
-    top: 45px;
-    padding: 0 10px;
-    width: 100%;
-    padding-bottom: 65px;
+.layout-box {
+  background: #fff;
+  position: absolute;
+  top: 45px;
+  padding: 0 10px;
+  width: 100%;
+  padding-bottom: 65px;
 }
-  .layout-header{
-    height: 45px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    background: #1bbc9b;
-    line-height: 45px;
-    font-size: 18px;
-    z-index: 999;
-    padding: 0 10px;
-  }
+
+.layout-header {
+  height: 45px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  background: #1bbc9b;
+  line-height: 45px;
+  font-size: 18px;
+  z-index: 999;
+  padding: 0 10px;
+}
 .layout-header .return {
   float: left;
   line-height: 45px;
@@ -81,9 +82,9 @@
   width: 100%;
   height: 100%;
 }
-.menu button{
-    background: #fff;
-    border: none;
+.menu button {
+  background: #fff;
+  border: none;
 }
 .article-title {
   text-align: left;

@@ -33,9 +33,11 @@ export default {
   data() {
     return {
       captchasSrc: "",
+      captchaKey: "",
       formInline: {
         user: "",
-        password: ""
+        password: "",
+        verification: "",
       },
       ruleInline: {
         user: [{ required: true, message: "请输入学号", trigger: "blur" }],
@@ -64,15 +66,25 @@ export default {
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$router.push("./home");
+          this.$http.post('authorizations', {
+              student_id: this.formInline.user,
+              password: this.formInline.password,
+              captcha_key: this.formInline.verification,
+              captcha_code: this.captchaKey,
+          }).then(res => {
+              this.$router.push("./home");
+          }, err => {
+              this.$Message.error("登录失败 用户名或密码错误!");
+          });
         } else {
-          this.$Message.error("登录失败!");
+          this.$Message.error("输入的数据格式有误，请检查!");
         }
       });
     },
     // 切换验证码
     updatedCaptchas(captchasSrc) {
       this.$http.get("captchas").then(res => {
+        this.captchaKey = res.body.captcha_key;
         this.captchasSrc = res.body.captcha_image_content;
       });
     }

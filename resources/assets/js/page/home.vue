@@ -4,6 +4,7 @@
            <p>掌电</p>
        </div>
        <div class="home-contain">
+           <!-- 轮播图 -->
             <div class="banner">
                 <Carousel autoplay v-model="value2"
                     :autoplay-speed="setting.autoplaySpeed"
@@ -33,6 +34,7 @@
                     </CarouselItem>
                 </Carousel>
             </div>
+            <!-- 新闻列表 -->
             <div class="news-container">
                 <ul class="news-lists">
                     <li>

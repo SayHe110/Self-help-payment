@@ -1,13 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import login from '../page/login.vue'
 import footer from '../components/footer.vue'
-import home from '../page/home.vue'
-import service from '../page/service.vue'
-import notice from '../page/notice.vue'
-import personal from '../page/personal.vue'
-import article from '../page/article.vue'
-
+import box from '../components/box.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -15,12 +9,12 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: login
+      component: require('../page/login.vue'),
     },
     {
         path: '/article/:id',
         name: 'article',
-        component: article
+        component: require('../page/article.vue'),
     },
     {
       path: '/footer',
@@ -30,25 +24,37 @@ export default new Router({
         {
           path: '/home',
           name: 'home',
-          component: home,
+          component: require('../page/home.vue'),
           children: []
         },
         {
           path: '/service',
           name: 'service',
-          component: service
+          component: require('../page/service.vue'),
         },
         {
           path: '/notice',
           name: 'notice',
-          component: notice
+          component: require('../page/notice.vue'),
         },
         {
           path: '/personal',
           name: 'personal',
-          component: personal
+          component: require('../page/personal.vue'),
         }
       ]
-    }
+    },
+    {
+        path: '/box',
+        name: 'box',
+        component: box,
+        children: [
+            {
+                path: '/pay',
+                name: 'pay',
+                component: require('../servepages/pay.vue'),
+            }
+        ]
+    },
   ]
 })

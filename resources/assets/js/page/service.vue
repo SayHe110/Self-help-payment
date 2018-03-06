@@ -11,10 +11,10 @@
             <div class="service-type">
                 <ul>
                    <li>
-                       <a href="javascript:;">
+                       <router-link :to="{name: 'pay'}">
                            <img src="../assets/icon/yuezhifu.png" alt="">
                            <p>快速购电</p>
-                       </a>
+                       </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
