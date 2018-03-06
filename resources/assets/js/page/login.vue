@@ -5,7 +5,7 @@
                 <img src="../assets/images/logo.png">
                 <p>掌上购电系统</p>
             </div>
-            <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline">
+            <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
                 <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="学号" size="large">
                         <Icon type="ios-person-outline" slot="prepend"></Icon>
