@@ -1,12 +1,9 @@
 <template>
   <div class="layout">
-      <div class="layout-contain">
-        <div class="layout-header">
+      <div class="layout-header">
             <a href="javascript:;" @click="back" class="return"><Icon type="android-arrow-back" color="#fff" size="28"></Icon></a>
-            
         </div>
         <router-view/>
-      </div>
   </div>
 </template>
 <script>
@@ -50,12 +47,5 @@ export default {
   left: 20px;
   top: 8px;
 }
-.header-title{
-    color: #fff;
-    position: absolute;
-    line-height: 45px;
-    z-index: 999;
-    left: 40%;
-    font-size: 18px;
-}
+
 </style>
