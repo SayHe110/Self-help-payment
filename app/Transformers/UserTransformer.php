@@ -15,10 +15,11 @@ class UserTransformer extends TransformerAbstract
         return [
             'id' => $user->id,
             'student_id' => $user->student_id,
-            // 'phone' => $user->phone,
+            'email' => $user->email,
             'nickname' => $user->nickname,
             'avatar' => $user->avatar,
             'dormitory_id' => $user->dormitory_id,
+            'is_verify' => $user->is_verify,
             'created_at' => $user->created_at->toDateTimeString(),
             'updated_at' => $user->updated_at->toDateTimeString(),
         ];

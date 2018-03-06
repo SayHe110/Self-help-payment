@@ -42,12 +42,11 @@ $api->version('v1', [
         'expires' => config('api.rate_limits.access.expires'),
     ], function ($api) {
         // 游客可以访问的接口
-
+        $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
         // 需要 token 验证的接口
         $api->group(['middleware' => 'api.auth'], function($api) {
             // 当前登录用户信息 ?include=dormitory
-            $api->get('user', 'UserController@me')
-                ->name('api.user.show');
+            $api->get('user', 'UserController@me')->name('api.user.show');
         });
     });
 });
