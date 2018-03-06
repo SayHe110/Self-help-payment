@@ -37,5 +37,10 @@ class UsersTableSeeder extends Seeder
         User::insert($user_array);
 
         $user = User::find(1);
+        $user -> student_id = 10001;
+        $user -> email = 'admin@admin.com';
+        $user -> nickname = 'admin';
+        $user -> is_verify = true;
+        $user -> save();
     }
 }

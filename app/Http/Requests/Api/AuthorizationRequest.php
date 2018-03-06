@@ -15,7 +15,7 @@ class AuthorizationRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'required|string',
+            'student_id' => 'required|integer',
             'password' => 'required|string',
         ];
     }
@@ -23,7 +23,7 @@ class AuthorizationRequest extends Request
     public function attributes()
     {
         return [
-            'username' => '用户名',
+            'student_id' => '学号',
             'password' => '密码',
         ];
     }

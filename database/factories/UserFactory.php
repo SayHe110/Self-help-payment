@@ -15,10 +15,14 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\User::class, function (Faker $faker) {
 
+    $time = $faker -> dateTimeThisMonth();
+
     return [
         'student_id' => random_int(10000,90000),
-        'password' => bcrypt('password'),
+        'password' => bcrypt('admin'),
         'nickname' => str_random(10),
         'remember_token' => str_random(10),
+        'created_at' => $time,
+        'updated_at' => $time,
     ];
 });

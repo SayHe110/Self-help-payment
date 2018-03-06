@@ -27,7 +27,7 @@ $api->version('v1', [
         // 所有宿舍号
         $api->get('dormitories', 'DormitoriesController@show')->name('api.dormitories.show');
         // 用户注册
-        $api->post('users', 'UserController@store')->name('api.users.store');
+        // $api->post('users', 'UserController@store')->name('api.users.store');
         // 登录
         $api->post('authorizations','AuthorizationsController@store')->name('api.authorizations.store');
         // 刷新token
