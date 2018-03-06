@@ -26,7 +26,6 @@ class UserController extends Controller
             'student_id' => $request->student_id,
             'password' => bcrypt($request->password),
             'nickname' => str_random(10),
-            'dormitory_id' => $request->dormitory_id,
         ]);
 
         // 清除验证码缓存
