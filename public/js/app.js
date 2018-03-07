@@ -704,6 +704,74 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/_babel-loader@7.1.3@babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/servepages/pay.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            formPay: {
+                input1: '',
+                input2: '',
+                input3: ''
+            },
+            data: [{
+                value: '1',
+                label: '一单元',
+                children: [{
+                    value: 'A',
+                    label: 'A栋'
+
+                }, {
+                    value: 'B',
+                    label: 'B栋'
+
+                }]
+            }, {
+                value: '2',
+                label: '二单元',
+                children: [{
+                    value: 'A',
+                    label: 'A栋'
+
+                }, {
+                    value: 'B',
+                    label: 'B栋'
+
+                }]
+            }],
+            value3: []
+        };
+    }
+});
+
+/***/ }),
+
 /***/ "./node_modules/_css-loader@0.28.10@css-loader/index.js!./node_modules/_iview@2.9.2@iview/dist/styles/iview.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37921,37 +37989,91 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "layout-box" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "layout-application" }, [
+      _c(
+        "div",
+        { staticClass: "article-title" },
+        [
+          _c(
+            "Form",
+            {
+              attrs: {
+                model: _vm.formPay,
+                "label-position": "right",
+                "label-width": 80
+              }
+            },
+            [
+              _c(
+                "FormItem",
+                { attrs: { label: "所在单元" } },
+                [
+                  _c("Cascader", {
+                    attrs: { data: _vm.data, filterable: "" },
+                    model: {
+                      value: _vm.value3,
+                      callback: function($$v) {
+                        _vm.value3 = $$v
+                      },
+                      expression: "value3"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "FormItem",
+                { attrs: { label: "宿舍号" } },
+                [
+                  _c("Input", {
+                    model: {
+                      value: _vm.formPay.input2,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formPay, "input2", $$v)
+                      },
+                      expression: "formPay.input2"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "FormItem",
+                { attrs: { label: "缴费金额" } },
+                [
+                  _c("Input", {
+                    model: {
+                      value: _vm.formPay.input3,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formPay, "input3", $$v)
+                      },
+                      expression: "formPay.input3"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "layout-box" }, [
-      _c("div", { staticClass: "header-title" }, [
-        _c("p", [_vm._v("快速购电")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "layout-application" }, [
-        _c("div", { staticClass: "article-title" }, [
-          _c("h2", [
-            _vm._v("国家电网公司积极推进10个城市世界一流城市配电网建设")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "info" }, [
-            _c("span", [_vm._v("2018-03-03")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "margin-left" }, [_vm._v("admin")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "margin-left" }, [
-              _c("i", { staticClass: "iconfont icon-sannongguancha" }, [
-                _vm._v(" 90")
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "header-title" }, [
+      _c("p", [_vm._v("快速购电")])
     ])
   }
 ]
@@ -54993,7 +55115,7 @@ function injectStyle (ssrContext) {
 }
 var normalizeComponent = __webpack_require__("./node_modules/_vue-loader@13.7.1@vue-loader/lib/component-normalizer.js")
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__("./node_modules/_babel-loader@7.1.3@babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/servepages/pay.vue")
 /* template */
 var __vue_template__ = __webpack_require__("./node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-45c21fc0\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/servepages/pay.vue")
 /* template functional */
