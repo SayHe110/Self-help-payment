@@ -22,5 +22,11 @@ class TopicController extends Controller
         // todo
     }
 
+    public function show(Topic $topic)
+    {
+        //todo 什么鬼啊，，，获取不到
+        return $this->response->item($topic, new TopicTransformer());
+    }
+
 
 }

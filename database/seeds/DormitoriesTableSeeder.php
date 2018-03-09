@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Dormitory;
+use App\Models\Building;
 
 class DormitoriesTableSeeder extends Seeder
 {
@@ -12,9 +13,29 @@ class DormitoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        for ($i=1;$i<=10;$i++){
+            DB::table('unit_buildings')->insert([
+                'unit_number' => $i,
+            ]);
+        }
 
-        $droms = factory(Dormitory::class)->times(20)->make();
+        $build = [
+            [
+                'building' => 'A',
+            ],[
+                'building' => 'B',
+            ],
+        ];
+        Building::insert($build);
 
-        Dormitory::insert($droms->toArray());
+        for($i=1;$i<=5;$i++){
+            for($j=1;$j<=20;$j++){
+                $j = strlen($j)==1 ? '0'.$j : $j;
+                $dorm_num = $i.$j;
+                DB::table('dormitories')->insert([
+                    'dorm_num' => $dorm_num,
+                ]);
+            }
+        }
     }
 }
