@@ -3,22 +3,16 @@
 namespace App\Transformers;
 
 use App\Models\Dormitory;
-use App\Models\UnitBuilding;
 use League\Fractal\TransformerAbstract;
 
 class DormitoryTransformer  extends TransformerAbstract
 {
-    protected $availableIncludes = ['building'];
-    public function transform(UnitBuilding $unitBuilding)
+    public function transform(Dormitory $dormitory)
     {
-        return [
-            'id' => $unitBuilding->id,
-            'unit_number' => $unitBuilding->unit_number,
-        ];
-    }
-
-    public function includeBuilding(UnitBuilding $unitBuilding)
-    {
-        // return $this->item($unitBuilding->buildings, new )
+        // todo
+//        return [
+//            'dorm_id' => $dormitory->id,
+//            'dorm_name'
+//        ];
     }
 }

@@ -42,8 +42,6 @@ $api->version('v1', [
         // 游客可以访问的接口
         // 轮播图
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
-        // 宿舍号
-        $api->get('dormitories', 'DormitoriesController@show')->name('api.dormitories.show');
         // 文章列表
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情
@@ -57,7 +55,8 @@ $api->version('v1', [
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
 
-
+            // 宿舍号
+            $api->get('dormitories', 'DormitoriesController@index')->name('api.dormitories.index');
         });
     });
 });
