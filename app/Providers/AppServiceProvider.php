@@ -24,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        \API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+            abort(404);
+        });
     }
 }

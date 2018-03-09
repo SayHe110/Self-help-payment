@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Dormitory;
+use App\Models\Building;
 
 class DormitoriesTableSeeder extends Seeder
 {
@@ -12,9 +13,6 @@ class DormitoriesTableSeeder extends Seeder
      */
     public function run()
     {
-
-        $droms = factory(Dormitory::class)->times(20)->make();
-
-        Dormitory::insert($droms->toArray());
+        // todo
     }
 }

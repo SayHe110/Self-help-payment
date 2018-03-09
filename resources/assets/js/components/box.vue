@@ -22,6 +22,13 @@ export default {
   height: 100%;
   width: 100%;
 }
+.layout-box {
+  position: absolute;
+  top: 0px;
+  padding: 0px 0px;
+  width: 100%;
+  padding-bottom: 65px;
+}
 .layout-contain {
   position: relative;
   padding-bottom: 50px;
@@ -47,5 +54,4 @@ export default {
   left: 20px;
   top: 8px;
 }
-
 </style>
