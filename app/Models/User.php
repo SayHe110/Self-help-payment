@@ -34,6 +34,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(Dormitory::class);
     }
 
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class);
