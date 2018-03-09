@@ -841,11 +841,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-<<<<<<< HEAD
 exports.push([module.i, "\n.layout[data-v-3c45d078] {\r\n  background: #f3f3f3;\r\n  position: relative;\r\n  height: 100%;\r\n  width: 100%;\n}\n.layout-box[data-v-3c45d078] {\r\n  position: absolute;\r\n  top: 0px;\r\n  padding: 0px 0px;\r\n  width: 100%;\r\n  padding-bottom: 65px;\n}\n.layout-contain[data-v-3c45d078] {\r\n  position: relative;\r\n  padding-bottom: 50px;\r\n  height: 100%;\n}\n.layout-header[data-v-3c45d078] {\r\n  height: 45px;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  color: #fff;\r\n  background: #1bbc9b;\r\n  line-height: 45px;\r\n  font-size: 18px;\r\n  z-index: 999;\r\n  padding: 0 10px;\n}\n.layout-header .return[data-v-3c45d078] {\r\n  float: left;\r\n  line-height: 45px;\r\n  position: absolute;\r\n  left: 20px;\r\n  top: 8px;\n}\r\n", ""]);
-=======
-exports.push([module.i, "\n.layout[data-v-3c45d078] {\n  background: #f3f3f3;\n  position: relative;\n  height: 100%;\n  width: 100%;\n}\n.layout-contain[data-v-3c45d078] {\n  position: relative;\n  padding-bottom: 50px;\n  height: 100%;\n}\n.layout-header[data-v-3c45d078] {\n  height: 45px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  color: #fff;\n  background: #1bbc9b;\n  line-height: 45px;\n  font-size: 18px;\n  z-index: 999;\n  padding: 0 10px;\n}\n.layout-header .return[data-v-3c45d078] {\n  float: left;\n  line-height: 45px;\n  position: absolute;\n  left: 20px;\n  top: 8px;\n}\n\n", ""]);
->>>>>>> 139538780bb5e79aa8546217a930ea550536384f
 
 // exports
 
@@ -860,11 +856,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-<<<<<<< HEAD
 exports.push([module.i, "\n.header-title[data-v-45c21fc0]{\r\n    color: #fff;\r\n    position: absolute;\r\n    line-height: 45px;\r\n    z-index: 999;\r\n    left: 40%;\r\n    font-size: 18px;\n}\n.layout-application[data-v-45c21fc0]{\r\n    position: absolute;\r\n    top: 45px;\r\n    padding: 0 10px;\r\n    width: 100%;\r\n    padding-bottom: 65px;\r\n    background: #fff;\n}\n.application-box[data-v-45c21fc0]{\r\n    padding-top: 30px;\n}\r\n", ""]);
-=======
-exports.push([module.i, "\n.header-title[data-v-45c21fc0]{\n    color: #fff;\n    position: absolute;\n    line-height: 45px;\n    z-index: 999;\n    left: 40%;\n    font-size: 18px;\n}\n.layout-application[data-v-45c21fc0]{\n    position: absolute;\n    top: 45px;\n    padding: 0 10px;\n    width: 100%;\n    padding-bottom: 65px;\n    background: #fff;\n}\n", ""]);
->>>>>>> 139538780bb5e79aa8546217a930ea550536384f
 
 // exports
 
