@@ -53,6 +53,11 @@ export default new Router({
                 path: '/pay',
                 name: 'pay',
                 component: require('../servepages/pay.vue'),
+            },
+             {
+                path: '/mybill',
+                name: 'mybill',
+                component: require('../servepages/mybill.vue'),
             }
         ]
     },
