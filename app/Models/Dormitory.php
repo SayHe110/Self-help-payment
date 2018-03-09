@@ -6,15 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dormitory extends Model
 {
-    protected $fillable = ['dorm_num'];
-
-    public function unitBuilding()
-    {
-        return $this->belongsTo(UnitBuilding::class);
-    }
-
-    public function building()
-    {
-        return $this->belongsTo(Building::class);
-    }
+    protected $fillable = ['dorm_name', 'parent_dorm_code', 'is_unit_building'];
 }
