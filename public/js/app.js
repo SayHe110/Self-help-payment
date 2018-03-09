@@ -844,7 +844,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout-box .header-title p[data-v-45c21fc0]{\r\n    color: #fff;\r\n    position: absolute;\r\n    line-height: 45px;\r\n    z-index: 999;\r\n    left: 40%;\r\n    font-size: 18px;\n}\n.article-title[data-v-45c21fc0]{\r\n  padding: 10px;\n}\n.layout-application[data-v-45c21fc0]{\r\n    position: absolute;\r\n    top: 45px;\r\n    padding: 0 10px;\r\n    width: 100%;\r\n    padding-bottom: 65px;\r\n    background: #fff;\n}\n.dorNum[data-v-45c21fc0]{\r\n  font-size: 16px;\r\n  color: #874;\n}\n.cash[data-v-45c21fc0]{\r\n  font-size: 16px;\r\n  color: #454;\n}\n.chose[data-v-45c21fc0]{\r\n  font-size: 18px;\r\n  color: #444;\n}\n.application-box[data-v-45c21fc0]{\r\n    padding-top: 30px;\n}\r\n", ""]);
+exports.push([module.i, "\n.layout-box .header-title p[data-v-45c21fc0]{\r\n    color: #fff;\r\n    position: absolute;\r\n    line-height: 45px;\r\n    z-index: 999;\r\n    left: 40%;\r\n    font-size: 18px;\n}\n.article-title[data-v-45c21fc0]{\r\n  padding: 10px;\n}\n.layout-application[data-v-45c21fc0]{\r\n    position: absolute;\r\n    top: 45px;\r\n    padding: 0 10px;\r\n    width: 100%;\r\n    padding-bottom: 65px;\r\n    background: #fff;\n}\n.dorNum[data-v-45c21fc0]{\r\n  font-size: 16px;\r\n  color: #874;\n}\n.cash[data-v-45c21fc0]{\r\n  font-size: 16px;\r\n  color: #454;\n}\n.chose[data-v-45c21fc0]{\r\n  font-size: 18px;\r\n  color: #444;\n}\n.application-box[data-v-45c21fc0]{\r\n    padding-top: 30px;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -37956,8 +37956,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "Button",
-                { attrs: { type: "success" }, on: { click: _vm.goLink } },
-                [_vm._v("提交")]
+                {
+                  attrs: { type: "success", long: "" },
+                  on: { click: _vm.goLink }
+                },
+                [_vm._v("下一步")]
               ),
               _vm._v(" "),
               _c(

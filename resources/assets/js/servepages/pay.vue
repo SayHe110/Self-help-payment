@@ -15,7 +15,7 @@
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.input3"></Input>
                 </FormItem>
-                <Button type="success" @click="goLink">提交</Button>
+                <Button type="success" long @click="goLink">下一步</Button>
                 <Modal
                     v-model="submit"
                     title="请您核对"
@@ -128,4 +128,5 @@
 .application-box{
     padding-top: 30px;
 }
+
 </style>
