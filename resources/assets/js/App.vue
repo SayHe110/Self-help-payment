@@ -23,6 +23,13 @@ export default {
   height: 100%;
   background: #fff;
 }
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
 html,body{
   width: 100%;
   height: 100%;
@@ -30,6 +37,5 @@ html,body{
 }
 html{
   font-size: 62.5%;
- 
 }
 </style>

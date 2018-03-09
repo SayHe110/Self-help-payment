@@ -4,7 +4,7 @@
         <p>快速购电</p>
     </div>
     <div class="layout-application">
-        <div class="article-title">
+        <div class="application-box">
             <Form :model="formPay" label-position="right" :label-width="80">
                 <FormItem label="所在单元">
                     <Cascader v-model="value3" :data="data" filterable></Cascader>
@@ -81,5 +81,8 @@
     width: 100%;
     padding-bottom: 65px;
     background: #fff;
+}
+.application-box{
+    padding-top: 30px;
 }
 </style>
