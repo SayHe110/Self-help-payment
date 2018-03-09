@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDormitoriesTable extends Migration
+class CreateBuildingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateDormitoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dormitories', function (Blueprint $table) {
+        Schema::create('buildings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dorm_number')->unique()->index()->comment('宿舍号');
-            $table->timestamps();
+            $table->enum('building',['A', 'B'])->index()->comment('A栋orB栋');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateDormitoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dormitories');
+        Schema::dropIfExists('buildings');
     }
 }
