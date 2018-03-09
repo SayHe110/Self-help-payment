@@ -11,7 +11,8 @@ class CaptchasController extends Controller
     {
         $key = 'captcha-'.str_random(15);
 
-        $captcha = $captchaBuilder->build();
+        $captcha = $captchaBuilder->build()->setBackgroundColor(230,230,250);
+
         // 两分钟后过期
         $expiredAt = now()->addMinutes(20);//todo 测试更改
         \Cache::put($key, ['captcha'=>$captcha->getPhrase()], $expiredAt);

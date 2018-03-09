@@ -13,28 +13,32 @@ class DormitoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1;$i<=10;$i++){
-            DB::table('unit_buildings')->insert([
-                'unit_number' => $i,
+        $building = ['A', 'B'];
+        for ($i=1; $i<=5; $i++){
+            $unit_buildingId = DB::table('dormitories')->insertGetId([
+                'dorm_name' => $i.'单元',
+                'is_unit_building' => true,
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now(),
             ]);
-        }
-
-        $build = [
-            [
-                'building' => 'A',
-            ],[
-                'building' => 'B',
-            ],
-        ];
-        Building::insert($build);
-
-        for($i=1;$i<=5;$i++){
-            for($j=1;$j<=20;$j++){
-                $j = strlen($j)==1 ? '0'.$j : $j;
-                $dorm_num = $i.$j;
-                DB::table('dormitories')->insert([
-                    'dorm_num' => $dorm_num,
+            for ($j=0; $j<=1; $j++){
+                $buildingId = DB::table('dormitories')->insertGetId([
+                    'dorm_name' => $building[$j],
+                    'parent_dorm_code' => $unit_buildingId,
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ]);
+                for ($z=1; $z<=2; $z++){
+                    for ($k=1; $k<=10; $k++){
+                        $dorm_name = strlen($k)==1 ? $z.'0'.$k : $z.$k;
+                        DB::table('dormitories')->insert([
+                            'dorm_name' => $dorm_name,
+                            'parent_dorm_code' => $buildingId,
+                            'created_at' => \Carbon\Carbon::now(),
+                            'updated_at' => \Carbon\Carbon::now(),
+                        ]);
+                    }
+                }
             }
         }
     }

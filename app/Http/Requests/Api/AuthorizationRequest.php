@@ -15,7 +15,7 @@ class AuthorizationRequest extends Request
     public function rules()
     {
         return [
-            'student_id' => 'required|between:5,10|integer',
+            'student_id' => 'required|integer',
             'password' => 'required|string|min:6',
         ];
     }

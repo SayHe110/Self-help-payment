@@ -24,8 +24,6 @@ $api->version('v1', [
     ],function ($api){
         // 图片验证码
         $api->get('captchas', 'CaptchasController@store')->name('api.captchas.store');
-        // 宿舍号
-        $api->get('dormitories', 'DormitoriesController@show')->name('api.dormitories.show');
         // 用户注册
         $api->post('users', 'UserController@store')->name('api.users.store');
         // 登录
@@ -42,6 +40,7 @@ $api->version('v1', [
         'expires' => config('api.rate_limits.access.expires'),
     ], function ($api) {
         // 游客可以访问的接口
+        // 轮播图
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
         // 文章列表
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
@@ -55,6 +54,9 @@ $api->version('v1', [
 
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
+
+            // 宿舍号
+            $api->get('dormitories', 'DormitoriesController@index')->name('api.dormitories.index');
         });
     });
 });
