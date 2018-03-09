@@ -17,7 +17,7 @@ export default {
 </script>
 <style scoped>
 .layout {
-  background: #f3f3f3;
+  background: #fff;
   position: relative;
   height: 100%;
   width: 100%;
@@ -54,4 +54,5 @@ export default {
   left: 20px;
   top: 8px;
 }
+
 </style>

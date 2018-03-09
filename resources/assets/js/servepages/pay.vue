@@ -15,16 +15,15 @@
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.input3"></Input>
                 </FormItem>
-                     <Button type="primary" @click="goLink">提交</Button>
-                      <Modal
-                          v-model="submit"
-                          title="请您核对"
-                          @on-ok="asyncOK">
-                          <p class="chose">您选择了{{data.label}}</p>
-                          <p class="dorNum">您的宿舍号是：  {{formPay.input2}}</p>
-                          <p  class="cash">您的缴费金额是:   {{formPay.input3}}</p>
-                      </Modal>
-                  
+                <Button type="success" @click="goLink">提交</Button>
+                <Modal
+                    v-model="submit"
+                    title="请您核对"
+                    @on-ok="asyncOK">
+                    <p class="chose">您选择了{{data.label}}</p>
+                    <p class="dorNum">您的宿舍号是：  {{formPay.input2}}</p>
+                    <p  class="cash">您的缴费金额是:   {{formPay.input3}}</p>
+                </Modal>
             </Form>
         </div>  
     </div>
@@ -95,7 +94,7 @@
     }
 </script>
 <style scoped>
-.header-title{
+.layout-box .header-title p{
     color: #fff;
     position: absolute;
     line-height: 45px;
@@ -114,7 +113,6 @@
     padding-bottom: 65px;
     background: #fff;
 }
-<<<<<<< HEAD
 .dorNum{
   font-size: 16px;
   color: #874;
@@ -126,9 +124,8 @@
 .chose{
   font-size: 18px;
   color: #444;
-=======
+  }
 .application-box{
     padding-top: 30px;
->>>>>>> d5dbebea28ecf4317b27edb09f4a5d915062b586
 }
 </style>
