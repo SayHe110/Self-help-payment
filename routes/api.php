@@ -43,10 +43,14 @@ $api->version('v1', [
     ], function ($api) {
         // 游客可以访问的接口
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
+        $api->get('topics', 'TopicController@index')->name('api.topics.index');
         // 需要 token 验证的接口
         $api->group(['middleware' => 'api.auth'], function($api) {
             // 当前登录用户信息 ?include=dormitory
             $api->get('user', 'UserController@me')->name('api.user.show');
+
+            // 发布文章
+            $api->post('topics', 'TopicController@store')->name('api.topic.store');
         });
     });
 });
