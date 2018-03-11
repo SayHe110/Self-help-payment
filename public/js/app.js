@@ -859,7 +859,7 @@ exports = module.exports = __webpack_require__("./node_modules/_css-loader@0.28.
 
 
 // module
-exports.push([module.i, "\n.layout {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #fff;\n}\n.login-bg {\r\n  padding: 0 15px;\n}\n.login_top {\r\n  width: 100%;\r\n  left: 0;\r\n  padding: 20px;\n}\n.login_top img {\r\n  width: 80px;\r\n  height: 80px;\n}\n.login_top p {\r\n  font-size: 26px;\n}\r\n", ""]);
+exports.push([module.i, "\n.layout {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #fff;\n}\n.login-bg {\r\n  padding: 0 15px;\n}\n.login_top {\r\n  width: 100%;\r\n  left: 0;\r\n  padding: 20px;\n}\r\n/* .login_top img {\r\n  width: 80px;\r\n  height: 80px;\r\n} */\n.login_top p {\r\n  font-size: 26px;\n}\r\n", ""]);
 
 // exports
 
@@ -38202,9 +38202,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "login_top" }, [
-      _c("img", { attrs: { src: __webpack_require__("./resources/assets/js/assets/images/logo.png") } }),
+      _c("img", { attrs: { src: __webpack_require__("./resources/assets/js/assets/images/logo2.png") } }),
       _vm._v(" "),
-      _c("p", [_vm._v("掌上购电系统")])
+      _c("p", [_vm._v("掌上购电")])
     ])
   }
 ]
@@ -54551,10 +54551,10 @@ module.exports = "/images/03.png?5d339d79464ebe3748c13fff5bd33e34";
 
 /***/ }),
 
-/***/ "./resources/assets/js/assets/images/logo.png":
+/***/ "./resources/assets/js/assets/images/logo2.png":
 /***/ (function(module, exports) {
 
-module.exports = "/images/logo.png?fe5a57cb6deba958379b85c1675d896a";
+module.exports = "/images/logo2.png?fe1ed6e61ede0baab4e2c58b60c3b3ec";
 
 /***/ }),
 

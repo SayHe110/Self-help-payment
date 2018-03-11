@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="author" content="yeqi" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>掌上购电系统</title>
+        <title>掌上购电</title>
     </head>
     <body>
         <div id="app"></div>
