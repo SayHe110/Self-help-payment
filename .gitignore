@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/fonts
+/public/vendor
 /storage/*.key
 /vendor
 /.idea
