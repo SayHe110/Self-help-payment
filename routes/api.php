@@ -46,6 +46,8 @@ $api->version('v1', [
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
+        // 分类列表
+        $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
 
         // 需要 token 验证的接口
         $api->group(['middleware' => 'api.auth'], function($api) {

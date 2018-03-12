@@ -10,6 +10,6 @@ class DormitoriesController extends Controller
     public function index()
     {
         $dorms = Dormitory::with('allChildrenDorms')->get();
-        return $dorms;
+        return $this->response->array($dorms)->setStatusCode(201);
     }
 }
