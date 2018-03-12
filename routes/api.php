@@ -53,7 +53,6 @@ $api->version('v1', [
         $api->group(['middleware' => 'api.auth'], function($api) {
             // 当前登录用户信息 ?include=dormitory
             $api->get('user', 'UserController@me')->name('api.user.show');
-
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
 

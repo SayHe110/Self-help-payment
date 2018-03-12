@@ -13,6 +13,7 @@ class TopicTransformer extends TransformerAbstract
     {
         return [
             'id' => $topic->id,
+            'category_id' => $topic->category_id,
             'title' => $topic->title,
             'body' => $topic->body,
             'title_image_path' => $topic->title_image_path,

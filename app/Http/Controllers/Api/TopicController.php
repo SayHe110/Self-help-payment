@@ -18,12 +18,17 @@ class TopicController extends Controller
 
     public function store(TopicRequest $request, Topic $topic)
     {
-        // $topic->fill($request->all());
-        // todo
+        $topic->fill($request->all());
+        $topic->user_id = $this->user()->id;
+        $topic->save();
+
+        return $this->response->item($topic, new TopicTransformer())->setStatusCode(201);
     }
 
     public function show(Topic $topic)
     {
+        dd($topic->toArray());
+        dd($topic->find(1)->toArray());
         //todo 什么鬼啊，，，获取不到
         return $this->response->item($topic, new TopicTransformer());
     }
