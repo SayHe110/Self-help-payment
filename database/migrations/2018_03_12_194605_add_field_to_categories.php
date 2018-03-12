@@ -14,7 +14,7 @@ class AddFieldToCategories extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table){
-            $table->integer('parent_id')->after('id')->index()->comment('分类父类ID');
+            $table->integer('parent_id')->default(0)->after('id')->index()->comment('分类父类ID');
             $table->string('title_image_path')->nullable()->comment('分类图标');
             $table->string('url')->nullable()->comment('跳转地址');
         });
