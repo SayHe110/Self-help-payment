@@ -26,14 +26,14 @@ DB_PORT=
 DB_DATABASE=
 DB_USERNAME=
 DB_PASSWORD=
-<br>
+
 # dingo 配置
 API_STANDARDS_TREE=
 API_SUBTYPE=
 API_PREFIX=
 API_VERSION=
 API_DEBUG=
-<br>
+
 # 百度翻译
 BAIDU_TRANSLATE_APPID=
 BAIDU_TRANSLATE_KEY=
@@ -48,14 +48,12 @@ php artisan key:generate
 ```shell
 php artisan vendor:publish --provider='Dingo\Api\Provider\LaravelServiceProvider'
 ```
-
-#### 7.安装前端资源
-```shell
-npm install
-npm run dev
+#### 7.创建数据库并填充测试数据
+```
+php artisan migrate --seed
 ```
 
-### 安装后台管理
+#### 8.安装后台管理
 运行以下命令发布后台管理资源：
 ```shell
 php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
@@ -69,3 +67,10 @@ php artisan admin:install
 
 安装后在浏览器中打开 `{host}/admin` ，使用用户名 `admin` 和密码 `admin` 进行登录
 > {host} 为主机名
+
+
+### 安装前端资源
+```shell
+npm install
+npm run dev
+```
