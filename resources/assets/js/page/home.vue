@@ -12,24 +12,9 @@
                     :radius-dot="setting.radiusDot"
                     :trigger="setting.trigger"
                     :arrow="setting.arrow" loop style="height:150px">
-                    <CarouselItem>
+                    <CarouselItem v-for="imgvalues in carousel_figureData" :key="imgvalues.id">
                         <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/03.png"></a>
-                        </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/01.jpg"></a>
-                        </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/03.png"></a>
-                        </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/01.jpg"></a>
+                            <a href="javascript:;" target="_blank"><img :v-model="carousel_figureData" :src="imgvalues.path"></a>
                         </div>
                     </CarouselItem>
                 </Carousel>
@@ -80,13 +65,22 @@ export default {
         topicsData:[
             {id: ""},
             {title: ""},
+        ],
+        carousel_figureData: [
+            {id: ""},
+            {path: ""}
         ]
         };
     },
-   //请求文章接口
+    //请求接口
     mounted() {
+        // 文章
         this.$http.get("topics").then(res => {
             this.topicsData = res.body.data;
+        });
+        // 轮播图
+        this.$http.get("carousel_figure").then(res => {
+            this.carousel_figureData = res.body.images;
         });
     }
 };
