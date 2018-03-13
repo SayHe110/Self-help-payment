@@ -18,4 +18,8 @@ class Dormitory extends Model
         return $this->childrenDorm()->with('allChildrenDorms');
     }
 
+    public function parentDorm()
+    {
+        return $this->hasOne('App\Models\Dormitory', 'dorm_id', 'parent_dorm_code');
+    }
 }
