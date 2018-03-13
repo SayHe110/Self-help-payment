@@ -31,12 +31,6 @@ class UserController extends Controller
             $grid->email('邮箱');
             // todo 显示有待更改
             $grid->dormitory_id('宿舍号');
-
-            $grid->actions(function ($actions){
-                $actions->getKey();
-                $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
-            });
-
         });
     }
 
@@ -62,7 +56,19 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        return $this->form()->destroy($id);
+        if ($this->form()->destroy($id)) {
+            return response()->json([
+                'status'  => true,
+                'message' => '删除成功',
+                // 'message' => trans('admin::lang.delete_succeeded'),
+            ]);
+        } else {
+            return response()->json([
+                'status'  => false,
+                'message' => '删除失败',
+                // 'message' => trans('admin::lang.delete_failed'),
+            ]);
+        }
     }
 
     public function form()
