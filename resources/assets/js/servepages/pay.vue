@@ -10,7 +10,7 @@
                     <Cascader v-model="dorNums" :data="data" filterable></Cascader>
                 </FormItem>
                 <FormItem label="宿舍号">
-                    <Input class="dorNum" v-model="formPay.input2" ></Input>
+                    <Input class="dorNum" v-model="formPay.input2" @click.native="choseDor">{{dorNums.name}}</Input>
                 </FormItem>
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.input3"></Input>
@@ -20,7 +20,7 @@
                           v-model="submit"
                           title="请您核对"
                           @on-ok="asyncOK">
-                          <p class="chose">您选择了{{data.label}}</p>
+                          <p class="chose" v-for="(value,key) in data ">您选择了{{key}}单元,{{value}}号宿舍</p>
                           <p class="dorNum">您的宿舍号是：  {{formPay.input2}}</p>
                           <p  class="cash">您的缴费金额是:   {{formPay.input3}}</p>
                       </Modal>
@@ -36,6 +36,7 @@
             return {
                 submit: false,
                 loading: true,
+                choseDornums:{},
                 dorNums: [],
                 formPay: {
                     input1: '',
@@ -45,13 +46,15 @@
                 data: [{
                     value: '1',
                     label: '一单元',
+                    dorNums:[
+                          { name: '9a432', dorNums:'6'},
+                          { name: '9a433', dorNums:'6'}, 
+                          { name: '9a434', dorNums:'6'}  
+                            ],
                     children: [
                         {
                             value: 'A',
                             label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
                         },
                         {
                             value: 'B',
@@ -62,13 +65,35 @@
                 }, {
                     value: '2',
                     label: '二单元',
+                    dorNums:[
+                          { name: '9a432', dorNums:'6'},
+                          { name: '9a433', dorNums:'6'}, 
+                          { name: '9a434', dorNums:'6'}
+                            ],
                     children: [
                         {
                             value: 'A',
                             label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
+                        },
+                        {
+                            value: 'B',
+                            label: 'B栋',
+                            
+                        }
+                    ],
+
+                }, {
+                    value: '3',
+                    label: '三单元',
+                    dorNums:[
+                          { name: '9a432', dorNums:'6'},
+                          { name: '9a433', dorNums:'6'}, 
+                          { name: '9a434', dorNums:'6'} 
+                            ],
+                    children: [
+                        {
+                            value: 'A',
+                            label: 'A栋',
                         },
                         {
                             value: 'B',
@@ -90,7 +115,12 @@
             },
              goLink () {
               this.submit = true;
-          }
+            },
+             choseDor() {
+              for(let item in this.data){
+                 this.choseDornums = this.data[item].dorNums;
+              }
+             }
         }
     }
 </script>
@@ -114,7 +144,6 @@
     padding-bottom: 65px;
     background: #fff;
 }
-<<<<<<< HEAD
 .dorNum{
   font-size: 16px;
   color: #874;
@@ -126,9 +155,8 @@
 .chose{
   font-size: 18px;
   color: #444;
-=======
+}
 .application-box{
     padding-top: 30px;
->>>>>>> d5dbebea28ecf4317b27edb09f4a5d915062b586
 }
 </style>

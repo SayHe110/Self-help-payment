@@ -3,13 +3,16 @@
     <div class="header-title">
         <p>我的账单</p>
     </div>
+    <div class="">
+    	
+    </div>
 </div>
 </template>
 <script>
 	
 </script>
 <style scoped>
-	.header-title{
+.header-title{
     color: #fff;
     position: absolute;
     line-height: 45px;
