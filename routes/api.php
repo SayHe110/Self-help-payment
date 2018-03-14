@@ -46,6 +46,9 @@ $api->version('v1', [
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情 //todo 有问题，但找不到
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
+//        $api->get('topics/{topic}', function($topic){
+//            dd($topic);
+//        })->name('api.topics.show');
         // 分类列表
         $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
 
