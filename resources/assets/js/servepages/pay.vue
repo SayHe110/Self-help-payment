@@ -7,7 +7,7 @@
         <div class="application-box">
             <Form :model="formPay" label-position="right" :label-width="80">
                 <FormItem label="所在单元">
-                    <Cascader v-model="dorNums" :data="data" filterable trigger="hover"></Cascader>
+                    <Cascader v-model="dorNums" :data="dordata" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="宿舍号">
                     <Input class="dorNum" v-model="formPay.dorNum" @click.native="choseDor">{{dorNums.name}}</Input>
@@ -16,14 +16,14 @@
                     <Input class="cash" v-model="formPay.cash"></Input>
                 </FormItem>
                       <Button type="success" long @click="goLink">下一步</Button>
-                      <!-- <Modal
+                      <Modal
                           v-model="submit"
                           title="请您核对"
                           @on-ok="asyncOK">
-                          <p class="chose" v-for="(value,key) in data ">您选择了{{data.label}}号宿舍</p>
+                          <p class="chose"  v-for="value in dordata " >您选择了{{value.label}}号宿舍</p>
                           <p class="dorNum">您的宿舍号是：  {{formPay.dorNum}}</p>
                           <p  class="cash">您的缴费金额是:   {{formPay.cash}}</p>
-                      </Modal> -->
+                      </Modal>
             </Form>
         </div>  
     </div>
@@ -41,7 +41,7 @@ export default {
         dorNum: "",
         cash: ""
       },
-      data: [
+      dordata: [
         {
           value: "1",
           label: "一单元",
@@ -74,33 +74,6 @@ export default {
               value: "A",
               label: "A栋"
             },
-<<<<<<< HEAD
-            {
-              value: "B",
-              label: "B栋"
-            }
-          ]
-        },
-        {
-          value: "3",
-          label: "三单元",
-          dorNums: [
-            { name: "9a432", dorNums: "6" },
-            { name: "9a433", dorNums: "6" },
-            { name: "9a434", dorNums: "6" }
-          ],
-          children: [
-            {
-              value: "A",
-              label: "A栋"
-=======
-             goLink () {
-              this.submit = true;
-              setTimeout(function(){
-                this.$router.push({name: 'mybill'});
-              }.bind(this), 1000);
->>>>>>> 9582a44ca1dfa771f8626cb3fb46084d956b132c
-            },
             {
               value: "B",
               label: "B栋"
@@ -116,13 +89,14 @@ export default {
       // this.$router.push({name: 'mybill'});
       setTimeout(
         function() {
-          this.$router.push({ name: "mybill" });
+          this.$router.push({ name: "confirm" });
         }.bind(this),
         1000
       );
     },
     goLink() {
       this.submit = true;
+        this.$router.push({ name: "confirm" });
     },
     choseDor() {
       for (let item in this.data) {
@@ -164,12 +138,10 @@ export default {
   font-size: 18px;
   color: #444;
 }
-<<<<<<< HEAD
 .application-box {
   padding-top: 30px;
-=======
+}
 .application-box{
     padding-top: 30px;
->>>>>>> 9582a44ca1dfa771f8626cb3fb46084d956b132c
 }
 </style>
