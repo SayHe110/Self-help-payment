@@ -27,14 +27,14 @@ class adminMenuTableSeeder extends Seeder
                 'order'     => 2,
                 'title'     => '文章列表',
                 'icon'      => 'fa-clipboard',
-                'uri'       => '',
+                'uri'       => '/topics',
             ],
             [
                 'parent_id' => 0,
                 'order'     => 3,
                 'title'     => '分类',
                 'icon'      => 'fa-bars',
-                'uri'       => '',
+                'uri'       => '/categories',
             ],
             [
                 'parent_id' => 0,
