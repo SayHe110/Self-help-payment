@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\TopicRequest;
-use App\Http\Requests\Request;
 use App\Models\Topic;
 use App\Transformers\TopicTransformer;
 
@@ -25,10 +24,10 @@ class TopicController extends Controller
         return $this->response->item($topic, new TopicTransformer())->setStatusCode(201);
     }
 
-    public function show(Topic $topic)
+    public function show($id,Topic $topic)
     {
-        dd($topic->toArray());
-        dd($topic->find(1)->toArray());
+        // todo 先这样写着，再回来完善以下，应该可以直接获取到 $topic 的
+        $topic = Topic::find($id);
         //todo 什么鬼啊，，，获取不到
         return $this->response->item($topic, new TopicTransformer());
     }
