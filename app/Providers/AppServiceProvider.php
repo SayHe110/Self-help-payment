@@ -14,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // 模型监控
+        \App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+
         Schema::defaultStringLength(191);
     }
 

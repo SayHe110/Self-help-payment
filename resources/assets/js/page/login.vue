@@ -2,8 +2,8 @@
     <div class="layout">
         <div class="login-bg">
             <div class="login_top">
-                <img src="../assets/images/logo.png">
-                <p>掌上购电系统</p>
+                <img src="../assets/images/logo2.png">
+                <p>掌上购电</p>
             </div>
             <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
                 <FormItem prop="user">
@@ -103,10 +103,10 @@ export default {
   left: 0;
   padding: 20px;
 }
-.login_top img {
+/* .login_top img {
   width: 80px;
   height: 80px;
-}
+} */
 .login_top p {
   font-size: 26px;
 }

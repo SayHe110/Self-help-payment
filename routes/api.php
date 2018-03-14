@@ -42,22 +42,25 @@ $api->version('v1', [
         // 游客可以访问的接口
         // 轮播图
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
-        // 宿舍号
-        $api->get('dormitories', 'DormitoriesController@show')->name('api.dormitories.show');
         // 文章列表
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
-        // 文章详情
+        // 文章详情 //todo 有问题，但找不到
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
+        // 分类列表
+        $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
 
         // 需要 token 验证的接口
         $api->group(['middleware' => 'api.auth'], function($api) {
             // 当前登录用户信息 ?include=dormitory
             $api->get('user', 'UserController@me')->name('api.user.show');
-
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
 
+            // 宿舍号
+            $api->get('dormitories', 'DormitoriesController@index')->name('api.dormitories.index');
 
+            // 通知列表
+            $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
         });
     });
 });

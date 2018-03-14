@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'title_image_path', 'url'];
 
-    public function services()
+    public function childrenCate()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany('App\Models\Category', 'parent_id');
     }
+
 }

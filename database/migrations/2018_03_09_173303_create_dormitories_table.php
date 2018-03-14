@@ -14,8 +14,11 @@ class CreateDormitoriesTable extends Migration
     public function up()
     {
         Schema::create('dormitories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('dorm_num')->index()->comment('宿舍号');
+            $table->increments('dorm_id');
+            $table->string('dorm_name')->index();
+            $table->integer('parent_dorm_code')->default(0);
+            $table->boolean('is_unit_building')->default(false);
+            $table->timestamps();
         });
     }
 

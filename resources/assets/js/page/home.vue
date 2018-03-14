@@ -12,124 +12,34 @@
                     :radius-dot="setting.radiusDot"
                     :trigger="setting.trigger"
                     :arrow="setting.arrow" loop style="height:150px">
-                    <CarouselItem>
+                    <CarouselItem v-for="imgvalues in carousel_figureData" :key="imgvalues.id">
                         <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/03.png"></a>
-                        </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/01.jpg"></a>
-                        </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/03.png"></a>
-                        </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel">
-                            <a href="javascript:;" target="_blank"><img src="../assets/images/01.jpg"></a>
+                            <a href="javascript:;" target="_blank"><img :v-model="carousel_figureData" :src="imgvalues.path"></a>
                         </div>
                     </CarouselItem>
                 </Carousel>
             </div>
+            <BackTop :height="200" :bottom="80" :right="10" :duration="1000"></BackTop>
             <!-- 新闻列表 -->
             <div class="news-container">
                 <ul class="news-lists">
-                    <li>
+                    <li v-for="values in topicsData" :key="values.id">
                         <div class="news-box">
-                            <router-link :to="{name: 'article', params: {id: 1}}">
+                            <router-link :to="{name: 'article', params: {id: values.id}}">
                                 <div class="news-left">
-                                    <p class="news-title">国家电网公司积极推进10个城市世界一流城市配电网建设</p>
+                                    <p class="news-title" :v-model="topicsData">{{values.title}}</p>
                                     <p class="info">
-                                        <span>2017-12-27</span>
+                                        <span>{{values.created_at}}</span>
                                         <span class="margin-left">admin</span>
                                         <span class="margin-left">
-                                            <i class="iconfont icon-sannongguancha"> 90</i>
+                                            <i class="iconfont icon-sannongguancha">{{values.view_count}}</i>
                                         </span>
                                     </p>
                                 </div>
                                 <div class="news-right">
-                                    <img src="../assets/images/list1.png" alt="">
+                                    <img :src="values.title_image_path" alt="">
                                 </div>
                             </router-link>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="news-box">
-                            <a href="javascript:;">
-                                <div class="news-left">
-                                    <p class="news-title">能源绿色低碳转型组合拳推出</p>                                        
-                                    <p class="info">
-                                        <span>2017-12-27</span>
-                                        <span class="margin-left">admin</span>
-                                        <span class="margin-left">
-                                            <i class="iconfont icon-sannongguancha"> 90</i>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="news-right">
-                                    <img src="../assets/images/list2.png" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="news-box">
-                            <a href="javascript:;">
-                                <div class="news-left">
-                                    <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
-                                    <p class="info">
-                                        <span>2017-12-27</span>
-                                        <span class="margin-left">admin</span>
-                                        <span class="margin-left">
-                                            <i class="iconfont icon-sannongguancha"> 90</i>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="news-right">
-                                    <img src="../assets/images/list3.png" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="news-box">
-                            <a href="javascript:;">
-                                <div class="news-left">
-                                    <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
-                                    <p class="info">
-                                        <span>2017-12-27</span>
-                                        <span class="margin-left">admin</span>
-                                        <span class="margin-left">
-                                            <i class="iconfont icon-sannongguancha"> 90</i>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="news-right">
-                                    <img src="../assets/images/02.jpg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="news-box">
-                            <a href="javascript:;">
-                                <div class="news-left">
-                                    <p class="news-title">国家电网蝉联中国500最具价值品牌第一名</p>
-                                    <p class="info">
-                                        <span>2017-12-27</span>
-                                        <span class="margin-left">admin</span>
-                                        <span class="margin-left">
-                                            <i class="iconfont icon-sannongguancha"> 90</i>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="news-right">
-                                    <img src="../assets/images/list1.png" alt="">
-                                </div>
-                            </a>
                         </div>
                     </li>
                 </ul>
@@ -141,21 +51,42 @@
 
 <script>
 export default {
-  data() {
-    return {
-      value2: 0,
-      setting: {
-        autoplay: false,
-        autoplaySpeed: 2000,
-        dots: "inside",
-        radiusDot: true,
-        trigger: "click",
-        arrow: "never"
-      }
-    };
-  }
+    data() {
+        return {
+        value2: 0,
+        setting: {
+            autoplay: false,
+            autoplaySpeed: 2000,
+            dots: "inside",
+            radiusDot: true,
+            trigger: "click",
+            arrow: "never"
+        },
+        topicsData:[
+            {id: ""},
+            {title: ""},
+        ],
+        carousel_figureData: [
+            {id: ""},
+            {path: ""}
+        ]
+        };
+    },
+    //请求接口
+    mounted() {
+        // 文章
+        this.$http.get("topics").then(res => {
+            this.topicsData = res.body.data;
+        });
+        // 轮播图
+        this.$http.get("carousel_figure").then(res => {
+            this.carousel_figureData = res.body.images;
+        });
+    }
 };
 </script>
+
+
 <style scoped>
 .layout-box {
   background-color: #fff;
