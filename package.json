@@ -22,6 +22,7 @@
   "dependencies": {
     "fastclick": "^1.0.6",
     "iview": "^2.9.2",
+    "no-f5": "^1.0.11",
     "vue-resource": "^1.2.1"
   }
 }
