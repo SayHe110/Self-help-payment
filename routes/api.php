@@ -44,8 +44,11 @@ $api->version('v1', [
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
         // 文章列表
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
-        // 文章详情 //todo 有问题，但找不到
+        // 文章详情 ?include=user
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
+//        $api->get('topics/{topic}', function($topic){
+//            dd($topic);
+//        })->name('api.topics.show');
         // 分类列表
         $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
 
