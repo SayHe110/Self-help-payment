@@ -13,7 +13,7 @@
         </div>
         <div class="article-contain">
             <div class="article-title">
-                <h2>国家电网公司积极推进10个城市世界一流城市配电网建设</h2>
+                <!-- <h2>{{$route.params.title}}</h2> -->
                 <p class="info">
                     <span>2018-03-03</span>
                     <span class="margin-left">admin</span>
@@ -32,13 +32,27 @@
 </template>
 <script>
 export default {
-  methods: {
-    back() {
-      this.$router.back(-1);
+    props: {
+        topicsData:{
+            type: Object
+        }
     },
-    success() {
-      this.$Message.success("收藏成功!");
-    }
+    mounted () {
+        this.loadItem();
+    },
+    methods: {
+        back() {
+        this.$router.back(-1);
+        },
+        success() {
+        this.$Message.success("收藏成功!");
+        },
+        loadItem(){
+            alert(123);
+            this.$http.get("topics/" + this.$route.params.id).then(res => {
+                console.log(res);
+            })
+        }
   }
 };
 </script>

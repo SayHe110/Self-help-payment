@@ -65,6 +65,7 @@ export default {
         topicsData:[
             {id: ""},
             {title: ""},
+            {body: ""}
         ],
         carousel_figureData: [
             {id: ""},
