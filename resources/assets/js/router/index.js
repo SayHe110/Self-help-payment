@@ -59,9 +59,14 @@ export default new Router({
                 component: require('../servepages/pay.vue'),
             },
              {
+                path: '/confirm',
+                name: 'confirm',
+                component: require('../servepages/confirm.vue'),
+            },
+            {
                 path: '/mybill',
                 name: 'mybill',
-                component: require('../servepages/mybill.vue'),
+                component: require('../servepages/confirm.vue'),
             }
         ]
     },

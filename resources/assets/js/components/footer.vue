@@ -4,7 +4,7 @@
         <router-view/>
     </div>
     <div class="layout-footer">
-    <Menu mode="horizontal" active-name="home" @on-select="onSelect">
+    <Menu mode="horizontal" :active-name="activeName" @on-select="onSelect">
         <MenuItem name="home">
             <Icon type="android-home"></Icon>
             首页
@@ -27,10 +27,20 @@
 </template>
 <script>
 export default {
+    data(){
+        return{
+            activeName: ''
+        }
+    },
+    mounted () {
+        this.activeName = localStorage.active ? localStorage.active : 'home';
+        this.$router.push({name: this.activeName});
+    },
   methods: {
     onSelect(name) {
       this.$nextTick(() => {
         this.$router.push({ name });
+        localStorage.active = name;
       });
     }
   }

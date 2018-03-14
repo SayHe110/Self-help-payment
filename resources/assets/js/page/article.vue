@@ -13,28 +13,26 @@
         </div>
         <div class="article-contain">
             <div class="article-title">
-                <!-- <h2>{{$route.params.title}}</h2> -->
+                <h2>{{topicsData.title}}</h2>
                 <p class="info">
-                    <span>2018-03-03</span>
+                    <span>{{topicsData.created_at}}</span>
                     <span class="margin-left">admin</span>
                     <span class="margin-left">
-                        <i class="iconfont icon-sannongguancha"> 90</i>
+                        <i class="iconfont icon-sannongguancha">{{topicsData.view_count}}</i>
                     </span>
                 </p>
             </div>
             <div class="article-box">
-                <p>
-                    8月17日，公司组织召开世界一流城市配电网建设推进电视电话会议，交流世界一流城市配电网建设管理工作经验，部署下阶段重点工作任务。会议要求，各单位要进一步增强责任感和紧迫感，准确把握世界一流城市配电网建设的实质，加快构建坚强合理的网架结构，积极推动配网设备技术升级，加强精益运维管理，提升智能互动服务水平，切实做到“结构好、设备好、技术好、管理好”。要加强建设实施过程管控，搭建工作交流平台，交流典型做法，展示建设进度和工作成效；构建评价指标体系，开展建设成效评估，积极运用配网资产国际对标成果，滚动优化实施方案。要加强组织领导，注重安全质量，做深做细项目需求储备，强化各级电科院、经研院（所）支撑保障，高效协调推进10个城市世界一流城市配电网建设，持续提升配电网建设运营管理水平。国网运检部、发展部、营销部、科技部，中国电科院、国网经研院在主会场参加会议。国网北京、天津、河北、山东、上海、江苏、浙江、福建电力及有关地市公司相关人员在各分会场参加会议。
-                </p>
+                <p>{{topicsData.body}}</p>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
-    props: {
-        topicsData:{
-            type: Object
+    data () {
+        return{
+            topicsData: []
         }
     },
     mounted () {
@@ -48,9 +46,8 @@ export default {
         this.$Message.success("收藏成功!");
         },
         loadItem(){
-            alert(123);
             this.$http.get("topics/" + this.$route.params.id).then(res => {
-                console.log(res);
+            this.topicsData = res.body;
             })
         }
   }
