@@ -3,9 +3,28 @@
     <div class="header-title">
         <p>我的账单</p>
     </div>
+    <div class="Bill_content">
+        
+    </div>
 </div>
 </template>
 <script>
+export default{
+    data(){
+        return{
+
+        }
+    },
+    methods: {
+        confirm () {
+            this.$http.post(`/api/select_dorm/${this.$route.params.id}`).then(res => {
+                this.$router.push({name: 'pay'})
+            }).catch(err => {
+                this.$router.push({name: 'pay'})
+            })
+        }
+    }
+}
 </script>
 <style scoped>
 .header-title{

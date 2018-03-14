@@ -104,13 +104,13 @@
               }
             },
             methods: {
-             asyncOK () {
-              this.submit = false;
-              // this.$router.push({name: 'mybill'});
-              setTimeout(function(){
-                this.$router.push({name: 'mybill'});
-              }.bind(this), 1000);
-            },
+            //  asyncOK () {
+            //   this.submit = false;
+            //   // this.$router.push({name: 'mybill'});
+            //   setTimeout(function(){
+            //     this.$router.push({name: 'mybill'});
+            //   }.bind(this), 1000);
+            // },
              goLink () {
               this.submit = true;
               setTimeout(function(){
