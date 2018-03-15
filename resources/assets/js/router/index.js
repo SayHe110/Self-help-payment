@@ -66,7 +66,12 @@ export default new Router({
             {
                 path: '/mybill',
                 name: 'mybill',
-                component: require('../servepages/confirm.vue'),
+                component: require('../servepages/mybill.vue'),
+            },
+            {
+                path: '/repair',
+                name: 'repair',
+                component: require('../servepages/repair.vue'),
             }
         ]
     },

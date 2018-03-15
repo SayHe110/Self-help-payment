@@ -11,16 +11,16 @@
             <div class="service-type">
                 <ul>
                    <li>
-                       <router-link :to="{name: 'pay'}">
+                        <router-link :to="{name: 'pay'}">
                            <img src="../assets/icon/yuezhifu.png" alt="">
                            <p>快速购电</p>
                        </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'mybill'}">
                            <img src="../assets/icon/zhangdan.png" alt="">
                            <p>我的账单</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
@@ -35,10 +35,10 @@
                        </a>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'repair'}">
                            <img src="../assets/icon/baoxiu.png" alt="">
                            <p>故障报修</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
