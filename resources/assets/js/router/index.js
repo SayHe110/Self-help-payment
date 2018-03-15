@@ -74,9 +74,9 @@ export default new Router({
                 component: require('../servepages/repair.vue'),
             },
             {
-                path: '/notice',
-                name: 'notice',
-                component: require('../servepages/notice.vue'),
+                path: '/PowerCutNotice',
+                name: 'PowerCutNotice',
+                component: require('../servepages/PowerCutNotice.vue'),
             },
         ]
     },

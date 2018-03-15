@@ -108,4 +108,5 @@ export default {
 .application-box {
   padding-top: 30px;
 }
+
 </style>

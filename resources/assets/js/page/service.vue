@@ -41,10 +41,10 @@
                         </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'PowerCutNotice'}">
                            <img src="../assets/icon/gonggao.png" alt="">
                            <p>停电公告</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
