@@ -99,6 +99,7 @@ export default {
 }
 .article-title {
   text-align: left;
+  padding:10px 0;
 }
 .article-title h2 {
   font-size: 18px;

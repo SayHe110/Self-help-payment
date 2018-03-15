@@ -72,7 +72,12 @@ export default new Router({
                 path: '/repair',
                 name: 'repair',
                 component: require('../servepages/repair.vue'),
-            }
+            },
+            {
+                path: '/notice',
+                name: 'notice',
+                component: require('../servepages/notice.vue'),
+            },
         ]
     },
   ]

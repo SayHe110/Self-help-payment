@@ -13,7 +13,7 @@
                     <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""></Input>
                 </FormItem>
                 <FormItem label="宿舍号:" prop="dorNum">
-                    <Input v-model="repairItem.Tel"></Input>
+                    <Input v-model="repairItem.dorNum"></Input>
                 </FormItem>
                 <FormItem label="联系电话:" prop="Tel">
                     <Input v-model="repairItem.Tel"></Input>
@@ -37,6 +37,7 @@ export default {
       repairItem: {
         title: "",
         radio: "yes",
+        dorNum: "",
         Tel: "",
         textarea: ""
       },
@@ -94,9 +95,6 @@ export default {
   z-index: 999;
   left: 40%;
   font-size: 18px;
-}
-.article-title {
-  padding: 10px;
 }
 .layout-application {
   position: absolute;

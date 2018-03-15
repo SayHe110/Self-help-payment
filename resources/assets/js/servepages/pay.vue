@@ -109,15 +109,13 @@ export default {
 <style scoped>
 .layout-box .header-title p {
   color: #fff;
-  position: absolute;
+  position: fixed;
   line-height: 45px;
   z-index: 999;
   left: 40%;
   font-size: 18px;
 }
-.article-title {
-  padding: 10px;
-}
+
 .layout-application {
   position: absolute;
   top: 45px;
