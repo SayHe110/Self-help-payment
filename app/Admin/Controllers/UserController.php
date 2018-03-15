@@ -74,13 +74,22 @@ class UserController extends Controller
     public function form()
     {
         return Admin::form(User::class, function (Form $form){
-            $form->text('student_id', '学号');
-            $form->email('email', '邮箱地址');
+            $form->text('student_id', '学号')->rules(function ($form){
+                // 如果不是编辑状态，则添加字段唯一验证
+                if(!$id = $form->model()->id){
+                    return 'required|integer|unique:users';
+                }
+            });
+            $form->email('email', '邮箱地址')->rules(function ($form){
+                if(!$id = $form->model()->id){
+                    return 'unique:users';
+                }
+            });
             $form->text('nickname', '昵称');
             $form->image('avatar', '头像');
             // todo 宿舍号待修改
             $form->text('dormitory_id', '宿舍号');
-            $form->switch('is_verify')->states();
+            $form->switch('is_verify', '是否已验证')->states();
             $form->datetime('created_at', '创建时间');
             $form->datetime('updated_at', '更新时间');
         });

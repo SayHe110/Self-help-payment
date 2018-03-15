@@ -62,7 +62,7 @@ php artisan admin:install
 ```
 
 安装后在浏览器中打开 `{host}/admin` ，使用用户名 `admin` 和密码 `admin` 进行登录
-> {host} 为主机名
+> {host} 为虚拟域名
 
 #### 8.创建数据库并填充测试数据
 ```
