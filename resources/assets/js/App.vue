@@ -38,4 +38,9 @@ html,body{
 html{
   font-size: 62.5%;
 }
+.ivu-btn-success{
+    color: #fff;
+    background-color: #1bbc9b;
+    border-color: #1bbc9b;
+}
 </style>

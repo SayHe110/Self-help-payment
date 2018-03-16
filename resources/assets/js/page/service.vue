@@ -11,16 +11,23 @@
             <div class="service-type">
                 <ul>
                    <li>
-                       <router-link :to="{name: 'pay'}">
+                        <router-link :to="{name: 'pay'}">
                            <img src="../assets/icon/yuezhifu.png" alt="">
                            <p>快速购电</p>
                        </router-link>
                    </li>
                    <li>
+<<<<<<< HEAD
                          <router-link :to="{name: 'mybill'}">
                            <img src="../assets/icon/zhangdan.png" alt="">
                            <p>我的订单</p>
                          </router-link>
+=======
+                        <router-link :to="{name: 'mybill'}">
+                           <img src="../assets/icon/zhangdan.png" alt="">
+                           <p>我的账单</p>
+                        </router-link>
+>>>>>>> 1ad0b0bd6e549a7a6118a3e7325c36d231c5109c
                    </li>
                    <li>
                        <a href="javascript:;">
@@ -35,16 +42,16 @@
                        </a>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'repair'}">
                            <img src="../assets/icon/baoxiu.png" alt="">
                            <p>故障报修</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'PowerCutNotice'}">
                            <img src="../assets/icon/gonggao.png" alt="">
                            <p>停电公告</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">

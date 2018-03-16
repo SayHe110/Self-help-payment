@@ -48,12 +48,8 @@ php artisan key:generate
 ```shell
 php artisan vendor:publish --provider='Dingo\Api\Provider\LaravelServiceProvider'
 ```
-#### 7.创建数据库并填充测试数据
-```
-php artisan migrate --seed
-```
 
-#### 8.安装后台管理
+#### 7.安装后台管理
 运行以下命令发布后台管理资源：
 ```shell
 php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
@@ -66,8 +62,12 @@ php artisan admin:install
 ```
 
 安装后在浏览器中打开 `{host}/admin` ，使用用户名 `admin` 和密码 `admin` 进行登录
-> {host} 为主机名
+> {host} 为虚拟域名
 
+#### 8.创建数据库并填充测试数据
+```
+php artisan migrate --seed
+```
 
 ### 安装前端资源
 ```shell

@@ -53,7 +53,7 @@ button{
 }
 .header-title{
     color: #fff;
-    position: absolute;
+    position: fixed;
     line-height: 45px;
     z-index: 999;
     left: 40%;

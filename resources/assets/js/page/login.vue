@@ -19,7 +19,7 @@
                 <FormItem prop="verification" style="text-align:left">
                     <Input type="text" style="width:50%;float: left;margin-right:10px;" inline v-model="formInline.verification" placeholder="验证码" size="large"></Input>
                     <a href="javascript:;" @click="updatedCaptchas(captchasSrc)"> <img class="token-img" id="token" alt="验证码" style="height:32px;width:80px;" :src="captchasSrc"></a>
-                    <a href="javascript:;" @click="updatedCaptchas(captchasSrc)" style="color:#19be6b">换一张</a>
+                    <a href="javascript:;" @click="updatedCaptchas(captchasSrc)" style="color:#1bbc9b">换一张</a>
                 </FormItem>
                 <FormItem>
                     <Button type="success" long @click="handleSubmit('formInline')">登录</Button>

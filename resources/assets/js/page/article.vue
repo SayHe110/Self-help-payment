@@ -16,7 +16,7 @@
                 <h2>{{topicsData.title}}</h2>
                 <p class="info">
                     <span>{{topicsData.created_at}}</span>
-                    <span class="margin-left">admin</span>
+                    <span class="margin-left">{{topicsData.user.nickname}}</span>
                     <span class="margin-left">
                         <i class="iconfont icon-sannongguancha">{{topicsData.view_count}}</i>
                     </span>
@@ -46,7 +46,7 @@ export default {
         this.$Message.success("收藏成功!");
         },
         loadItem(){
-            this.$http.get("topics/" + this.$route.params.id).then(res => {
+            this.$http.get("topics/" + this.$route.params.id + '?include=user').then(res => {
             this.topicsData = res.body;
             })
         }
@@ -99,6 +99,7 @@ export default {
 }
 .article-title {
   text-align: left;
+  padding:10px 0;
 }
 .article-title h2 {
   font-size: 18px;
