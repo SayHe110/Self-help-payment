@@ -15,15 +15,9 @@
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
                 </FormItem>
-                      <Button type="success" long @click="goLink">下一步</Button>
-                      <Modal
-                          v-model="submit"
-                          title="请您核对"
-                          @on-ok="asyncOK">
-                          <p class="chose"  v-for="value in dordata " >您选择了{{value.label}}号宿舍</p>
-                          <p class="dorNum">您的宿舍号是：  {{formPay.dorNum}}</p>
-                          <p  class="cash">您的缴费金额是:   {{formPay.cash}}</p>
-                      </Modal>
+                    <router-link :to="{name: 'mybill'}">
+                      <Button type="success" long>下一步</Button>
+                    </router-link>
             </Form>
         </div>  
     </div>
@@ -84,19 +78,9 @@ export default {
     };
   },
   methods: {
-    asyncOK() {
-      this.submit = false;
-      // this.$router.push({name: 'mybill'});
-      setTimeout(
-        function() {
-          this.$router.push({ name: "confirm" });
-        }.bind(this),
-        1000
-      );
-    },
     goLink() {
       this.submit = true;
-        this.$router.push({ name: "confirm" });
+        this.$router.push({ name: "mybill" });
     },
     choseDor() {
       for (let item in this.data) {

@@ -54,20 +54,21 @@ export default new Router({
         component: box,
         children: [
             {
-                path: '/pay',
+                path: '/pay/:id',
                 name: 'pay',
                 component: require('../servepages/pay.vue'),
             },
              {
-                path: '/confirm',
-                name: 'confirm',
-                component: require('../servepages/confirm.vue'),
-            },
-            {
                 path: '/mybill',
                 name: 'mybill',
-                component: require('../servepages/confirm.vue'),
-            }
+                component: require('../servepages/mybill.vue'),
+            },
+            {
+               path: '/myorder',
+               name: 'myorder',
+               component: require('../servepages/myorder.vue'),
+           }
+            
         ]
     },
   ]

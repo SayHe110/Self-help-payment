@@ -17,10 +17,10 @@
                        </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                         <router-link :to="{name: 'mybill'}">
                            <img src="../assets/icon/zhangdan.png" alt="">
-                           <p>我的账单</p>
-                       </a>
+                           <p>我的订单</p>
+                         </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
