@@ -42,15 +42,14 @@ $api->version('v1', [
         // 游客可以访问的接口
         // 轮播图
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
-        // 文章列表
+        // 文章列表 ?include=user
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情 ?include=user
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
-//        $api->get('topics/{topic}', function($topic){
-//            dd($topic);
-//        })->name('api.topics.show');
         // 分类列表
         $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
+        // 某个分类下的文章(用电常识)
+        $api->get('categories/{category}', 'CategoriesController@show')->name('api.categories.show');
 
         // 需要 token 验证的接口
         $api->group(['middleware' => 'api.auth'], function($api) {

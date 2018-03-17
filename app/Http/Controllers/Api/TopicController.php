@@ -28,9 +28,7 @@ class TopicController extends Controller
     {
         // todo 先这样写着，再回来完善以下，应该可以直接获取到 $topic 的
         $topic = Topic::find($id);
-        //todo 什么鬼啊，，，获取不到
+        // todo 什么鬼啊，，，获取不到
         return $this->response->item($topic, new TopicTransformer());
     }
-
-
 }
