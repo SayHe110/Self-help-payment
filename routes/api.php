@@ -48,7 +48,7 @@ $api->version('v1', [
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
         // 分类列表
         $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
-        // 某个分类下的文章(用电常识)
+        // 某个分类下的文章(用电常识、停电公告, 故障报修除外)
         $api->get('categories/{category}', 'CategoriesController@show')->name('api.categories.show');
 
         // 需要 token 验证的接口
