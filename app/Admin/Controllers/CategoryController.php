@@ -43,6 +43,14 @@ class CategoryController extends Controller
         });
     }
 
+    public function create()
+    {
+        return Admin::content(function (Content $content){
+            $content->header('添加分类');
+            $content->body($this->form());
+        });
+    }
+
     protected function form()
     {
         return Category::form(function (Form $form){
