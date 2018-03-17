@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Encore\Admin\Controllers\ModelForm;
 use Encore\Admin\Facades\Admin;
+use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Tree;
@@ -34,14 +35,25 @@ class CategoryController extends Controller
         });
     }
 
-    public function grid()
+    public function edit($id)
     {
-        return Admin::grid(Category::class, function (Grid $grid){
-            $grid->id('ID');
-            $grid->parent_id('父类ID');
-            $grid->name('分类名称');
-            $grid->title_image_path()->image(30, 30);
-            $grid->url('跳转地址');
+        return Admin::content(function (Content $content) use ($id){
+            $content->header('编辑分类');
+            $content->body($this->form()->edit($id));
         });
     }
+
+    protected function form()
+    {
+        return Category::form(function (Form $form){
+            $form->display('id', 'ID');
+            $form->select('parent_id')->options(Category::selectOptions());
+            $form->text('name', '名称')->rules('required');
+            $form->image('title_image_path');
+            $form->text('url', '跳转地址');
+            $form->display('created_at', '创建时间');
+            $form->display('updated_at', '修改时间');
+        });
+    }
+
 }
