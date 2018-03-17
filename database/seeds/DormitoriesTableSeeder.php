@@ -25,6 +25,7 @@ class DormitoriesTableSeeder extends Seeder
                 $buildingId = DB::table('dormitories')->insertGetId([
                     'dorm_name' => $building[$j],
                     'parent_dorm_code' => $unit_buildingId,
+                    'is_unit_building' => true,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now(),
                 ]);

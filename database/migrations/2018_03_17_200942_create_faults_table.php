@@ -21,7 +21,7 @@ class CreateFaultsTable extends Migration
             $table->integer('dorm_id')->index()->comment('宿舍号');
             $table->string('phone')->comment('联系电话');
             $table->boolean('arrival_processing')->default(false)->comment('是否到场处理');
-            $table->integer('processing_person')->index()->comment('处理人');
+            $table->integer('processing_person')->default(0)->index()->comment('处理人');
             $table->timestamps();
         });
     }
