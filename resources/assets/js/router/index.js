@@ -78,6 +78,11 @@ export default new Router({
                 name: 'PowerCutNotice',
                 component: require('../servepages/PowerCutNotice.vue'),
             },
+            {
+                path: '/nous',
+                name: 'nous',
+                component: require('../servepages/nous.vue'),
+            },
         ]
     },
   ]

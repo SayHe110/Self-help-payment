@@ -47,10 +47,10 @@
                         </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'nous'}">
                            <img src="../assets/icon/changshi.png" alt="">
                            <p>用电常识</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
