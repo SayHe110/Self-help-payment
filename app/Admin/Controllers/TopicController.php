@@ -34,6 +34,14 @@ class TopicController extends Controller
         });
     }
 
+    public function create()
+    {
+        return Admin::content(function (Content $content){
+            $content->header('添加文章');
+            $content->body($this->form());
+        });
+    }
+
     public function grid()
     {
         return Admin::grid(Topic::class, function (Grid $grid){
@@ -54,15 +62,9 @@ class TopicController extends Controller
         return Admin::form(Topic::class, function (Form $form){
             $form->display('id', 'ID');
             $form->text('title', '标题');
-            $form->select('category_id', '分类')->options(function ($id){
-                $category = Category::find($id);
-
-                if($category)
-                    return [$category->id => $category->name];
-            });
-
+            $form->select('category_id', '分类')->options(Category::all()->pluck('name', 'id'));
             // todo 富文本编辑器
-            $form->editor('body', '内容');
+            $form->textarea('body', '内容')->rows(10);
             $form->image('title_image_path');
             $form->select('user_id', '作者')->options(function ($id){
                 $user = User::find($id);
@@ -74,7 +76,20 @@ class TopicController extends Controller
             $form->text('excerpt', '摘录');
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '修改时间');
+            $form->hidden('user_id')->value(Admin::user()->id);
+        });
+    }
 
+    // todo 获取不到 body
+    public function storeForm()
+    {
+        return Admin::form(Topic::class, function (Form $form){
+            $form->text('title', '标题');
+            $form->select('category_id', '分类')->options(Category::all()->pluck('name', 'id'));
+            // todo 富文本编辑器
+            $form->text('body');
+            $form->image('title_image_path');
+            $form->hidden('user_id')->value(Admin::user()->id);
         });
     }
 
