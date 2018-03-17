@@ -8,6 +8,7 @@ use Encore\Admin\Controllers\ModelForm;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
+use Encore\Admin\Tree;
 use function foo\func;
 
 class CategoryController extends Controller
@@ -17,11 +18,21 @@ class CategoryController extends Controller
     public function index()
     {
         return Admin::content(function (Content $content){
-            $content->body($this->grid());
+            $content->body($this->tree());
         });
     }
 
+    public function tree()
+    {
+        return Category::tree(function (Tree $tree){
+            $tree->branch(function($branch){
+                $src = $branch['title_image_path'];
+                $logo = "<img src='$src' style='max-width:30px;max-height:30px' class='img'/>";
 
+                return "{$branch['id']} - {$branch['name']} $logo";
+            });
+        });
+    }
 
     public function grid()
     {
