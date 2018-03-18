@@ -26,9 +26,11 @@
                 </FormItem>
                 <FormItem>
                     <router-link :to="{name: 'register'}">
-                    <a href="javascript:;" style="color:#1bbc9b">马上注册</a>
+                        <a href="javascript:;" style="color:#1bbc9b">马上注册</a>
                     </router-link>
-                    <a href="javascript:;" style="color:#444">| 忘记密码</a>
+                    <router-link :to="{name: 'Forget'}">
+                        <a href="javascript:;" style="color:#444">| 忘记密码</a>
+                    </router-link>
                 </FormItem>
             </Form>
         </div>

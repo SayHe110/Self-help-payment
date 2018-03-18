@@ -59,6 +59,11 @@ export default new Router({
                 component: require('../page/register.vue'),
             },
             {
+                path: '/Forget',
+                name: 'Forget',
+                component: require('../page/Forget.vue'),
+            },
+            {
                 path: '/pay',
                 name: 'pay',
                 component: require('../servepages/pay.vue'),
