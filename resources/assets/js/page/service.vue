@@ -53,10 +53,10 @@
                         </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'complaint'}">
                            <img src="../assets/icon/tousu.png" alt="">
                            <p>投诉举报</p>
-                       </a>
+                        </router-link>
                    </li>
                </ul>
            </div>

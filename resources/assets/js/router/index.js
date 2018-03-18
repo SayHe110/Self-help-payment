@@ -83,6 +83,11 @@ export default new Router({
                 name: 'nous',
                 component: require('../servepages/nous.vue'),
             },
+            {
+                path: '/complaint',
+                name: 'complaint',
+                component: require('../servepages/complaint.vue'),
+            }
         ]
     },
   ]
