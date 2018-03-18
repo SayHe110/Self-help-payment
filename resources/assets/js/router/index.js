@@ -85,6 +85,11 @@ export default new Router({
                 component: require('../servepages/alreadybill.vue'),
             },
             {
+              path: '/nous',
+              name: 'nous',
+              component: require('../servepages/nous.vue'),
+            },
+            {
                 path: '/complaint',
                 name: 'complaint',
                 component: require('../servepages/complaint.vue'),
