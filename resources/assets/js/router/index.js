@@ -93,7 +93,13 @@ export default new Router({
                 path: '/complaint',
                 name: 'complaint',
                 component: require('../servepages/complaint.vue'),
+            },
+            {
+                path: '/tellphone',
+                name: 'tellphone',
+                component: require('../servepages/tellphone.vue'),
             }
+            
         ]
     },
   ]

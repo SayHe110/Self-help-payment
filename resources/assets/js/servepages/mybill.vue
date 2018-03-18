@@ -11,7 +11,7 @@
                     <li><p>缴费宿舍 :</p><span>9A110</span></li>
                     <li><p>缴费金额 :</p><span>110</span></li>
                 </ul>
-                 <Button type="primary" @click="submit">提交订单</Button>
+                 <Button  type="primary" @click="submit">提交订单</Button>
                    
             </div>
        
@@ -60,12 +60,12 @@ button{
     height: 40px;
 }
 .Bill_content ul li span{
-    font-size: 16px;
+    font-size: 14px;
     line-height: 40px;
     float: right;
 }
 .Bill_content ul li p{
-    font-size: 16px;
+    font-size: 14px;
     float: left;
     line-height: 40px;
 }

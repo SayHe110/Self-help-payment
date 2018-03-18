@@ -22,7 +22,27 @@
                            <p>系统消息</p>
                             <span>暂无内容</span>
                        </div>
-                       <span class="notice-time">2018-3-1</span>
+                       <span class="notice-time">2018-3-12</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="javascript:;">
+                       <div class="notice-icon"><img src="../assets/icon/buydian.png" alt=""></div>
+                       <div class="notice-title">
+                           <p>购电公告</p>
+                            <span>您于2018-2-15购电50元核算75度电</span>
+                       </div>
+                       <span class="notice-time">2018-2-15</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="javascript:;">
+                       <div class="notice-icon"><img src="../assets/icon/buydian.png" alt=""></div>
+                       <div class="notice-title">
+                           <p>购电公告</p>
+                            <span>您于2018-3-15购电100元核算150度电</span>
+                       </div>
+                       <span class="notice-time">2018-3-15</span>
                    </a>
                 </li>
             </ul>
