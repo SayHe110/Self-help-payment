@@ -1,7 +1,7 @@
 <template>
 	<div class="layout-box">
         <div class="header-title">
-            <p>我的订单</p>
+            <p>提交订单</p>
         </div>
             <div class="Bill_content">
                 <ul>
@@ -11,14 +11,8 @@
                     <li><p>缴费宿舍 :</p><span>9A110</span></li>
                     <li><p>缴费金额 :</p><span>110</span></li>
                 </ul>
-                 <Button type="primary" @click="modal1 = true">提交订单</Button>
-                    <Modal
-                        v-model="modal1"
-                        title="提交订单"
-                        @on-ok="ok"
-                        @on-cancel="cancel">
-                        <p>确定支付吗?</p>
-                    </Modal>
+                 <Button type="primary" @click="submit">提交订单</Button>
+                   
             </div>
        
 	</div>
@@ -37,14 +31,11 @@ export default{
             }).catch(err => {
                 this.$router.push({name: 'pay'})
             })
+        },
+        submit(){
+        this.$router.push({ name: "alreadybill" });
         }
-    },
-        ok () {
-                    this.$Message.info('Clicked ok');
-                },
-                cancel () {
-                    this.$Message.info('Clicked cancel');
-            }
+    } 
 }
 </script>
 <style scoped>

@@ -64,13 +64,12 @@ export default new Router({
                 component: require('../servepages/mybill.vue'),
             },
             {
-<<<<<<< HEAD
+
                path: '/myorder',
                name: 'myorder',
                component: require('../servepages/myorder.vue'),
-           }
-            
-=======
+           },
+            {
                 path: '/repair',
                 name: 'repair',
                 component: require('../servepages/repair.vue'),
@@ -80,7 +79,11 @@ export default new Router({
                 name: 'PowerCutNotice',
                 component: require('../servepages/PowerCutNotice.vue'),
             },
->>>>>>> 1ad0b0bd6e549a7a6118a3e7325c36d231c5109c
+            {
+              path: '/alreadybill',
+              name: 'alreadybill',
+              component: require('../servepages/alreadybill.vue'),
+          },
         ]
     },
   ]
