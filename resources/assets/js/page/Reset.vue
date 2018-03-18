@@ -5,18 +5,21 @@
     </div>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
-            <Form class="login" ref="formInline"  :rules="ruleInline" post="">
-                <FormItem prop="email">
-                    <AutoComplete
-                        v-model="email"
-                        size="large"
-                        @on-search="handleSearch_email"
-                        placeholder="请输入您注册时的邮箱">
-                        <Option aligin="left" v-for="item in emailarry" :value="item" :key="item">{{ item }}</Option>
-                    </AutoComplete>
+            <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
+                <FormItem prop="code">
+                    <Input type="text" v-model="formInline.code" placeholder="请输入验证码" size="large">
+                    </Input>
+                </FormItem>
+                <FormItem prop="password">
+                    <Input type="password" v-model="formInline.password" placeholder="请设置6-16位密码" size="large">
+                    </Input>
+                </FormItem>
+                 <FormItem prop="password_confirm">
+                    <Input type="password" v-model="formInline.password" placeholder="请确认您的密码" size="large">
+                    </Input>
                 </FormItem>
                 <FormItem>
-                    <Button type="success" long @click="handleSubmit('formInline')">发送验证码</Button>
+                    <Button type="success" long @click="handleSubmit('formInline')">完成</Button>
                 </FormItem>
             </Form>
         </div>
@@ -27,11 +30,24 @@
 export default {
   data() {
     return {
-      email: "",
-      emailarry: "",
+      formInline: {
+         code: "",
+         password: "",
+         password_confirm: ""
+      },
       ruleInline: {
-        email: [
-          { required: true, message: "请输入邮箱", trigger: "blur" }
+        code: [{ required: true, message: "请输入验证码", trigger: "blur" }],
+        password: [
+          { required: true, message: "请输入新密码", trigger: "blur" },
+          {
+            type: "string",
+            min: 6,
+            message: "密码长度不能小于6位",
+            trigger: "blur"
+          }
+        ],
+        password_confirm: [
+          { required: true, message: "请再次输入密码", trigger: "blur" }
         ]
       }
     };
@@ -49,10 +65,10 @@ export default {
             })
             .then(
               res => {
-                this.$router.push("./Reset");
+                this.$router.push("./login");
               },
               err => {
-                this.$Message.error(err.body.message || "提交失败");
+                this.$Message.error(err.body.message || "重置失败");
               }
             );
         } else {

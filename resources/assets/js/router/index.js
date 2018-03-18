@@ -64,6 +64,11 @@ export default new Router({
                 component: require('../page/Forget.vue'),
             },
             {
+                path: '/Reset',
+                name: 'Reset',
+                component: require('../page/Reset.vue'),
+            },
+            {
                 path: '/pay',
                 name: 'pay',
                 component: require('../servepages/pay.vue'),
