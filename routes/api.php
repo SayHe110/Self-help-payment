@@ -66,7 +66,7 @@ $api->version('v1', [
             // 提交订单
             $api->post('orders', 'OrderController@store')->name('api.orders.store');
             // 我的订单
-
+            $api->get('orders', 'OrderController@me')->name('api.orders.show');
 
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');

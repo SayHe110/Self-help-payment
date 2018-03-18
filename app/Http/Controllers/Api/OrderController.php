@@ -20,4 +20,11 @@ class OrderController extends Controller
         
         return $this->response->item($order, new OrderTransformer())->setStatusCode(201);
     }
+
+    public function me()
+    {
+        $orders = Order::where('user_id', $this->user()->id)->get();
+
+        return $this->response->item($orders, new OrderTransformer());
+    }
 }
