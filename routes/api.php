@@ -59,8 +59,10 @@ $api->version('v1', [
             $api->get('user', 'UserController@me')->name('api.user.show');
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
-            // 提交故障报修
+            // 故障报修
             $api->post('faults', 'FaultsController@store')->name('api.fault.store');
+            // 投诉举报
+            $api->post('reports', 'ReportsController@store')->name('api.reports.store');
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
         });
