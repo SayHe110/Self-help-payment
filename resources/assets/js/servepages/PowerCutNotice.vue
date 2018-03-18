@@ -10,7 +10,7 @@
                     <p>停电预告</p>
                 </div>
                 <div class="card-body">
-                    <p>停电时间：3月19日—3月25日</p>
+                    <p class="card-box">停电时间：3月19日—3月25日</p>
                     <p class="time">2018-3-17</p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     <p>停电预告</p>
                 </div>
                 <div class="card-body">
-                    <p>停电时间：3月19日—3月25日</p>
+                    <p class="card-box">停电时间：3月19日—3月25日</p>
                     <p class="time">2018-3-17</p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <p>停电预告</p>
                 </div>
                 <div class="card-body">
-                    <p>停电时间：3月19日—3月25日</p>
+                    <p class="card-box">停电时间：3月19日—3月25日</p>
                     <p class="time">2018-3-17</p>
                 </div>
             </div>
@@ -66,7 +66,7 @@ export default {};
   background: #f3f3f3;
 }
 .application-box {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 /* 卡片 */
 .card {
@@ -97,6 +97,13 @@ export default {};
 }
 .card-body {
   padding: 5px;
+}
+.card-box {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-bottom: 5px;
 }
 .time {
   text-align: right;

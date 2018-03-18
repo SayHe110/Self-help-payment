@@ -25,11 +25,12 @@ class DormitoriesTableSeeder extends Seeder
                 $buildingId = DB::table('dormitories')->insertGetId([
                     'dorm_name' => $building[$j],
                     'parent_dorm_code' => $unit_buildingId,
+                    'is_unit_building' => true,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now(),
                 ]);
                 for ($z=1; $z<=2; $z++){
-                    for ($k=1; $k<=10; $k++){
+                    for ($k=1; $k<=2; $k++){
                         $dorm_name = strlen($k)==1 ? $z.'0'.$k : $z.$k;
                         DB::table('dormitories')->insert([
                             'dorm_name' => $dorm_name,

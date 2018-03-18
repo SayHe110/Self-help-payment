@@ -7,6 +7,7 @@ use App\Handlers\ImageUploadHandler;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Request;
 use App\Models\User;
+use Encore\Admin\Controllers\ModelForm;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -15,6 +16,8 @@ use function foo\func;
 
 class UserController extends Controller
 {
+    use ModelForm;
+
     public function index()
     {
         return Admin::content(function (Content $content){
@@ -25,6 +28,10 @@ class UserController extends Controller
     public function grid()
     {
         return Admin::grid(User::class, function (Grid $grid){
+            $grid->model()->orderBy('id', 'DESC');
+
+            $grid->paginate(15);
+
             $grid->id('ID')->sortable();
             $grid->student_id('学号');
             $grid->nickname('昵称');
@@ -45,54 +52,23 @@ class UserController extends Controller
         });
     }
 
-    public function show($id)
-    {
-        return $this->edit($id);
-    }
-
-    public function update($id)
-    {
-        return $this->form()->update($id);
-    }
-
-    public function destroy($id)
-    {
-        if ($this->form()->destroy($id)) {
-            return response()->json([
-                'status'  => true,
-                'message' => '删除成功',
-                // 'message' => trans('admin::lang.delete_succeeded'),
-            ]);
-        } else {
-            return response()->json([
-                'status'  => false,
-                'message' => '删除失败',
-                // 'message' => trans('admin::lang.delete_failed'),
-            ]);
-        }
-    }
-
     public function create()
     {
         return Admin::content(function (Content $content){
             $content->header('用户');
             $content->description('新增用户');
 
-            $content->body($this->storeForm());
+                $content->body($this->storeForm());
         });
     }
 
     public function store()
     {
-        $this->storeForm()->saving(function (Form $form){
-            $form->avatar = env('APP_URL').'/'.$form->avatar;
-        });
         return $this->storeForm()->store();
     }
 
     public function storeForm()
     {
-
         return Admin::form(User::class, function (Form $form){
             // 构建图片（文件）存储规则
             $folder_name = 'uploads/images/avatars/'.date('Ym',time()).'/'.date('d',time());
@@ -103,6 +79,7 @@ class UserController extends Controller
                 'unique' => '邮箱地址已经存在',
             ]);
             $form->text('nickname', '昵称');
+            // todo 图片显示有问题
             $form->image('avatar', '头像')->move($folder_name);
 
             // todo 宿舍号待修改

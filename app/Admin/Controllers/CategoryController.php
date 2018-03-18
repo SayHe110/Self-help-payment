@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Encore\Admin\Controllers\ModelForm;
 use Encore\Admin\Facades\Admin;
+use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
+use Encore\Admin\Tree;
 use function foo\func;
 
 class CategoryController extends Controller
@@ -17,20 +19,49 @@ class CategoryController extends Controller
     public function index()
     {
         return Admin::content(function (Content $content){
-            $content->body($this->grid());
+            $content->body($this->tree());
         });
     }
 
-
-
-    public function grid()
+    public function tree()
     {
-        return Admin::grid(Category::class, function (Grid $grid){
-            $grid->id('ID');
-            $grid->parent_id('父类ID');
-            $grid->name('分类名称');
-            $grid->title_image_path()->image(30, 30);
-            $grid->url('跳转地址');
+        return Category::tree(function (Tree $tree){
+            $tree->branch(function($branch){
+                $src = $branch['title_image_path'];
+                $logo = "<img src='$src' style='max-width:30px;max-height:30px' class='img'/>";
+
+                return "{$branch['id']} - {$branch['name']} $logo";
+            });
         });
     }
+
+    public function edit($id)
+    {
+        return Admin::content(function (Content $content) use ($id){
+            $content->header('编辑分类');
+            $content->body($this->form()->edit($id));
+        });
+    }
+
+    public function create()
+    {
+        return Admin::content(function (Content $content){
+            $content->header('添加分类');
+            $content->body($this->form());
+        });
+    }
+
+    protected function form()
+    {
+        return Category::form(function (Form $form){
+            $form->display('id', 'ID');
+            $form->select('parent_id')->options(Category::selectOptions());
+            $form->text('name', '名称')->rules('required');
+            $form->image('title_image_path');
+            $form->text('url', '跳转地址');
+            $form->display('created_at', '创建时间');
+            $form->display('updated_at', '修改时间');
+        });
+    }
+
 }

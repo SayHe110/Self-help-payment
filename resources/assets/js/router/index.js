@@ -68,7 +68,7 @@ export default new Router({
                path: '/myorder',
                name: 'myorder',
                component: require('../servepages/myorder.vue'),
-           },
+            },
             {
                 path: '/repair',
                 name: 'repair',
@@ -80,10 +80,15 @@ export default new Router({
                 component: require('../servepages/PowerCutNotice.vue'),
             },
             {
-              path: '/alreadybill',
-              name: 'alreadybill',
-              component: require('../servepages/alreadybill.vue'),
-          },
+                path: '/alreadybill',
+                name: 'alreadybill',
+                component: require('../servepages/alreadybill.vue'),
+            },
+            {
+                path: '/complaint',
+                name: 'complaint',
+                component: require('../servepages/complaint.vue'),
+            }
         ]
     },
   ]

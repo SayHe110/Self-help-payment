@@ -47,16 +47,16 @@
                         </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'nous'}">
                            <img src="../assets/icon/changshi.png" alt="">
                            <p>用电常识</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'complaint'}">
                            <img src="../assets/icon/tousu.png" alt="">
                            <p>投诉举报</p>
-                       </a>
+                        </router-link>
                    </li>
                </ul>
            </div>
