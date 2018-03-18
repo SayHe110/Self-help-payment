@@ -23,7 +23,7 @@
             <!-- 新闻列表 -->
             <div class="news-container">
                 <ul class="news-lists">
-                    <Scroll :on-reach-bottom="handleReachBottom" height="400">
+                    <Scroll :on-reach-bottom="handleReachBottom" height="340">
                         <li v-for="values in topicsData" :key="values.id">
                             <div class="news-box">
                                 <router-link :to="{name: 'article', params: {id: values.id}}">
@@ -45,7 +45,7 @@
                         </li>
                     </Scroll>
                 </ul>
-                <div v-if="current_page >= total_pages" class="get-more"> <Spin fix>已经到底部了</Spin></div>
+                <div v-if="current_page >= total_pages" class="get-more"> <Spin fix>已经到底了</Spin></div>
             </div>
        </div>
    </div>

@@ -24,6 +24,12 @@
                 <FormItem>
                     <Button type="success" long @click="handleSubmit('formInline')">登录</Button>
                 </FormItem>
+                <FormItem>
+                    <router-link :to="{name: 'register'}">
+                    <a href="javascript:;" style="color:#1bbc9b">马上注册</a>
+                    </router-link>
+                    <a href="javascript:;" style="color:#444">| 忘记密码</a>
+                </FormItem>
             </Form>
         </div>
     </div>
@@ -103,12 +109,11 @@ export default {
   left: 0;
   padding: 20px;
 }
-/* .login_top img {
-  width: 80px;
-  height: 80px;
-} */
 .login_top p {
   font-size: 26px;
+}
+.ivu-form-item{
+    margin-bottom: 20px;
 }
 </style>
 

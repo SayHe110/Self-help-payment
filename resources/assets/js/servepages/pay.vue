@@ -15,9 +15,9 @@
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
                 </FormItem>
-                    <router-link :to="{name: 'mybill'}">
-                      <Button type="success" long>下一步</Button>
-                    </router-link>
+                <router-link :to="{name: 'mybill'}">
+                    <Button type="success" long>下一步</Button>
+                </router-link>
             </Form>
         </div>  
     </div>
@@ -99,7 +99,6 @@ export default {
   left: 40%;
   font-size: 18px;
 }
-
 .layout-application {
   position: absolute;
   top: 45px;

@@ -9,7 +9,7 @@ export default new Router({
     {
         path: '*',
         redirect: require('../page/home.vue'),
-      },
+    },
     {
       path: '/',
       name: 'login',
@@ -54,7 +54,12 @@ export default new Router({
         component: box,
         children: [
             {
-                path: '/pay/:id',
+                path: '/register',
+                name: 'register',
+                component: require('../page/register.vue'),
+            },
+            {
+                path: '/pay',
                 name: 'pay',
                 component: require('../servepages/pay.vue'),
             },
