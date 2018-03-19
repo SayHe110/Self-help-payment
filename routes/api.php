@@ -26,7 +26,7 @@ $api->version('v1', [
         $api->get('captchas', 'CaptchasController@store')->name('api.captchas.store');
         // 用户注册
         $api->post('users', 'UserController@store')->name('api.users.store');
-        // 登录
+        // 登录 (可以邮箱、学号进行登录) 目前使用学号进行登录   遇到了什么的BUG  邮箱地址有时可以登录，有时不可以
         $api->post('authorizations','AuthorizationsController@store')->name('api.authorizations.store');
         // 刷新token
         $api->put('authorizations/current', 'AuthorizationsController@update')->name('api.authorizations.update');

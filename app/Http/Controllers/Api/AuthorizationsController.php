@@ -11,6 +11,11 @@ class AuthorizationsController extends Controller
 {
     public function store(AuthorizationRequest $request)
     {
+        // 若有验证码则进入验证码验证
+        if($request->captcha_key){
+            $this->verifyCaptcha($request);
+        }
+
         $user_name = $request->username;
 
         // filter_var — 使用特定的过滤器过滤一个变量
@@ -25,6 +30,21 @@ class AuthorizationsController extends Controller
         }
 
         return $this->respondWithToken($token)->setStatusCode(201);
+    }
+
+    // 验证码进行验证
+    protected function verifyCaptcha($data)
+    {
+        $captchaData = \Cache::get($data->captcha_key);
+
+        if(!$captchaData){
+            return $this->response->error('验证码已失效',422);
+        }
+        if(! hash_equals($captchaData['captcha'], $data->captcha_code)){
+            // 清除验证码缓存
+            \Cache::forget($data->captcha_key);
+            return $this->response->errorUnauthorized('验证码错误');
+        }
     }
 
     public function update()
