@@ -74,7 +74,7 @@ export default new Router({
                 component: require('../servepages/pay.vue'),
             },
              {
-                path: '/mybill',
+                path: '/mybill/:params',
                 name: 'mybill',
                 component: require('../servepages/mybill.vue'),
             },

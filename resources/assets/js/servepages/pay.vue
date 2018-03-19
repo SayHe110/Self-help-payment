@@ -36,10 +36,10 @@ export default {
   methods: {
     asyncOK() {
       this.submit = false;
-      // this.$router.push({name: 'mybill'});
+      // this.$router.push({name: '  mybill'});
       setTimeout(
         function() {
-          this.$router.push({ name: "mybill" });
+          this.$router.push({ name: "mybill", params: {params: {dorm_id}}});
         }.bind(this),
         1000
       );
