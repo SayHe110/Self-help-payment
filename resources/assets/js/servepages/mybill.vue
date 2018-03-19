@@ -5,9 +5,9 @@
         </div>
             <div class="Bill_content">
                 <ul>
-                    <li><p>缴费单位 :</p><span>淮南市知明科技</span></li>
-                    <li><p>户名 :</p><span>某某某</span></li>
                     <li><p>用户编号 :</p><span>102500124</span></li>
+                    <li><p>单元号 :</p><span>1</span></li>
+                    <li><p>A楼/B楼:</p><span>A楼</span></li>
                     <li><p>缴费宿舍 :</p><span>9A110</span></li>
                     <li><p>缴费金额 :</p><span>110</span></li>
                 </ul>
