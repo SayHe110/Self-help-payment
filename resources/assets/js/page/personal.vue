@@ -12,7 +12,7 @@
                             <p>南枫</p>
                             <span>1508220235</span>
                         </div>
-                        <span class="personal-exit"><a href="javascript:;">退出</a></span>
+                        <span class="personal-exit"><a @click="quit">退出</a></span>
                     </a>
                 </li>
                 <li>
@@ -50,9 +50,18 @@
    </div>
 </template>
 <script>
-export default {
-  name: "personal"
-};
+export default{
+		data () {
+			return {
+        name: "personal"
+			}
+		},
+		methods: {
+			quit () {
+					this.$router.push({name: 'login'});
+				}
+			}
+		}
 </script>
 <style>
 .personal-contain {
