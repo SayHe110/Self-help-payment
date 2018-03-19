@@ -55,7 +55,7 @@ export default {
 }
 .layout-contain {
   position: relative;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   height: 100%;
 }
 .layout-header {
@@ -83,7 +83,7 @@ export default {
   top: 45px;
   padding: 0 10px;
   width: 100%;
-  padding-bottom: 65px;
+  /* padding-bottom: 50px; */
 }
 .ivu-menu-light {
   background: #f7f7f7;

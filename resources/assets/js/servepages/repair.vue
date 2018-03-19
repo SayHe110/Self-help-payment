@@ -7,16 +7,16 @@
         <div class="application-box">
             <Form :model="repairItem" ref="repairItem" label-position="top" :rules="ruleValidate"  >
                 <FormItem label="主题:" prop="title">
-                    <Input v-model="repairItem.title"></Input>
+                    <Input v-model="repairItem.title" />
                 </FormItem>
                 <FormItem label="故障描述:" prop="textarea">
                     <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""></Input>
                 </FormItem>
                 <FormItem label="宿舍号:" prop="dorNum">
-                    <Input v-model="repairItem.dorNum"></Input>
+                    <Input v-model="repairItem.dorNum" />
                 </FormItem>
                 <FormItem label="联系电话:" prop="Tel">
-                    <Input v-model="repairItem.Tel"></Input>
+                    <Input v-model="repairItem.Tel" />
                 </FormItem>
                 <FormItem label="需维修人员到现场处理:" prop="radio">
                     <RadioGroup v-model="repairItem.radio">

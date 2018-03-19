@@ -4,7 +4,7 @@
            <p>掌电</p>
        </div>
        <div class="home-contain">
-           <!-- 轮播图 -->
+            <!-- 轮播图 -->
             <div class="banner">
                 <Carousel autoplay v-model="value2"
                     :autoplay-speed="setting.autoplaySpeed"
@@ -23,27 +23,29 @@
             <!-- 新闻列表 -->
             <div class="news-container">
                 <ul class="news-lists">
-                    <li v-for="values in topicsData" :key="values.id">
-                        <div class="news-box">
-                            <router-link :to="{name: 'article', params: {id: values.id}}">
-                                <div class="news-left">
-                                    <p class="news-title" :v-model="topicsData">{{values.title}}</p>
-                                    <p class="info">
-                                        <span>{{values.created_at}}</span>
-                                        <span class="margin-left">admin</span>
-                                        <span class="margin-left">
-                                            <i class="iconfont icon-sannongguancha">{{values.view_count}}</i>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="news-right">
-                                    <img :src="values.title_image_path" alt="">
-                                </div>
-                            </router-link>
-                        </div>
-                    </li>
+                    <Scroll :on-reach-bottom="handleReachBottom" height="340">
+                        <li v-for="values in topicsData" :key="values.id">
+                            <div class="news-box">
+                                <router-link :to="{name: 'article', params: {id: values.id}}">
+                                    <div class="news-left">
+                                        <p class="news-title" :v-model="topicsData">{{values.title}}</p>
+                                        <p class="info">
+                                            <span>{{values.created_at}}</span>
+                                            <span class="margin-left">admin</span>
+                                            <span class="margin-left">
+                                                <i class="iconfont icon-sannongguancha">{{values.view_count}}</i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="news-right">
+                                        <img :src="values.title_image_path" alt="">
+                                    </div>
+                                </router-link>
+                            </div>
+                        </li>
+                    </Scroll>
                 </ul>
-                <div class="get-more"> <Spin fix>加载中...</Spin></div>
+                <div v-if="current_page >= total_pages" class="get-more"> <Spin fix>已经到底了</Spin></div>
             </div>
        </div>
    </div>
@@ -54,6 +56,8 @@ export default {
     data() {
         return {
         value2: 0,
+        current_page: null,
+        total_pages: null,
         setting: {
             autoplay: false,
             autoplaySpeed: 2000,
@@ -78,11 +82,32 @@ export default {
         // 文章
         this.$http.get("topics").then(res => {
             this.topicsData = res.body.data;
+            this.current_page = res.body.meta.pagination.current_page;
+            this.total_pages = res.body.meta.pagination.total_pages;
         });
         // 轮播图
         this.$http.get("carousel_figure").then(res => {
             this.carousel_figureData = res.body.images;
         });
+    },
+    methods: {
+        handleReachBottom () { 
+            if (this.current_page >= this.total_pages) {
+                return false
+            } else {
+                return new Promise(resolve => {
+                    this.$http.get("topics", {
+                        params: {
+                            page: ++this.current_page
+                        }
+                    }).then(res => {
+                        for(let i in  res.body.data){
+                            this.topicsData.push(res.body.data[i])
+                        }
+                    });
+                });
+            }
+        }
     }
 };
 </script>

@@ -54,4 +54,9 @@ export default {
   left: 20px;
   top: 8px;
 }
+.ivu-btn-success {
+    color: #fff;
+    background-color: #1bbc9b;
+    border-color: #1bbc9b;
+}
 </style>

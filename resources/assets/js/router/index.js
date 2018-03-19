@@ -9,7 +9,7 @@ export default new Router({
     {
         path: '*',
         redirect: require('../page/home.vue'),
-      },
+    },
     {
       path: '/',
       name: 'login',
@@ -53,6 +53,21 @@ export default new Router({
         name: 'box',
         component: box,
         children: [
+            {
+                path: '/register',
+                name: 'register',
+                component: require('../page/register.vue'),
+            },
+            {
+                path: '/Forget',
+                name: 'Forget',
+                component: require('../page/Forget.vue'),
+            },
+            {
+                path: '/Reset',
+                name: 'Reset',
+                component: require('../page/Reset.vue'),
+            },
             {
                 path: '/pay',
                 name: 'pay',
