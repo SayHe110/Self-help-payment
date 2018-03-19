@@ -123,6 +123,11 @@ export default new Router({
                 path: '/Electricity',
                 name: 'Electricity',
                 component: require('../servepages/Electricity.vue'),
+            },
+            {
+                path: '/Powerdetails',
+                name: 'Powerdetails',
+                component: require('../servepages/Powerdetails.vue'),
             }
             
         ]

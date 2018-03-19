@@ -27,10 +27,10 @@
             </ul>
         </div>        
         <li class="details">
-            <a href="javascript:;">
+            <router-link :to="{name: 'Powerdetails'}">
                 <p>2017年电费电量</p>
                 <span>详情></span>
-            </a>
+            </router-link>
         </li>
     </div>
 </div>
