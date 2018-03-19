@@ -7,7 +7,7 @@
         <div class="application-box">
             <Form :model="formPay" label-position="right" :label-width="80">
                 <FormItem label="所在单元">
-                    <Cascader v-model="dorNums" :data="dordata" filterable trigger="hover"></Cascader>
+                     <Cascader v-model="dorNums" :data="data" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="宿舍号">
                     <Input class="dorNum" v-model="formPay.dorNum" @click.native="choseDor">{{dorNums.name}}</Input>
@@ -24,71 +24,124 @@
 </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      submit: false,
-      loading: true,
-      choseDornums: {},
-      dorNums: [],
-      formPay: {
-        dorNum: "",
-        cash: ""
-      },
-      dordata: [
-        {
-          value: "1",
-          label: "一单元",
-          dorNums: [
-            { name: "9a432", dorNums: "6" },
-            { name: "9a433", dorNums: "6" },
-            { name: "9a434", dorNums: "6" }
-          ],
-          children: [
-            {
-              value: "A",
-              label: "A栋"
+  export default {
+        data () {
+            return {
+                topicsData:{},
+                submit: false,
+                loading: true,
+                dorNums: [],
+                formPay: {
+                    dorNum: '',
+                    cash: ''
+                },
+                data: [{
+                    value: '1',
+                    label: '一单元',
+                    children: [
+                        {
+                            value: 'A',
+                            label: 'A栋',
+                            dorNums:[
+                              101,102,103,104,105,106
+                            ]
+                        },
+                        {
+                            value: 'B',
+                            label: 'B栋',
+                            
+                        }
+                    ]
+                }, {
+                    value: '2',
+                    label: '二单元',
+                    children: [
+                        {
+                            value: 'A',
+                            label: 'A栋',
+                            dorNums:[
+                              101,102,103,104,105,106
+                            ]
+                        },
+                        {
+                            value: 'B',
+                            label: 'B栋',
+                            
+                        }
+                    ],
+                }, {
+                    value: '3',
+                    label: '三单元',
+                    children: [
+                        {
+                            value: 'A',
+                            label: 'A栋',
+                            dorNums:[
+                              101,102,103,104,105,106
+                            ]
+                        },
+                        {
+                            value: 'B',
+                            label: 'B栋',
+                            
+                        }
+                    ],
+                }, {
+                    value: '4',
+                    label: '四单元',
+                    children: [
+                        {
+                            value: 'A',
+                            label: 'A栋',
+                            dorNums:[
+                              101,102,103,104,105,106
+                            ]
+                        },
+                        {
+                            value: 'B',
+                            label: 'B栋',
+                            
+                        }
+                    ],
+                }, {
+                    value: '5',
+                    label: '五单元',
+                    children: [
+                        {
+                            value: 'A',
+                            label: 'A栋',
+                            dorNums:[
+                              101,102,103,104,105,106
+                            ]
+                        },
+                        {
+                            value: 'B',
+                            label: 'B栋',
+                            
+                        }
+                    ],
+                }]
+              }
             },
-            {
-              value: "B",
-              label: "B栋"
-            }
-          ]
+            methods: {
+             asyncOK () {
+              this.submit = false;
+              // this.$router.push({name: 'mybill'});
+              setTimeout(function(){
+                this.$router.push({name: 'mybill'});
+              }.bind(this), 1000);
+            },
+             goLink () {
+              this.submit = true;
+          }
         },
-        {
-          value: "2",
-          label: "二单元",
-          dorNums: [
-            { name: "9a432", dorNums: "6" },
-            { name: "9a433", dorNums: "6" },
-            { name: "9a434", dorNums: "6" }
-          ],
-          children: [
-            {
-              value: "A",
-              label: "A栋"
-            },
-            {
-              value: "B",
-              label: "B栋"
-            }
-          ]
-        }
-      ]
-    };
-  },
-  methods: {
-    goLink() {
-      this.submit = true;
-        this.$router.push({ name: "mybill" });
-    },
-    choseDor() {
-      for (let item in this.data) {
-        this.choseDornums = this.data[item].dorNums;
-      }
+            mounted() {
+                this.$http.get("dormitories").then(res => {
+                    this.topicsData = res.data.dormitories;
+                    this.dornum = res.data.dormitories.dorm_name
+              });
     }
   }
-};
 </script>
 <style scoped>
 .layout-box .header-title p {
