@@ -36,7 +36,7 @@ export default {
         });
     },
     submit() {
-      this.$router.push({ name: "alreadybill" });
+      this.$router.push({ name: "payment" });
     }
   }
 };
