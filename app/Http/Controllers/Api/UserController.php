@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\UserRequest;
 use App\Models\User;
 use App\Transformers\UserTransformer;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -21,9 +20,10 @@ class UserController extends Controller
             \Cache::forget($request->captcha_key);
             return $this->response->errorUnauthorized('验证码错误');
         }
-        // dd($request->dormitory_id);
+
         $user = User::create([
             'student_id' => $request->student_id,
+            'email' => $request->email,
             'password' => bcrypt($request->password),
             'nickname' => str_random(10),
         ]);

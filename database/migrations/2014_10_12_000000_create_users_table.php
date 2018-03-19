@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('student_id')->unique()->index()->comment('学号');
             $table->string('password');
-            $table->string('email')->nullable()->unique()->comment('邮箱地址');
+            $table->string('email')->nullable()->comment('邮箱地址');
             $table->string('nickname')->default('')->nullable()->comment('昵称');
             $table->string('avatar')->default('')->nullable()->comment('头像');
             $table->string('dormitory_id')->default(0)->comment('宿舍号');

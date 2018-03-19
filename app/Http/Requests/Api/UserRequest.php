@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api;
 
 use App\Http\Requests\Request;
+use Auth;
 
 class UserRequest extends Request
 {
@@ -15,12 +16,18 @@ class UserRequest extends Request
     public function rules()
     {
         return [
-            // 'student_id' => 'required|integer|between:100000,100999',
-            'student_id' => 'required|integer',
+            'student_id' => 'required|integer|unique:users,student_id,'.Auth::id(),
+            'email' => 'required|email',
             'password' => 'required|min:5',
-            'dormitory_id' => 'required|integer',
             'captcha_key' => 'required|string',
             'captcha_code' => 'required|string',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'student_id.unique' => '学号已注册',
         ];
     }
 
@@ -28,8 +35,8 @@ class UserRequest extends Request
     {
         return [
             'student_id' => '学号',
+            'email' => '邮箱地址',
             'password' => '密码',
-            'dormitory_id' => '宿舍ID',
             'captcha_key' => '验证码 key',
             'captcha_code' => '验证码',
         ];
