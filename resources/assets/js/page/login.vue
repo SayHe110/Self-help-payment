@@ -96,6 +96,9 @@ export default {
         this.captchaKey = res.body.captcha_key;
         this.captchasSrc = res.body.captcha_image_content;
       });
+    },
+    handleSubmittwo(num){
+        console.log(num);
     }
   }
 };

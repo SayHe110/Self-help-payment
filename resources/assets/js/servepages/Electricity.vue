@@ -5,7 +5,7 @@
     </div>
     <div class="layout-application">
         <template>
-            <ve-histogram :data="chartData" :settings="chartSettings" style="height:360px;"></ve-histogram>
+            <ve-histogram :data="chartData" :settings="chartSettings" style="height:350px;"></ve-histogram>
         </template>  
     </div>
 </div>
@@ -26,7 +26,7 @@
       this.chartSettings = {
         metrics: ['电量', '电费'],
         dimension: ['日期'],
-        yAxisName: ['电量']
+        yAxisName: ['kW·h']
         
       }
     }

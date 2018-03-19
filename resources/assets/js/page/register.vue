@@ -72,7 +72,7 @@ export default {
       this.$refs[name].validate(valid => {
         if (valid) {
           this.$http
-            .post("authorizations", {
+            .post("users", {
               student_id: this.formInline.user,
               password: this.formInline.password,
               captcha_key: this.captchaKey,

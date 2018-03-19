@@ -118,6 +118,11 @@ export default new Router({
                 path: '/payment',
                 name: 'payment',
                 component: require('../servepages/payment.vue'),
+            },
+            {
+                path: '/Electricity',
+                name: 'Electricity',
+                component: require('../servepages/Electricity.vue'),
             }
             
         ]
