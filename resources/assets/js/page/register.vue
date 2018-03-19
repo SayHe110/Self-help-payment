@@ -23,8 +23,8 @@
                     <Input type="password" v-model="formInline.password" placeholder="请设置6-16位密码" size="large">
                     </Input>
                 </FormItem>
-                 <FormItem prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="请确认您的密码" size="large">
+                 <FormItem prop="password_confirm">
+                    <Input type="password" v-model="formInline.password_confirm" placeholder="请确认您的密码" size="large">
                     </Input>
                 </FormItem>
                 <FormItem>
@@ -60,6 +60,9 @@ export default {
         ],
         email: [
           { required: true, message: "请输入邮箱", trigger: "blur" }
+        ],
+        password_confirm: [
+            {required: true, message: "请确认密码", trigger: "blur" }
         ]
       }
     };
