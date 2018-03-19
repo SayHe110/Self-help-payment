@@ -6,11 +6,8 @@
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" label-position="right" :label-width="80">
-                <FormItem label="所在单元">
-                     <Cascader v-model="dorNums" :data="data" filterable trigger="hover"></Cascader>
-                </FormItem>
-                <FormItem label="宿舍号">
-                    <Input class="dorNum" v-model="formPay.dorNum" @click.native="choseDor">{{dorNums.name}}</Input>
+                <FormItem label="所在宿舍">
+                   <Cascader :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
@@ -24,124 +21,62 @@
 </div>
 </template>
 <script>
-  export default {
-        data () {
-            return {
-                topicsData:{},
-                submit: false,
-                loading: true,
-                dorNums: [],
-                formPay: {
-                    dorNum: '',
-                    cash: ''
-                },
-                data: [{
-                    value: '1',
-                    label: '一单元',
-                    children: [
-                        {
-                            value: 'A',
-                            label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
-                        },
-                        {
-                            value: 'B',
-                            label: 'B栋',
-                            
-                        }
-                    ]
-                }, {
-                    value: '2',
-                    label: '二单元',
-                    children: [
-                        {
-                            value: 'A',
-                            label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
-                        },
-                        {
-                            value: 'B',
-                            label: 'B栋',
-                            
-                        }
-                    ],
-                }, {
-                    value: '3',
-                    label: '三单元',
-                    children: [
-                        {
-                            value: 'A',
-                            label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
-                        },
-                        {
-                            value: 'B',
-                            label: 'B栋',
-                            
-                        }
-                    ],
-                }, {
-                    value: '4',
-                    label: '四单元',
-                    children: [
-                        {
-                            value: 'A',
-                            label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
-                        },
-                        {
-                            value: 'B',
-                            label: 'B栋',
-                            
-                        }
-                    ],
-                }, {
-                    value: '5',
-                    label: '五单元',
-                    children: [
-                        {
-                            value: 'A',
-                            label: 'A栋',
-                            dorNums:[
-                              101,102,103,104,105,106
-                            ]
-                        },
-                        {
-                            value: 'B',
-                            label: 'B栋',
-                            
-                        }
-                    ],
-                }]
-              }
-            },
-            methods: {
-             asyncOK () {
-              this.submit = false;
-              // this.$router.push({name: 'mybill'});
-              setTimeout(function(){
-                this.$router.push({name: 'mybill'});
-              }.bind(this), 1000);
-            },
-             goLink () {
-              this.submit = true;
-          }
-        },
-            mounted() {
-                this.$http.get("dormitories").then(res => {
-                    this.topicsData = res.data.dormitories;
-                    this.dornum = res.data.dormitories.dorm_name
-              });
+export default {
+  data() {
+    return {
+      submit: false,
+      loading: true,
+      formPay: {
+        dorNum: "",
+        cash: ""
+      },
+      dorms: []
+    };
+  },
+  methods: {
+    asyncOK() {
+      this.submit = false;
+      // this.$router.push({name: '  mybill'});
+      setTimeout(
+        function() {
+          this.$router.push({ name: "mybill", params: {params: {dorm_id}}});
+        }.bind(this),
+        1000
+      );
+    },
+    goLink() {
+      this.submit = true;
     }
+  },
+  mounted() {
+    this.$http.get("dormitories").then(res => {
+      this.dorms = res.data.dormitories.map(item => {
+        let dom = {
+          label: item.dorm_name,
+          value: item.dorm_id,
+        };
+        if (item.all_children_dorms.length != 0) {
+          dom.children = item.all_children_dorms.map(item => {
+            let dom =  {
+              label: item.dorm_name + '栋',
+              value: item.dorm_id,
+            };
+            if (item.all_children_dorms.length != 0) {
+              dom.children = item.all_children_dorms.map(item => {
+                return {
+                  label: item.dorm_name,
+                  value: item.dorm_id,
+                }
+              });
+            }
+            return dom;
+          });
+        }
+        return dom;
+      })
+    });
   }
+};
 </script>
 <style scoped>
 .layout-box .header-title p {
@@ -175,7 +110,7 @@
 .application-box {
   padding-top: 30px;
 }
-.application-box{
-    padding-top: 30px;
+.application-box {
+  padding-top: 30px;
 }
 </style>

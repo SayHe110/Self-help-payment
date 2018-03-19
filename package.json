@@ -20,9 +20,11 @@
     "vue-router": "^3.0.1"
   },
   "dependencies": {
+    "echarts": "^4.0.4",
     "fastclick": "^1.0.6",
     "iview": "^2.9.2",
     "no-f5": "^1.0.11",
+    "v-charts": "^1.16.6",
     "vue-resource": "^1.2.1"
   }
 }

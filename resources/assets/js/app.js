@@ -7,7 +7,9 @@ import VueResource from 'vue-resource'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import FastClick from 'fastclick';
+import VCharts from 'v-charts'
 
+Vue.use(VCharts)
 Vue.config.productionTip = false
 Vue.use(VueResource);
 Vue.use(iView);

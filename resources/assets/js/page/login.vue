@@ -16,7 +16,7 @@
                         <Icon type="ios-locked-outline" slot="prepend"></Icon>
                     </Input>
                 </FormItem>
-                <FormItem prop="verification" style="text-align:left">
+                <FormItem prop="verification" style="text-align:left" v-if="num >= 4">
                     <Input type="text" style="width:50%;float: left;margin-right:10px;" inline v-model="formInline.verification" placeholder="验证码" size="large"></Input>
                     <a href="javascript:;" @click="updatedCaptchas(captchasSrc)"> <img class="token-img" id="token" alt="验证码" style="height:32px;width:80px;" :src="captchasSrc"></a>
                     <a href="javascript:;" @click="updatedCaptchas(captchasSrc)" style="color:#1bbc9b">换一张</a>
@@ -42,6 +42,7 @@ export default {
     return {
       captchasSrc: "",
       captchaKey: "",
+      num: "0",
       formInline: {
         user: "",
         password: "",
@@ -81,9 +82,11 @@ export default {
               this.$router.push("./home");
           }, err => {
               this.$Message.error(err.body.message || '登录失败');
+              this.num++;
           });
         } else {
           this.$Message.error("输入的数据格式有误，请检查!");
+          this.num++
         }
       });
     },
@@ -93,6 +96,9 @@ export default {
         this.captchaKey = res.body.captcha_key;
         this.captchasSrc = res.body.captcha_image_content;
       });
+    },
+    handleSubmittwo(num){
+        console.log(num);
     }
   }
 };

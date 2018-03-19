@@ -12,7 +12,7 @@
                             <p>南枫</p>
                             <span>1508220235</span>
                         </div>
-                        <span class="personal-exit"><a href="javascript:;">退出</a></span>
+                        <span class="personal-exit"><a @click="quit">退出</a></span>
                     </a>
                 </li>
                 <li>
@@ -50,9 +50,24 @@
    </div>
 </template>
 <script>
-export default {
-  name: "personal"
-};
+export default{
+		data () {
+			return {
+        name: "personal"
+			}
+		},
+		methods: {
+			quit () {
+				this.$http.delete('authorizations/current', {
+          params: {
+            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNTIxNDYzMTc4LCJleHAiOjE1NTI5OTkxNzgsIm5iZiI6MTUyMTQ2MzE3OCwianRpIjoiT1pZRFpsU2ttWkd3c3dKViIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.NDGfnkVsNJ5Illv_sl1KHkaD3avn9nYsR36oHqFHxyc'
+          }
+        }).then(res => {
+					this.$router.push({name: 'index'});
+				})
+			}
+    }
+}
 </script>
 <style>
 .personal-contain {

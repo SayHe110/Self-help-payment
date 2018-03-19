@@ -1,18 +1,38 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>电量电费</p>
+        <p>电费电量</p>
     </div>
     <div class="layout-application">
-        <div class="application-box">
-            
-        </div>  
+        <template>
+            <ve-histogram :data="chartData" :settings="chartSettings" style="height:350px;"></ve-histogram>
+        </template>  
     </div>
 </div>
+    
 </template>
 <script>
-export default {};
+  module.exports = {
+    created: function () {
+      this.chartData = {
+        columns: ['日期', '电量', '电费'],
+        rows: [
+          { '电量': 5, '日期': '1月1日', '电费': 0.57*5, },
+          { '电量': 2, '日期': '1月2日', '电费': 2*0.57,  },
+          { '电量': 2, '日期': '1月3日', '电费': 2*0.57  },
+          { '电量': 3, '日期': '1月4日', '电费': 3*0.57, }
+        ]
+      }
+      this.chartSettings = {
+        metrics: ['电量', '电费'],
+        dimension: ['日期'],
+        yAxisName: ['kW·h']
+        
+      }
+    }
+  }
 </script>
+
 <style scoped>
 .layout-box {
   position: absolute;
