@@ -23,10 +23,10 @@
                          </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'Electricity'}">
                            <img src="../assets/icon/dianfei.png" alt="">
                            <p>电量电费</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                        <a href="javascript:;">
