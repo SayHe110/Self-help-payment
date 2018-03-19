@@ -58,10 +58,16 @@ export default{
 		},
 		methods: {
 			quit () {
-					this.$router.push({name: 'login'});
-				}
+				this.$http.delete('authorizations/current', {
+          params: {
+            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNTIxNDYzMTc4LCJleHAiOjE1NTI5OTkxNzgsIm5iZiI6MTUyMTQ2MzE3OCwianRpIjoiT1pZRFpsU2ttWkd3c3dKViIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.NDGfnkVsNJ5Illv_sl1KHkaD3avn9nYsR36oHqFHxyc'
+          }
+        }).then(res => {
+					this.$router.push({name: 'index'});
+				})
 			}
-		}
+    }
+}
 </script>
 <style>
 .personal-contain {
