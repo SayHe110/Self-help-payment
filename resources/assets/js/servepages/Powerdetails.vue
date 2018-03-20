@@ -5,10 +5,17 @@
     </div>
     <div class="layout-application">
         <div class="application-box">
+            <div class="personal">
+                <img src="../assets/icon/touxiang.png" alt="">
+                <div class="title">                        
+                    <p>用户名：31321</p>
+                    <p>宿舍号：9A106</p>
+                </div>
+            </div>
             <div class="total">
                 <ul>
-                    <li>年电量120度</li>
-                    <li>年电费90元</li>
+                    <li>2017年电量120度</li>
+                    <li>电费90元</li>
                 </ul>
             </div>
             <div class="box">
@@ -129,8 +136,38 @@ export default {};
 .application-box {
   padding-top: 10px;
 }
+.personal{
+    height: 72px;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.personal img{
+    float: left;
+    padding: 0 10px;
+    float: left;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.personal .title{
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    padding-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+}
 .total {
   text-align: center;
+  padding: 10px;
+  margin-top: 70px;
 }
 .total ul {
   display: inline-block;
@@ -138,9 +175,17 @@ export default {};
 .total ul li {
   display: block;
   float: left;
-  padding: 0 10px;
+  padding: 0 5px;
   font-size: 16px;
   color: #444;
+}
+.box{
+    width: 100%;
+    padding: 15px 5px 0;
+    background: #fff;
+    position: absolute;
+    left: 0;
+
 }
 .item{
     float: left;
@@ -168,7 +213,7 @@ export default {};
 .box-info li p{
     display: block;
     float: right;
-    padding-right: 10px;
+    padding-right: 5px;
     font-size: 14px;
 }
 
