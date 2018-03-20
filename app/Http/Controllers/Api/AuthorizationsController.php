@@ -11,11 +11,11 @@ class AuthorizationsController extends Controller
 {
     public function store(AuthorizationRequest $request)
     {
+        
         // 若有验证码则进入验证码验证
         if($request->captcha_key){
             $this->verifyCaptcha($request);
         }
-
         $user_name = $request->username;
 
         // filter_var — 使用特定的过滤器过滤一个变量
@@ -31,7 +31,7 @@ class AuthorizationsController extends Controller
                 'whetherNeedCaptcha' => $this->whetherNeedCaptcha($request->username),
                 'status_code' => 401,
             ];
-            return $this->response->array($data);
+            return $this->response->array($data)->setStatusCode(401);
         }
 
         return $this->respondWithToken($token)->setStatusCode(201);
