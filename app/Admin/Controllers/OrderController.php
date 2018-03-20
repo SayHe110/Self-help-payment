@@ -26,13 +26,17 @@ class OrderController extends Controller
     public function grid()
     {
         return Admin::grid(Order::class, function (Grid $grid){
-            $grid->model()->orderBy('DESC');
+            $grid->model()->orderBy('id', 'DESC');
 
             $grid->id('ID')->sortable();
             $grid->user()->nickname('用户');
             $grid->order_num('订单号');
-            // $gri
-
+            $grid->dormitory()->dorm_name('宿舍号');
+            $states = [
+                'on' => ['text' => 'YES'],
+                'off' => ['text' => 'NO'],
+            ];
+            $grid->is_handle('是否处理')->switch($states);
         });
     }
 }

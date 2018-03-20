@@ -12,4 +12,10 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function dormitory()
+    {
+        return $this->belongsTo(Dormitory::class);
+    }
+
 }
