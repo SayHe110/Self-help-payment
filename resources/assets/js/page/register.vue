@@ -46,6 +46,7 @@ export default {
         user: "",
         password: "",
         email: "",
+        password_confirm: ""
       },
       ruleInline: {
         user: [{ required: true, message: "请输入学号", trigger: "blur" }],
@@ -69,13 +70,16 @@ export default {
   },
   methods: {
     handleSubmit(name) {
+      if(this.formInline.password !== this.formInline.password_confirm) {
+        alert('两次输入的密码不同！')
+        return false
+      }
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$http
-            .post("users", {
+          this.$http.post("users", {
               student_id: this.formInline.user,
-              email: this.formInline.email,
-              password:this.formInline.password
+              password: this.formInline.password,
+              email: this.formInline.email
             })
             .then(
               res => {

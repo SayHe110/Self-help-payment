@@ -40,10 +40,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'aboutus'}">
                         <p class="personal-type">关于我们</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
        </div>
