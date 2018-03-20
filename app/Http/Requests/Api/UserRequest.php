@@ -19,8 +19,8 @@ class UserRequest extends Request
             'student_id' => 'required|integer|unique:users,student_id,'.Auth::id(),
             'email' => 'required|email',
             'password' => 'required|min:5',
-            'captcha_key' => 'required|string',
-            'captcha_code' => 'required|string',
+            // 'captcha_key' => 'required|string',
+            // 'captcha_code' => 'required|string',
         ];
     }
 
