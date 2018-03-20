@@ -12,7 +12,7 @@
                 </FormItem>
                 <FormItem prop="email">
                     <AutoComplete
-                        v-model="email"
+                        v-model="formInline.email"
                         size="large"
                         @on-search="handleSearch_email"
                         placeholder="请输入您的邮箱">
@@ -46,6 +46,8 @@ export default {
       formInline: {
         user: "",
         password: "",
+        email: "",
+        password_confirm: ""
       },
       ruleInline: {
         user: [{ required: true, message: "请输入学号", trigger: "blur" }],
@@ -69,14 +71,16 @@ export default {
   },
   methods: {
     handleSubmit(name) {
+      if(this.formInline.password !== this.formInline.password_confirm) {
+        alert('两次输入的密码不同！')
+        return false
+      }
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$http
-            .post("users", {
+          this.$http.post("users", {
               student_id: this.formInline.user,
               password: this.formInline.password,
-              captcha_key: this.captchaKey,
-              captcha_code: this.formInline.verification
+              email: this.formInline.email
             })
             .then(
               res => {
