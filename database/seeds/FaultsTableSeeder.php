@@ -23,7 +23,7 @@ class FaultsTableSeeder extends Seeder
                     ->make()
                     ->each(function ($fault, $index) use ($faker, $users_id, $dorms_id){
                         $fault->user_id = $faker->randomElement($users_id);
-                        $fault->dorm_id = $faker->randomElement($dorms_id);
+                        $fault->dormitory_id = $faker->randomElement($dorms_id);
                     })->toArray();
 
         Fault::insert($faults);

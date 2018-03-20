@@ -25,7 +25,7 @@ class OrdersTableSeeder extends Seeder
                     ->make()
                     ->each(function ($order, $index) use($faker, $users_id, $dorms_id){
                         $order->user_id = $faker->randomElement($users_id);
-                        $order->dorm_id = $faker->randomElement($dorms_id);
+                        $order->dormitory_id = $faker->randomElement($dorms_id);
                     })->toArray();
 
         Order::insert($orders);
