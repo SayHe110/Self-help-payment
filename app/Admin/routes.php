@@ -14,4 +14,5 @@ Route::group([
     $router->resource('users', UserController::class);
     $router->resource('categories', CategoryController::class);
     $router->resource('topics', TopicController::class);
+    $router->resource('orders', OrderController::class);
 });
