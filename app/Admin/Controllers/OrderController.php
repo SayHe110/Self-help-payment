@@ -14,12 +14,25 @@ class OrderController extends Controller
 {
     use ModelForm;
 
-    public function index()
+    public function untreatedIndex()
     {
         return Admin::content(function (Content $content){
             $content -> header('订单管理');
 
-            $content->body($this->grid());
+            $content->body($this->untreatedGrid());
+        });
+    }
+
+    public function untreatedGrid()
+    {
+        return Admin::grid(Order::class, function (Grid $grid){
+            $grid->model()->where('is_handle',0);
+            $grid->model()->orderBy('id', 'DESC');
+
+            $grid->id('ID')->sortable();
+            $grid->user()->nickname('用户');
+            $grid->order_num('订单号');
+            $grid->dormitory()->dorm_name('宿舍号');
         });
     }
 

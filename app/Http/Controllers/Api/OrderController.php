@@ -11,8 +11,9 @@ class OrderController extends Controller
 {
     public function store(OrderRequest $request, Order $order)
     {
-        $order->fill($request->all());
-
+        // $order->fill($request->all());
+        $order->dormitory_id = $request->dorm_id;
+        $order->money = $request->money;
         $order->user_id = $this->user()->id;
         $order->order_num = date('YmdHis').rand(100, 999);
         

@@ -11,7 +11,6 @@ class AuthorizationsController extends Controller
 {
     public function store(AuthorizationRequest $request)
     {
-        
         // 若有验证码则进入验证码验证
         if($request->captcha_key){
             $this->verifyCaptcha($request);

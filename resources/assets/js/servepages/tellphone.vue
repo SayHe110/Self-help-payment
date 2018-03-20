@@ -16,7 +16,7 @@
                 title="Title"
                 :loading="loading"
                 @on-ok="asyncOK">
-                <p v-model="tellphone">您确认将手机号换成{{tellphone}}</p>
+                <p v-model= "tellphone" >您确认将手机号换成{{tellphone}}</p>
             </Modal>
             <p class="notice">一个手机号只能作为一个账号的登录名，一个手机号最多可以账号绑定</p>
     </div>
@@ -27,7 +27,7 @@
 export default {
         data () {
             return {
-                tellphone:'',
+                tellphone: '',
                 modal6: false,
                 loading: true
             }

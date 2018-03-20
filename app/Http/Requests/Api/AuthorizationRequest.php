@@ -6,7 +6,6 @@ use App\Http\Requests\Request;
 
 class AuthorizationRequest extends Request
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -20,10 +19,17 @@ class AuthorizationRequest extends Request
         ];
     }
 
+    public function messages()
+    {
+        return [
+            //
+        ];
+    }
+
     public function attributes()
     {
         return [
-            'student_id' => '学号',
+            'username' => '学号/邮箱',
             'password' => '密码',
         ];
     }

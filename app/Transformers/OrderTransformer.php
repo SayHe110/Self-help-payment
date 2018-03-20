@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/3/18
- * Time: 16:38
- */
 
 namespace App\Transformers;
 
@@ -20,7 +14,7 @@ class OrderTransformer extends TransformerAbstract
             'id' => $order->id,
             'user_id' => $order->user_id,
             'order_num' => $order->order_num,
-            'dorm_id' => $order->dorm_id,
+            'dormitory_id' => $order->dormitory_id,
             'money' => $order->money,
             'processing_person_id' => $order->processing_person_id,
             'is_handle' => is_bool($order->is_handle),

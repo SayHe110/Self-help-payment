@@ -7,14 +7,14 @@
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="70">
                 <FormItem label="所在宿舍">
-                   <Cascader :data="dorms" filterable trigger="hover" ></Cascader>
+                   <Cascader v-model="formPay.dorNum" on-change="handleChange" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
                 </FormItem>
-                <router-link :to="{name: 'mybill'}">
-                    <Button type="success" long>下一步</Button>
-                </router-link>
+                <!-- <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}"> -->
+                    <Button @click="submitOrder" type="success" long>下一步</Button>
+                <!-- </router-link> -->
             </Form>
         </div>  
     </div>
@@ -27,7 +27,7 @@ export default {
       submit: false,
       loading: true,
       formPay: {
-        dorNum: "",
+        dorNum: [],
         cash: ""
       },
       dorms: []
@@ -39,16 +39,28 @@ export default {
       // this.$router.push({name: '  mybill'});
       setTimeout(
         function() {
-          this.$router.push({ name: "mybill", params: {params: {dorm_id}}});
+          this.$router.push({ name: "mybill", params: {id: this.formPay.dorNum, name:this.formPay.cash}});
         }.bind(this),
         1000
       );
+    },
+    submitOrder () {
+      this.$http.post('orders', {
+        dorm: this.formPay.dorNum[2],
+        money: this.formPay.cash
+      }).then(res => {
+        console.log(res)
+      })
+    },
+    handleChange (value, selectedData) {
+        console.log(selectedData.map(o => o.label).join(', '));
     },
     goLink() {
       this.submit = true;
     }
   },
   mounted() {
+    console.log(this.formPay)
     this.$http.get("dormitories").then(res => {
       this.dorms = res.data.dormitories.map(item => {
         let dom = {

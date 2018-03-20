@@ -74,7 +74,7 @@ export default new Router({
                 component: require('../servepages/pay.vue'),
             },
              {
-                path: '/mybill',
+                path: '/mybill/:id/:name',
                 name: 'mybill',
                 component: require('../servepages/mybill.vue'),
             },
@@ -115,24 +115,19 @@ export default new Router({
                 component: require('../servepages/tellphone.vue'),
             },
             {
-                path: '/payment',
-                name: 'payment',
-                component: require('../servepages/payment.vue'),
-            },
-            {
                 path: '/Electricity',
                 name: 'Electricity',
                 component: require('../servepages/Electricity.vue'),
             },
             {
-                path: '/Powerdetails',
-                name: 'Powerdetails',
-                component: require('../servepages/Powerdetails.vue'),
+                path: '/payment',
+                name: 'payment',
+                component: require('../servepages/payment.vue'),
             },
             {
-                path: '/balance',
-                name: 'balance',
-                component: require('../servepages/balance.vue'),
+                path: '/aboutus',
+                name: 'aboutus',
+                component: require('../servepages/aboutus.vue'),
             }
             
         ]
