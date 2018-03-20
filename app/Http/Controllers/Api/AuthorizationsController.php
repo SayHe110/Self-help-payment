@@ -15,7 +15,6 @@ class AuthorizationsController extends Controller
         if($request->captcha_key){
             $this->verifyCaptcha($request);
         }
-
         $user_name = $request->username;
 
         // filter_var — 使用特定的过滤器过滤一个变量
@@ -26,10 +25,33 @@ class AuthorizationsController extends Controller
         $credentials['password'] = $request->password;
 
         if(!$token = Auth::guard('api')->attempt($credentials)){
-            return $this->response->errorUnauthorized('用户名或密码错误');
+            $data = [
+                'message' => '用户名或者密码错误',
+                'whetherNeedCaptcha' => $this->whetherNeedCaptcha($request->username),
+                'status_code' => 401,
+            ];
+            return $this->response->array($data)->setStatusCode(401);
         }
 
         return $this->respondWithToken($token)->setStatusCode(201);
+    }
+
+    // 使用 username 字段进行存储
+    protected function whetherNeedCaptcha($username)
+    {
+        $expiredAt = now()->addMinutes(2);
+        if(! \Cache::has($username)){
+
+            \Cache::put($username, 0, $expiredAt);
+        }
+        $value = \Cache::get($username);
+        $value = $value+1;
+        \Cache::put($username, $value, $expiredAt);
+
+        if(\Cache::get($username) > 3){
+            return true;
+        }
+        return false;
     }
 
     // 验证码进行验证

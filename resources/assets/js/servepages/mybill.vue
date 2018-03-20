@@ -12,18 +12,18 @@
                     <li><p>缴费宿舍 :</p><span>9A110</span></li>
                     <li><p>缴费金额 :</p><span>110</span></li>
                 </ul>
-                <Button  type="success" long @click="showIdCardInput(value)">提交订单</Button>
+                <Button  type="success" long @click="showIdCardInput">提交订单</Button>
             </div>                
         </div>
          <transition name="fade">
             <div class="mask_one" v-show="a">
               <div class="password">
                 <div class="cancer">
-                  <button @click="a=false">X</button>
-                  <p>请输入银行卡后四位</p>
+                  <button @click="a=false"><Icon type="chevron-left"></Icon></button>
+                  <p>请输入支付密码</p>
                 </div>
                 <div class="button_box">
-                  <input :key="n" v-for="n in 4" :value="idCard[n - 1]" type="text">
+                  <input :key="n" v-for="n in 4" :value="idCard[n - 1]" type="password">
                 </div>
                 <div class="click_box">
                   <ul>
@@ -213,10 +213,8 @@ button {
   border-bottom: 1px solid #fff;
 }
 .password .cancer {
-  padding-bottom: 10px;
   text-align: center;
   position: relative;
-  /*border-bottom: 1px solid #ededed;*/
 }
 .password .cancer p {
   color: #848484 !important;
@@ -229,9 +227,11 @@ button {
   border: none;
   border: 0px;
   position: absolute;
-  top: 10px;
+  top: -15px;
   left: 10px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  background: #f9f9f9;
+  font-size: 20px;
 }
 </style>

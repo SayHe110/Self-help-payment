@@ -9,6 +9,7 @@ $factory->define(\App\Models\Order::class, function (Faker $faker) {
     return [
         'order_num' => mt_rand(),
         'money' => rand(50, 100),
+        'is_handle' => $faker->boolean(),
         'created_at' => $created_at,
         'updated_at' => $updated_at,
     ];

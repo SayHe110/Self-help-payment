@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->bigInteger('order_num')->unique()->index()->comment('订单号');
-            $table->integer('dorm_id')->index()->comment('宿舍ID');
+            $table->integer('dormitory_id')->index()->comment('宿舍ID');
             $table->integer('money');
             $table->integer('processing_person_id')->nullable()->comment('处理的管理员');
             $table->boolean('is_handle')->default(false)->comment('是否处理');

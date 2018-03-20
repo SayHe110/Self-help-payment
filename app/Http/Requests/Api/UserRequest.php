@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Api;
 
 use App\Http\Requests\Request;
-use Auth;
+use App\Rules\FieldHasExisted;
 
 class UserRequest extends Request
 {
@@ -16,11 +16,11 @@ class UserRequest extends Request
     public function rules()
     {
         return [
-            'student_id' => 'required|integer|unique:users,student_id,'.Auth::id(),
+            'student_id' => 'required|integer',
             'email' => 'required|email',
             'password' => 'required|min:5',
-            'captcha_key' => 'required|string',
-            'captcha_code' => 'required|string',
+            // 'captcha_key' => 'required|string',
+            // 'captcha_code' => 'required|string'
         ];
     }
 

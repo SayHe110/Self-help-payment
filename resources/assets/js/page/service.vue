@@ -29,10 +29,10 @@
                         </router-link>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                        <router-link :to="{name: 'balance'}">
                            <img src="../assets/icon/yue.png" alt="">
                            <p>电费余额</p>
-                       </a>
+                        </router-link>
                    </li>
                    <li>
                         <router-link :to="{name: 'repair'}">
@@ -69,19 +69,20 @@
             <div class="service-type" style="height:85px">
                 <ul>
                    <li>
-                       <a href="javascript:;">
+                       
+                        <a @click="warning">
                            <img src="../assets/icon/fudian.png" alt="">
                            <p>自助复电</p>
-                       </a>
+                        </a>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                       <a @click="warning">
                            <img src="../assets/icon/licai.png" alt="">
                            <p>电商理财</p>
                        </a>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                       <a @click="warning">
                            <img src="../assets/icon/fuwu.png" alt="">
                            <p>网点服务</p>
                        </a>
@@ -97,13 +98,13 @@
             <div class="service-type" style="height:85px">
                 <ul>
                    <li>
-                       <a href="javascript:;">
+                       <a @click="warning">
                            <img src="../assets/icon/fupin.png" alt="">
                            <p>电商扶贫</p>
                        </a>
                    </li>
                    <li>
-                       <a href="javascript:;">
+                       <a @click="warning">
                            <img src="../assets/icon/ditan.png" alt="">
                            <p>低碳生活</p>
                        </a>
@@ -118,6 +119,11 @@ export default {
   name: "service",
   data() {
     return {};
+  },
+  methods: {
+       warning () {
+                this.$Message.warning('尽情期待!');
+            }
   }
 };
 </script>

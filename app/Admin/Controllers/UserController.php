@@ -35,10 +35,11 @@ class UserController extends Controller
             $grid->id('ID')->sortable();
             $grid->student_id('学号');
             $grid->nickname('昵称');
-            $grid->avatar()->image(30,30);
+            $grid->avatar()->image(config('app.url').'/uploads/', 30 ,30);
             $grid->email('邮箱');
             // todo 显示有待更改
-            $grid->dormitory_id('宿舍号');
+            // $grid->dormitory_id('宿舍号');
+            $grid->dormitory()->dorm_name('宿舍号');
         });
     }
 
@@ -71,17 +72,13 @@ class UserController extends Controller
     {
         return Admin::form(User::class, function (Form $form){
             // 构建图片（文件）存储规则
-            $folder_name = 'uploads/images/avatars/'.date('Ym',time()).'/'.date('d',time());
+            $folder_name = '/uploads/images/avatars/'.date('Ym',time()).'/'.date('d',time());
 
             $form->text('student_id', '学号');
             $form->password('password', '密码');
-            $form->email('email', '邮箱地址')->rules('unique:users',[
-                'unique' => '邮箱地址已经存在',
-            ]);
+            $form->email('email', '邮箱地址')->rules('unique:users');
             $form->text('nickname', '昵称');
-            // todo 图片显示有问题
-            $form->image('avatar', '头像')->move($folder_name);
-
+            $form->image('avatar', '头像')->uniqueName();
             // todo 宿舍号待修改
             $form->text('dormitory_id', '宿舍号');
             $form->switch('is_verify', '是否已验证')->states();
@@ -92,9 +89,7 @@ class UserController extends Controller
     {
         return Admin::form(User::class, function (Form $form){
             $form->display('student_id', '学号');
-            $form->email('email', '邮箱地址')->rules('unique:users',[
-                'unique' => '邮箱地址已经存在',
-            ]);
+            $form->email('email', '邮箱地址');
             $form->text('nickname', '昵称');
             $form->image('avatar', '头像');
             // todo 宿舍号待修改

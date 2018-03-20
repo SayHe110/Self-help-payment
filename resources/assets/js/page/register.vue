@@ -39,9 +39,8 @@
 export default {
   data() {
     return {
-      email: "",
       emailarry: "",
-      captchasSrc: "",
+      usersSrc: "",
       captchaKey: "",
       formInline: {
         user: "",
@@ -84,7 +83,7 @@ export default {
             })
             .then(
               res => {
-                this.$router.push("./login");
+                this.$router.push("./");
               },
               err => {
                 this.$Message.error(err.body.message || "注册失败");

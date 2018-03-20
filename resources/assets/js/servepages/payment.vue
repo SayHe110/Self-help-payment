@@ -1,7 +1,7 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>付款</p>
+        <p>支付成功</p>
     </div>
     <div class="layout-application">
         <div class="application-box">
