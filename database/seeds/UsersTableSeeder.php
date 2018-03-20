@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         $faker = app(Faker\Generator::class);
 
-        $dorms = Dormitory::all()->pluck('dorm_id')->toArray();
+        $dorms = Dormitory::all()->pluck('id')->toArray();
 
         // 头像假数据
         $avatars = [

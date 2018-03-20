@@ -18,7 +18,7 @@ class OrdersTableSeeder extends Seeder
 
         $users_id = User::all()->pluck('id')->toArray();
 
-        $dorms_id = Dormitory::where('is_unit_building', '=', 0)->get()->pluck('dorm_id')->toArray();
+        $dorms_id = Dormitory::where('is_unit_building', '=', 0)->get()->pluck('id')->toArray();
 
         $orders = factory(Order::class)
                     ->times(100)
