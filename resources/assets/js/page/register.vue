@@ -12,7 +12,7 @@
                 </FormItem>
                 <FormItem prop="email">
                     <AutoComplete
-                        v-model="email"
+                        v-model="formInline.email"
                         size="large"
                         @on-search="handleSearch_email"
                         placeholder="请输入您的邮箱">
@@ -39,13 +39,13 @@
 export default {
   data() {
     return {
-      email: "",
       emailarry: "",
-      captchasSrc: "",
+      usersSrc: "",
       captchaKey: "",
       formInline: {
         user: "",
         password: "",
+        email: "",
       },
       ruleInline: {
         user: [{ required: true, message: "请输入学号", trigger: "blur" }],
@@ -74,13 +74,12 @@ export default {
           this.$http
             .post("users", {
               student_id: this.formInline.user,
-              password: this.formInline.password,
-              captcha_key: this.captchaKey,
-              captcha_code: this.formInline.verification
+              email: this.formInline.email,
+              password:this.formInline.password
             })
             .then(
               res => {
-                this.$router.push("./login");
+                this.$router.push("./");
               },
               err => {
                 this.$Message.error(err.body.message || "注册失败");

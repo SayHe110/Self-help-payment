@@ -3,9 +3,11 @@
         <div class="layout-header">
            <p>掌电</p>
        </div>
-       <div class="home-contain">
+        <Scroll :on-reach-bottom="handleReachBottom" height="460">
+        <div class="home-contain">
             <!-- 轮播图 -->
             <div class="banner">
+                <div class="banner-box">
                 <Carousel autoplay v-model="value2"
                     :autoplay-speed="setting.autoplaySpeed"
                     :dots="setting.dots"
@@ -18,12 +20,12 @@
                         </div>
                     </CarouselItem>
                 </Carousel>
+                </div>
             </div>
-            <BackTop :height="200" :bottom="80" :right="10" :duration="1000"></BackTop>
             <!-- 新闻列表 -->
             <div class="news-container">
                 <ul class="news-lists">
-                    <Scroll :on-reach-bottom="handleReachBottom" height="340">
+                    <!-- <Scroll :on-reach-bottom="handleReachBottom" height="340"> -->
                         <li v-for="values in topicsData" :key="values.id">
                             <div class="news-box">
                                 <router-link :to="{name: 'article', params: {id: values.id}}">
@@ -43,72 +45,68 @@
                                 </router-link>
                             </div>
                         </li>
-                    </Scroll>
+                    <!-- </Scroll> -->
                 </ul>
                 <div v-if="current_page >= total_pages" class="get-more"> <Spin fix>已经到底了</Spin></div>
             </div>
        </div>
+       </Scroll>
    </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-        value2: 0,
-        current_page: null,
-        total_pages: null,
-        setting: {
-            autoplay: false,
-            autoplaySpeed: 2000,
-            dots: "inside",
-            radiusDot: true,
-            trigger: "click",
-            arrow: "never"
-        },
-        topicsData:[
-            {id: ""},
-            {title: ""},
-            {body: ""}
-        ],
-        carousel_figureData: [
-            {id: ""},
-            {path: ""}
-        ]
-        };
-    },
-    //请求接口
-    mounted() {
-        // 文章
-        this.$http.get("topics").then(res => {
-            this.topicsData = res.body.data;
-            this.current_page = res.body.meta.pagination.current_page;
-            this.total_pages = res.body.meta.pagination.total_pages;
+  data() {
+    return {
+      value2: 0,
+      current_page: null,
+      total_pages: null,
+      setting: {
+        autoplay: false,
+        autoplaySpeed: 2000,
+        dots: "inside",
+        radiusDot: true,
+        trigger: "click",
+        arrow: "never"
+      },
+      topicsData: [{ id: "" }, { title: "" }, { body: "" }],
+      carousel_figureData: [{ id: "" }, { path: "" }]
+    };
+  },
+  //请求接口
+  mounted() {
+    // 文章
+    this.$http.get("topics").then(res => {
+      this.topicsData = res.body.data;
+      this.current_page = res.body.meta.pagination.current_page;
+      this.total_pages = res.body.meta.pagination.total_pages;
+    });
+    // 轮播图
+    this.$http.get("carousel_figure").then(res => {
+      this.carousel_figureData = res.body.images;
+    });
+  },
+  methods: {
+    handleReachBottom() {
+      if (this.current_page >= this.total_pages) {
+        return false;
+      } else {
+        return new Promise(resolve => {
+          this.$http
+            .get("topics", {
+              params: {
+                page: ++this.current_page
+              }
+            })
+            .then(res => {
+              for (let i in res.body.data) {
+                this.topicsData.push(res.body.data[i]);
+              }
+            });
         });
-        // 轮播图
-        this.$http.get("carousel_figure").then(res => {
-            this.carousel_figureData = res.body.images;
-        });
-    },
-    methods: {
-        handleReachBottom () { 
-            if (this.current_page >= this.total_pages) {
-                return false
-            } else {
-                return new Promise(resolve => {
-                    this.$http.get("topics", {
-                        params: {
-                            page: ++this.current_page
-                        }
-                    }).then(res => {
-                        for(let i in  res.body.data){
-                            this.topicsData.push(res.body.data[i])
-                        }
-                    });
-                });
-            }
-        }
+      }
     }
+  }
 };
 </script>
 
@@ -116,10 +114,12 @@ export default {
 <style scoped>
 .layout-box {
   background-color: #fff;
+  top: 35px;
+  padding: 0px;
 }
 /* 轮播图 */
 .banner {
-  position: absolute;
+  position: relative;
   left: 0;
   overflow: hidden;
   width: 100%;
@@ -131,7 +131,7 @@ export default {
 }
 /* 新闻资讯 */
 .news-container {
-  padding-top: 150px;
+  padding: 0 10px;
 }
 .news {
   background: #fff;
