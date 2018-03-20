@@ -6,7 +6,6 @@ use App\Http\Requests\Request;
 
 class AuthorizationRequest extends Request
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
