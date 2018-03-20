@@ -59,14 +59,14 @@ export default {
         dorNum: [
           {
             required: true,
-            message: "请输入宿舍号",           
+            message: "请输入宿舍号",
             trigger: "blur"
           }
         ],
         Tel: [
           {
             required: true,
-            message: "请输入电话",           
+            message: "请输入电话",
             trigger: "blur"
           }
         ]
@@ -78,9 +78,24 @@ export default {
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$Message.success("提交成功!");
+          this.$http
+            .post("faults", {
+              title: this.repairItem.title,
+              description: this.repairItem.textarea,
+              dormitory_id: this.repairItem.dorNum,
+              phone: this.repairItem.Tel
+            })
+            .then(
+              res => {
+                this.$Message.success("提交成功!");
+                this.$router.push("./service");
+              },
+              err => {
+                this.$Message.error(err.body.message || "提交失败");
+              }
+            );
         } else {
-          this.$Message.error("提交失败!");
+          this.$Message.error("输入的数据格式有误，请检查!");
         }
       });
     }
@@ -108,5 +123,4 @@ export default {
 .application-box {
   padding-top: 30px;
 }
-
 </style>

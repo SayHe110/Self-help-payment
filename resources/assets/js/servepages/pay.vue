@@ -5,9 +5,9 @@
     </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="formPay" label-position="right" :label-width="80">
+            <Form :model="formPay" label-position="left" :label-width="70">
                 <FormItem label="所在宿舍">
-                   <Cascader :data="dorms" filterable trigger="hover"></Cascader>
+                   <Cascader :data="dorms" filterable trigger="hover" ></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
@@ -112,5 +112,8 @@ export default {
 }
 .application-box {
   padding-top: 30px;
+}
+.ivu-cascader-menu{
+    max-width: 90px;
 }
 </style>
