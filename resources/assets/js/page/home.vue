@@ -3,7 +3,7 @@
         <div class="layout-header">
            <p>掌电</p>
        </div>
-        <Scroll :on-reach-bottom="handleReachBottom" height="460">
+        <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight">
         <div class="home-contain">
             <!-- 轮播图 -->
             <div class="banner">
@@ -86,6 +86,12 @@ export default {
       this.carousel_figureData = res.body.images;
     });
   },
+  computed: {
+    // 获取浏览器窗口的可视区域的高度
+    getViewPortHeight: function() {
+      return document.documentElement.clientHeight - 45;
+    }
+  },
   methods: {
     handleReachBottom() {
       if (this.current_page >= this.total_pages) {
@@ -109,8 +115,6 @@ export default {
   }
 };
 </script>
-
-
 <style scoped>
 .layout-box {
   background-color: #fff;

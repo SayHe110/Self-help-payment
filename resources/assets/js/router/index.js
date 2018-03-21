@@ -120,6 +120,11 @@ export default new Router({
                 component: require('../servepages/Electricity.vue'),
             },
             {
+                path: '/balance',
+                name: 'balance',
+                component: require('../servepages/balance.vue'),
+            },
+            {
                 path: '/payment',
                 name: 'payment',
                 component: require('../servepages/payment.vue'),
