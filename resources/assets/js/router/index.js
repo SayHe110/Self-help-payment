@@ -133,6 +133,11 @@ export default new Router({
                 path: '/aboutus',
                 name: 'aboutus',
                 component: require('../servepages/aboutus.vue'),
+            },
+            {
+                path: '/information',
+                name: 'information',
+                component: require('../servepages/information.vue'),
             }
             
         ]

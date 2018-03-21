@@ -6,14 +6,18 @@
        <div class="personal-contain">
             <ul>
                 <li class="personal-box">
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'information'}">
                         <div class="personal-icon"><img src="../assets/icon/4.jpg" alt=""></div>
                         <div class="personal-title">
                             <p>南枫</p>
                             <span>1508220235</span>
-                        </div>
-                        <span class="personal-exit"><a @click="quit">退出</a></span>
-                    </a>
+                        </div>                        
+                        <span class="personal-exit">
+                            <router-link :to="{name: 'home'}" style="display: inline;">
+                                <a @click="quit" style="display: inline;">退出</a>
+                            </router-link>
+                        </span>                        
+                    </router-link>
                 </li>
                 <li>
                      <router-link :to="{name: 'tellphone'}">
@@ -77,7 +81,7 @@ export default{
   left: 0;
 }
 .personal-contain ul li {
-  height: 40px;
+  height: 48px;
   border-bottom: 1px solid #f3f3f3;
 }
 .personal-contain ul .personal-box {
@@ -128,11 +132,11 @@ export default{
   display: block;
   float: left;
   color: #444;
-  line-height: 40px;
+  line-height: 48px;
   font-size: 14px;
 }
 .personal-contain ul li .more {
-  line-height: 40px;
+  line-height: 48px;
 }
 .personal-contain ul li .more img {
   width: 12px;
