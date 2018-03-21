@@ -5,7 +5,7 @@
     </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="formPay" label-position="left" :label-width="70">
+            <Form :model="formPay" label-position="left" :label-width="60">
                 <FormItem label="所在宿舍">
                    <Cascader v-model="formPay.dorNum" on-change="handleChange" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>

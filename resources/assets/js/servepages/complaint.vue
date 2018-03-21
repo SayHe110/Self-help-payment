@@ -71,9 +71,24 @@ export default {
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$Message.success("提交成功!");
+            this.$http
+            .post("reports",{
+                title: this.repairItem.title,
+                Company: this.repairItem.Company,
+                textarea: this.repairItem.textarea,                
+                radio: this.repairItem.radio
+            })
+            .then(
+                res => {                    
+                    this.$Message.success("提交成功!");
+                    this.$router.push("./service");
+                },
+                err => {
+                    this.$Message.error(err.body.message || "提交失败");                    
+                }
+            );
         } else {
-          this.$Message.error("提交失败!");
+          this.$Message.error("输入的数据格式有误，请检查!");
         }
       });
     }

@@ -6,6 +6,7 @@
     <div class="layout-application">
         <div class="application-box">
             <BackTop :height="200" :bottom="50" :right="10" :duration="1000"></BackTop>
+            <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight">            
             <ul class="news-lists">
                 <li v-for="values in topicsData" :key="values.id">
                     <div class="news-box">
@@ -27,7 +28,7 @@
                     </div>
                 </li>
             </ul>
-            <div class="get-more"> <Spin fix>加载中...</Spin></div>
+            </Scroll>
         </div>  
     </div>
 </div>
@@ -36,14 +37,45 @@
 export default {
   data() {
     return {
+      current_page: null,
+      total_pages: null,
       topicsData: [{ id: "" }, { title: "" }, { body: "" }]
     };
+  },
+  computed: {
+    // 获取浏览器窗口的可视区域的高度
+    getViewPortHeight: function() {
+      return document.documentElement.clientHeight - 45;
+    }
   },
   mounted() {
     // 文章
     this.$http.get("topics").then(res => {
       this.topicsData = res.body.data;
+      this.current_page = res.body.meta.pagination.current_page;
+      this.total_pages = res.body.meta.pagination.total_pages;
     });
+  },
+  methods: {
+    handleReachBottom() {
+      if (this.current_page >= this.total_pages) {
+        return false;
+      } else {
+        return new Promise(resolve => {
+          this.$http
+            .get("topics", {
+              params: {
+                page: ++this.current_page
+              }
+            })
+            .then(res => {
+              for (let i in res.body.data) {
+                this.topicsData.push(res.body.data[i]);
+              }
+            });
+        });
+      }
+    }
   }
 };
 </script>
@@ -66,7 +98,7 @@ export default {
 }
 .layout-application {
   position: absolute;
-  top: 45px;
+  top: 25px;
   padding: 0 10px;
   text-align: left;
   width: 100%;
