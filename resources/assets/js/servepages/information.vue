@@ -10,7 +10,11 @@
                 <li class="personal-box">
                     <a href="javascript:;">                        
                         <p class="personal-type" style="line-height:72px;">头像</p>
-                        <div class="personal-icon"><img src="../assets/icon/4.jpg" alt=""></div>
+                        <div class="personal-icon">
+                            <Upload action="//jsonplaceholder.typicode.com/posts/">
+                                <img src="../assets/icon/4.jpg" alt="">
+                            </Upload>
+                        </div>
                     </a>
                 </li>
                 <li>
@@ -44,9 +48,7 @@
 </div>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
 <style scoped>
 .layout-box {
@@ -89,7 +91,7 @@ export default {
 .personal-contain ul .personal-box {
   height: 72px;
 }
-.personal-box p{    
+.personal-box p {
   line-height: 72px;
 }
 .personal-contain ul li a {
@@ -99,14 +101,13 @@ export default {
   height: 100%;
 }
 .personal-contain ul li .personal-icon {
-    position: absolute;
-    right: 10px;
+  position: absolute;
+  right: 10px;
   width: 48px;
   height: 48px;
   float: left;
   overflow: hidden;
   margin-top: 12px;
-  border-radius: 50%;
 }
 .personal-contain ul li .personal-icon img {
   width: 100%;
@@ -120,20 +121,21 @@ export default {
 }
 .personal-contain ul li .personal-title p {
   color: #444;
-  font-size: 16px; 
+  font-size: 16px;
 }
 .personal-contain ul li .personal-title span {
   color: #999;
   font-size: 13px;
 }
-.personal-contain ul li .personal-exit, .personal-value {
+.personal-contain ul li .personal-exit,
+.personal-value {
   position: absolute;
   right: 10px;
   color: #999;
   line-height: 72px;
 }
-.personal-contain ul li .personal-exit a{
-    color:#444;
+.personal-contain ul li .personal-exit a {
+  color: #444;
 }
 .personal-contain ul li .personal-type {
   display: block;

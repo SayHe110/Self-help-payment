@@ -99,7 +99,6 @@ export default{
   float: left;
   overflow: hidden;
   margin-top: 12px;
-  border-radius: 50%;
 }
 .personal-contain ul li .personal-icon img {
   width: 100%;
