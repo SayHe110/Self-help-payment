@@ -44,6 +44,8 @@ $api->version('v1', [
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
         // 宿舍号
         $api->get('dormitories', 'DormitoriesController@index')->name('api.dormitories.index');
+        // 根据宿舍ID返回宿舍名称  9A105
+        $api->get('dormitories/{dormitory}', 'DormitoriesController@show')->name('api.dormitories.show');
         // 文章列表 ?include=user
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情 ?include=user
