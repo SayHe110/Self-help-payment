@@ -15,7 +15,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
     'namespace'=>'App\Http\Controllers\Api',
-    'middleware' => 'serializer:array',
+    'middleware' => ['serializer:array', 'bindings']
 ], function ($api){
     $api->group([
         'middleware' => 'api.throttle',
@@ -75,8 +75,7 @@ $api->version('v1', [
             $api->get('orders', 'OrderController@me')->name('api.orders.show');
             // 电费余额
             $api->get('electricity_balance', 'ElectricityFeesController@show')->name('api.Electricity.show');
-
-
+            
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
         });
