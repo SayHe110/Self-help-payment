@@ -18,14 +18,14 @@
                     </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'Alipay'}">
                         <p class="personal-type">绑定支付宝</p>
-                    </a>
+                    </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;" @click="handleRender_autograph">
+                    <router-link :to="{name: 'Forget'}">
                         <p class="personal-type">邮箱地址</p>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
             </div>
@@ -42,44 +42,7 @@ export default {
     };
   },
   methods: {
-    handleRender_name() {
-      this.$Modal.confirm({
-        render: h => {
-          return h("Input", {
-            props: {
-              value: this.value,
-              autofocus: true,
-              placeholder: "请输入您的昵称...",
-              icon: "ios-close-outline"
-            },
-            on: {
-              input: val => {
-                this.name_value = val;
-              }
-            }
-          });
-        }
-      });
-    },
-    handleRender_autograph() {
-      this.$Modal.confirm({
-        render: h => {
-          return h("Input", {
-            props: {
-              value: this.value,
-              autofocus: true,
-              placeholder: "请输入您的个性签名...",
-              icon: "ios-close-outline"
-            },
-            on: {
-              input: val => {
-                this.autograph_value = val;
-              }
-            }
-          });
-        }
-      });
-    },
+   
   }
 };
 </script>
@@ -92,12 +55,14 @@ export default {
   height: 100%;
   background: #f3f3f3;
 }
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
 .layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {

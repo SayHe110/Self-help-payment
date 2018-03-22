@@ -1,12 +1,12 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>重置密码</p>
+        <p>邮箱地址</p>
     </div>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
-            <Form class="login" ref="formInline"  :rules="ruleInline" post="">
-                <FormItem prop="email">
+            <Form class="login" ref="formInline"  :rules="ruleInline" post="" label-position="right" :label-width="70">
+                <FormItem label="邮箱地址" prop="email">
                     <AutoComplete
                         v-model="email"
                         size="large"
@@ -15,10 +15,8 @@
                         <Option aligin="left" v-for="item in emailarry" :value="item" :key="item">{{ item }}</Option>
                     </AutoComplete>
                 </FormItem>
-                <FormItem>
-                    <Button type="success" long @click="handleSubmit('formInline')">发送验证码</Button>
-                </FormItem>
             </Form>
+            <Button type="success" long @click="handleSubmit('formInline')">发送验证码</Button>
         </div>
     </div>
 </div>

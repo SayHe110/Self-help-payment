@@ -101,6 +101,7 @@ button {
   left: 40%;
   font-size: 18px;
 }
+
 .layout-application {
   position: absolute;
   top: 45px;

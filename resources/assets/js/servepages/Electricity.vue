@@ -66,12 +66,14 @@
   height: 100%;
   background: #fff;
 }
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
 .layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {
