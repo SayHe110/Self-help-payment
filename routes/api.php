@@ -15,7 +15,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
     'namespace'=>'App\Http\Controllers\Api',
-    'middleware' => 'serializer:array',
+    'middleware' => ['serializer:array', 'bindings']
 ], function ($api){
     $api->group([
         'middleware' => 'api.throttle',
@@ -44,10 +44,16 @@ $api->version('v1', [
         $api->get('carousel_figure', 'ImagesController@carousel_figure')->name('api.image.carousel_figure');
         // 宿舍号
         $api->get('dormitories', 'DormitoriesController@index')->name('api.dormitories.index');
+        // 根据宿舍ID返回宿舍名称  9A105
+        $api->get('dormitories/{dormitory}', 'DormitoriesController@show')->name('api.dormitories.show');
         // 文章列表 ?include=user
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情 ?include=user
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
+        // 停电公告
+        $api->get('power_failure', 'TopicController@powerFailure')->name('api.topic.powerFailure');
+        // 用电常识
+        $api->get('use_electrical_sense', 'TopicController@useElectricalSense')->name('api.topic.use_electrical_sense');
         // 分类列表
         $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
         // 某个分类下的文章(用电常识、停电公告, 故障报修除外)
@@ -67,7 +73,9 @@ $api->version('v1', [
             $api->post('orders', 'OrderController@store')->name('api.orders.store');
             // 我的订单
             $api->get('orders', 'OrderController@me')->name('api.orders.show');
-
+            // 电费余额
+            $api->get('electricity_balance', 'ElectricityFeesController@show')->name('api.Electricity.show');
+            
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
         });

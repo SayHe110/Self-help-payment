@@ -1,117 +1,135 @@
 <template>
-	<div class="layout-box">
-        <div class="header-title">
-            <p>我的订单</p>
-        </div>
-            <div class="Order_content">
-                <Table stripe :columns="table_lists" :data="listContent"></Table>
-                <router-link :to="{name: 'service'}">
-		          <Button  type="primary">返回</Button>
-		        </router-link>
+<div class="layout-box">
+    <div class="header-title">
+        <p>我的订单</p>
+    </div>
+    <div class="layout-application">
+        <div class="application-box">
+            <div class="card">
+                <div class="card-head">
+                    <p>下单日期：2018年3月21日 16：22</p>
+                </div>
+                <div class="card-body">
+                     <img src="../assets/icon/iview.png" alt="">
+                    <ul>
+                        <li><p>订单编号:10002001</p></li>
+                        <li><p>支付金额:150元</p></li>
+                        <li><p>充电宿舍:9A121</p></li>
+                    </ul>
+                </div>
+                <p class="money">实际付款：42</p>                
             </div>
-	</div>
+            <div class="card">
+                <div class="card-head">
+                    <p>下单日期：2018年3月21日 16：22</p>
+                </div>
+                <div class="card-body">
+                     <img src="../assets/icon/iview.png" alt="">
+                    <ul>
+                        <li><p>订单编号:10002001</p></li>
+                        <li><p>支付金额:150元</p></li>
+                        <li><p>充电宿舍:9A121</p></li>
+                    </ul>
+                </div>
+                <p class="money">实际付款：42</p>                
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <p>下单日期：2018年3月21日 16：22</p>
+                </div>
+                <div class="card-body">
+                     <img src="../assets/icon/iview.png" alt="">
+                    <ul>
+                        <li><p>订单编号:10002001</p></li>
+                        <li><p>支付金额:150元</p></li>
+                        <li><p>充电宿舍:9A121</p></li>
+                    </ul>
+                </div>
+                <p class="money">实际付款：42</p>                
+            </div>
+        </div>  
+    </div>
+</div>
 </template>
 <script>
-export default{
-    data(){
-        return{
-            table_lists: [
-                    {
-                        title: '订单编号',
-                        key: 'name'
-                    },
-                    {
-                        title: '价格',
-                        key: 'age'
-                    },
-                    {
-                        title: '时间',
-                        key: 'date'
-                    }
-                ],
-                listContent: [
-                    {
-                        name: '001',
-                        age: 2232,
-                        date: '2016-10-03'
-                    },
-                    {
-                        name: '002',
-                        age: 24,
-                        date: '2016-10-01'
-                    },
-                    {
-                        name: '003',
-                        age: 30,
-                        date: '2016-10-02'
-                    },
-                    {
-                        name: '004',
-                        age: 26,
-                        date: '2016-10-04'
-                    }
-                ]
-        }
-    },
-    methods: {
-        confirm () {
-            this.$http.post(`/api/select_dorm/${this.$route.params.id}`).then(res => {
-                this.$router.push({name: 'pay'})
-            }).catch(err => {
-                this.$router.push({name: 'pay'})
-            })
-        }
-    }
-}
+export default {};
 </script>
 <style scoped>
-.layout-box{
-    position: relative;
+.layout-box {
+  position: absolute;
+  top: 0px;
+  padding: 0px 0px;
+  width: 100%;
+  height: 100%;
+  background: #f3f3f3;
 }
-button{
-    margin: 10px 10px;
+.layout-box .header-title p {
+  color: #fff;
+  position: fixed;
+  line-height: 45px;
+  z-index: 999;
+  left: 40%;
+  font-size: 18px;
 }
-.Order_content{
-    width: 100%;
-    position: absolute;
-    top: 45px;
+.layout-application {
+  position: absolute;
+  top: 45px;
+  padding: 0 10px;
+  text-align: left;
+  width: 100%;
+  padding-bottom: 65px;
+  background: #f3f3f3;
 }
-.header-title{
-    color: #fff;
-    position: absolute;
-    line-height: 45px;
-    z-index: 999;
-    left: 40%;
-    font-size: 18px;
+.application-box {
+  padding-top: 10px;
 }
-.Bill_content{
-    margin: 55px 20px 20px 10px;
+/* 订单*/
+.card {
+  background: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #eee;
 }
-.Bill_content ul li{
-    border-bottom: 1px dotted #ccc;
-    width: 100%;
-    float: left;
-    height: 40px;
+.card-head {
+  padding: 0px 10px; 
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  
 }
-.Bill_content ul li span{
-    font-size: 16px;
-    line-height: 40px;
-    float: right;
+.card-head p {
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  color: #444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.Bill_content ul li p{
-    font-size: 16px;
-    float: left;
-    line-height: 40px;
-}
-.article-title {
+.card-body {
   padding: 10px;
+  border-bottom: 1px solid #eee;
 }
-.layout-bill{
-    position: absolute;
-    top: 45px;
-    padding: 0 10px;
-    width: 100%;
-    padding-bottom: 65px;
-    background: #fff;
+/* .card-body ul li p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-bottom: 5px;
+} */
+.card-body img{
+    float: left;
+    width: 72px;
+    margin-right: 20px;
+}
+.money {
+  text-align: right;
+  font-size: 14px;
+  padding: 5px 15px;
 }
 </style>

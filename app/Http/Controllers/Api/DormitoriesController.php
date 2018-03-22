@@ -12,4 +12,31 @@ class DormitoriesController extends Controller
         $dorms = Dormitory::with('allChildrenDorms')->where('is_unit_building','1')->get();
         return $this->response->array($dorms)->setStatusCode(201);
     }
+
+    public function show(Dormitory $dormitory)
+    {
+        $name = $this->getDormName($dormitory->id);
+
+        $data = [
+            'dorm_name' => $name,
+            'status_code' => '201'
+        ];
+
+        return $this->response->array($data)->setStatusCode(201);
+    }
+
+    /**
+     * 根据宿舍 ID 拼装宿舍名称
+     * @param $id
+     * @return string
+     */
+    public function getDormName($id)
+    {
+        $dormitory = Dormitory::findOrFail($id);
+        $building = $dormitory->parentDorm;
+        $unit = $building->parentDorm->dorm_name;
+        $name = $unit.$building->dorm_name.$dormitory->dorm_name;
+
+        return $name;
+    }
 }

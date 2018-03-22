@@ -1,13 +1,13 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>手机号绑定</p>
+        <p>宿舍号绑定</p>
     </div>
     <div class="layout-application">
         <div class="application-box">
             <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate"  >
-                <FormItem label="手机号:" prop="Tel">
-                    <Input v-model="repairItem.tel" icon="ios-close-outline" />
+                <FormItem label="宿舍号:" prop="dorNum">
+                    <Input v-model="repairItem.dorNum" icon="ios-close-outline" />
                 </FormItem>
                 <Button type="success" long  @click="handleSubmit('repairItem')">提交</Button>
             </Form>
@@ -20,13 +20,13 @@ export default {
   data() {
     return {
       repairItem: {
-        tel: ""
+        dorNum: ""
       },
       ruleValidate: {
-        Tel: [
+        dorNum: [
           {
             required: true,
-            message: "请输入手机号",
+            message: "请输入宿舍号",
             trigger: "blur"
           }
         ]

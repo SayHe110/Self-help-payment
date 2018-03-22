@@ -11,7 +11,6 @@ class OrderController extends Controller
 {
     public function store(OrderRequest $request, Order $order)
     {
-        // $order->fill($request->all());
         $order->dormitory_id = $request->dorm_id;
         $order->money = $request->money;
         $order->user_id = $this->user()->id;
@@ -26,6 +25,6 @@ class OrderController extends Controller
     {
         $orders = Order::where('user_id', $this->user()->id)->get();
 
-        return $this->response->item($orders, new OrderTransformer());
+        return $this->response->collection($orders, new OrderTransformer());
     }
 }

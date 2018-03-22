@@ -133,8 +133,27 @@ export default new Router({
                 path: '/aboutus',
                 name: 'aboutus',
                 component: require('../servepages/aboutus.vue'),
-            }
-            
+            },
+            {
+                path: '/information',
+                name: 'information',
+                component: require('../servepages/information.vue'),
+            },
+            {
+                path: '/dornum',
+                name: 'dornum',
+                component: require('../servepages/dornum.vue'),
+            },
+            {
+                path: '/security',
+                name: 'security',
+                component: require('../servepages/security.vue'),
+            },
+            {
+                path: '/SetPassword',
+                name: 'SetPassword',
+                component: require('../servepages/SetPassword.vue'),
+            },
         ]
     },
   ]

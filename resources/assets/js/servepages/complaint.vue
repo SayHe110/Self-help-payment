@@ -11,10 +11,10 @@
             </div>
             <Form :model="repairItem" ref="repairItem" label-position="top" :rules="ruleValidate"  >
                 <FormItem label="投诉标题:" prop="title">
-                    <Input v-model="repairItem.title"></Input>
+                    <Input v-model="repairItem.title" />
                 </FormItem>
                 <FormItem label="投诉单位:" prop="Company">
-                    <Input v-model="repairItem.Company"></Input>
+                    <Input v-model="repairItem.Company" />
                 </FormItem>
                 <FormItem label="详细描述:" prop="textarea">
                     <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""></Input>

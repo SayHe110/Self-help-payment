@@ -6,32 +6,36 @@
        <div class="personal-contain">
             <ul>
                 <li class="personal-box">
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'information'}">
                         <div class="personal-icon"><img src="../assets/icon/4.jpg" alt=""></div>
                         <div class="personal-title">
                             <p>南枫</p>
                             <span>1508220235</span>
-                        </div>
-                        <span class="personal-exit"><a @click="quit">退出</a></span>
-                    </a>
+                        </div>                        
+                        <span class="personal-exit">
+                            <router-link :to="{name: 'home'}" style="display: inline;">
+                                <a @click="quit" style="display: inline;">退出</a>
+                            </router-link>
+                        </span>                        
+                    </router-link>
                 </li>
                 <li>
-                     <router-link :to="{name: 'tellphone'}">
-                        <p class="personal-type">手机号绑定</p>
+                     <router-link :to="{name: 'alreadybill'}">
+                        <p class="personal-type">我的订单</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
                      </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'dornum'}">
                         <p class="personal-type">宿舍号</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'security'}">
                         <p class="personal-type">账户与安全</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li>
                     <a href="javascript:;">
@@ -77,7 +81,7 @@ export default{
   left: 0;
 }
 .personal-contain ul li {
-  height: 40px;
+  height: 48px;
   border-bottom: 1px solid #f3f3f3;
 }
 .personal-contain ul .personal-box {
@@ -95,7 +99,6 @@ export default{
   float: left;
   overflow: hidden;
   margin-top: 12px;
-  border-radius: 50%;
 }
 .personal-contain ul li .personal-icon img {
   width: 100%;
@@ -128,11 +131,11 @@ export default{
   display: block;
   float: left;
   color: #444;
-  line-height: 40px;
+  line-height: 48px;
   font-size: 14px;
 }
 .personal-contain ul li .more {
-  line-height: 40px;
+  line-height: 48px;
 }
 .personal-contain ul li .more img {
   width: 12px;

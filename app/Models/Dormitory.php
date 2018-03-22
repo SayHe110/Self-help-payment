@@ -20,11 +20,27 @@ class Dormitory extends Model
 
     public function parentDorm()
     {
-        return $this->hasOne('App\Models\Dormitory', 'id', 'parent_dorm_id');
+        // return $this->hasOne('App\Models\Dormitory', 'id', 'parent_dorm_id');
+        return $this->belongsTo('App\Models\Dormitory', 'parent_dorm_id');
     }
 
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function electricityFees()
+    {
+        return $this->hasMany(ElectricityFees::class);
+    }
+
+    public function getDormName($id)
+    {
+        $dormitory = Dormitory::findOrFail($id);
+        $building = $dormitory->parentDorm;
+        $unit = $building->parentDorm->dorm_name;
+        $name = $unit.$building->dorm_name.$dormitory->dorm_name;
+
+        return $name;
     }
 }
