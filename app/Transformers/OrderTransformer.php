@@ -10,7 +10,7 @@ use League\Fractal\TransformerAbstract;
 
 class OrderTransformer extends TransformerAbstract
 {
-    protected $availableIncludes = ['dormitory'];
+    protected $availableIncludes = ['dormitory', ];
 
     public function transform(Order $order)
     {
