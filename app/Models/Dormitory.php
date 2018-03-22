@@ -29,8 +29,9 @@ class Dormitory extends Model
         return $this->hasMany(Order::class);
     }
 
-    protected function getDormNameAttributes()
+    public function electricityFees()
     {
-        return $this->attributes['dorm_name'];
+        return $this->hasMany(ElectricityFees::class);
     }
+    
 }
