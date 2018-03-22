@@ -1,48 +1,30 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>个人信息</p>
+        <p>账户与安全</p>
     </div>
     <div class="layout-application">
         <div class="application-box">
             <div class="personal-contain ">
             <ul>
-                <li class="personal-box">
-                    <a href="javascript:;">                        
-                        <p class="personal-type" style="line-height:72px;">头像</p>
-                        <div class="personal-icon">
-                            <Upload 
-                                :format="['jpg','jpeg','png']" 
-                                :max-size="2048"
-                                :show-upload-list="true"
-                                action="//jsonplaceholder.typicode.com/posts/">
-                                <img src="../assets/icon/4.jpg" alt="">
-                            </Upload>
-                        </div>
-                    </a>
+                <li>
+                    <router-link :to="{name: 'SetPassword'}">
+                        <p class="personal-type">修改账户密码</p>
+                    </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;" @click="handleRender_name">
-                        <p class="personal-type">昵称</p>
-                        <span class="personal-value">{{ name_value }}</span>
-                    </a>
+                    <router-link :to="{name: 'tellphone'}">
+                        <p class="personal-type">手机号</p>
+                    </router-link>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <p class="personal-type">学号</p>
-                        <span class="personal-value">1508220235</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <p class="personal-type">宿舍号</p>
-                        <span class="personal-value">9A106</span>
+                        <p class="personal-type">绑定支付宝</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" @click="handleRender_autograph">
-                        <p class="personal-type">个性签名</p>
-                        <span class="personal-value">{{ autograph_value }}</span>
+                        <p class="personal-type">邮箱地址</p>
                     </a>
                 </li>
             </ul>
