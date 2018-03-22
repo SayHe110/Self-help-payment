@@ -34,4 +34,13 @@ class Dormitory extends Model
         return $this->hasMany(ElectricityFees::class);
     }
 
+    public function getDormName($id)
+    {
+        $dormitory = Dormitory::findOrFail($id);
+        $building = $dormitory->parentDorm;
+        $unit = $building->parentDorm->dorm_name;
+        $name = $unit.$building->dorm_name.$dormitory->dorm_name;
+
+        return $name;
+    }
 }

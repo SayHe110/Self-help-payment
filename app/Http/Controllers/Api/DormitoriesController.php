@@ -13,9 +13,9 @@ class DormitoriesController extends Controller
         return $this->response->array($dorms)->setStatusCode(201);
     }
 
-    public function show($id ,Dormitory $dormitory)
+    public function show(Dormitory $dormitory)
     {
-        $name = $this->getDormName($id);
+        $name = $this->getDormName($dormitory->id);
 
         $data = [
             'dorm_name' => $name,

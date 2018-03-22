@@ -9,10 +9,10 @@ class DormitoryTransformer  extends TransformerAbstract
 {
     public function transform(Dormitory $dormitory)
     {
-        // todo
-//        return [
-//            'dorm_id' => $dormitory->id,
-//            'dorm_name'
-//        ];
+        return [
+            'id' => $dormitory->id,
+            'dorm_name' => $dormitory->dorm_name,
+            'parent_dorm_id' => $dormitory->parent_dorm_id,
+        ];
     }
 }

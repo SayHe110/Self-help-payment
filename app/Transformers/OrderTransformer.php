@@ -3,11 +3,15 @@
 namespace App\Transformers;
 
 
+use App\Http\Controllers\Api\DormitoriesController;
+use App\Models\Dormitory;
 use App\Models\Order;
 use League\Fractal\TransformerAbstract;
 
 class OrderTransformer extends TransformerAbstract
 {
+    protected $availableIncludes = ['dormitory'];
+
     public function transform(Order $order)
     {
         return [
@@ -21,5 +25,10 @@ class OrderTransformer extends TransformerAbstract
             'created_at' => $order->created_at->toDateTimeString(),
             'updated_at' => $order->updated_at->toDateTimeString(),
         ];
+    }
+
+    public function includeDormitory(Order $order)
+    {
+        return $this->item($order->dormitory, new DormitoryTransformer());
     }
 }
