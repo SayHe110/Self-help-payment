@@ -43,7 +43,16 @@ class TopicController extends Controller
         return $this->response->item($topics, new TopicTransformer());
     }
 
+    /**
+     * 用电常识
+     * @return \Dingo\Api\Http\Response
+     */
+    public function useElectricalSense()
+    {
+        $topics = $this->getTopics('用电常识');
 
+        return $this->response->item($topics, new TopicTransformer());
+    }
 
     /**
      * 根据分类名称返回文章
