@@ -50,6 +50,10 @@ $api->version('v1', [
         $api->get('topics', 'TopicController@index')->name('api.topic.index');
         // 文章详情 ?include=user
         $api->get('topics/{topic}', 'TopicController@show')->name('api.topics.show');
+        // 停电公告
+        $api->get('power_failure', 'TopicController@powerFailure')->name('api.topic.powerFailure');
+        // 用电常识
+        $api->get('use_electrical_sense', 'Topic');
         // 分类列表
         $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
         // 某个分类下的文章(用电常识、停电公告, 故障报修除外)
