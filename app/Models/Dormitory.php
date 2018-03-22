@@ -33,5 +33,5 @@ class Dormitory extends Model
     {
         return $this->hasMany(ElectricityFees::class);
     }
-    
+
 }
