@@ -73,6 +73,9 @@ $api->version('v1', [
             $api->post('orders', 'OrderController@store')->name('api.orders.store');
             // 我的订单
             $api->get('orders', 'OrderController@me')->name('api.orders.show');
+            // 电费余额
+            $api->get('electricity_balance', 'ElectricityFeesController@show')->name('api.Electricity.show');
+
 
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');

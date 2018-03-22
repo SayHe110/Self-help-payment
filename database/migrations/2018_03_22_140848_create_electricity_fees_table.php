@@ -15,7 +15,7 @@ class CreateElectricityFeesTable extends Migration
     {
         Schema::create('electricity_fees', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dormitory_id')->index()->comment('宿舍ID');
+            $table->integer('dormitory_id')->unique()->index()->comment('宿舍ID');
             $table->integer('balance_of_electricity')->comment('电量余额');
             $table->timestamps();
         });

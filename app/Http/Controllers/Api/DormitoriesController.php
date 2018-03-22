@@ -15,10 +15,7 @@ class DormitoriesController extends Controller
 
     public function show($id ,Dormitory $dormitory)
     {
-        $dormitory = Dormitory::findOrFail($id);
-        $building = $dormitory->parentDorm;
-        $unit = $building->parentDorm->dorm_name;
-        $name = $unit.$building->dorm_name.$dormitory->dorm_name;
+        $name = $this->getDormName($id);
 
         $data = [
             'dorm_name' => $name,
@@ -26,5 +23,20 @@ class DormitoriesController extends Controller
         ];
 
         return $this->response->array($data)->setStatusCode(201);
+    }
+
+    /**
+     * 根据宿舍 ID 拼装宿舍名称
+     * @param $id
+     * @return string
+     */
+    public function getDormName($id)
+    {
+        $dormitory = Dormitory::findOrFail($id);
+        $building = $dormitory->parentDorm;
+        $unit = $building->parentDorm->dorm_name;
+        $name = $unit.$building->dorm_name.$dormitory->dorm_name;
+
+        return $name;
     }
 }
