@@ -25,10 +25,8 @@ class TopicController extends Controller
         return $this->response->item($topic, new TopicTransformer())->setStatusCode(201);
     }
 
-    public function show($id,Topic $topic)
+    public function show(Topic $topic)
     {
-        // todo 先这样写着，再回来完善以下，应该可以直接获取到 $topic 的
-        $topic = Topic::find($id);
         return $this->response->item($topic, new TopicTransformer());
     }
 
