@@ -5,23 +5,21 @@
     </div>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
-            <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
-                <FormItem prop="password">
+            <Form class="login" ref="formInline" :model="formInline" label-position="right" :rules="ruleInline" post="" :label-width="70">
+                <FormItem label="账户密码" prop="password">
                     <Input type="text" v-model="formInline.password" placeholder="请输入账户密码" size="large">
                     </Input>
                 </FormItem>
-                <FormItem prop="password_new">
+                <FormItem label="设置密码" prop="password_new">
                     <Input type="password" v-model="formInline.password_new" placeholder="请输入新密码" size="large">
                     </Input>
                 </FormItem>
-                 <FormItem prop="password_confirm">
+                 <FormItem label="确认密码" prop="password_confirm">
                     <Input type="password" v-model="formInline.password_confirm" placeholder="请确认新密码" size="large">
                     </Input>
                 </FormItem>
-                <FormItem>
-                    <Button type="success" long @click="handleSubmit('formInline')">完成</Button>
-                </FormItem>
             </Form>
+            <Button type="success" long @click="handleSubmit('formInline')">完成</Button>
         </div>
     </div>
 </div>
@@ -90,12 +88,14 @@ export default {
 };
 </script>
 <style>
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
 .layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {

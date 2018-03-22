@@ -5,7 +5,7 @@
     </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate"  >
+            <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate" :label-width="70">
                 <FormItem label="手机号:" prop="Tel">
                     <Input v-model="repairItem.tel" icon="ios-close-outline" />
                 </FormItem>
@@ -60,12 +60,14 @@ export default {
 };
 </script>
 <style scoped>
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
 .layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {

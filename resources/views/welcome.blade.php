@@ -12,6 +12,11 @@
     </head>
     <body>
         <div id="app"></div>
-		<script src="{{mix('js/app.js')}}"></script>
+        <script src="{{mix('js/app.js')}}"></script>
+        <style>
+            .header-title{
+                padding: 0 45px;
+            }
+        </style>
     </body>
 </html>

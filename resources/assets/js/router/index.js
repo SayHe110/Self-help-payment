@@ -120,6 +120,11 @@ export default new Router({
                 component: require('../servepages/Electricity.vue'),
             },
             {
+                path: '/Powerdetails',
+                name: 'Powerdetails',
+                component: require('../servepages/Powerdetails.vue'),
+            },
+            {
                 path: '/balance',
                 name: 'balance',
                 component: require('../servepages/balance.vue'),
@@ -154,6 +159,11 @@ export default new Router({
                 name: 'SetPassword',
                 component: require('../servepages/SetPassword.vue'),
             },
+            {
+                path: '/Alipay',
+                name: 'Alipay',
+                component: require('../servepages/Alipay.vue')
+            }
         ]
     },
   ]
