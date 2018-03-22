@@ -9,11 +9,11 @@
                 <img src="../assets/icon/touxiang.png" alt="">
                 <div class="title">                        
                     <p>用户名：31321</p>
-                    <p>宿舍号：9A106</p>
+                    <p>宿舍号：{{dormitory_id}}</p>
                 </div>
             </div>
             <div class="box">
-               <h2>48.00元</h2>
+               <h2>{{balance}}元</h2>
                <p>电费余额</p>
                <span>截止到2018年3月20日 14:15:23</span>
             </div>
@@ -26,8 +26,16 @@
 export default {
     data() {
         return{
-
+            dormitory_id: "",
+            balance: ""
         }
+    },
+    mounted() {
+        //余额
+        this.$http.get("electricity_balance").then(res => {
+            this.dormitory_id = this.res.dormitory_id;
+            this.balance = this.res.balance_of_electricity;
+        });
     },
     methods: {
         showIdCardInput(){            
