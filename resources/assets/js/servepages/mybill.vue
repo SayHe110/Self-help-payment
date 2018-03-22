@@ -93,15 +93,16 @@ export default {
 button {
   margin-top: 20px;
 }
-.header-title {
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
+.layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
-
 .layout-application {
   position: absolute;
   top: 45px;
