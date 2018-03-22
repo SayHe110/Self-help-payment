@@ -6,11 +6,10 @@
         <div class="layout-application">
             <div class="application-box">
                 <ul>
-                    <li><p>用户编号 :</p><span>102500124</span></li>
-                    <li><p>单元号 :</p><span>{{item.dorm_name}}</span></li>
+                    <li><p>单元号 :</p><span>{{$route.params.id}}单元</span></li>
                     <li><p>A楼/B楼:</p><span>A楼</span></li>
                     <li><p>缴费宿舍 :</p><span>9A110</span></li>
-                    <li><p>缴费金额 :</p><span>110</span></li>
+                    <li><p>缴费金额 :</p><span>{{$route.params.name}}元</span></li>
                 </ul>
                 <Button  type="success" long @click="showIdCardInput">提交订单</Button>
             </div>                
@@ -45,7 +44,11 @@ export default {
       modal1: false,
       myDate: [],
       a: false,
-      idCard: []
+      idCard: [],
+      formPay: {
+        dorNum: [],
+        cash: null
+      }
     };
   },
   methods: {
@@ -72,17 +75,14 @@ export default {
         this.$router.push({ name: "payment" });
       }
     }
-    // row(rest){
-    //    this.$router.push({ name: "mybill", params: {id: dorm_id,name:dorm_name}});
-    // }
   },
-  mounted () {
-      this.$http.get('dormitories/').then(res => {
-			this.dorms = res.data.data
-      this.dorms_name = res.data.meta.dorm_name
-      console.log(this.$route.params)
-		})
+  mounted(){
+      this.$http.get("dormitories/" + this.$route.params.id).then(res => {
+         this.dorms = res.data.dormitories.dor_name;
+         console.log(dorms)
+      })
   }
+ 
 };
 </script>
 <style scoped>

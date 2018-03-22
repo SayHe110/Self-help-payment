@@ -12,9 +12,9 @@
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
                 </FormItem>
-                <!-- <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}"> -->
+                 <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}">
                     <Button @click="submitOrder" type="success" long>下一步</Button>
-                <!-- </router-link> -->
+                </router-link> 
             </Form>
         </div>  
     </div>
@@ -36,7 +36,7 @@ export default {
   methods: {
     asyncOK() {
       this.submit = false;
-      // this.$router.push({name: '  mybill'});
+      this.$router.push({name: '  mybill'});
       setTimeout(
         function() {
           this.$router.push({ name: "mybill", params: {id: this.formPay.dorNum, name:this.formPay.cash}});
