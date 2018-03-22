@@ -18,7 +18,7 @@
             <div class="mask_one" v-show="a">
               <div class="password">
                 <div class="cancer">
-                  <button @click="a=false"><Icon type="chevron-left"></Icon></button>
+                  <button @click="a=false"><Icon type="chevron-left" style="margin-top:4px;"></Icon></button>
                   <p>请输入支付密码</p>
                 </div>
                 <div class="button_box">
@@ -219,7 +219,7 @@ button {
   position: relative;
 }
 .password .cancer p {
-  color: #848484 !important;
+  color: #333 !important;
   font-family: "Microsoft Yahei";
   letter-spacing: 2px;
   font-size: 20px;
