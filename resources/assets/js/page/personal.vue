@@ -20,22 +20,22 @@
                     </router-link>
                 </li>
                 <li>
-                     <router-link :to="{name: 'tellphone'}">
-                        <p class="personal-type">手机号绑定</p>
+                     <router-link :to="{name: 'alreadybill'}">
+                        <p class="personal-type">我的订单</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
                      </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'dornum'}">
                         <p class="personal-type">宿舍号</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <router-link :to="{name: 'security'}">
                         <p class="personal-type">账户与安全</p>
                         <span class="more"><img src="../assets/icon/more.png" alt=""></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li>
                     <a href="javascript:;">

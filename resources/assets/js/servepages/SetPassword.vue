@@ -1,34 +1,25 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>用户注册</p>
+        <p>设置密码</p>
     </div>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
             <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
-                <FormItem prop="user">
-                    <Input type="text" v-model="formInline.user" placeholder="请输入您的学号" size="large">
+                <FormItem prop="password">
+                    <Input type="text" v-model="formInline.password" placeholder="请输入账户密码" size="large">
                     </Input>
                 </FormItem>
-                <FormItem prop="email">
-                    <AutoComplete
-                        v-model="formInline.email"
-                        size="large"
-                        @on-search="handleSearch_email"
-                        placeholder="请输入您的邮箱">
-                        <Option aligin="left" v-for="item in emailarry" :value="item" :key="item">{{ item }}</Option>
-                    </AutoComplete>
-                </FormItem>
-                <FormItem prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="请设置6-16位密码" size="large">
+                <FormItem prop="password_new">
+                    <Input type="password" v-model="formInline.password_new" placeholder="请输入新密码" size="large">
                     </Input>
                 </FormItem>
                  <FormItem prop="password_confirm">
-                    <Input type="password" v-model="formInline.password_confirm" placeholder="请确认您的密码" size="large">
+                    <Input type="password" v-model="formInline.password_confirm" placeholder="请确认新密码" size="large">
                     </Input>
                 </FormItem>
                 <FormItem>
-                    <Button type="success" long @click="handleSubmit('formInline')">立即注册</Button>
+                    <Button type="success" long @click="handleSubmit('formInline')">完成</Button>
                 </FormItem>
             </Form>
         </div>
@@ -39,19 +30,15 @@
 export default {
   data() {
     return {
-      emailarry: "",
-      usersSrc: "",
-      captchaKey: "",
       formInline: {
-        user: "",
-        password: "",
-        email: "",
-        password_confirm: ""
+         password: "",
+         password_new: "",
+         password_confirm: ""
       },
       ruleInline: {
-        user: [{ required: true, message: "请输入学号", trigger: "blur" }],
-        password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
+        password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+        password_new: [
+          { required: true, message: "请输入新密码", trigger: "blur" },
           {
             type: "string",
             min: 6,
@@ -59,34 +46,33 @@ export default {
             trigger: "blur"
           }
         ],
-        email: [
-          { required: true, message: "请输入邮箱", trigger: "blur" }
-        ],
         password_confirm: [
-            {required: true, message: "请确认密码", trigger: "blur" }
+          { required: true, message: "请再次输入新密码", trigger: "blur" }
         ]
       }
     };
   },
   methods: {
     handleSubmit(name) {
-      if(this.formInline.password !== this.formInline.password_confirm) {
-        this.$Message.error("两次输入的密码不相同!");
+        if(this.formInline.password_new !== this.formInline.password_confirm) {
+          this.$Message.error("两次输入的密码不相同!");
         return false
       }
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$http.post("users", {
+          this.$http
+            .post("authorizations", {
               student_id: this.formInline.user,
               password: this.formInline.password,
-              email: this.formInline.email
+              captcha_key: this.captchaKey,
+              captcha_code: this.formInline.verification
             })
             .then(
               res => {
-                this.$router.push("./");
+                this.$router.push("./login");
               },
               err => {
-                this.$Message.error(err.body.message || "注册失败");
+                this.$Message.error(err.body.message || "重置失败");
               }
             );
         } else {
@@ -125,4 +111,3 @@ export default {
   padding-top: 10px;
 }
 </style>
-
