@@ -3,7 +3,24 @@ import Router from 'vue-router'
 import footer from '../components/footer.vue'
 import box from '../components/box.vue'
 Vue.use(Router)
-
+const Parent = {
+    data () {
+      return {
+        transitionName: ''
+      }
+    },
+    beforeRouteUpdate (to, from, next) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'vux-pop-out' : 'vux-pop-in'
+      next()
+    },
+    template: `
+    <transition :name="transitionName">
+        <router-view class="router-view"></router-view>
+    </transition>
+    `
+  }
 export default new Router({
   routes: [
     {
