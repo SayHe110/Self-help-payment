@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>支付宝绑定</p>
-    </div>
+    <sheader headerTitle="绑定支付宝"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formInline" ref="formInline" label-position="right" :rules="ruleValidate" :label-width="90" >
@@ -20,7 +18,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       formInline: {

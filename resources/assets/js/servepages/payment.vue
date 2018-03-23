@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>支付成功</p>
-    </div>
+    <sheader headerTitle="支付成功"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <img src="../assets/icon/success.png">
@@ -24,7 +22,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       dorm_content: {},

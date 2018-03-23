@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>停电公告</p>
-    </div>
+    <sheader headerTitle="停电公告"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <div class="card" v-for="values in noticeData" :key="values.id">
@@ -19,7 +17,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
     data(){
         return{
             noticeData: [{ id: "" }, { title: "" }, { body: "" }, {time: ""}]

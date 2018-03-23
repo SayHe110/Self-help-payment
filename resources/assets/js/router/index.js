@@ -25,7 +25,7 @@ export default new Router({
   routes: [
     {
         path: '*',
-        redirect: require('../page/home.vue'),
+        redirect: '/home',
     },
     {
       path: '/login',

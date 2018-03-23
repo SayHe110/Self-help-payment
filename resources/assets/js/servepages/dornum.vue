@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>宿舍号绑定</p>
-    </div>
+    <sheader headerTitle="宿舍号绑定"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate"  >
@@ -16,7 +14,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       repairItem: {

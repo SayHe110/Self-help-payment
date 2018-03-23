@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>用电常识</p>
-    </div>
+    <sheader headerTitle="用电常识"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <BackTop :height="200" :bottom="50" :right="10" :duration="1000"></BackTop>
@@ -34,7 +32,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       current_page: null,

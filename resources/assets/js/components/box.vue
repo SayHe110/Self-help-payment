@@ -2,12 +2,16 @@
   <div class="layout">
       <div class="layout-header">
             <a href="javascript:;" @click="back" class="return"><Icon type="android-arrow-back" color="#fff" size="28"></Icon></a>
+            <p>{{headerTitle || '掌电'}}</p>
         </div>
         <router-view/>
   </div>
 </template>
 <script>
 export default {
+    props: {
+        headerTitle: String
+    },
   methods: {
     back() {
       this.$router.back(-1);

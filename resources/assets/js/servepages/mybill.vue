@@ -1,8 +1,6 @@
 <template>
 	<div class="layout-box">
-        <div class="header-title">
-            <p>提交订单</p>
-        </div>
+    <sheader headerTitle="提交订单"></sheader>
         <div class="layout-application">
             <div class="application-box">
                 <ul>
@@ -36,7 +34,11 @@
 	</div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       dorm_content: {},
@@ -76,14 +78,12 @@ export default {
       }
     }
   },
-  mounted(){
-      this.$http.get("dormitories/" + this.$route.params.id).then(res => {
-       this.dormstudent = res.data.data;
-       this.dorm_content = res.data.dorm_name;
-       console.log(dorm_content);
-      })
+  mounted() {
+    this.$http.get("dormitories/" + this.$route.params.id).then(res => {
+      this.dormstudent = res.data.data;
+      this.dorm_content = res.data.dorm_name;
+    });
   }
- 
 };
 </script>
 <style scoped>
@@ -94,9 +94,9 @@ export default {
 button {
   margin-top: 20px;
 }
-.header-title{
-    display: flex;
-    flex-direction: column;
+.header-title {
+  display: flex;
+  flex-direction: column;
 }
 .layout-box .header-title p {
   color: #fff;

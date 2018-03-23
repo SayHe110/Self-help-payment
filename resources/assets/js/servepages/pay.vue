@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>快速购电</p>
-    </div>
+    <sheader headerTitle="快速交电"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="60">
@@ -21,7 +19,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       submit: false,

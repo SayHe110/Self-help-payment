@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>个人信息</p>
-    </div>
+    <sheader headerTitle="个人信息"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <div class="personal-contain ">
@@ -52,7 +50,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       name_value: "",

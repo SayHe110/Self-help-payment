@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>设置密码</p>
-    </div>
+    <sheader headerTitle="重置密码"></sheader>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
             <Form class="login" ref="formInline" :model="formInline" label-position="right" :rules="ruleInline" post="" :label-width="70">
@@ -25,7 +23,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       formInline: {

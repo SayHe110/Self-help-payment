@@ -1,16 +1,13 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>电费电量</p>
-    </div>
+    <sheader headerTitle="电费电量"></sheader>
     <div class="layout-application">
         <template>
             <ve-histogram :data="chartData" :settings="chartSettings" height="300px" style="top:20px"></ve-histogram>
         </template>
         <div class="total">
             <ul>
-                <li style="
-    border-bottom: 1px solid #e9eaec;">
+                <li style="border-bottom: 1px solid #e9eaec;">
                     <p class="title">月用电量</p>
                     <div class="info">
                         <img src="../assets/icon/dianliang.png" alt="">
@@ -36,7 +33,14 @@
 </div>
 </template>
 <script>
-  module.exports = {
+import sheader from '../components/box.vue'
+export default {
+     components:{
+        sheader
+    },
+  data(){
+      return{}
+  },
     created: function () {
       this.chartData = {
         columns: ['日期', '电量', '电费'],
@@ -57,9 +61,8 @@
         
       }
     }
-  }
+}
 </script>
-
 <style scoped>
 .layout-box {
   position: absolute;

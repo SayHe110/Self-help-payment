@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>电费电量</p>
-    </div>
+    <sheader headerTitle="电费电量"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <div class="personal">
@@ -105,7 +103,12 @@
 </div>
 </template>
 <script>
-export default {};
+import sheader from '../components/box.vue'
+export default {
+    components:{
+        sheader
+    },
+};
 </script>
 <style scoped>
 .layout-box {

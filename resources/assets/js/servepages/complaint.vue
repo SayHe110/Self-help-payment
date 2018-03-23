@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>投诉举报</p>
-    </div>
+    <sheader headerTitle="投诉举报"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <div class="complaint_title">
@@ -32,7 +30,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       repairItem: {

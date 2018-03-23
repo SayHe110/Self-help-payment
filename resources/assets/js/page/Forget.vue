@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>邮箱地址</p>
-    </div>
+    <sheader headerTitle="邮箱地址"></sheader>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
             <Form class="login" ref="formInline"  :rules="ruleInline" post="" label-position="right" :label-width="70">
@@ -22,7 +20,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+     components:{
+        sheader
+    },
   data() {
     return {
       email: "",

@@ -104,7 +104,6 @@ export default {
       this.$http.get("captchas").then(res => {
         this.captchaKey = res.body.captcha_key;
         this.captchasSrc = res.body.captcha_image_content;
-        console.log(res);
       });
     }
   }
