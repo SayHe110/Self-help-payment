@@ -30,7 +30,6 @@ export default {
      mounted() {
     // 停电公告
     this.$http.get("power_failure").then(res => {
-        console.log(res.body.topics)
       this.noticeData = res.body.topics;
     //   this.current_page = res.body.meta.pagination.current_page;
     //   this.total_pages = res.body.meta.pagination.total_pages;

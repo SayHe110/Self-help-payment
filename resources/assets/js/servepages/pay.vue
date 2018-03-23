@@ -1,6 +1,6 @@
 <template>
 <div class="layout-box">
-    <sheader headerTitle="快速交电"></sheader>
+    <sheader headerTitle="快速购电"></sheader>
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="60">
