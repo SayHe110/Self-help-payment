@@ -19,11 +19,7 @@
 </div>
 </template>
 <script>
-import sheader from '../components/box.vue'
 export default {
-    components:{
-        sheader
-    },
   data() {
     return {
       submit: false,
@@ -48,7 +44,7 @@ export default {
     },
     submitOrder () {
       this.$http.post('orders', {
-          dorm_id: this.formPay.dorNum[2],
+          dorm: this.formPay.dorNum[2],
           money: Number(this.formPay.cash)
       }).then(res => {
         console.log(res)
