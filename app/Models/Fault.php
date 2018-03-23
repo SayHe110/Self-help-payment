@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fault extends Model
 {
-    protected $fillable = ['title', 'description', 'dorm_id', 'phone', 'arrival_processing', 'processing_person'];
+    protected $fillable = ['title', 'description', 'dormitory', 'phone', 'arrival_processing', 'processing_person'];
 }

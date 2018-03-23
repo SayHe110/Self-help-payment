@@ -14,7 +14,7 @@ class ReportsController extends Controller
         $report->fill($request->all());
 
         // 如果匿名则保存用户 ID
-        if($request->anonymous)
+        if(! $request->anonymous)
             $report->user_id = $this->user()->id;
 
         $report->save();

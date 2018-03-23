@@ -18,7 +18,8 @@ class CreateFaultsTable extends Migration
             $table->integer('user_id')->index();
             $table->string('title');
             $table->string('description')->coment('描述');
-            $table->integer('dormitory_id')->index()->comment('宿舍号');
+            // $table->integer('dormitory_id')->index()->comment('宿舍号');
+            $table->string('dormitory')->comment('宿舍名称');
             $table->string('phone')->comment('联系电话');
             $table->boolean('arrival_processing')->default(false)->comment('是否到场处理');
             $table->integer('processing_person')->default(0)->index()->comment('处理人');

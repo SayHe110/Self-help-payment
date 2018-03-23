@@ -16,14 +16,14 @@ class FaultsTableSeeder extends Seeder
     {
         $faker = app(Faker\Generator::class);
         $users_id = User::all()->pluck('id')->toArray();
-        $dorms_id = Dormitory::where('is_unit_building', '=', 0)->get()->pluck('id')->toArray();
+        $dorms = Dormitory::where('is_unit_building', '=', 0)->get()->pluck('dorm_name')->toArray();
 
         $faults = factory(\App\Models\Fault::class)
                     ->times(50)
                     ->make()
-                    ->each(function ($fault, $index) use ($faker, $users_id, $dorms_id){
+                    ->each(function ($fault, $index) use ($faker, $users_id, $dorms){
                         $fault->user_id = $faker->randomElement($users_id);
-                        $fault->dormitory_id = $faker->randomElement($dorms_id);
+                        $fault->dormitory = $faker->randomElement($dorms);
                     })->toArray();
 
         Fault::insert($faults);
