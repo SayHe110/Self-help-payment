@@ -35,7 +35,6 @@ export default {
     mounted() {
         //余额
         this.$http.get("electricity_balance").then(res => {
-            console.log(res.body);
             this.sutdent_name = res.body.user.nickname;
             this.dormitory_name = res.body.dormitory_name;
             // this.balance = this.res.balance_of_electricity;
