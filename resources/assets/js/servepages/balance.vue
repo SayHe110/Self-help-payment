@@ -8,14 +8,14 @@
             <div class="personal">
                 <img src="../assets/icon/touxiang.png" alt="">
                 <div class="title">                        
-                    <p>用户名：31321</p>
-                    <p>宿舍号：{{dormitory_id}}</p>
+                    <p>用户名：{{sutdent_name}}</p>
+                    <p>宿舍号：{{dormitory_name}}</p>
                 </div>
             </div>
             <div class="box">
                <h2>{{balance}}元</h2>
                <p>电费余额</p>
-               <span>截止到2018年3月20日 14:15:23</span>
+               <span>截止到{{updated_time}}</span>
             </div>
             <Button  type="success" long @click="showIdCardInput(value)">立即购电</Button>
         </div>  
@@ -26,15 +26,20 @@
 export default {
     data() {
         return{
-            dormitory_id: "",
-            balance: ""
+            sutdent_name: "",
+            dormitory_name: "",
+            balance: "67    ",
+            updated_time: "",
         }
     },
     mounted() {
         //余额
         this.$http.get("electricity_balance").then(res => {
-            this.dormitory_id = this.res.dormitory_id;
-            this.balance = this.res.balance_of_electricity;
+            console.log(res.body);
+            this.sutdent_name = res.body.user.nickname;
+            this.dormitory_name = res.body.dormitory_name;
+            // this.balance = this.res.balance_of_electricity;
+            this.updated_time = res.body.user.updated_at;
         });
     },
     methods: {
@@ -96,7 +101,7 @@ export default {
 .personal .title {
   font-size: 14px;
   float: left;
-  text-align: center;
+  text-align: left;
   padding-left: 10px;
   position: absolute;
   top: 50%;

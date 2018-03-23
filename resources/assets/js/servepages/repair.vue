@@ -20,8 +20,8 @@
                 </FormItem>
                 <FormItem label="需维修人员到现场处理:" prop="radio">
                     <RadioGroup v-model="repairItem.radio">
-                        <Radio label="yes">是</Radio>
-                        <Radio label="no">否</Radio>
+                        <Radio label="1">是</Radio>
+                        <Radio label="0">否</Radio>
                     </RadioGroup>
                 </FormItem>
                 <Button type="success" long  @click="handleSubmit('repairItem')">提交</Button>
@@ -36,7 +36,7 @@ export default {
     return {
       repairItem: {
         title: "",
-        radio: "yes",
+        radio: "1",
         dorNum: "",
         Tel: "",
         textarea: ""
@@ -82,8 +82,9 @@ export default {
             .post("faults", {
               title: this.repairItem.title,
               description: this.repairItem.textarea,
-              dormitory_id: this.repairItem.dorNum,
-              phone: this.repairItem.Tel
+              dormitory: this.repairItem.dorNum,
+              phone: this.repairItem.Tel,
+              arrival_processing: this.repairItem.radio
             })
             .then(
               res => {

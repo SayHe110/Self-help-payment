@@ -5,31 +5,13 @@
     </div>
     <div class="layout-application">
         <div class="application-box">
-            <div class="card">
+            <div class="card" v-for="values in noticeData" :key="values.id">
                 <div class="card-head">
-                    <p>停电预告</p>
+                    <p :v-model="noticeData" >{{values.title}}</p>
                 </div>
                 <div class="card-body">
-                    <p class="card-box">停电时间：3月19日—3月25日</p>
-                    <p class="time">2018-3-17</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-head">
-                    <p>停电预告</p>
-                </div>
-                <div class="card-body">
-                    <p class="card-box">停电时间：3月19日—3月25日</p>
-                    <p class="time">2018-3-17</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-head">
-                    <p>停电预告</p>
-                </div>
-                <div class="card-body">
-                    <p class="card-box">停电时间：3月19日—3月25日</p>
-                    <p class="time">2018-3-17</p>
+                    <p class="card-box">{{values.body}}</p>
+                    <p class="time">{{values.created_at}}</p>
                 </div>
             </div>
         </div>  
@@ -37,7 +19,22 @@
 </div>
 </template>
 <script>
-export default {};
+export default {
+    data(){
+        return{
+            noticeData: [{ id: "" }, { title: "" }, { body: "" }, {time: ""}]
+        }
+    },
+     mounted() {
+    // 停电公告
+    this.$http.get("power_failure").then(res => {
+        console.log(res.body.topics)
+      this.noticeData = res.body.topics;
+    //   this.current_page = res.body.meta.pagination.current_page;
+    //   this.total_pages = res.body.meta.pagination.total_pages;
+    });
+  },
+};
 </script>
 <style scoped>
 .layout-box {
