@@ -13,46 +13,33 @@
                      <img src="../assets/icon/iview.png" alt="">
                     <ul>
                         <li><p>订单编号:10002001</p></li>
-                        <li><p>支付金额:150元</p></li>
-                        <li><p>充电宿舍:9A121</p></li>
+                        <li><p>支付金额:{{$route.params.name}}元</p></li>
+                        <li><p>充电宿舍:{{dorm_content}}</p></li>
                     </ul>
                 </div>
-                <p class="money">实际付款：42</p>                
-            </div>
-            <div class="card">
-                <div class="card-head">
-                    <p>下单日期：2018年3月21日 16：22</p>
-                </div>
-                <div class="card-body">
-                     <img src="../assets/icon/iview.png" alt="">
-                    <ul>
-                        <li><p>订单编号:10002001</p></li>
-                        <li><p>支付金额:150元</p></li>
-                        <li><p>充电宿舍:9A121</p></li>
-                    </ul>
-                </div>
-                <p class="money">实际付款：42</p>                
-            </div>
-            <div class="card">
-                <div class="card-head">
-                    <p>下单日期：2018年3月21日 16：22</p>
-                </div>
-                <div class="card-body">
-                     <img src="../assets/icon/iview.png" alt="">
-                    <ul>
-                        <li><p>订单编号:10002001</p></li>
-                        <li><p>支付金额:150元</p></li>
-                        <li><p>充电宿舍:9A121</p></li>
-                    </ul>
-                </div>
-                <p class="money">实际付款：42</p>                
+                <p class="money">实际付款:{{$route.params.name}}</p>                
             </div>
         </div>  
     </div>
 </div>
 </template>
 <script>
-export default {};
+export default {
+    data(){
+        return{
+         dorm_content: {},
+         dormstudent: {},
+         dorm:[]
+        }
+    },
+     mounted(){
+      this.$http.get("orders").then(res => {
+         this.dorm = res.data.dormitories.map(){
+             
+         }
+      })
+  }
+};
 </script>
 <style scoped>
 .layout-box {

@@ -46,7 +46,7 @@ export default {
     },
     submitOrder () {
       this.$http.post('orders', {
-          dorm: this.formPay.dorNum[2],
+          dorm_id: this.formPay.dorNum[2],
           money: Number(this.formPay.cash)
       }).then(res => {
         console.log(res)
