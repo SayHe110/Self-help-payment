@@ -5,17 +5,17 @@
         <div class="application-box">
             <div class="card" v-for="(item, index) in dorms" :key="index">
                 <div class="card-head">
-                    <p>下单日期：2018年3月21日 16：22</p>
+                    <p>下单日期：{{item.created_at}}</p>
                 </div>
                 <div class="card-body">
                      <img src="../assets/icon/iview.png" alt="">
                     <ul>
-                        <li><p>订单编号:{{dorms.order_num}}</p></li>
-                        <li><p>支付金额:{{dorms.money}}元</p></li>
-                        <li><p>充电宿舍:{{dorms.dormitory_id}}</p></li>
+                        <li><p class="list_font">订单编号:<span>{{item.order_num}}</span></p></li>
+                        <li><p class="list_font">支付金额:<span>{{item.money}}元</span></p></li>
+                        <li><p class="list_font">充电宿舍:<span>{{item.dormitory_id}}</span></p></li>
                     </ul>
                 </div>
-                <p class="money">实际付款:{{$route.params.name}}</p>                
+                <p class="money">实际付款:<span>¥{{item.money}}</span></p>                
             </div>
         </div>  
     </div>
@@ -29,8 +29,12 @@ export default {
     },
     data(){
         return{
-         dorms:
-         [{ order_num: "" }, { money: "" }, { dormitory_id: "" }],
+         dorms:[{
+            order_num: "",
+            money: "",
+            dormitory_id: "",
+            created_at:""
+         }],
          dorm_content: {},
          dormstudent: {},
          dorm:[],
@@ -39,9 +43,16 @@ export default {
     },
      mounted(){
       this.$http.get("orders").then(res => {
-        this.order_num = res.body.data.order_num;
-        this.money = res.body.money;
-        this.dormitory_id = res.body.dormitory_id;
+        this.dorms = res.data.data.map(item => {
+        let dom = {
+        created_at: item.created_at,
+        order_num: item.order_num,
+        money : item.money,
+        dormitory_id: item.dormitory_id,
+        };
+        console.log(item.order_num,item.money,item.dormitory_id)
+        return dom;
+      })
     });
   }
 };
@@ -55,9 +66,9 @@ export default {
   height: 100%;
   background: #f3f3f3;
 }
-.header-title{
-    display: flex;
-    flex-direction: column;
+.header-title {
+  display: flex;
+  flex-direction: column;
 }
 .layout-box .header-title p {
   color: #fff;
@@ -89,12 +100,11 @@ export default {
   border-bottom: 1px solid #eee;
 }
 .card-head {
-  padding: 0px 10px; 
+  padding: 0px 10px;
   height: 40px;
   line-height: 40px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  
 }
 .card-head p {
   display: inline-block;
@@ -109,6 +119,10 @@ export default {
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
+.list_font span{
+    padding-left: 8px;
+    font-size: 14px;
+}
 /* .card-body ul li p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -116,14 +130,18 @@ export default {
     overflow: hidden;
     padding-bottom: 5px;
 } */
-.card-body img{
-    float: left;
-    width: 72px;
-    margin-right: 20px;
+.card-body img {
+  float: left;
+  width: 70px;
+  margin-right: 20px;
 }
 .money {
   text-align: right;
   font-size: 14px;
   padding: 5px 15px;
+}
+.money span{
+    padding-left: 7px;
+    font-size: 16px;
 }
 </style>
