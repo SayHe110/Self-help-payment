@@ -7,14 +7,14 @@
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="60">
                 <FormItem label="所在宿舍">
-                   <Cascader v-model="formPay.dorNum" on-change="handleChange" :data="dorms" filterable trigger="hover"></Cascader>
+                   <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
                     <Input class="cash" v-model="formPay.cash"></Input>
                 </FormItem>
-                <!-- <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}"> -->
+                 <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}">
                     <Button @click="submitOrder" type="success" long>下一步</Button>
-                <!-- </router-link> -->
+                </router-link> 
             </Form>
         </div>  
     </div>
@@ -28,7 +28,7 @@ export default {
       loading: true,
       formPay: {
         dorNum: [],
-        cash: ""
+        cash: null
       },
       dorms: []
     };
@@ -36,7 +36,7 @@ export default {
   methods: {
     asyncOK() {
       this.submit = false;
-      // this.$router.push({name: '  mybill'});
+      this.$router.push({name: '  mybill'});
       setTimeout(
         function() {
           this.$router.push({ name: "mybill", params: {id: this.formPay.dorNum, name:this.formPay.cash}});
@@ -46,38 +46,37 @@ export default {
     },
     submitOrder () {
       this.$http.post('orders', {
-        dorm: this.formPay.dorNum[2],
-        money: this.formPay.cash
+          dorm: this.formPay.dorNum[2],
+          money: Number(this.formPay.cash)
       }).then(res => {
         console.log(res)
       })
     },
-    handleChange (value, selectedData) {
-        console.log(selectedData.map(o => o.label).join(', '));
-    },
+    // handleChange (value, selectedData) {
+    //   this.formPay.dormNum = value[2]
+    // },
     goLink() {
       this.submit = true;
     }
   },
   mounted() {
-    console.log(this.formPay)
     this.$http.get("dormitories").then(res => {
       this.dorms = res.data.dormitories.map(item => {
         let dom = {
           label: item.dorm_name,
-          value: item.dorm_id,
+          value: item.id,
         };
         if (item.all_children_dorms.length != 0) {
           dom.children = item.all_children_dorms.map(item => {
             let dom =  {
               label: item.dorm_name + '栋',
-              value: item.dorm_id,
+              value: item.id,
             };
             if (item.all_children_dorms.length != 0) {
               dom.children = item.all_children_dorms.map(item => {
                 return {
                   label: item.dorm_name,
-                  value: item.dorm_id,
+                  value: item.id,
                 }
               });
             }
@@ -91,12 +90,14 @@ export default {
 };
 </script>
 <style scoped>
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
 .layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {

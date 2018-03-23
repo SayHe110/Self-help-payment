@@ -14,7 +14,19 @@ Vue.config.productionTip = false
 Vue.use(VueResource);
 Vue.use(iView);
 Vue.http.options.root = '/api';
+
+
 /* eslint-disable no-new */
+if(!!localStorage.jwt_token){
+  Vue.http.headers.common.Authorization = 'Bearer ' + localStorage.jwt_token
+}
+
+Vue.http.interceptors.push(function(request) {
+  if(!!localStorage.jwt_token){
+    console.log(localStorage.jwt_token)
+    request.headers.set('Authorization', 'Bearer ' + localStorage.jwt_token);
+  }
+});
 new Vue({
   el: '#app',
   router,

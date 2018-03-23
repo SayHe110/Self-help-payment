@@ -1,15 +1,19 @@
 <template>
 <div class="layout-box">
     <div class="header-title">
-        <p>宿舍号绑定</p>
+        <p>支付宝绑定</p>
     </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate"  >
-                <FormItem label="宿舍号:" prop="dorNum">
-                    <Input v-model="repairItem.dorNum" icon="ios-close-outline" />
+            <Form :model="formInline" ref="formInline" label-position="right" :rules="ruleValidate" :label-width="90" >
+                <FormItem label="支付宝账号:" prop="Alipay_id">
+                    <Input v-model="formInline.Alipay_id" placeholder="请输入支付宝账号" />
                 </FormItem>
-                <Button type="success" long  @click="handleSubmit('repairItem')">提交</Button>
+                <FormItem label="支付宝密码:" prop="Alipay_password">
+                    <Input type="password" v-model="formInline.Alipay_password" placeholder="请支付宝登录密码" size="large">
+                    </Input>
+                </FormItem>
+                <Button type="success" long  @click="handleSubmit('repairItem')">绑定支付宝账户</Button>
             </Form>
         </div>  
     </div>
@@ -19,14 +23,22 @@
 export default {
   data() {
     return {
-      repairItem: {
-        dorNum: ""
+      formInline: {
+        Alipay_id: "",
+        Alipay_password: ""
       },
       ruleValidate: {
-        dorNum: [
+        Alipay_id: [
           {
             required: true,
-            message: "请输入宿舍号",
+            message: "请输入支付宝账号",
+            trigger: "blur"
+          }
+        ],
+        Alipay_password: [
+          {
+            required: true,
+            message: "请输入支付宝密码",
             trigger: "blur"
           }
         ]
@@ -40,7 +52,8 @@ export default {
         if (valid) {
             this.$http
             .post("reports",{
-                tel: this.repairItem.tel,
+                Alipay_id: this.formInline.Alipay_id,
+                Alipay_password: this.formInline.Alipay_password
             })
             .then(
                 res => {                    
@@ -82,5 +95,4 @@ export default {
 .application-box {
   padding-top: 10px;
 }
-
 </style>

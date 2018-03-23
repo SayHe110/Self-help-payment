@@ -6,11 +6,8 @@
         <div class="layout-application">
             <div class="application-box">
                 <ul>
-                    <li><p>用户编号 :</p><span>102500124</span></li>
-                    <li><p>单元号 :</p><span>{{item.dorm_name}}</span></li>
-                    <li><p>A楼/B楼:</p><span>A楼</span></li>
-                    <li><p>缴费宿舍 :</p><span>9A110</span></li>
-                    <li><p>缴费金额 :</p><span>110</span></li>
+                    <li><p>缴费宿舍 :</p><span>{{dorm_content}}</span></li>
+                    <li v-if="dorm_content !== undefined"><p>缴费金额 :</p><span>{{$route.params.name}}元</span></li>
                 </ul>
                 <Button  type="success" long @click="showIdCardInput">提交订单</Button>
             </div>                
@@ -19,7 +16,7 @@
             <div class="mask_one" v-show="a">
               <div class="password">
                 <div class="cancer">
-                  <button @click="a=false"><Icon type="chevron-left"></Icon></button>
+                  <button @click="a=false"><Icon type="chevron-left" style="margin-top:4px;"></Icon></button>
                   <p>请输入支付密码</p>
                 </div>
                 <div class="button_box">
@@ -42,10 +39,16 @@
 export default {
   data() {
     return {
+      dorm_content: {},
+      dormstudent: {},
       modal1: false,
       myDate: [],
       a: false,
-      idCard: []
+      idCard: [],
+      formPay: {
+        dorNum: [],
+        cash: null
+      }
     };
   },
   methods: {
@@ -72,17 +75,15 @@ export default {
         this.$router.push({ name: "payment" });
       }
     }
-    // row(rest){
-    //    this.$router.push({ name: "mybill", params: {id: dorm_id,name:dorm_name}});
-    // }
   },
-  mounted () {
-      this.$http.get('dormitories/').then(res => {
-			this.dorms = res.data.data
-      this.dorms_name = res.data.meta.dorm_name
-      console.log(this.$route.params)
-		})
+  mounted(){
+      this.$http.get("dormitories/" + this.$route.params.id).then(res => {
+       this.dormstudent = res.data.data;
+       this.dorm_content = res.data.dorm_name;
+       console.log(dorm_content);
+      })
   }
+ 
 };
 </script>
 <style scoped>
@@ -93,12 +94,14 @@ export default {
 button {
   margin-top: 20px;
 }
-.header-title {
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
+.layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {
@@ -217,7 +220,7 @@ button {
   position: relative;
 }
 .password .cancer p {
-  color: #848484 !important;
+  color: #333 !important;
   font-family: "Microsoft Yahei";
   letter-spacing: 2px;
   font-size: 20px;

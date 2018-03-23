@@ -11,9 +11,9 @@
         <div class="list_box">
           <ul>
               <li>订单编号:<span>10002001</span></li>
-              <li>支付金额:<span>150元</span></li>
+              <li>支付金额:<span>{{$route.params.name}}</span></li>
               <li>交易日期:<span>2018-3-19</span></li>
-              <li>充电宿舍:<span>9A121</span></li>
+              <li v-if="dorm_content !== undefined">充电宿舍:<span>{{dorm_content}}</span></li>
           </ul>
         </div> 
           <router-link :to="{name: 'service'}">
@@ -24,7 +24,29 @@
 </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      dorm_content: {},
+      dormstudent: {},
+      modal1: false,
+      myDate: [],
+      a: false,
+      idCard: [],
+      formPay: {
+        dorNum: [],
+        cash: null
+      }
+    };
+  },
+  mounted(){
+    this.$http.get("dormitories/" + this.$route.params.id).then(res => {
+      this.dormstudent = res.data.data;
+      this.dorm_content = res.data.dorm_name;
+    })
+  }
+ 
+};
 </script>
 <style scoped>
 .layout-box {
@@ -35,12 +57,14 @@ export default {};
   height: 100%;
   background: #f3f3f3;
 }
+.header-title{
+    display: flex;
+    flex-direction: column;
+}
 .layout-box .header-title p {
   color: #fff;
-  position: fixed;
   line-height: 45px;
   z-index: 999;
-  left: 40%;
   font-size: 18px;
 }
 .layout-application {

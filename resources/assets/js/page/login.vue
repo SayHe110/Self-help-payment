@@ -45,8 +45,8 @@ export default {
       whetherNeedCaptcha: false,
       num: "0",
       formInline: {
-        user: "",
-        password: "",
+        user: "10001",
+        password: "password",
         verification: ""
       },
       ruleInline: {
@@ -86,6 +86,7 @@ export default {
             .post("authorizations", params)
             .then(
               res => {
+                localStorage.jwt_token = res.data.access_token;
                 this.$router.push("./home");
               },
               err => {
@@ -103,7 +104,6 @@ export default {
       this.$http.get("captchas").then(res => {
         this.captchaKey = res.body.captcha_key;
         this.captchasSrc = res.body.captcha_image_content;
-
         console.log(res);
       });
     }
