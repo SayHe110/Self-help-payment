@@ -5,16 +5,16 @@
     </div>
     <div class="layout-application">
         <div class="application-box">
-            <div class="card">
+            <div class="card" v-for="(item, index) in dorms" :key="index">
                 <div class="card-head">
                     <p>下单日期：2018年3月21日 16：22</p>
                 </div>
                 <div class="card-body">
                      <img src="../assets/icon/iview.png" alt="">
                     <ul>
-                        <li><p>订单编号:10002001</p></li>
-                        <li><p>支付金额:{{$route.params.name}}元</p></li>
-                        <li><p>充电宿舍:{{dorm_content}}</p></li>
+                        <li><p>订单编号:{{dorms.order_num}}</p></li>
+                        <li><p>支付金额:{{dorms.money}}元</p></li>
+                        <li><p>充电宿舍:{{dorms.dormitory_id}}</p></li>
                     </ul>
                 </div>
                 <p class="money">实际付款:{{$route.params.name}}</p>                
@@ -27,17 +27,20 @@
 export default {
     data(){
         return{
+         dorms:
+         [{ order_num: "" }, { money: "" }, { dormitory_id: "" }],
          dorm_content: {},
          dormstudent: {},
-         dorm:[]
+         dorm:[],
+         
         }
     },
      mounted(){
       this.$http.get("orders").then(res => {
-         this.dorm = res.data.dormitories.map(){
-             
-         }
-      })
+        this.order_num = res.body.data.order_num;
+        this.money = res.body.money;
+        this.dormitory_id = res.body.dormitory_id;
+    });
   }
 };
 </script>
