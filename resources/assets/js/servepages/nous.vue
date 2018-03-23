@@ -15,7 +15,7 @@
                                 <p class="news-title" :v-model="topicsData">{{values.title}}</p>
                                 <p class="info">
                                     <span>{{values.created_at}}</span>
-                                    <span class="margin-left">{{values.user.nickname}}</span>
+                                    <span class="margin-left" v-if="values.user!==undefined">{{values.user.nickname}}</span>
                                     <span class="margin-left">
                                         <i class="iconfont icon-sannongguancha">{{values.view_count}}</i>
                                     </span>
