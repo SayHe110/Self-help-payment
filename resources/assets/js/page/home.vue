@@ -33,7 +33,7 @@
                                         <p class="news-title" :v-model="topicsData">{{values.title}}</p>
                                         <p class="info">
                                             <span>{{values.created_at}}</span>
-                                            <span class="margin-left">admin</span>
+                                            <span class="margin-left">{{values.user.nickname}}</span>
                                             <span class="margin-left">
                                                 <i class="iconfont icon-sannongguancha">{{values.view_count}}</i>
                                             </span>
@@ -76,7 +76,7 @@ export default {
   //请求接口
   mounted() {
     // 文章
-    this.$http.get("topics").then(res => {
+    this.$http.get("topics?include=user").then(res => {
       this.topicsData = res.body.data;
       this.current_page = res.body.meta.pagination.current_page;
       this.total_pages = res.body.meta.pagination.total_pages;

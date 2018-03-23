@@ -44,27 +44,31 @@ BAIDU_TRANSLATE_KEY=
 php artisan key:generate
 ```
 
-#### 6.发布资源
+#### 6.设置jwtauth密钥用来签名的令牌
+```
+php artisan jwt:secret
+```
+
+#### 7.发布资源
 ```shell
 php artisan vendor:publish --provider='Dingo\Api\Provider\LaravelServiceProvider'
 ```
 
-#### 7.安装后台管理
+#### 8.安装后台管理
+然后运行下面的命令完成安装：
+```
+php artisan admin:install
+```
 运行以下命令发布后台管理资源：
 ```shell
 php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
 ```
 在该命令会生成配置文件 `config/admin.php`，可以在里面修改安装的地址、数据库连接、以及表名，建议都是用默认配置不修改。
 <br>
-然后运行下面的命令完成安装：
-```
-php artisan admin:install
-```
-
 安装后在浏览器中打开 `{host}/admin` ，使用用户名 `admin` 和密码 `admin` 进行登录
 > {host} 为虚拟域名
 
-#### 8.创建数据库并填充测试数据
+#### 9.创建数据库并填充测试数据
 ```
 php artisan migrate --seed
 ```

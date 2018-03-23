@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\FaultRequest;
 use App\Models\Fault;
 use App\Transformers\FaultTransformer;
-use Illuminate\Http\Request;
 
 class FaultsController extends Controller
 {

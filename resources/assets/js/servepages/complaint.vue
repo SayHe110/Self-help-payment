@@ -21,8 +21,8 @@
                 </FormItem>
                 <FormItem label="是否匿名:" prop="radio">
                     <RadioGroup v-model="repairItem.radio">
-                        <Radio label="yes">是</Radio>
-                        <Radio label="no">否</Radio>
+                        <Radio label="1">是</Radio>
+                        <Radio label="0">否</Radio>
                     </RadioGroup>
                 </FormItem>
                 <Button type="success" long  @click="handleSubmit('repairItem')">提交</Button>
@@ -37,7 +37,7 @@ export default {
     return {
       repairItem: {
         title: "",
-        radio: "yes",
+        radio: "1",
         Company: "",
         textarea: ""
       },
@@ -74,9 +74,9 @@ export default {
             this.$http
             .post("reports",{
                 title: this.repairItem.title,
-                Company: this.repairItem.Company,
-                textarea: this.repairItem.textarea,                
-                radio: this.repairItem.radio
+                reports: this.repairItem.Company,
+                description: this.repairItem.textarea,                
+                anonymous: this.repairItem.radio
             })
             .then(
                 res => {                    

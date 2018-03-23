@@ -14,7 +14,7 @@ class FaultTransformer extends TransformerAbstract
             'user_id' => $fault->user_id,
             'title' => $fault->title,
             'description' => $fault->description,
-            'dorm_id' => $fault->dorm_id,
+            'dormitory' => $fault->dormitory,
             'phone' => $fault->phone,
             'arrival_processing' => $fault->arrival_processing,
             'processing_person' => $fault->processing_person,

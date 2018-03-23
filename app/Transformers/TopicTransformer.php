@@ -21,8 +21,9 @@ class TopicTransformer extends TransformerAbstract
             'view_count' => $topic->view_count,
             'excerpt' => $topic->excerpt,
             'slug' => $topic->slug,
-            'created_at' => $topic->created_at->toDateTimeString(),
-            'updated_at' => $topic->updated_at->toDateTimeString(),
+            // 'created_at' => $topic->created_at->toDateTimeString(),
+            'created_at' => substr($topic->created_at->toDateTimeString(), 5, 11),
+            'updated_at' => substr($topic->updated_at->toDateTimeString(), 5, 11),
         ];
     }
 
