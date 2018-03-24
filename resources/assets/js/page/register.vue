@@ -1,8 +1,6 @@
 <template>
 <div class="layout-box">
-    <div class="header-title">
-        <p>用户注册</p>
-    </div>
+    <sheader headerTitle="用户注册"></sheader>
     <div class="layout-application">
         <div class="application-box" style="padding-top:30px;">
             <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
@@ -36,7 +34,11 @@
 </div>
 </template>
 <script>
+import sheader from '../components/box.vue'
 export default {
+    components:{
+        sheader
+    },
   data() {
     return {
       emailarry: "",
@@ -83,7 +85,7 @@ export default {
             })
             .then(
               res => {
-                this.$router.push("./");
+                this.$router.push("./login");
               },
               err => {
                 this.$Message.error(err.body.message || "注册失败");
