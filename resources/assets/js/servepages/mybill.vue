@@ -66,7 +66,7 @@ export default {
       this.idCard.push(n);
       if (this.idCard.length === 4) {
         this.$http.post('orders', {
-          dorm_id: this.$g.params.id,
+          dorm_id: this.$route.params.id,
           money: this.$route.params.name,
         }).then(res => {
           this.$router.push({ name: "payment", params: {
