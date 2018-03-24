@@ -71,7 +71,7 @@ $api->version('v1', [
             $api->post('reports', 'ReportsController@store')->name('api.reports.store');
             // 提交订单
             $api->post('orders', 'OrderController@store')->name('api.orders.store');
-            // 我的订单
+            // 我的订单 ?include=dormitory
             $api->get('orders', 'OrderController@me')->name('api.orders.show');
             // 电费余额
             $api->get('electricity_balance', 'ElectricityFeesController@show')->name('api.Electricity.show');
