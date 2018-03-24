@@ -27,7 +27,7 @@
                     <li class="click">完成</li>
                     <li @click="addIdCard(0)" class="click">0</li>
                     <li @click="removeIdCard" class="id_cancer click">
-                     <Icon type="android-delete"></Icon>
+                     <Icon type="backspace"></Icon>
                     </li>
                   </ul>
                 </div>

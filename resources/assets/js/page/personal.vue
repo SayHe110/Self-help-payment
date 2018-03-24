@@ -6,18 +6,26 @@
        <div class="personal-contain">
             <ul>
                 <li class="personal-box" >
-                    <router-link :to="{name: 'information'}">
+                    <div class="personal_login" v-if="!jwtToken">
+                        <router-link :to="{name: 'login'}">
+                            <div class="personal-icon"><img src="../assets/icon/moicon.png" alt=""></div>
+                            <div class="personal-title">
+                                <p>登录/注册</p>
+                                <span >添加宿舍迅速购电</span>
+                            </div>                        
+                            <span class="more" style="line-height:72px;" ><img src="../assets/icon/more.png" alt=""></span>                   
+                        </router-link>
+                    </div>
+                    <span class="personal-exit" v-if="jwtToken">
+                        <a @click="quit" style="display: inline;">退出</a>
+                    </span>
+                    <router-link :to="{name: 'information'}" v-if="jwtToken">
                         <div class="personal-icon"><img :src="avatar" alt=""></div>
                         <div class="personal-title">
                             <p>{{nickname}}</p>
                             <span >{{student_id}}</span>
-                        </div>                        
-                        <span class="personal-exit">
-                            <router-link :to="{name: 'home'}" style="display: inline;">
-                                <a @click="quit" style="display: inline;">退出</a>
-                            </router-link>
-                        </span>                        
-                    </router-link>
+                        </div>                          
+                    </router-link>                      
                 </li>
                 <li>
                      <router-link :to="{name: 'alreadybill'}">
@@ -60,7 +68,8 @@ export default {
       name: "personal",
       student_id: "",
       nickname: "",
-      avatar: ""
+      avatar: "",
+      jwtToken: !!localStorage.jwt_token,
     };
   },
   mounted() {
@@ -74,14 +83,10 @@ export default {
   methods: {
     quit() {
       this.$http
-        .delete("authorizations/current", {
-          params: {
-            token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNTIxNDYzMTc4LCJleHAiOjE1NTI5OTkxNzgsIm5iZiI6MTUyMTQ2MzE3OCwianRpIjoiT1pZRFpsU2ttWkd3c3dKViIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.NDGfnkVsNJ5Illv_sl1KHkaD3avn9nYsR36oHqFHxyc"
-          }
-        })
+        .delete("authorizations/current")
         .then(res => {
-          this.$router.push({ name: "login" });
+            this.jwtToken = false;
+            localStorage.removeItem('jwt_token');
         });
     }
   }
@@ -138,6 +143,9 @@ export default {
   right: 10px;
   color: #999;
   line-height: 72px;
+}
+.personal-contain ul li .personal-exit{
+    top: 0px;
 }
 .personal-contain ul li .personal-exit a {
   color: #444;

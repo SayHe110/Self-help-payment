@@ -38,12 +38,6 @@ export default {
       current_page: null,
       total_pages: null,
       dorms: [
-        {
-          order_num: "",
-          money: "",
-          dormitory_id: "",
-          created_at: ""
-        }
       ],
       dorm_content: {},
       dormstudent: {},
