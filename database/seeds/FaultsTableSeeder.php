@@ -16,7 +16,7 @@ class FaultsTableSeeder extends Seeder
     {
         $faker = app(Faker\Generator::class);
         $users_id = User::all()->pluck('id')->toArray();
-        $dorms = Dormitory::where('is_unit_building', '=', 0)->get()->pluck('dorm_name')->toArray();
+        $dorms = Dormitory::where('type', 'dormitory')->get()->pluck('dorm_name')->toArray();
 
         $faults = factory(\App\Models\Fault::class)
                     ->times(50)

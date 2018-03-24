@@ -6,7 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dormitory extends Model
 {
-    protected $fillable = ['dorm_name', 'parent_dorm_code', 'is_unit_building'];
+    protected $fillable = ['dorm_name', 'parent_dorm_code'];
+
+    public function getDormAttribute()
+    {
+        if($this->type == 'dormitory'){
+            return $this->getDormName($this->id);
+        }
+
+        return $this->dorm_name;
+    }
 
     public function childrenDorm()
     {
@@ -33,13 +42,24 @@ class Dormitory extends Model
         return $this->hasMany(ElectricityFees::class);
     }
 
-    /*public function getDormName($id)
+    /**
+     * 拼接宿舍名
+     * @param $id
+     * @return string
+     */
+    public function getDormName($id)
     {
         $dormitory = Dormitory::findOrFail($id);
-        $building = $dormitory->parentDorm;
-        $unit = $building->parentDorm->dorm_name;
-        $name = $unit.$building->dorm_name.$dormitory->dorm_name;
 
-        return $name;
-    }*/
+        if($dormitory->allChildrenDorms()){
+
+            $building = $dormitory->parentDorm;
+            $unit = $building->parentDorm->dorm_name;
+            $name = $unit.$building->dorm_name.$dormitory->dorm_name;
+
+            return $name;
+        }
+
+        return $dormitory->dorm_name;
+    }
 }

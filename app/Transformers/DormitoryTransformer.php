@@ -11,7 +11,7 @@ class DormitoryTransformer  extends TransformerAbstract
     {
         return [
             'id' => $dormitory->id,
-            'dorm_name' => $dormitory->dorm_name,
+            'dorm_name' => $dormitory->dorm,
             'parent_dorm_id' => $dormitory->parent_dorm_id,
         ];
     }

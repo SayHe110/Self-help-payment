@@ -12,12 +12,9 @@ class ElectricityFeesController extends Controller
         $user = \Auth::user();
         $dormitory = Dormitory::find($user->dormitory_id);
 
-        $dormitoryController = app(DormitoriesController::class);
-        $dormitoryName = $dormitoryController->getDormName($user->dormitory_id);
-
         $data = [
             'user' => $user,
-            'dormitory_name' => $dormitoryName,
+            'dormitory_name' => $dormitory->dorm,
             'electricityFees' => $dormitory->electricityFees,
         ];
 

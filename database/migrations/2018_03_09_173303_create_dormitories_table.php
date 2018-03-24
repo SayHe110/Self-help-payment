@@ -17,7 +17,7 @@ class CreateDormitoriesTable extends Migration
             $table->increments('id');
             $table->string('dorm_name')->index();
             $table->integer('parent_dorm_id')->default(0);
-            $table->boolean('is_unit_building')->default(false);
+            $table->enum('type',['unit', 'building', 'dormitory'])->default('dormitory');
             $table->timestamps();
         });
     }
