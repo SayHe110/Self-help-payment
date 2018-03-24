@@ -8,7 +8,11 @@
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
+<<<<<<< HEAD
                   <Input class="cash" v-model="formPay.cash"  placeholder="请输入金额..." /> 
+=======
+                    <Input class="cash" v-model="formPay.cash" type="Number"></Input>
+>>>>>>> f39a002f7208ca8612f344b3c6c0d4fff6101a16
                 </FormItem>
                 <Button @click="submitOrder" type="success" long>下一步</Button>
             </Form>

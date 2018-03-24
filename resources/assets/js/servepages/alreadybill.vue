@@ -3,11 +3,18 @@
     <sheader headerTitle="我的订单"></sheader>
     <div class="layout-application">
         <div class="application-box">
+<<<<<<< HEAD
             <!-- <div class="no_card" :v-model="dorm" v-if="dorms.order_num == null">
                 <img src="../assets/icon/nodata.png" width="100%">
                 <p style="font-size:20px">暂无订单</p>
             </div> -->
             <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight">
+=======
+            <!-- <div class="no_card" :v-model="order" v-if="orders == null">
+                <img src="../assets/icon/nodata.png" width="100%">
+                <p style="font-size:20px">暂无订单</p>
+            </div> -->
+>>>>>>> f39a002f7208ca8612f344b3c6c0d4fff6101a16
             <div class="card" v-for="(item, index) in dorms" :key="index" >
                 <div class="card-head">
                     <p>下单日期：{{item.created_at}}</p>
@@ -60,15 +67,14 @@ export default {
     }
   },
   mounted() {
-    this.$http.get("orders").then(res => {
+    this.$http.get("orders?include=dormitory").then(res => {
       this.dorms = res.data.data.map(item => {
         let dom = {
           created_at: item.created_at,
           order_num: item.order_num,
           money: item.money,
-          dormitory_id: item.dormitory_id
+          dormitory_id: item.dormitory.dorm_name
         };
-        console.log(item.order_num, item.money, item.dormitory_id);
         return dom;
       });
     });

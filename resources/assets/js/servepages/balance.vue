@@ -30,7 +30,7 @@ export default {
         return{
             sutdent_name: "",
             dormitory_name: "",
-            balance: "67    ",
+            balance: "67",
             updated_time: "",
         }
     },

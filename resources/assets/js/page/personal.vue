@@ -5,12 +5,12 @@
         </div>
        <div class="personal-contain">
             <ul>
-                <li class="personal-box">
+                <li class="personal-box" >
                     <router-link :to="{name: 'information'}">
-                        <div class="personal-icon"><img src="../assets/icon/4.jpg" alt=""></div>
+                        <div class="personal-icon"><img :src="avatar" alt=""></div>
                         <div class="personal-title">
-                            <p>南枫</p>
-                            <span>1508220235</span>
+                            <p>{{nickname}}</p>
+                            <span >{{student_id}}</span>
                         </div>                        
                         <span class="personal-exit">
                             <router-link :to="{name: 'home'}" style="display: inline;">
@@ -54,24 +54,38 @@
    </div>
 </template>
 <script>
-export default{
-		data () {
-			return {
-        name: "personal"
-			}
-		},
-		methods: {
-			quit () {
-				this.$http.delete('authorizations/current', {
+export default {
+  data() {
+    return {
+      name: "personal",
+      student_id: "",
+      nickname: "",
+      avatar: ""
+    };
+  },
+  mounted() {
+      //用户
+      this.$http.get("user").then(res => {
+          this.student_id = res.body.student_id;
+          this.nickname = res.body.nickname;
+          this.avatar = res.body.avatar;
+      });
+  },
+  methods: {
+    quit() {
+      this.$http
+        .delete("authorizations/current", {
           params: {
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNTIxNDYzMTc4LCJleHAiOjE1NTI5OTkxNzgsIm5iZiI6MTUyMTQ2MzE3OCwianRpIjoiT1pZRFpsU2ttWkd3c3dKViIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.NDGfnkVsNJ5Illv_sl1KHkaD3avn9nYsR36oHqFHxyc'
+            token:
+              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNTIxNDYzMTc4LCJleHAiOjE1NTI5OTkxNzgsIm5iZiI6MTUyMTQ2MzE3OCwianRpIjoiT1pZRFpsU2ttWkd3c3dKViIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.NDGfnkVsNJ5Illv_sl1KHkaD3avn9nYsR36oHqFHxyc"
           }
-        }).then(res => {
-					this.$router.push({name: 'index'});
-				})
-			}
+        })
+        .then(res => {
+          this.$router.push({ name: "login" });
+        });
     }
-}
+  }
+};
 </script>
 <style>
 .personal-contain {
@@ -112,20 +126,21 @@ export default{
 }
 .personal-contain ul li .personal-title p {
   color: #444;
-  font-size: 16px; 
+  font-size: 16px;
 }
 .personal-contain ul li .personal-title span {
   color: #999;
   font-size: 13px;
 }
-.personal-contain ul li .personal-exit, .more {
+.personal-contain ul li .personal-exit,
+.more {
   position: absolute;
   right: 10px;
   color: #999;
   line-height: 72px;
 }
-.personal-contain ul li .personal-exit a{
-    color:#444;
+.personal-contain ul li .personal-exit a {
+  color: #444;
 }
 .personal-contain ul li .personal-type {
   display: block;

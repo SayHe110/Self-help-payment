@@ -10,11 +10,12 @@
                         <p class="personal-type" style="line-height:72px;">头像</p>
                         <div class="personal-icon">
                             <Upload 
+                                :before-upload="handleUpload"
                                 :format="['jpg','jpeg','png']" 
                                 :max-size="2048"
                                 :show-upload-list="true"
                                 action="//jsonplaceholder.typicode.com/posts/">
-                                <img src="../assets/icon/4.jpg" alt="">
+                                <img :src="avatar" alt="">
                             </Upload>
                         </div>
                     </a>
@@ -22,25 +23,25 @@
                 <li>
                     <a href="javascript:;" @click="handleRender_name">
                         <p class="personal-type">昵称</p>
-                        <span class="personal-value">{{ name_value }}</span>
+                        <span class="personal-value">{{nickname}}</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;">
                         <p class="personal-type">学号</p>
-                        <span class="personal-value">1508220235</span>
+                        <span class="personal-value">{{student_id}}</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;">
                         <p class="personal-type">宿舍号</p>
-                        <span class="personal-value">9A106</span>
+                        <span class="personal-value">{{dormitory}}</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" @click="handleRender_autograph">
                         <p class="personal-type">个性签名</p>
-                        <span class="personal-value">{{ autograph_value }}</span>
+                        <span class="personal-value">{{ autograph }}</span>
                     </a>
                 </li>
             </ul>
@@ -57,24 +58,39 @@ export default {
     },
   data() {
     return {
-      name_value: "",
-      autograph_value: ""
+      student_id: "",
+      nickname: "",
+      avatar: "",
+      dormitory: "",
+      autograph: "",
+      file: null
     };
   },
+   mounted() {
+      //用户
+      this.$http.get("user?include=dormitory").then(res => {
+          this.student_id = res.body.student_id;
+          this.nickname = res.body.nickname;
+          this.avatar = res.body.avatar;
+          this.dormitory = res.body.dormitory.dorm_name;
+      });
+  },
   methods: {
+    handleUpload(file) {
+        this.avatar = file;
+    },
     handleRender_name() {
       this.$Modal.confirm({
         render: h => {
           return h("Input", {
             props: {
-              value: this.value,
+              value: this.nickname,
               autofocus: true,
               placeholder: "请输入您的昵称...",
-              icon: "ios-close-outline"
             },
             on: {
               input: val => {
-                this.name_value = val;
+                this.nickname = val;
               }
             }
           });

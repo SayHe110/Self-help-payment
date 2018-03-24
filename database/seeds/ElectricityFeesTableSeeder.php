@@ -15,7 +15,7 @@ class ElectricityFeesTableSeeder extends Seeder
     {
         // $faker = app(Faker\Generator::class);
         $time = date('Y-m-d H:i:s', time());
-        $dormitories_id = Dormitory::where('is_unit_building', 0)->pluck('id')->toArray();
+        $dormitories_id = Dormitory::where('type', 'dormitory')->pluck('id')->toArray();
 
         foreach ($dormitories_id as $item){
             DB::table('electricity_fees')->insert([
