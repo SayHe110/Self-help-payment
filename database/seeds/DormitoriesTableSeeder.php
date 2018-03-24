@@ -33,7 +33,7 @@ class DormitoriesTableSeeder extends Seeder
                     for ($k=1; $k<=2; $k++){
                         $dorm_name = strlen($k)==1 ? $z.'0'.$k : $z.$k;
                         DB::table('dormitories')->insert([
-                            'dorm_name' => $dorm_name,
+                            'dorm_name' => $i.'单元'.$building[$j].$dorm_name,
                             'parent_dorm_id' => $buildingId,
                             'created_at' => \Carbon\Carbon::now(),
                             'updated_at' => \Carbon\Carbon::now(),

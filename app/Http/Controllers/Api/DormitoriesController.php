@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Dormitory;
+use App\Transformers\DormitoryTransformer;
 use Illuminate\Http\Request;
 
 class DormitoriesController extends Controller
@@ -15,14 +16,7 @@ class DormitoriesController extends Controller
 
     public function show(Dormitory $dormitory)
     {
-        $name = $this->getDormName($dormitory->id);
-
-        $data = [
-            'dorm_name' => $name,
-            'status_code' => '201'
-        ];
-
-        return $this->response->array($data)->setStatusCode(201);
+        return $this->response->item($dormitory, new DormitoryTransformer())->setStatusCode(201);
     }
 
     /**

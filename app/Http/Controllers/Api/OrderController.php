@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\OrderRequest;
+use App\Models\Category;
 use App\Models\Order;
 use App\Transformers\OrderTransformer;
 use Illuminate\Http\Request;

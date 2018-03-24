@@ -7,7 +7,7 @@ use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract
 {
-    // protected $availableIncludes = ['dormitory'];
+    protected $availableIncludes = ['dormitory'];
 
     public function transform(User $user)
     {
@@ -24,8 +24,8 @@ class UserTransformer extends TransformerAbstract
         ];
     }
 
-    /*public function includeDormitory(User $user)
+    public function includeDormitory(User $user)
     {
         return $this->item($user->dormitory, new DormitoryTransformer());
-    }*/
+    }
 }
