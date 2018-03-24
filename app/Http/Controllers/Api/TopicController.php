@@ -11,7 +11,7 @@ class TopicController extends Controller
 {
     public function index(Topic $topic)
     {
-        $topics = $topic->paginate(20);
+        $topics = $topic->orderBy('created_at', 'DESC')->paginate(20);
 
         return $this->response->paginator($topics, new TopicTransformer());
     }
@@ -64,7 +64,7 @@ class TopicController extends Controller
     {
         $category_id = Category::where('name', $category_name)->get()->pluck('id');
 
-        $topics = Topic::where('category_id', $category_id)->get();
+        $topics = Topic::where('category_id', $category_id)->orderBy('created_at', 'DESC')->get();
 
         return $topics;
     }

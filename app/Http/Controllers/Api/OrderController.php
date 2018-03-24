@@ -24,8 +24,8 @@ class OrderController extends Controller
 
     public function me()
     {
-        $orders = Order::where('user_id', $this->user()->id)->get();
+        $orders = Order::where('user_id', $this->user()->id)->orderBy('created_at', 'DESC')->paginate(10);
 
-        return $this->response->collection($orders, new OrderTransformer());
+        return $this->response->paginator($orders, new OrderTransformer());
     }
 }
