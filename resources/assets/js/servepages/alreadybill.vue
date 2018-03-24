@@ -3,7 +3,7 @@
     <sheader headerTitle="我的订单"></sheader>
     <div class="layout-application">
         <div class="application-box">
-            <div class="no_card" :v-model="dorm" v-if="dorms.lenght == 0">
+            <div class="no_card" :v-model="dorm" v-if="dorms.length == 0">
                 <img src="../assets/icon/nodata.png" width="100%">
                 <p style="font-size:20px">暂无订单</p>
             </div>
