@@ -180,6 +180,11 @@ export default new Router({
                 path: '/Alipay',
                 name: 'Alipay',
                 component: require('../servepages/Alipay.vue')
+            },
+            {
+                path: '/paypassword',
+                name: 'paypassword',
+                component: require('../servepages/paypassword.vue')
             }
         ]
     },

@@ -10,7 +10,7 @@
                         <div class="personal-icon"><img :src="avatar" alt=""></div>
                         <div class="personal-title">
                             <p>{{nickname}}</p>
-                            <span >{{user_id}}</span>
+                            <span >{{student_id}}</span>
                         </div>                        
                         <span class="personal-exit">
                             <router-link :to="{name: 'home'}" style="display: inline;">
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       name: "personal",
-      user_id: "",
+      student_id: "",
       nickname: "",
       avatar: ""
     };
@@ -66,7 +66,7 @@ export default {
   mounted() {
       //用户
       this.$http.get("user").then(res => {
-          this.user_id = res.body.student_id;
+          this.student_id = res.body.student_id;
           this.nickname = res.body.nickname;
           this.avatar = res.body.avatar;
       });
@@ -81,7 +81,7 @@ export default {
           }
         })
         .then(res => {
-          this.$router.push({ name: "index" });
+          this.$router.push({ name: "login" });
         });
     }
   }
