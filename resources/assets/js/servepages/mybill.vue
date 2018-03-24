@@ -54,19 +54,17 @@ export default {
     };
   },
   methods: {
-    confirm() {
-      this.$http
-        .post(`/api/select_dorm/${this.$route.params.id}`)
-        .then(res => {
-          this.$router.push({ name: "pay" });
-        })
-        .catch(err => {
-          this.$router.push({ name: "pay" });
-        });
-    },
     showIdCardInput(val) {
       this.t1 = val;
       this.a = true;
+        this.$http
+        .post("orders/" + this.$route.params.id)
+        .then(res => {
+          this.$router.push({ name: "alreadybill" });
+        })
+        .catch(err => {
+          this.$router.push({ name: "alreadybill" });
+        });
     },
     removeIdCard() {
       this.idCard.pop();

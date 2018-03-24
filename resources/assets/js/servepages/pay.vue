@@ -8,7 +8,7 @@
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
-                    <Input class="cash" v-model="formPay.cash"></Input>
+                  <input class="cash" v-model="formPay.cash" type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="f_order" placeholder="请输入金额..." /> 
                 </FormItem>
                  <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}">
                     <Button @click="submitOrder" type="success" long>下一步</Button>
@@ -41,6 +41,7 @@ export default {
         }.bind(this),
         1000
       );
+      
     },
     submitOrder () {
       this.$http.post('orders', {
@@ -111,8 +112,13 @@ export default {
   color: #874;
 }
 .cash {
+  font-size: 12px !important;
+  padding:0px 5px; 
+  width: 100%;
+  border-radius: 5px;
   font-size: 16px;
   color: #454;
+
 }
 .chose {
   font-size: 18px;
