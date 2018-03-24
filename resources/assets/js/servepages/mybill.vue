@@ -67,6 +67,7 @@ export default {
     showIdCardInput(val) {
       this.t1 = val;
       this.a = true;
+      
     },
     removeIdCard() {
       this.idCard.pop();
