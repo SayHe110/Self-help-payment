@@ -17,6 +17,15 @@ class OrderRequest extends Request
         return [
             'dorm_id' => 'required',
             'money' => 'required',
+            'payment_password' => 'required|integer',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'payment_password.required' => '请输入支付密码',
+            'payment_password.integer' => '支付密码应为整型',
         ];
     }
 }
