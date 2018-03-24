@@ -3,12 +3,12 @@
     <sheader headerTitle="快速购电"></sheader>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="formPay" label-position="left" :label-width="60">
+            <Form :model="formPay" label-position="left" :label-width="60" >
                 <FormItem label="所在宿舍">
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
-                    <Input class="cash" v-model="formPay.cash"></Input>
+                    <Input class="cash" v-model="formPay.cash" ></Input>
                 </FormItem>
                  <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}">
                     <Button @click="submitOrder" type="success" long>下一步</Button>
