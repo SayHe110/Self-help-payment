@@ -3,7 +3,11 @@
     <sheader headerTitle="我的订单"></sheader>
     <div class="layout-application">
         <div class="application-box">
-            <div class="card" v-for="(item, index) in dorms" :key="index">
+            <div class="no_card" :v-model="dorm" v-if="dorms.order_num == null">
+                <img src="../assets/icon/nodata.png" width="100%">
+                <p style="font-size:20px">暂无订单</p>
+            </div>
+            <div class="card" v-for="(item, index) in dorms" :key="index" >
                 <div class="card-head">
                     <p>下单日期：{{item.created_at}}</p>
                 </div>
@@ -22,42 +26,47 @@
 </div>
 </template>
 <script>
-import sheader from '../components/box.vue'
+import sheader from "../components/box.vue";
 export default {
-    components:{
-        sheader
-    },
-    data(){
-        return{
-         dorms:[{
-            order_num: "",
-            money: "",
-            dormitory_id: "",
-            created_at:""
-         }],
-         dorm_content: {},
-         dormstudent: {},
-         dorm:[],
-         
+  components: {
+    sheader
+  },
+  data() {
+    return {
+      dorms: [
+        {
+          order_num: "",
+          money: "",
+          dormitory_id: "",
+          created_at: ""
         }
-    },
-     mounted(){
-      this.$http.get("orders").then(res => {
-        this.dorms = res.data.data.map(item => {
+      ],
+      dorm_content: {},
+      dormstudent: {},
+      dorm: []
+    };
+    styledata: {
+        background: 'white';
+    }
+  },
+  mounted() {
+    this.$http.get("orders").then(res => {
+      this.dorms = res.data.data.map(item => {
         let dom = {
-        created_at: item.created_at,
-        order_num: item.order_num,
-        money : item.money,
-        dormitory_id: item.dormitory_id,
+          created_at: item.created_at,
+          order_num: item.order_num,
+          money: item.money,
+          dormitory_id: item.dormitory_id
         };
-        console.log(item.order_num,item.money,item.dormitory_id)
+        console.log(item.order_num, item.money, item.dormitory_id);
         return dom;
-      })
+      });
     });
   }
 };
 </script>
 <style scoped>
+
 .layout-box {
   position: absolute;
   top: 0px;
@@ -89,6 +98,15 @@ export default {
   padding-top: 10px;
 }
 /* 订单*/
+.no_card{
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    top: 0;
+}
 .card {
   background: #fff;
   border-radius: 4px;
@@ -119,9 +137,9 @@ export default {
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
-.list_font span{
-    padding-left: 8px;
-    font-size: 14px;
+.list_font span {
+  padding-left: 8px;
+  font-size: 14px;
 }
 /* .card-body ul li p {
     display: -webkit-box;
@@ -140,8 +158,8 @@ export default {
   font-size: 14px;
   padding: 5px 15px;
 }
-.money span{
-    padding-left: 7px;
-    font-size: 16px;
+.money span {
+  padding-left: 7px;
+  font-size: 16px;
 }
 </style>

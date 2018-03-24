@@ -49,6 +49,9 @@ export default {
 };
 </script>
 <style scoped>
+.layout{
+    background: #f3f3f3;
+}
 .layout-box {
   position: absolute;
   top: 0px;

@@ -16,7 +16,7 @@
                 <h2>{{topicsData.title}}</h2>
                 <p class="info">
                     <span>{{topicsData.created_at}}</span>
-                    <span class="margin-left">{{topicsData.user.nickname}}</span>
+                    <span class="margin-left" v-if="topicsData.user!==undefined">{{topicsData.user.nickname}}</span>
                     <span class="margin-left">
                         <i class="iconfont icon-sannongguancha">{{topicsData.view_count}}</i>
                     </span>

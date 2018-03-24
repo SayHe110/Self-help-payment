@@ -6,19 +6,19 @@
     <div class="layout-footer">
     <Menu mode="horizontal" :active-name="activeName" @on-select="onSelect">
         <MenuItem name="home">
-            <Icon type="android-home"></Icon>
+            <Icon type="android-home" style="display:block"></Icon>
             首页
         </MenuItem>
         <MenuItem name="service">
-            <Icon type="ios-color-filter"></Icon>
+            <Icon type="ios-color-filter" style="display:block"></Icon>
             服务
         </MenuItem>
         <MenuItem name="notice">
-            <Icon type="chatbubble-working"></Icon>
+            <Icon type="chatbubble-working" style="display:block"></Icon>
             消息
         </MenuItem>
         <MenuItem name="personal">
-            <Icon type="android-person"></Icon>
+            <Icon type="android-person" style="display:block"></Icon>
             我的
         </MenuItem>
     </Menu>
@@ -102,7 +102,6 @@ export default {
   margin-right: 0;
 }
 .ivu-icon {
-  display: block;
   font-size: 24px;
   margin-bottom: -20px;
 }
