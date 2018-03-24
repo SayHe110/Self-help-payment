@@ -3,14 +3,14 @@
     <sheader headerTitle="支付成功"></sheader>
     <div class="layout-application">
         <div class="application-box">
-            <img src="../assets/icon/success.png">
+            <img src="../assets/icon/success1.png" style="width:80px;margin-top:10px;">
             <p>支付成功</p>
         </div> 
         <div class="list_box">
           <ul>
-              <li>订单编号:<span>10002001</span></li>
+              <li>订单编号:<span>{{$route.params.orderNum}}</span></li>
               <li>支付金额:<span>{{$route.params.name}}</span></li>
-              <li>交易日期:<span>2018-3-19</span></li>
+              <li>交易日期:<span>{{$route.params.date}}</span></li>
               <li v-if="dorm_content !== undefined">充电宿舍:<span>{{dorm_content}}</span></li>
           </ul>
         </div> 
@@ -31,6 +31,8 @@ export default {
     return {
       dorm_content: {},
       dormstudent: {},
+      order_num: "",
+      created_at:"",
       modal1: false,
       myDate: [],
       a: false,
@@ -42,8 +44,7 @@ export default {
     };
   },
   mounted(){
-    this.$http.get("dormitories/" + this.$route.params.id).then(res => {
-      this.dormstudent = res.data.data;
+    this.$http.get("dormitories/" + this.$route.params.id).then(res => {        
       this.dorm_content = res.data.dorm_name;
     })
   }
@@ -51,6 +52,9 @@ export default {
 };
 </script>
 <style scoped>
+.layout{
+    background: #f3f3f3;
+}
 .layout-box {
   position: absolute;
   top: 0px;
@@ -93,6 +97,7 @@ export default {
 }
 .list_box{
   background-color: #fff;
+  margin-bottom: 10px;
 }
 .list_box ul li{
   padding: 10px 15px;

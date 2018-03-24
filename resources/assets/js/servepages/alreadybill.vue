@@ -7,7 +7,7 @@
                 <img src="../assets/icon/nodata.png" width="100%">
                 <p style="font-size:20px">暂无订单</p>
             </div>
-            <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight">
+            <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight" v-if="dorms.length != 0">
             <div class="card" v-for="(item, index) in dorms" :key="index" >
                 <div class="card-head">
                     <p>下单日期：{{item.created_at}}</p>
