@@ -7,9 +7,9 @@
                     <li><p>缴费宿舍 :</p><span>{{dorm_content}}</span></li>
                     <li v-if="dorm_content !== undefined"><p>缴费金额 :</p><span>{{$route.params.name}}元</span></li>
                 </ul>
-                <Button  type="success" long @click="showIdCardInput">提交订单</Button>
+                <Button type="success" long @click="showIdCardInput">提交订单</Button>
             </div>                
-        </div>
+        </div>formPay
          <transition name="fade">
             <div class="mask_one" v-show="a">
               <div class="password">
@@ -57,7 +57,6 @@ export default {
     showIdCardInput(val) {
       this.t1 = val;
       this.a = true;
-      this.$router.post({ name: "orders", params: {id: this.formPay.dorNum, name:this.formPay.cash}});
     },
     removeIdCard() {
       this.idCard.pop();
@@ -65,7 +64,15 @@ export default {
     addIdCard(n) {
       this.idCard.push(n);
       if (this.idCard.length === 4) {
-        this.$router.push({ name: "payment" });
+        this.$http.post('orders', {
+          dorm_id: this.$g.params.id,
+          money: this.$route.params.name,
+        }).then(res => {
+          this.$router.push({ name: "payment", params: {
+            id: this.$route.params.id,
+            name: this.$route.params.name
+          }});
+        });
       }
     }
   },

@@ -8,22 +8,20 @@
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
-                  <input class="cash" v-model="formPay.cash" type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="f_order" placeholder="请输入金额..." /> 
+                  <Input class="cash" v-model="formPay.cash"  placeholder="请输入金额..." /> 
                 </FormItem>
-                 <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}">
-                    <Button @click="submitOrder" type="success" long>下一步</Button>
-                </router-link> 
+                <Button @click="submitOrder" type="success" long>下一步</Button>
             </Form>
         </div>  
     </div>
 </div>
 </template>
 <script>
-import sheader from '../components/box.vue'
+import sheader from "../components/box.vue";
 export default {
-    components:{
-        sheader
-    },
+  components: {
+    sheader
+  },
   data() {
     return {
       submit: false,
@@ -38,22 +36,23 @@ export default {
   methods: {
     asyncOK() {
       this.submit = false;
-      this.$router.push({name: '  mybill'});
+      this.$router.push({ name: "  mybill" });
       setTimeout(
         function() {
-          this.$router.push({ name: "mybill", params: {id: this.formPay.dorNum, name:this.formPay.cash}});
+          this.$router.push({
+            name: "mybill",
+            params: { id: this.formPay.dorNum, name: this.formPay.cash }
+          });
         }.bind(this),
         1000
       );
-      
     },
-    submitOrder () {
-      this.$http.post('orders', {
-          dorm: this.formPay.dorNum[2],
-          money: Number(this.formPay.cash)
-      }).then(res => {
-        console.log(res)
-      })
+    submitOrder() {
+      this.$router.push({name: 'mybill', params: {
+        id: this.formPay.dorNum[2],
+        name:this.formPay.cash}
+      });
+      
     },
     // handleChange (value, selectedData) {
     //   this.formPay.dormNum = value[2]
@@ -67,35 +66,35 @@ export default {
       this.dorms = res.data.dormitories.map(item => {
         let dom = {
           label: item.dorm_name,
-          value: item.id,
+          value: item.id
         };
         if (item.all_children_dorms.length != 0) {
           dom.children = item.all_children_dorms.map(item => {
-            let dom =  {
-              label: item.dorm_name + '栋',
-              value: item.id,
+            let dom = {
+              label: item.dorm_name + "栋",
+              value: item.id
             };
             if (item.all_children_dorms.length != 0) {
               dom.children = item.all_children_dorms.map(item => {
                 return {
                   label: item.dorm_name,
-                  value: item.id,
-                }
+                  value: item.id
+                };
               });
             }
             return dom;
           });
         }
         return dom;
-      })
+      });
     });
   }
 };
 </script>
 <style scoped>
-.header-title{
-    display: flex;
-    flex-direction: column;
+.header-title {
+  display: flex;
+  flex-direction: column;
 }
 .layout-box .header-title p {
   color: #fff;
@@ -115,15 +114,7 @@ export default {
   font-size: 16px;
   color: #874;
 }
-.cash {
-  font-size: 12px !important;
-  padding:0px 5px; 
-  width: 100%;
-  border-radius: 5px;
-  font-size: 16px;
-  color: #454;
 
-}
 .chose {
   font-size: 18px;
   color: #444;
@@ -134,7 +125,7 @@ export default {
 .application-box {
   padding-top: 30px;
 }
-.ivu-cascader-menu{
-    max-width: 90px;
+.ivu-cascader-menu {
+  max-width: 90px;
 }
 </style>
