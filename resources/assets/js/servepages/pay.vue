@@ -8,7 +8,7 @@
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
-                    <Input class="cash" v-model="formPay.cash" ></Input>
+                    <Input class="cash" v-model="formPay.cash" type="Number"></Input>
                 </FormItem>
                  <router-link :to="{name: 'mybill', params: {id: this.formPay.dorNum[2], name:this.formPay.cash}}">
                     <Button @click="submitOrder" type="success" long>下一步</Button>

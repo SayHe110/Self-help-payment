@@ -16,6 +16,11 @@
                     </router-link>
                 </li>
                 <li>
+                    <router-link :to="{name: 'paypassword'}">
+                        <p class="personal-type">支付密码   </p>
+                    </router-link>
+                </li>
+                <li>
                     <router-link :to="{name: 'Alipay'}">
                         <p class="personal-type">绑定支付宝</p>
                     </router-link>
