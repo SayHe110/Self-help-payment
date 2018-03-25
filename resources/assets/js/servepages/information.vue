@@ -10,11 +10,18 @@
                         <p class="personal-type" style="line-height:72px;">头像</p>
                         <div class="personal-icon">
                             <Upload 
-                                :before-upload="handleUpload"
                                 :format="['jpg','jpeg','png']" 
                                 :max-size="2048"
+                                :data="{
+                                    type: 'avatar'
+                                }"
+                                :headers="{
+                                    'Authorization': 'Bearer ' + jwtToken
+                                }"
+                                :on-success="onUploadSuccess"
+                                name="image"
                                 :show-upload-list="true"
-                                action="//jsonplaceholder.typicode.com/posts/">
+                                action="/api/images">
                                 <img :src="avatar" alt="">
                             </Upload>
                         </div>
@@ -61,10 +68,16 @@ export default {
       student_id: "",
       nickname: "",
       avatar: "",
+      type: "",
       dormitory: "",
       autograph: "",
       file: null
     };
+  },
+  computed: {
+      jwtToken () {
+          return localStorage.jwt_token;
+      }
   },
    mounted() {
       //用户
@@ -76,8 +89,8 @@ export default {
       });
   },
   methods: {
-    handleUpload(file) {
-        this.avatar = file;
+    onUploadSuccess(res) {
+        console.log(res)
     },
     handleRender_name() {
       this.$Modal.confirm({
@@ -104,8 +117,7 @@ export default {
             props: {
               value: this.value,
               autofocus: true,
-              placeholder: "请输入您的个性签名...",
-              icon: "ios-close-outline"
+              placeholder: "请输入您的个性签名..."
             },
             on: {
               input: val => {

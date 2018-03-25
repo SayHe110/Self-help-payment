@@ -5,7 +5,7 @@
         <div class="application-box">
             <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate" :label-width="70">
                 <FormItem label="手机号:" prop="Tel">
-                    <Input v-model="repairItem.tel" icon="ios-close-outline" />
+                    <Input v-model="repairItem.tel"/>
                 </FormItem>
                 <Button type="success" long  @click="handleSubmit('repairItem')">提交</Button>
             </Form>

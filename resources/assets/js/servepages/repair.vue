@@ -8,7 +8,7 @@
                     <Input v-model="repairItem.title" />
                 </FormItem>
                 <FormItem label="故障描述:" prop="textarea">
-                    <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""></Input>
+                    <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""/>
                 </FormItem>
                 <FormItem label="宿舍号:" prop="dorNum">
                     <Input v-model="repairItem.dorNum" />
@@ -29,11 +29,11 @@
 </div>
 </template>
 <script>
-import sheader from '../components/box.vue'
+import sheader from "../components/box.vue";
 export default {
-    components:{
-        sheader
-    },
+  components: {
+    sheader
+  },
   data() {
     return {
       repairItem: {
@@ -106,9 +106,9 @@ export default {
 };
 </script>
 <style scoped>
-.header-title{
-    display: flex;
-    flex-direction: column;
+.header-title {
+  display: flex;
+  flex-direction: column;
 }
 .layout-box .header-title p {
   color: #fff;

@@ -3,11 +3,11 @@
     <sheader headerTitle="宿舍号绑定"></sheader>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="repairItem" ref="repairItem" label-position="right" :rules="ruleValidate"  >
-                <FormItem label="宿舍号:" prop="dorNum">
-                    <Input v-model="repairItem.dorNum" icon="ios-close-outline" />
+            <Form :model="formPay" ref="formPay" label-position="right" :rules="ruleValidate"  >
+                <FormItem label="宿舍号:" prop="dorNumber">
+                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
-                <Button type="success" long  @click="handleSubmit('repairItem')">提交</Button>
+                <Button type="success" long  @click="handleSubmit('formPay')">提交</Button>
             </Form>
         </div>  
     </div>
@@ -21,11 +21,12 @@ export default {
     },
   data() {
     return {
-      repairItem: {
-        dorNum: ""
-      },
+      formPay: {
+        dorNum: []
+      },      
+      dorms: [],
       ruleValidate: {
-        dorNum: [
+        dorNumber: [
           {
             required: true,
             message: "请输入宿舍号",
@@ -35,19 +36,47 @@ export default {
       }
     };
   },
+    mounted() {
+    this.$http.get("dormitories").then(res => {
+      this.dorms = res.data.dormitories.map(item => {
+        let dom = {
+          label: item.dorm_name,
+          value: item.id
+        };
+        if (item.all_children_dorms.length != 0) {
+          dom.children = item.all_children_dorms.map(item => {
+            let dom = {
+              label: item.dorm_name + "栋",
+              value: item.id
+            };
+            if (item.all_children_dorms.length != 0) {
+              dom.children = item.all_children_dorms.map(item => {
+                return {
+                  label: item.dorm_name,
+                  value: item.id
+                };
+              });
+            }
+            return dom;
+          });
+        }
+        return dom;
+      });
+    });
+  },
   methods: {
     //提交
-    handleSubmit(name) {
+    handleSubmit(name) {    
       this.$refs[name].validate(valid => {
         if (valid) {
             this.$http
-            .post("reports",{
-                tel: this.repairItem.tel,
+            .post("dormitories",{
+                
             })
             .then(
                 res => {                    
                     this.$Message.success("提交成功!");
-                    this.$router.push("./service");
+                    this.$router.push("./personal");
                 },
                 err => {
                     this.$Message.error(err.body.message || "提交失败");                    

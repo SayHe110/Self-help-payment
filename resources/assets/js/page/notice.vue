@@ -57,9 +57,9 @@ export default {
   },
   mounted() {
     // 消息
-    this.$http.get("user/notifications").then(res => {
-      console.log(res.body.data);
-    });
+    // this.$http.get("user/notifications").then(res => {
+    //   console.log(res.body.data);
+    // });
   }
 };
 </script>
