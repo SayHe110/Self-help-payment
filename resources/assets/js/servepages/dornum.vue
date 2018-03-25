@@ -4,7 +4,7 @@
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" ref="formPay" label-position="right" :rules="ruleValidate"  >
-                <FormItem label="宿舍号:" prop="dorNumber">
+                <FormItem label="宿舍号:" prop="dorNum">
                     <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <Button type="success" long  @click="handleSubmit('formPay')">提交</Button>
@@ -70,8 +70,8 @@ export default {
       this.$refs[name].validate(valid => {
         if (valid) {
             this.$http
-            .post("dormitories",{
-                
+            .post("user/reset_dorm",{
+                dorm_id: this.formPay.dorNum[2]
             })
             .then(
                 res => {                    

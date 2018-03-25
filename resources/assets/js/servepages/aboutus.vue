@@ -2,9 +2,9 @@
 <div class="layout-box">
     <sheader headerTitle="关于我们"></sheader>
     <div class="layout-application">
-        <div class="application-box" style="padding-top:30px;">
+        <div class="application-box" style="padding-top:30px;text-align:center">
             <h1>就很牛逼</h1>
-            <p>足不出户,移动缴费,方便快捷</p>
+            <p style="font-size:16px;">足不出户,移动缴费,方便快捷</p>
         </div>
     </div>
 </div>
