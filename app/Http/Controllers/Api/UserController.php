@@ -7,6 +7,7 @@ use App\Http\Requests\Api\PaymentPasswordRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Models\User;
 use App\Transformers\UserTransformer;
+use Dingo\Api\Http\Request;
 
 class UserController extends Controller
 {
@@ -38,6 +39,18 @@ class UserController extends Controller
     {
         /*dd(bcrypt('password'));
         dd(\Auth::user()->password);*/
+    }
+
+    public function resetDorm(Request $request)
+    {
+        $validatedData = $request->validate([
+            'dorm_id' => 'required|integer',
+        ],[
+            'dorm_id.required' => '请完善宿舍 id',
+            'dorm_id.integer' => '宿舍 id 应为整型',
+        ]);
+
+
     }
 
     public function paymentPassword(PaymentPasswordRequest $request)

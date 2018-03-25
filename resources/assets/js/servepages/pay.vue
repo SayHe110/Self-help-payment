@@ -1,6 +1,9 @@
 <template>
 <div class="layout-box">
     <sheader headerTitle="快速购电"></sheader>
+    <div>
+              <img src="../assets/images/buyd.png">
+    </div>
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="60" >

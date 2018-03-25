@@ -89,8 +89,8 @@ export default {
       });
   },
   methods: {
-    onUploadSuccess(res) {
-        console.log(res)
+    onUploadSuccess({path}) {
+        this.avatar = path;
     },
     handleRender_name() {
       this.$Modal.confirm({
@@ -104,6 +104,9 @@ export default {
             on: {
               input: val => {
                 this.nickname = val;
+                this.$http.post('users',{
+                    nickname: this.nickname
+                })
               }
             }
           });

@@ -67,6 +67,8 @@ $api->version('v1', [
             $api->post('payment_password', 'UserController@paymentPassword')->name('api.user.payment_password');
             // 修改密码
             $api->post('user/reset', 'UserController@reset')->name('api.user.reset');
+            // 用户修改宿舍
+            $api->post('user/reset_dorm', 'UserController@resetDorm')->name('api.user.reset_dorm');
             // 上传头像
             $api->post('images', 'ImagesController@store')->name('api.images.store');
             // 发布文章
