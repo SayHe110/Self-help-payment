@@ -79,6 +79,7 @@ return [
     */
 
     'locale' => 'zh-CN',
+
     // faker 语言环境
     'faker_locale' => 'zh_CN',
 
