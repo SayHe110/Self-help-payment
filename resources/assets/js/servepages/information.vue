@@ -104,7 +104,7 @@ export default {
             on: {
               input: val => {
                 this.nickname = val;
-                this.$http.post('users',{
+                this.$http.post('user/reset_nickname',{
                     nickname: this.nickname
                 })
               }
