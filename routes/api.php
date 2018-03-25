@@ -69,6 +69,8 @@ $api->version('v1', [
             $api->post('user/reset', 'UserController@reset')->name('api.user.reset');
             // 用户修改宿舍
             $api->post('user/reset_dorm', 'UserController@resetDorm')->name('api.user.reset_dorm');
+            // 修改昵称
+            $api->post('user/reset_nickname', 'UserController@resetNickname')->name('api.user.reset_nickname');
             // 上传头像
             $api->post('images', 'ImagesController@store')->name('api.images.store');
             // 发布文章

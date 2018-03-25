@@ -57,6 +57,21 @@ class UserController extends Controller
         return $this->response->noContent();
     }
 
+    public function resetNickname(Request $request)
+    {
+        $validatedData = $request->validate([
+            'nickname' => 'required',
+        ],[
+            'nickname.required' => '请完善昵称',
+        ]);
+
+        $user = \Auth::user();
+        $user->nickname = $validatedData['nickname'];
+        $user->update();
+
+        return $this->response->noContent();
+    }
+
     public function paymentPassword(PaymentPasswordRequest $request)
     {
 
