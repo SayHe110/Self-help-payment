@@ -8,7 +8,7 @@ class Order extends Model
 {
     protected $fillable = ['order_num', 'dorm_id', 'money'];
 
-    public function getIsHandleAttribute($value)
+    public function getStateAttribute($value)
     {
         if($value){
             return '已处理';
