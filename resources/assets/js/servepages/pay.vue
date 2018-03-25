@@ -1,13 +1,25 @@
 <template>
 <div class="layout-box">
+<<<<<<< HEAD
+=======
+    <sheader headerTitle="快速购电"></sheader>
+    <div>
+              <img src="../assets/icon/success1.png">
+    </div>
+>>>>>>> 49b813b6be6c2c5c32284f42ebdac28721765268
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="60">
                 <FormItem label="所在宿舍" prop="dorNum">
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
+<<<<<<< HEAD
                 <FormItem label="缴费金额" prop="cash">
                   <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..." /> 
+=======
+                <FormItem label="缴费金额">
+                  <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..."/> 
+>>>>>>> 49b813b6be6c2c5c32284f42ebdac28721765268
                 </FormItem>
                 <Button @click="submitOrder('formPay')" type="success" long>下一步</Button>
             </Form> 
@@ -23,6 +35,9 @@ export default {
   },
   data() {
     return {
+      btn: null,
+      btnn: null,
+      btnnn: null,
       submit: false,
       loading: true,
       formPay: {
@@ -55,6 +70,7 @@ export default {
     };
   },
   methods: {
+    
     asyncOK() {
       this.submit = false;
       this.$router.push({ name: "  mybill" });
@@ -69,6 +85,7 @@ export default {
       );
     },
     submitOrder() {
+<<<<<<< HEAD
       // 下一步
       this.$router.push({
         name: "mybill",
@@ -77,40 +94,50 @@ export default {
           name: this.formPay.cash
         }
       });
+=======
+        if (this.formPay.cash === null || this.formPay.dorNum.length ===  0) {
+            this.$Message.error('数据不能为空');
+        } else {
+            this.$router.push({name: 'mybill', params: {
+            id: this.formPay.dorNum[2],
+            name:this.formPay.cash}
+          });
+        }
+     } 
+>>>>>>> 49b813b6be6c2c5c32284f42ebdac28721765268
     },
     goLink() {
       this.submit = true;
-    }
   },
-  mounted() {
-    this.$http.get("dormitories").then(res => {
-      this.dorms = res.data.dormitories.map(item => {
-        let dom = {
-          label: item.dorm_name,
-          value: item.id
-        };
-        if (item.all_children_dorms.length != 0) {
-          dom.children = item.all_children_dorms.map(item => {
-            let dom = {
-              label: item.dorm_name + "栋",
-              value: item.id
-            };
-            if (item.all_children_dorms.length != 0) {
-              dom.children = item.all_children_dorms.map(item => {
-                return {
-                  label: item.dorm_name,
-                  value: item.id
-                };
-              });
-            }
-            return dom;
-          });
-        }
-        return dom;
+    mounted() {
+      this.$http.get("dormitories").then(res => {
+        this.dorms = res.data.dormitories.map(item => {
+          let dom = {
+            label: item.dorm_name,
+            value: item.id
+          };
+          if (item.all_children_dorms.length != 0) {
+            dom.children = item.all_children_dorms.map(item => {
+              let dom = {
+                label: item.dorm_name + "栋",
+                value: item.id
+              };
+              if (item.all_children_dorms.length != 0) {
+                dom.children = item.all_children_dorms.map(item => {
+                  return {
+                    label: item.dorm_name,
+                    value: item.id
+                  };
+                });
+              }
+              return dom;
+            });
+          }
+          return dom;
+        });
       });
-    });
-  }
-};
+    }
+  };
 </script>
 <style scoped>
 .header-title {
