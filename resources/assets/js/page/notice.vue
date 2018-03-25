@@ -25,24 +25,14 @@
                        <span class="notice-time">2018-3-12</span>
                    </a>
                 </li>
-                <li>
+                <li  v-for="(item, index) in dorms" :key="index">
                    <a href="javascript:;">
                        <div class="notice-icon"><img src="../assets/icon/buydian.png" alt=""></div>
                        <div class="notice-title">
-                           <p>购电公告</p>
-                            <span>您于2018-2-15购电50元核算75度电</span>
+                           <p>购电通知</p>
+                            <span>您于{{item.created_at}}购电{{item.money}}元核算{{item.money}}度电</span>
                        </div>
                        <span class="notice-time">2018-2-15</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="javascript:;">
-                       <div class="notice-icon"><img src="../assets/icon/buydian.png" alt=""></div>
-                       <div class="notice-title">
-                           <p>购电公告</p>
-                            <span>您于2018-3-15购电100元核算150度电</span>
-                       </div>
-                       <span class="notice-time">2018-3-15</span>
                    </a>
                 </li>
             </ul>
@@ -53,12 +43,31 @@
 export default {
   name: "notice",
   data() {
-    return {};
+    return {
+      current_page: null,
+      total_pages: null,
+      dorms: [],
+      dorm_content: {},
+      dormstudent: {},
+      dorm: []
+    };
   },
   mounted() {
     // 消息
     this.$http.get("user/notifications").then(res => {
       console.log(res.body.data);
+    });
+    this.$http.get("orders?include=dormitory").then(res => {
+      this.dorms = res.data.data.map(item => {
+        let dom = {
+          created_at: item.created_at,
+          order_num: item.order_num,
+          money: item.money,
+          dormitory_id: item.dormitory.dorm_name,
+          handle: item.is_handle
+        };
+        return dom;
+      });
     });
   }
 };
@@ -71,12 +80,12 @@ export default {
   left: 0;
 }
 .notice-contain ul li {
-  height: 50px;
+  height: 60px;
   border-bottom: 1px solid #f3f3f3;
 }
 .notice-contain ul li a {
   display: block;
-  padding: 5px 10px;
+  padding: 12px 10px;
   width: 100%;
   height: 100%;
 }
