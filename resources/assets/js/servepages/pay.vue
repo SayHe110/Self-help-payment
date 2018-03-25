@@ -1,25 +1,14 @@
 <template>
 <div class="layout-box">
-<<<<<<< HEAD
-=======
     <sheader headerTitle="快速购电"></sheader>
-    <div>
-              <img src="../assets/icon/success1.png">
-    </div>
->>>>>>> 49b813b6be6c2c5c32284f42ebdac28721765268
     <div class="layout-application">
         <div class="application-box">
             <Form :model="formPay" label-position="left" :label-width="60">
-                <FormItem label="所在宿舍" prop="dorNum">
+                <FormItem label="所在宿舍">
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
-<<<<<<< HEAD
-                <FormItem label="缴费金额" prop="cash">
-                  <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..." /> 
-=======
                 <FormItem label="缴费金额">
                   <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..."/> 
->>>>>>> 49b813b6be6c2c5c32284f42ebdac28721765268
                 </FormItem>
                 <Button @click="submitOrder('formPay')" type="success" long>下一步</Button>
             </Form> 
@@ -45,28 +34,6 @@ export default {
         cash: null
       },
       dorms: [],
-      ruleInline: {
-        dorNum: [
-          {
-            required: true,
-            message: "Please fill in the user name",
-            trigger: "blur"
-          }
-        ],
-        cash: [
-          {
-            required: true,
-            message: "Please fill in the password.",
-            trigger: "blur"
-          },
-          {
-            type: "string",
-            min: 6,
-            message: "The password length cannot be less than 6 bits",
-            trigger: "blur"
-          }
-        ]
-      }
     };
   },
   methods: {
@@ -85,16 +52,6 @@ export default {
       );
     },
     submitOrder() {
-<<<<<<< HEAD
-      // 下一步
-      this.$router.push({
-        name: "mybill",
-        params: {
-          id: this.formPay.dorNum[2],
-          name: this.formPay.cash
-        }
-      });
-=======
         if (this.formPay.cash === null || this.formPay.dorNum.length ===  0) {
             this.$Message.error('数据不能为空');
         } else {
@@ -104,7 +61,6 @@ export default {
           });
         }
      } 
->>>>>>> 49b813b6be6c2c5c32284f42ebdac28721765268
     },
     goLink() {
       this.submit = true;
