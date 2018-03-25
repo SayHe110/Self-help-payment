@@ -65,6 +65,10 @@ $api->version('v1', [
             $api->get('user', 'UserController@me')->name('api.user.show');
             // 支付密码
             $api->post('payment_password', 'UserController@paymentPassword')->name('api.user.payment_password');
+            // 修改密码
+            $api->post('user/reset', 'UserController@reset')->name('api.user.reset');
+            // 上传头像
+            $api->post('images', 'ImagesController@store')->name('api.images.store');
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
             // 故障报修

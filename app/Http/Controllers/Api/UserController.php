@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\Api\PasswordRequest;
 use App\Http\Requests\Api\PaymentPasswordRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Models\User;
@@ -31,6 +32,12 @@ class UserController extends Controller
     public function me()
     {
         return $this->response->item($this->user(), new UserTransformer());
+    }
+
+    public function reset(PasswordRequest $request)
+    {
+        /*dd(bcrypt('password'));
+        dd(\Auth::user()->password);*/
     }
 
     public function paymentPassword(PaymentPasswordRequest $request)
