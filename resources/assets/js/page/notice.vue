@@ -32,7 +32,7 @@
                            <p>购电通知</p>
                             <span>您于{{item.created_at}}购电{{item.money}}元核算{{item.money}}度电</span>
                        </div>
-                       <span class="notice-time">2018-2-15</span>
+                       <span class="notice-time">{{item.created_at}}</span>
                    </a>
                 </li>
             </ul>

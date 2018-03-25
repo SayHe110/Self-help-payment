@@ -1,20 +1,16 @@
 <template>
 <div class="layout-box">
-    <sheader headerTitle="快速购电"></sheader>
-    <div>
-              <img src="../assets/images/buyd.png">
-    </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="formPay" label-position="left" :label-width="60" >
-                <FormItem label="所在宿舍">
+            <Form :model="formPay" label-position="left" :label-width="60">
+                <FormItem label="所在宿舍" prop="dorNum">
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
-                <FormItem label="缴费金额">
+                <FormItem label="缴费金额" prop="cash">
                   <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..." /> 
                 </FormItem>
-                <Button @click="submitOrder" type="success" long>下一步</Button>
-            </Form>
+                <Button @click="submitOrder('formPay')" type="success" long>下一步</Button>
+            </Form> 
         </div>  
     </div>
 </div>
@@ -33,7 +29,29 @@ export default {
         dorNum: [],
         cash: null
       },
-      dorms: []
+      dorms: [],
+      ruleInline: {
+        dorNum: [
+          {
+            required: true,
+            message: "Please fill in the user name",
+            trigger: "blur"
+          }
+        ],
+        cash: [
+          {
+            required: true,
+            message: "Please fill in the password.",
+            trigger: "blur"
+          },
+          {
+            type: "string",
+            min: 6,
+            message: "The password length cannot be less than 6 bits",
+            trigger: "blur"
+          }
+        ]
+      }
     };
   },
   methods: {
@@ -51,15 +69,15 @@ export default {
       );
     },
     submitOrder() {
-      this.$router.push({name: 'mybill', params: {
-        id: this.formPay.dorNum[2],
-        name:this.formPay.cash}
+      // 下一步
+      this.$router.push({
+        name: "mybill",
+        params: {
+          id: this.formPay.dorNum[2],
+          name: this.formPay.cash
+        }
       });
-      
     },
-    // handleChange (value, selectedData) {
-    //   this.formPay.dormNum = value[2]
-    // },
     goLink() {
       this.submit = true;
     }
@@ -131,7 +149,7 @@ export default {
 .ivu-cascader-menu {
   max-width: 90px;
 }
-.cash{
-    width: 100% !important;
+.cash {
+  width: 100% !important;
 }
 </style>
