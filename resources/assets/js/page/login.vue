@@ -7,7 +7,7 @@
             </div>
             <Form class="login" ref="formInline" :model="formInline" :rules="ruleInline" post="">
                 <FormItem prop="user">
-                    <Input type="text" v-model="formInline.user" placeholder="学号" size="large">
+                    <Input type="text" v-model="formInline.user" placeholder="学号/邮箱" size="large">
                         <Icon type="ios-person-outline" slot="prepend"></Icon>
                     </Input>
                 </FormItem>

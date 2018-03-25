@@ -1,20 +1,17 @@
 <template>
 <div class="layout-box">
     <sheader headerTitle="快速购电"></sheader>
-    <div>
-              <img src="../assets/images/buyd.png">
-    </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="formPay" label-position="left" :label-width="60" >
+            <Form :model="formPay" label-position="left" :label-width="60">
                 <FormItem label="所在宿舍">
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
-                  <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..." /> 
+                  <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..."/> 
                 </FormItem>
-                <Button @click="submitOrder" type="success" long>下一步</Button>
-            </Form>
+                <Button @click="submitOrder('formPay')" type="success" long>下一步</Button>
+            </Form> 
         </div>  
     </div>
 </div>
@@ -27,16 +24,20 @@ export default {
   },
   data() {
     return {
+      btn: null,
+      btnn: null,
+      btnnn: null,
       submit: false,
       loading: true,
       formPay: {
         dorNum: [],
         cash: null
       },
-      dorms: []
+      dorms: [],
     };
   },
   methods: {
+    
     asyncOK() {
       this.submit = false;
       this.$router.push({ name: "  mybill" });
@@ -51,48 +52,48 @@ export default {
       );
     },
     submitOrder() {
-      this.$router.push({name: 'mybill', params: {
-        id: this.formPay.dorNum[2],
-        name:this.formPay.cash}
-      });
-      
-    },
-    // handleChange (value, selectedData) {
-    //   this.formPay.dormNum = value[2]
-    // },
-    goLink() {
-      this.submit = true;
-    }
-  },
-  mounted() {
-    this.$http.get("dormitories").then(res => {
-      this.dorms = res.data.dormitories.map(item => {
-        let dom = {
-          label: item.dorm_name,
-          value: item.id
-        };
-        if (item.all_children_dorms.length != 0) {
-          dom.children = item.all_children_dorms.map(item => {
-            let dom = {
-              label: item.dorm_name + "栋",
-              value: item.id
-            };
-            if (item.all_children_dorms.length != 0) {
-              dom.children = item.all_children_dorms.map(item => {
-                return {
-                  label: item.dorm_name,
-                  value: item.id
-                };
-              });
-            }
-            return dom;
+        if (this.formPay.cash === null || this.formPay.dorNum.length ===  0) {
+            this.$Message.error('数据不能为空');
+        } else {
+            this.$router.push({name: 'mybill', params: {
+            id: this.formPay.dorNum[2],
+            name:this.formPay.cash}
           });
         }
-        return dom;
+     } 
+    },
+    goLink() {
+      this.submit = true;
+  },
+    mounted() {
+      this.$http.get("dormitories").then(res => {
+        this.dorms = res.data.dormitories.map(item => {
+          let dom = {
+            label: item.dorm_name,
+            value: item.id
+          };
+          if (item.all_children_dorms.length != 0) {
+            dom.children = item.all_children_dorms.map(item => {
+              let dom = {
+                label: item.dorm_name + "栋",
+                value: item.id
+              };
+              if (item.all_children_dorms.length != 0) {
+                dom.children = item.all_children_dorms.map(item => {
+                  return {
+                    label: item.dorm_name,
+                    value: item.id
+                  };
+                });
+              }
+              return dom;
+            });
+          }
+          return dom;
+        });
       });
-    });
-  }
-};
+    }
+  };
 </script>
 <style scoped>
 .header-title {
@@ -131,7 +132,7 @@ export default {
 .ivu-cascader-menu {
   max-width: 90px;
 }
-.cash{
-    width: 100% !important;
+.cash {
+  width: 100% !important;
 }
 </style>
