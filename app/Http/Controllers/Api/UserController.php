@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\Api\PaymentPasswordRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Models\User;
 use App\Transformers\UserTransformer;
@@ -30,5 +31,20 @@ class UserController extends Controller
     public function me()
     {
         return $this->response->item($this->user(), new UserTransformer());
+    }
+
+    public function paymentPassword(PaymentPasswordRequest $request)
+    {
+
+        if(\Auth::user()->payment_password == md5($request->payment_password)){
+            return $this->response->noContent();
+        }else{
+            $data = [
+                'message' => '支付密码错误',
+                'status_code' => '403',
+            ];
+
+            return $this->response->array($data)->setStatusCode(403);
+        }
     }
 }

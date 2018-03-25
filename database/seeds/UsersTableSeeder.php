@@ -40,6 +40,7 @@ class UsersTableSeeder extends Seeder
         $user -> student_id = 10001;
         $user -> email = 'admin@admin.com';
         $user -> nickname = 'admin';
+        $user -> payment_password = md5(1234);
         $user -> dormitory_id = 3;
         $user -> is_verify = true;
         $user -> save();

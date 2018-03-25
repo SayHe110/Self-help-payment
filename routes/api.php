@@ -63,6 +63,8 @@ $api->version('v1', [
         $api->group(['middleware' => 'api.auth'], function($api) {
             // 当前登录用户信息 ?include=dormitory
             $api->get('user', 'UserController@me')->name('api.user.show');
+            // 支付密码
+            $api->post('payment_password', 'UserController@paymentPassword')->name('api.user.payment_password');
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
             // 故障报修

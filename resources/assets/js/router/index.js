@@ -147,7 +147,7 @@ export default new Router({
                 component: require('../servepages/balance.vue'),
             },
             {
-                path: '/payment/:id/:name',
+                path: '/payment/:id/:name/:orderNum/:date/',
                 name: 'payment',
                 component: require('../servepages/payment.vue'),
             },

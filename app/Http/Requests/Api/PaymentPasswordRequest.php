@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api;
 
 use App\Http\Requests\Request;
 
-class OrderRequest extends Request
+class PaymentPasswordRequest extends Request
 {
 
     /**
@@ -15,8 +15,6 @@ class OrderRequest extends Request
     public function rules()
     {
         return [
-            'dorm_id' => 'required',
-            'money' => 'required',
             'payment_password' => 'required|integer',
         ];
     }

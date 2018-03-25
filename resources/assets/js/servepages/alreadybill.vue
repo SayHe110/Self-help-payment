@@ -7,7 +7,7 @@
                 <img src="../assets/icon/nodata.png" width="100%">
                 <p style="font-size:20px">暂无订单</p>
             </div>
-            <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight">
+            <Scroll :on-reach-bottom="handleReachBottom" :height="getViewPortHeight" v-if="dorms.length != 0">
             <div class="card" v-for="(item, index) in dorms" :key="index" >
                 <div class="card-head">
                     <p>下单日期：{{item.created_at}}</p>
@@ -20,7 +20,12 @@
                         <li><p class="list_font">充电宿舍:<span>{{item.dormitory_id}}</span></p></li>
                     </ul>
                 </div>
-                <p class="money">实际付款:<span>¥{{item.money}}</span></p>                
+                <div class="card-footer">
+                    <p style="color: #3899ff;float: left;padding-left: 10px;">{{item.handle}}</p>
+                    <router-link :to="{name: 'pay'}">
+                        <Tag class="tag" type="border" color="yellow">再来一单</Tag>
+                    </router-link>
+                </div>                
             </div>
             </Scroll>
         </div>  
@@ -37,20 +42,13 @@ export default {
     return {
       current_page: null,
       total_pages: null,
-      dorms: [
-        {
-          order_num: "",
-          money: "",
-          dormitory_id: "",
-          created_at: ""
-        }
-      ],
+      dorms: [],
       dorm_content: {},
       dormstudent: {},
       dorm: []
     };
     styledata: {
-        background: 'white';
+      background: "white";
     }
   },
   computed: {
@@ -66,7 +64,8 @@ export default {
           created_at: item.created_at,
           order_num: item.order_num,
           money: item.money,
-          dormitory_id: item.dormitory.dorm_name
+          dormitory_id: item.dormitory.dorm_name,
+          handle: item.is_handle
         };
         return dom;
       });
@@ -98,7 +97,6 @@ export default {
 
 </script>
 <style scoped>
-
 .layout-box {
   position: absolute;
   top: 0px;
@@ -130,14 +128,14 @@ export default {
   padding-top: 10px;
 }
 /* 订单*/
-.no_card{
-    text-align: center;
-    background: #fff;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    height: 100%;
-    top: 0;
+.no_card {
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  top: 0;
 }
 .card {
   background: #fff;
@@ -185,10 +183,20 @@ export default {
   width: 70px;
   margin-right: 20px;
 }
+.card-footer {
+  height: 40px;
+  line-height: 40px;
+}
+.card-footer .tag {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+}
 .money {
   text-align: right;
   font-size: 14px;
-  padding: 5px 15px;
+  padding: 0px 15px;
+  float: right;
 }
 .money span {
   padding-left: 7px;

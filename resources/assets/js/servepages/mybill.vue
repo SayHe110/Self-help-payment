@@ -9,13 +9,14 @@
                 </ul>
                 <Button type="success" long @click="showIdCardInput">提交订单</Button>
             </div>                
-        </div>formPay
+        </div>
          <transition name="fade">
             <div class="mask_one" v-show="a">
               <div class="password">
                 <div class="cancer">
                   <button @click="a=false"><Icon type="chevron-left" style="margin-top:4px;"></Icon></button>
                   <p>请输入支付密码</p>
+                  <span style="color:red;">{{err_message}}</span>
                 </div>
                 <div class="button_box">
                   <input :key="n" v-for="n in 4" :value="idCard[n - 1]" type="password">
@@ -23,9 +24,11 @@
                 <div class="click_box">
                   <ul>
                     <li :key="n" @click="addIdCard(n)" v-for="n in 9" class="click">{{n}}</li>
-                    <li class="id_X click" @click="addIdCard('x')">X</li>
+                    <li class="click">完成</li>
                     <li @click="addIdCard(0)" class="click">0</li>
-                    <li @click="removeIdCard" class="id_cancer click glyphicon glyphicon-remove-circle"></li>
+                    <li @click="removeIdCard" class="id_cancer click">
+                     <Icon type="backspace"></Icon>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -44,6 +47,7 @@ export default {
       dorm_content: {},
       dormstudent: {},
       modal1: false,
+      err_message: "",
       myDate: [],
       a: false,
       idCard: [],
@@ -68,11 +72,21 @@ export default {
         this.$http.post('orders', {
           dorm_id: this.$route.params.id,
           money: this.$route.params.name,
-        }).then(res => {
+          payment_password: this.idCard.join(''),
+        })
+        .then(res => {
           this.$router.push({ name: "payment", params: {
             id: this.$route.params.id,
-            name: this.$route.params.name
+            name: this.$route.params.name,
+            orderNum: res.data.order_num,
+            date: res.data.created_at,
           }});
+        }, err => {
+            this.err_message = err.data.message;
+            setTimeout(() => {
+               this.err_message = ''; 
+            },3000);
+            this.idCard= []
         });
       }
     }
@@ -153,8 +167,8 @@ button {
 }
 .click_box {
   overflow: hidden;
-  margin-top: 35px;
-  background-color: #fff;
+  margin-top: 42px;
+  background-color: #f9f9f9;
 }
 .click_box ul li {
   color: #474747;
@@ -184,8 +198,7 @@ button {
   opacity: 0;
 }
 .button_box {
-  border-top: 1px solid #efefef;
-  padding: 10px 20px;
+  padding: 20px 20px;
   width: 100%;
   line-height: 40px;
 }
@@ -194,7 +207,13 @@ button {
   float: left;
   height: 40px;
   width: 24%;
+  border: 1px solid #aaa;
+  border-left: 0;
 }
+.button_box input:first-child{
+  border-left: 1px solid #aaa;
+}
+
 .content_box {
   position: absolute;
   bottom: 0;
@@ -208,7 +227,7 @@ button {
   opacity: 0.7;
 }
 .password {
-  background-color: #f7f7f7;
+  background-color: #f9f9ff;
   width: 100%;
   position: absolute;
   bottom: 0px;
