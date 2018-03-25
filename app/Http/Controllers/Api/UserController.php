@@ -50,7 +50,11 @@ class UserController extends Controller
             'dorm_id.integer' => '宿舍 id 应为整型',
         ]);
 
+        $user = \Auth::user();
+        $user->dormitory_id = $validatedData['dorm_id'];
+        $user->update();
 
+        return $this->response->noContent();
     }
 
     public function paymentPassword(PaymentPasswordRequest $request)
