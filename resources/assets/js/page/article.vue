@@ -30,26 +30,28 @@
 </template>
 <script>
 export default {
-    data () {
-        return{
-            topicsData: []
-        }
+  data() {
+    return {
+      topicsData: []
+    };
+  },
+  mounted() {
+    this.loadItem();
+  },
+  methods: {
+    back() {
+      this.$router.back(-1);
     },
-    mounted () {
-        this.loadItem();
+    success() {
+      this.$Message.success("收藏成功!");
     },
-    methods: {
-        back() {
-        this.$router.back(-1);
-        },
-        success() {
-        this.$Message.success("收藏成功!");
-        },
-        loadItem(){
-            this.$http.get("topics/" + this.$route.params.id + '?include=user').then(res => {
-            this.topicsData = res.body;
-            })
-        }
+    loadItem() {
+      this.$http
+        .get("topics/" + this.$route.params.id + "?include=user")
+        .then(res => {
+          this.topicsData = res.body;
+        });
+    }
   }
 };
 </script>
@@ -61,6 +63,9 @@ export default {
   padding: 0 10px;
   width: 100%;
   padding-bottom: 65px;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
 .layout-header {
@@ -99,7 +104,7 @@ export default {
 }
 .article-title {
   text-align: left;
-  padding:10px 0;
+  padding: 10px 0;
 }
 .article-title h2 {
   font-size: 18px;
