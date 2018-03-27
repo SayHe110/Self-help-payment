@@ -30,4 +30,6 @@ Route::group([
     $router->resource('carouselFigure', 'CarouselFigureController');
     // 投诉举报
     $router->resource('reports', 'ReportController');
+    // 故障报修
+    $router->resource('faults', 'FaultController');
 });
