@@ -164,6 +164,12 @@ class adminMenuTableSeeder extends Seeder
                 'title'     => '轮播图管理',
                 'icon'      => 'fa-image',
                 'uri'       => 'carouselFigure',
+            ],[
+                'parent_id' => 0,
+                'order'     => 0,
+                'title'     => '投诉举报',
+                'icon'      => 'fa-exclamation',
+                'uri'       => 'reports',
             ]
         ]);
 

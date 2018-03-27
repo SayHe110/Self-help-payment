@@ -28,4 +28,6 @@ Route::group([
     $router->resource('orders/untreated', 'UntreatedOrderController');
     // 轮播图
     $router->resource('carouselFigure', 'CarouselFigureController');
+    // 投诉举报
+    $router->resource('reports', 'ReportController');
 });
