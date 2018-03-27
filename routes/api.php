@@ -71,6 +71,8 @@ $api->version('v1', [
             $api->post('user/reset_dorm', 'UserController@resetDorm')->name('api.user.reset_dorm');
             // 修改昵称
             $api->post('user/reset_nickname', 'UserController@resetNickname')->name('api.user.reset_nickname');
+            // 修改支付密码
+            $api->post('users/reset_payment_password', 'UserController@resetPaymentPassword')->name('api.uses.resetPaymentPassword');
             // 上传头像
             $api->post('images', 'ImagesController@store')->name('api.images.store');
             // 发布文章
@@ -85,7 +87,9 @@ $api->version('v1', [
             $api->get('orders', 'OrderController@me')->name('api.orders.show');
             // 电费余额
             $api->get('electricity_balance', 'ElectricityFeesController@show')->name('api.Electricity.show');
-            
+
+
+
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
         });
