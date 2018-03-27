@@ -21,7 +21,7 @@ class OrdersTableSeeder extends Seeder
         $dorms_id = Dormitory::where('type', 'dormitory')->get()->pluck('id')->toArray();
 
         $orders = factory(Order::class)
-                    ->times(100)
+                    ->times(1000)
                     ->make()
                     ->each(function ($order, $index) use($faker, $users_id, $dorms_id){
                         $order->user_id = $faker->randomElement($users_id);

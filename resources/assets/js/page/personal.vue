@@ -113,11 +113,12 @@ export default {
   height: 100%;
 }
 .personal-contain ul li .personal-icon {
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   float: left;
   overflow: hidden;
-  margin-top: 12px;
+  margin-top: 8px;
+  border-radius: 50%;
 }
 .personal-contain ul li .personal-icon img {
   width: 100%;
