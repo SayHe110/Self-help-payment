@@ -14,25 +14,38 @@ class OrderController extends Controller
 {
     use ModelForm;
 
+    public function index()
+    {
+        return Admin::content(function (Content $content){
+            $content->body($this->grid());
+        });
+    }
+
     public function untreatedIndex()
     {
         return Admin::content(function (Content $content){
             $content -> header('订单管理');
 
-            $content->body($this->untreatedGrid());
+            $content->breadcrumb(
+                ['text' => '订单管理'],
+                ['text' => '未处理订单']
+            );
+
+            $content->body($this->isHandleGrid(0));
         });
     }
 
-    public function untreatedGrid()
+    public function processedIndex()
     {
-        return Admin::grid(Order::class, function (Grid $grid){
-            $grid->model()->where('is_handle',0);
-            $grid->model()->orderBy('id', 'DESC');
+        return Admin::content(function (Content $content){
+            $content -> header('订单管理');
 
-            $grid->id('ID')->sortable();
-            $grid->user()->nickname('用户');
-            $grid->order_num('订单号');
-            $grid->dormitory()->dorm_name('宿舍号');
+            $content->breadcrumb(
+                ['text' => '订单管理'],
+                ['text' => '已处理订单']
+            );
+
+            $content->body($this->isHandleGrid(1));
         });
     }
 
@@ -52,4 +65,31 @@ class OrderController extends Controller
             $grid->is_handle('是否处理')->switch($states);
         });
     }
+
+    /*public function untreatedGrid()
+    {
+        return Admin::grid(Order::class, function (Grid $grid){
+            $grid->model()->where('is_handle',0);
+            $grid->model()->orderBy('id', 'DESC');
+
+            $grid->id('ID')->sortable();
+            $grid->user()->nickname('用户');
+            $grid->order_num('订单号');
+            $grid->dormitory()->dorm_name('宿舍号');
+        });
+    }*/
+
+    public function isHandleGrid($isHandle)
+    {
+        return Admin::grid(Order::class, function (Grid $grid) use ($isHandle){
+            $grid->model()->where('is_handle',$isHandle);
+            $grid->model()->orderBy('id', 'DESC');
+
+            $grid->id('ID')->sortable();
+            $grid->user()->nickname('用户');
+            $grid->order_num('订单号');
+            $grid->dormitory()->dorm_name('宿舍号');
+        });
+    }
+
 }

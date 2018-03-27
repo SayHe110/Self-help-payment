@@ -14,6 +14,8 @@ Route::group([
     $router->resource('users', 'UserController');
     $router->resource('categories', 'CategoryController');
     $router->resource('topics', 'TopicController');
-    // $router->resource('orders', OrderController::class);
+    // $router->resource('orders', 'OrderController');
+    $router->get('orders/index', 'OrderController@index');
     $router->get('orders/untreated', 'OrderController@untreatedIndex');
+    $router->get('orders/processed', 'OrderController@processedIndex');
 });
