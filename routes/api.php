@@ -88,8 +88,6 @@ $api->version('v1', [
             // 电费余额
             $api->get('electricity_balance', 'ElectricityFeesController@show')->name('api.Electricity.show');
 
-
-
             // 通知列表
             $api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
         });

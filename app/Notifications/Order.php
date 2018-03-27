@@ -4,22 +4,24 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class TopicReplied extends Notification
+class Order extends Notification
 {
     use Queueable;
+
+    public $order;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(\App\Models\Order $order)
     {
-        //
+        $this->order = $order;
     }
+
 
     /**
      * Get the notification's delivery channels.
@@ -29,7 +31,20 @@ class TopicReplied extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
+        //return ['mail'];
+    }
+
+    public function toDatabase($notifiable)
+    {
+        return [
+            'order_id' => $this->order->id,
+            'title' => '购电公告',
+            'content' => '您于'.substr($this->order->created_at,0,9).'购电'.$this->order->money.'元度电',
+            'user_id' => $this->order->user->id,
+            'user_name' => $this->order->user->nickname,
+            'created_at' => $this->order->created_at->toDateTimeString(),
+        ];
     }
 
     /**
