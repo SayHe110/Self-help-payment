@@ -26,13 +26,13 @@
                    </a>
                 </li>
                 <li  v-for="(item, index) in dorms" :key="index">
-                   <a href="javascript:;">
+                    <a href="javascript:;">
                        <div class="notice-icon"><img src="../assets/icon/buydian.png" alt=""></div>
                        <div class="notice-title">
                            <p>购电通知</p>
                             <span>您于{{item.created_at}}购电{{item.money}}元核算{{item.money}}度电</span>
                        </div>
-                       <span class="notice-time">{{item.created_at}}</span>
+                       <span class="notice-time">2018-3-25</span>
                    </a>
                 </li>
             </ul>

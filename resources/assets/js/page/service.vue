@@ -122,7 +122,7 @@ export default {
   },
   methods: {
        warning () {
-                this.$Message.warning('尽情期待!');
+                this.$Message.warning('敬请期待!');
             }
   }
 };
