@@ -140,6 +140,18 @@ class adminMenuTableSeeder extends Seeder
                 'title'     => '操作日志',
                 'icon'      => 'fa-history',
                 'uri'       => 'auth/logs',
+            ],[
+                'parent_id' => 4,
+                'order'     => 0,
+                'title'     => '已处理订单',
+                'icon'      => 'fa-check',
+                'uri'       => 'orders/processed',
+            ],[
+                'parent_id' => 4,
+                'order'     => 0,
+                'title'     => '未处理订单',
+                'icon'      => 'fa-close',
+                'uri'       => 'orders/untreated',
             ]
         ]);
 
