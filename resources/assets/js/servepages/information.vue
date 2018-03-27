@@ -118,13 +118,13 @@ export default {
         render: h => {
           return h("Input", {
             props: {
-              value: this.value,
+              value: this.autograph,
               autofocus: true,
               placeholder: "请输入您的个性签名..."
             },
             on: {
               input: val => {
-                this.autograph_value = val;
+                this.autograph = val;
               }
             }
           });
