@@ -20,7 +20,7 @@ class Topic extends Model
 
     public function setTitleImagePathAttribute($path)
     {
-        if(! starts_with($path, '/uploads')){
+        if(! starts_with($path, '/uploads') && ! starts_with($path, 'http')){
             $path = '/uploads/'.$path;
         }
 
