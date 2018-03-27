@@ -51,7 +51,7 @@ class TopicController extends Controller
 
             $grid->id('ID')->sortable();
             $grid->title('标题');
-            $grid->title_image_path('标题图片')->image(config('app.url').'/uploads/',60, 60);
+            $grid->title_image_path('标题图片')->image(config('app.url').'uploads/',60, 60);
             $grid->category()->name('分类');
             $grid->user()->nickname('作者');
         });
@@ -65,7 +65,7 @@ class TopicController extends Controller
             $form->select('category_id', '分类')->options(Category::all()->pluck('name', 'id'));
             // todo 富文本编辑器
             $form->textarea('body', '内容')->rows(10);
-            $form->image('title_image_path');
+            $form->image('title_image_path')->move('topics/')->uniqueName();
             $form->select('user_id', '作者')->options(function ($id){
                 $user = User::find($id);
 
