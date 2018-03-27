@@ -16,7 +16,7 @@ class Image extends Model
     public function setPathAttribute($path)
     {
         // 如果不是 'uploads' 开头则是后台上传
-        if(! starts_with($path, '/uploads')){
+        if(! starts_with($path, '/uploads') && !starts_with($path, 'http')){
             $path = '/uploads/'.$path;
         }
 
