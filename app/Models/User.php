@@ -57,6 +57,14 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Order::class);
     }
 
+    // 消息通知已读
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
