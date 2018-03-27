@@ -17,4 +17,13 @@ class Topic extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function setTitleImagePathAttribute($path)
+    {
+        if(! starts_with($path, '/uploads')){
+            $path = '/uploads/'.$path;
+        }
+
+        $this->attributes['title_image_path'] = $path;
+    }
 }

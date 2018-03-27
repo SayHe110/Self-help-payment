@@ -16,7 +16,8 @@ class AppServiceProvider extends ServiceProvider
     {
         // 模型监控
         \App\Models\Topic::observe(\App\Observers\TopicObserver::class);
-
+        \App\Models\Order::observe(\App\Observers\OrderObserver::class);
+        \App\Models\Image::observe(\App\Observers\ImageObserver::class);
         Schema::defaultStringLength(191);
     }
 

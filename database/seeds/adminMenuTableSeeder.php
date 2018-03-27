@@ -158,6 +158,12 @@ class adminMenuTableSeeder extends Seeder
                 'title'     => '未处理订单',
                 'icon'      => 'fa-close',
                 'uri'       => 'orders/untreated',
+            ],[
+                'parent_id' => 0,
+                'order'     => 0,
+                'title'     => '轮播图管理',
+                'icon'      => 'fa-image',
+                'uri'       => 'carouselFigure',
             ]
         ]);
 

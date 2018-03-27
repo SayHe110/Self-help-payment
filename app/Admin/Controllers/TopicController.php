@@ -46,12 +46,11 @@ class TopicController extends Controller
     {
         return Admin::grid(Topic::class, function (Grid $grid){
             $grid->model()->orderBy('id', 'DESC');
-
             $grid->paginate(10);
 
             $grid->id('ID')->sortable();
             $grid->title('标题');
-            $grid->title_image_path('标题图片')->image(config('app.url').'uploads/',60, 60);
+            $grid->title_image_path('标题图片')->image(config('app.url'),60, 60);
             $grid->category()->name('分类');
             $grid->user()->nickname('作者');
         });

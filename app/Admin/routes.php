@@ -26,4 +26,6 @@ Route::group([
     $router->get('orders/processed', 'OrderController@processedIndex');
     // 未处理订单
     $router->resource('orders/untreated', 'UntreatedOrderController');
+    // 轮播图
+    $router->resource('carouselFigure', 'CarouselFigureController');
 });
