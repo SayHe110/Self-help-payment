@@ -7,24 +7,13 @@ use Illuminate\Notifications\Notifiable;
 
 class Order extends Model
 {
-    use Notifiable{
-        notify as protected laravelNotify;
-    }
-
     protected $fillable = ['order_num', 'dorm_id', 'money'];
-
-    public function notify($instance)
-    {
-        $this->increment('notification_count');
-        $this->laravelNotify($instance);
-    }
-
 
     public function getStateAttribute($value)
     {
-        if($value){
+        if ($value) {
             return '已处理';
-        }else{
+        } else {
             return '未处理';
         }
     }
