@@ -5,14 +5,14 @@
         </div>
         <div class="notice-contain">
             <ul>
-               <li>
+               <li v-for="item in notice" :key="item.id">
                    <a href="javascript:;">
                        <div class="notice-icon"><Badge dot><img src="../assets/icon/huodong.png" alt=""></Badge></div>
                        <div class="notice-title">
-                           <p>精彩活动</p>
-                            <span>百万优惠券限量抢</span>
+                           <p>{{notice.title}}</p>
+                            <span>{{notice.body}}</span>
                        </div>
-                       <span class="notice-time">2018-3-1</span>
+                       <span class="notice-time">{{notice.time}}</span>
                    </a>
                 </li>
                 <li>
@@ -49,13 +49,15 @@ export default {
       dorms: [],
       dorm_content: {},
       dormstudent: {},
-      dorm: []
+      dorm: [],
+      notice:[{title: ""}, {body: ""}, {time: ""}]
     };
   },
   mounted() {
     // 消息
     this.$http.get("user/notifications").then(res => {
-      console.log(res.body.data);
+      console.log(res.data);
+      this.notice = res.data;
     });
     this.$http.get("orders?include=dormitory").then(res => {
       this.dorms = res.data.data.map(item => {

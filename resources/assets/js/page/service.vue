@@ -121,9 +121,9 @@ export default {
     return {};
   },
   methods: {
-       warning () {
-                this.$Message.warning('敬请期待!');
-            }
+    warning() {
+      this.$Message.warning("敬请期待!");
+    }
   }
 };
 </script>
