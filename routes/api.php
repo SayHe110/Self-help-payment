@@ -63,29 +63,29 @@ $api->version('v1', [
         $api->group(['middleware' => 'api.auth'], function($api) {
             // 当前登录用户信息 ?include=dormitory
             $api->get('user', 'UserController@me')->name('api.user.show');
-            // 支付密码
+            // 支付密码 params: payment_password, password
             $api->post('payment_password', 'UserController@paymentPassword')->name('api.user.payment_password');
-            // 修改密码
+            // 修改密码 params: password, new_password
             $api->post('user/reset', 'UserController@reset')->name('api.user.reset');
-            // 用户修改宿舍
+            // 用户修改宿舍 params: dorm_id
             $api->post('user/reset_dorm', 'UserController@resetDorm')->name('api.user.reset_dorm');
-            // 修改昵称
+            // 修改昵称 params: nickname
             $api->post('user/reset_nickname', 'UserController@resetNickname')->name('api.user.reset_nickname');
-            // 修改支付密码
-            $api->post('users/reset_payment_password', 'UserController@resetPaymentPassword')->name('api.uses.resetPaymentPassword');
-            // 上传头像
+            // 修改支付密码 params: payment_password, password
+            $api->post('user/reset_payment_password', 'UserController@resetPaymentPassword')->name('api.uses.resetPaymentPassword');
+            // 上传头像 params: image(file), type:avatar
             $api->post('images', 'ImagesController@store')->name('api.images.store');
-            // 发布文章
+            // 发布文章 params: title, body, category_id
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
-            // 修改文章
+            // 修改文章 params: title, body, category_id
             $api->patch('topics/{topic}', 'TopicController@update')->name('api.topic.update');
             // 删除文章
             $api->delete('topics/{topic}', 'TopicController@destroy')->name('api.topic.destroy');
-            // 故障报修
+            // 故障报修 params: title, dormitory, phone, description
             $api->post('faults', 'FaultsController@store')->name('api.fault.store');
-            // 投诉举报
+            // 投诉举报 params: title, reports, description, anonymous
             $api->post('reports', 'ReportsController@store')->name('api.reports.store');
-            // 提交订单
+            // 提交订单 params: dorm_id, money, payment_password
             $api->post('orders', 'OrderController@store')->name('api.orders.store');
             // 我的订单 ?include=dormitory
             $api->get('orders', 'OrderController@me')->name('api.orders.show');

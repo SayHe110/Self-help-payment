@@ -35,10 +35,27 @@ class UserController extends Controller
         return $this->response->item($this->user(), new UserTransformer());
     }
 
-    public function reset(PasswordRequest $request)
+    public function reset(Request $request)
     {
-        /*dd(bcrypt('password'));
-        dd(\Auth::user()->password);*/
+        $user = \Auth::user();
+
+        $validatedData = $request->validate([
+            'password' => 'required|min:6|string',
+            'new_password' => 'required|min:6|string',
+        ]);
+
+        if(! \Hash::check($validatedData['password'], $user->password)){
+            $data = [
+                'message' => '用户密码错误',
+                'status_code' => '403',
+            ];
+            return $this->response->array($data)->setStatusCode(403);
+        }
+
+        $user->password = bcrypt($validatedData['new_password']);
+        $user->update();
+
+        return $this->response->noContent();
     }
 
     public function resetDorm(Request $request)
@@ -103,7 +120,7 @@ class UserController extends Controller
             ];
             return $this->response->array($data)->setStatusCode(403);
         }
-        $user->password = bcrypt($validateData['password']);
+        $user->payment_password = md5($validateData['payment_password']);
         $user->save();
 
         return $this->response->noContent();
