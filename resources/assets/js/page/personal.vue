@@ -85,7 +85,7 @@ export default {
       this.$http
         .delete("authorizations/current")
         .then(res => {
-            this.jwtToken = false;
+            this.jwtToken = false; 
             localStorage.removeItem('jwt_token');
         });
     }
