@@ -15,7 +15,7 @@
                     <Input v-model="repairItem.Company" />
                 </FormItem>
                 <FormItem label="详细描述:" prop="textarea">
-                    <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""></Input>
+                    <Input v-model="repairItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder=""/>
                 </FormItem>
                 <FormItem label="是否匿名:" prop="radio">
                     <RadioGroup v-model="repairItem.radio">

@@ -41,7 +41,8 @@ export default {
     return {
       current_page: null,
       total_pages: null,
-      topicsData: [{ id: "" }, { title: "" }, { body: "" }]
+      topicsData: [{ id: "" }, { title: "" }, { body: "" }],
+
     };
   },
   computed: {
@@ -52,10 +53,8 @@ export default {
   },
   mounted() {
     // 文章
-    this.$http.get("topics?include=user").then(res => {
-      this.topicsData = res.body.data;
-      this.current_page = res.body.meta.pagination.current_page;
-      this.total_pages = res.body.meta.pagination.total_pages;
+    this.$http.get("use_electrical_sense").then(res => {
+      this.topicsData = res.body.topics;
     });
   },
   methods: {

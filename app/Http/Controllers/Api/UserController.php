@@ -86,4 +86,26 @@ class UserController extends Controller
             return $this->response->array($data)->setStatusCode(403);
         }
     }
+
+    public function resetPaymentPassword(Request $request)
+    {
+        $validateData = $request->validate([
+            'password' => 'required',
+            'payment_password' => 'required',
+        ]);
+        $user = \Auth::user();
+
+
+        if(! \Hash::check($validateData['password'], $user->password)){
+            $data = [
+                'message' => '用户密码错误',
+                'status_code' => '403',
+            ];
+            return $this->response->array($data)->setStatusCode(403);
+        }
+        $user->password = bcrypt($validateData['password']);
+        $user->save();
+
+        return $this->response->noContent();
+    }
 }

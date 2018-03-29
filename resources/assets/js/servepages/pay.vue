@@ -1,20 +1,17 @@
 <template>
 <div class="layout-box">
     <sheader headerTitle="快速购电"></sheader>
-    <div>
-              <img src="../assets/icon/success1.png">
-    </div>
     <div class="layout-application">
         <div class="application-box">
-            <Form :model="formPay" label-position="left" :label-width="60" >
+            <Form :model="formPay" label-position="left" :label-width="60">
                 <FormItem label="所在宿舍">
                    <Cascader v-model="formPay.dorNum" :data="dorms" filterable trigger="hover"></Cascader>
                 </FormItem>
                 <FormItem label="缴费金额">
                   <InputNumber class="cash" :max="999" :min="0" v-model="formPay.cash"  placeholder="请输入金额..."/> 
                 </FormItem>
-                <Button @click="submitOrder" type="success" long>下一步</Button>
-            </Form>
+                <Button @click="submitOrder('formPay')" type="success" long>下一步</Button>
+            </Form> 
         </div>  
     </div>
 </div>
@@ -36,7 +33,7 @@ export default {
         dorNum: [],
         cash: null
       },
-      dorms: []
+      dorms: [],
     };
   },
   methods: {
@@ -135,7 +132,7 @@ export default {
 .ivu-cascader-menu {
   max-width: 90px;
 }
-.cash{
-    width: 100% !important;
+.cash {
+  width: 100% !important;
 }
 </style>

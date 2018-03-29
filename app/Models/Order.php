@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Order extends Model
 {
@@ -10,9 +11,9 @@ class Order extends Model
 
     public function getStateAttribute($value)
     {
-        if($value){
+        if ($value) {
             return '已处理';
-        }else{
+        } else {
             return '未处理';
         }
     }

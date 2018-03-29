@@ -44,5 +44,14 @@ class UsersTableSeeder extends Seeder
         $user -> dormitory_id = 3;
         $user -> is_verify = true;
         $user -> save();
+
+        $user = User::find(2);
+        $user -> student_id = 10002;
+        $user -> email = 'admin@admin.com';
+        $user -> nickname = 'admin';
+        $user -> payment_password = md5(2345);
+        $user -> dormitory_id = 3;
+        $user -> is_verify = true;
+        $user -> save();
     }
 }

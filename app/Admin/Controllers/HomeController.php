@@ -21,7 +21,8 @@ class HomeController extends Controller
                 ['text' => '首页', 'url' => '/admin']
             );
 
-            $content->row(Dashboard::title());
+            $content->row("<h1 style='color: #00a7d0'><center>Self-help-payment</center></h1>");
+            $content->row("<br><br>");
 
             $content->row(function (Row $row) {
 

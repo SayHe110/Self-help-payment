@@ -78,28 +78,28 @@ class adminMenuTableSeeder extends Seeder
                 'order'     => 1,
                 'title'     => '用户列表',
                 'icon'      => 'fa-bars',
-                'uri'       => '/users',
+                'uri'       => 'users',
             ],
             [
                 'parent_id' => 0,
                 'order'     => 2,
                 'title'     => '文章列表',
                 'icon'      => 'fa-clipboard',
-                'uri'       => '/topics',
+                'uri'       => 'topics',
             ],
             [
                 'parent_id' => 0,
                 'order'     => 3,
                 'title'     => '分类',
                 'icon'      => 'fa-bars',
-                'uri'       => '/categories',
+                'uri'       => 'categories',
             ],
             [
                 'parent_id' => 0,
                 'order'     => 4,
                 'title'     => '订单管理',
                 'icon'      => 'fa-file-text-o',
-                'uri'       => '/orders',
+                'uri'       => '',
             ],
             [
                 'parent_id' => 0,
@@ -140,6 +140,36 @@ class adminMenuTableSeeder extends Seeder
                 'title'     => '操作日志',
                 'icon'      => 'fa-history',
                 'uri'       => 'auth/logs',
+            ],[
+                'parent_id' => 4,
+                'order'     => 0,
+                'title'     => '所有订单',
+                'icon'      => 'fa-clone',
+                'uri'       => 'orders/index',
+            ],[
+                'parent_id' => 4,
+                'order'     => 0,
+                'title'     => '已处理订单',
+                'icon'      => 'fa-check',
+                'uri'       => 'orders/processed',
+            ],[
+                'parent_id' => 4,
+                'order'     => 0,
+                'title'     => '未处理订单',
+                'icon'      => 'fa-close',
+                'uri'       => 'orders/untreated',
+            ],[
+                'parent_id' => 0,
+                'order'     => 0,
+                'title'     => '轮播图管理',
+                'icon'      => 'fa-image',
+                'uri'       => 'carouselFigure',
+            ],[
+                'parent_id' => 0,
+                'order'     => 0,
+                'title'     => '投诉举报',
+                'icon'      => 'fa-exclamation',
+                'uri'       => 'reports',
             ]
         ]);
 
