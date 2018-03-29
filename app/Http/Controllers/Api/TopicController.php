@@ -33,6 +33,20 @@ class TopicController extends Controller
         return $this->response->item($topic, new TopicTransformer());
     }
 
+    public function update(TopicRequest $request, Topic $topic)
+    {
+        $topic->update($request->all());
+
+        return $this->response->item($topic, new TopicTransformer());
+    }
+
+    public function destroy(Topic $topic)
+    {
+        $topic->delete();
+
+        return $this->response->noContent();
+    }
+
     /**
      * 停电公告
      * @return \Dingo\Api\Http\Response

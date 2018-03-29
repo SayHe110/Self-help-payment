@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Api;
 
 use App\Http\Requests\Request;
-use App\Rules\FieldHasExisted;
 
 class UserRequest extends Request
 {

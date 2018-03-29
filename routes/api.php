@@ -77,6 +77,10 @@ $api->version('v1', [
             $api->post('images', 'ImagesController@store')->name('api.images.store');
             // 发布文章
             $api->post('topics', 'TopicController@store')->name('api.topic.store');
+            // 修改文章
+            $api->patch('topics/{topic}', 'TopicController@update')->name('api.topic.update');
+            // 删除文章
+            $api->delete('topics/{topic}', 'TopicController@destroy')->name('api.topic.destroy');
             // 故障报修
             $api->post('faults', 'FaultsController@store')->name('api.fault.store');
             // 投诉举报

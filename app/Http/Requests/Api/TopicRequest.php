@@ -14,11 +14,23 @@ class TopicRequest extends Request
      */
     public function rules()
     {
-        return [
-            'title' => 'required|string|min:2',
-            'body' => 'required|string|min:2',
-            'category_id' => 'required|numeric',
-        ];
+        switch ($this->method()) {
+            case 'POST':
+                return [
+                    'title' => 'required|string|min:2',
+                    'body' => 'required|string|min:2',
+                    'category_id' => 'required|numeric',
+                ];
+                break;
+            case 'PATCH':
+                return [
+                    'title' => 'string',
+                    'body' => 'string',
+                    'category_id' => 'exists:categories,id',
+                ];
+                break;
+        }
+
     }
 
     public function messages()
