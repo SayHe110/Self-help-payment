@@ -5,7 +5,7 @@
         <div class="application-box" style="padding-top:30px;">
             <Form class="login" ref="formInline" :model="formInline" label-position="right" :rules="ruleInline" post="" :label-width="70">
                 <FormItem label="账户密码" prop="password">
-                    <Input type="text" v-model="formInline.password" placeholder="请输入账户密码" size="large">
+                    <Input type="password" v-model="formInline.password" placeholder="请输入账户密码" size="large">
                     </Input>
                 </FormItem>
                 <FormItem label="设置密码" prop="password_new">
@@ -61,14 +61,13 @@ export default {
       this.$refs[name].validate(valid => {
         if (valid) {
           this.$http
-            .post("authorizations", {
-              student_id: this.formInline.user,
-              password: this.formInline.password,
-              captcha_key: this.captchaKey,
-              captcha_code: this.formInline.verification
+            .post("user/reset", {
+                password: this.formInline.password,
+                new_password: this.formInline.password_new,
             })
             .then(
               res => {
+                this.$Message.success("重置成功");
                 this.$router.push("./login");
               },
               err => {
@@ -79,12 +78,6 @@ export default {
           this.$Message.error("输入的数据格式有误，请检查!");
         }
       });
-    },
-    handleSearch_email(value) {
-      this.emailarry =
-        !value || value.indexOf("@") >= 0
-          ? []
-          : [value + "@qq.com", value + "@sina.com", value + "@163.com"];
     }
   }
 };

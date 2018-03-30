@@ -5,26 +5,6 @@
         </div>
         <div class="notice-contain">
             <ul>
-               <li v-for="item in notice" :key="item.id">
-                   <a href="javascript:;">
-                       <div class="notice-icon"><Badge dot><img src="../assets/icon/huodong.png" alt=""></Badge></div>
-                       <div class="notice-title">
-                           <p>{{notice.title}}</p>
-                            <span>{{notice.body}}</span>
-                       </div>
-                       <span class="notice-time">{{notice.time}}</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="javascript:;">
-                       <div class="notice-icon"><img src="../assets/icon/xitongxiaoxi.png" alt=""></div>
-                       <div class="notice-title">
-                           <p>系统消息</p>
-                            <span>暂无内容</span>
-                       </div>
-                       <span class="notice-time">2018-3-12</span>
-                   </a>
-                </li>
                 <li  v-for="(item, index) in dorms" :key="index">
                     <a href="javascript:;">
                        <div class="notice-icon"><img src="../assets/icon/buydian.png" alt=""></div>
@@ -57,7 +37,6 @@ export default {
     // 消息
     this.$http.get("user/notifications").then(res => {
       console.log(res.data);
-      this.notice = res.data;
     });
     this.$http.get("orders?include=dormitory").then(res => {
       this.dorms = res.data.data.map(item => {

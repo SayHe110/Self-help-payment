@@ -5,13 +5,13 @@
         <div class="application-box" style="padding-top:30px;">
             <Form class="login" ref="formInline" :model="formInline" label-position="right" :rules="ruleInline" post="" :label-width="70">
                 <FormItem label="账户密码" prop="password">
-                    <Input type="text" v-model="formInline.password" placeholder="请输入账户密码" size="large" />
+                    <Input type="password" v-model="formInline.password" placeholder="请输入账户密码" size="large" />
                 </FormItem>
                 <FormItem label="设置密码" prop="password_new">
-                    <Input type="password" v-model="formInline.password_new" placeholder="请输入新密码" size="large" />
+                    <Input type="password" v-model="formInline.password_new" placeholder="请输入新支付密码" size="large" />
                 </FormItem>
                  <FormItem label="确认密码" prop="password_confirm">
-                    <Input type="password" v-model="formInline.password_confirm" placeholder="请确认新密码" size="large" />
+                    <Input type="password" v-model="formInline.password_confirm" placeholder="请确认支付密码" size="large" />
                 </FormItem>
             </Form>
             <Button type="success" long @click="handleSubmit('formInline')">完成</Button>
@@ -59,15 +59,16 @@ export default {
         if (valid) {
           this.$http
             .post("users/reset_payment_password", {
+                password: this.formInline.password,
                 payment_password: this.formInline.password_new,
-
             })
             .then(
               res => {
-                this.$router.push("./login");
+                this.$Message.success("修改成功");
+                this.$router.push("./security");
               },
               err => {
-                this.$Message.error(err.body.message || "重置失败");
+                this.$Message.error(err.body.message || "修改失败");
               }
             );
         } else {
