@@ -170,6 +170,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Hhxsv5\LaravelS\Illuminate\LaravelSServiceProvider::class,
 
         /*
          * Application Service Providers...
